@@ -26,7 +26,7 @@ export async function POST() {
     const { data: feedback, error } = await supabase
       .from('feedback')
       .select('*')
-      .eq('status', 'submitted')
+      .eq('status', 'pending')
       .order('created_at', { ascending: true });
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });

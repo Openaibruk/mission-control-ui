@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
         description: body.description,
         category: body.category || 'improvement',
         priority: body.priority || 'medium',
-        status: 'submitted',
+        status: 'pending',
       })
       .select()
       .single();

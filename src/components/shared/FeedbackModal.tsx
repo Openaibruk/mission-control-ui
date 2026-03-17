@@ -44,7 +44,7 @@ export default function FeedbackModal({ isOpen, onClose, theme }: FeedbackModalP
       await fetch('/api/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, description, category, priority, status: 'submitted' }),
+        body: JSON.stringify({ title, description, category, priority, status: 'pending' }),
       });
       setSubmitted(true);
       setTimeout(() => {

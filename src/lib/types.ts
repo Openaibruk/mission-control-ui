@@ -82,7 +82,7 @@ export interface Feedback {
   description: string;
   category: 'bug' | 'feature' | 'improvement';
   priority: 'low' | 'medium' | 'high' | 'critical';
-  status: 'submitted' | 'acknowledged' | 'in_progress' | 'project_created' | 'done';
+  status: 'pending' | 'acknowledged' | 'in_progress' | 'project_created' | 'done';
   created_at: string;
   updated_at: string;
   project_id?: string;
