@@ -15,9 +15,11 @@ import { AgentGrid } from '@/components/agents/AgentGrid';
 import { ApprovalsView } from '@/components/views/ApprovalsView';
 import { WorkflowView } from '@/components/views/WorkflowView';
 import { InsightsView } from '@/components/views/InsightsView';
+import { ProjectsView } from '@/components/views/ProjectsView';
 import { ActivityView } from '@/components/views/ActivityView';
 import { SettingsView } from '@/components/views/SettingsView';
 import { SkillsView } from '@/components/views/SkillsView';
+import { FeedbackView } from '@/components/views/FeedbackView';
 import { TaskModal } from '@/components/shared/TaskModal';
 import { AgentModal } from '@/components/shared/AgentModal';
 import { ProjectModal } from '@/components/shared/ProjectModal';
@@ -178,12 +180,21 @@ export default function MC() {
                   loading={db.loading} theme={theme}
                 />
               )}
+              {view === 'projects' && (
+                <ProjectsView
+                  projects={db.projects} tasks={db.tasks} agents={db.agents}
+                  loading={db.loading} theme={theme}
+                  onEditTask={handleEditTaskClick}
+                  onEditProject={handleEditProjectClick}
+                />
+              )}
               {view === 'approvals' && <ApprovalsView pendingTasks={pendingApprovals} onApprove={db.approveTask} loading={db.loading} theme={theme} />}
               {view === 'workflow' && <WorkflowView theme={theme} agents={db.agents} />}
               {view === 'skills' && <SkillsView theme={theme} />}
               {view === 'insights' && <InsightsView stats={db.stats} agents={db.agents} tasks={db.tasks} projects={db.projects} loading={db.loading} theme={theme} />}
               {view === 'activity' && <ActivityView activities={db.activities} agents={db.agents} loading={db.loading} theme={theme} />}
               {view === 'settings' && <SettingsView agents={db.agents} theme={theme} onUpdateAgent={db.updateAgent} />}
+              {view === 'feedback' && <FeedbackView theme={theme} />}
             </>
           )}
         </div>

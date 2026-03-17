@@ -5,7 +5,7 @@ import {
   Activity, FileText, DollarSign, Server,
   Clock, Webhook, Github,
   ShieldCheck, Zap, Moon, Sun, ChevronLeft, Settings,
-  Terminal, Hammer
+  Terminal, Hammer, FolderOpen, MessageSquarePlus
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ViewType } from '@/lib/utils';
@@ -39,10 +39,12 @@ const sections: NavSection[] = [
       { id: 'dashboard', label: 'Overview', icon: LayoutDashboard, real: true },
       { id: 'agents', label: 'Agents', icon: Users, real: true },
       { id: 'board', label: 'Tasks', icon: ListTodo, real: true },
+      { id: 'projects' as ViewType, label: 'Projects', icon: FolderOpen, real: true },
       { id: 'workflow', label: 'Workflow', icon: MessageSquare, real: true },
       { id: 'skills', label: 'Skills', icon: Hammer, real: true },
       { id: 'approvals', label: 'Approvals', icon: Bell, real: true },
       { id: 'insights', label: 'Analytics', icon: Activity, real: true },
+      { id: 'feedback' as ViewType, label: 'Feedback', icon: MessageSquarePlus, real: true },
     ],
   },
   {

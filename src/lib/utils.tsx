@@ -175,6 +175,7 @@ export const KANBAN_COLUMNS = [
 export const NAV_ITEMS = [
   { id: 'dashboard', label: 'Overview', icon: 'LayoutDashboard' },
   { id: 'board', label: 'Board', icon: 'Columns3' },
+  { id: 'projects', label: 'Projects', icon: 'FolderOpen' },
   { id: 'agents', label: 'Agents', icon: 'UserCircle' },
   { id: 'approvals', label: 'Approvals', icon: 'AlertCircle' },
   { id: 'workflow', label: 'Workflow', icon: 'Network' },
@@ -182,6 +183,7 @@ export const NAV_ITEMS = [
   { id: 'insights', label: 'Analytics', icon: 'TrendingUp' },
   { id: 'activity', label: 'Activity', icon: 'Activity' },
   { id: 'settings', label: 'Settings', icon: 'Settings' },
+  { id: 'feedback', label: 'Feedback', icon: 'MessageSquarePlus' },
 ] as const;
 
 export type ViewType = typeof NAV_ITEMS[number]['id'];
