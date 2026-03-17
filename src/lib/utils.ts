@@ -5,13 +5,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export type ViewType = 'overview' | 'tasks' | 'agents' | 'projects' | 'activity' | 'approvals' | 'org-chart' | 'settings' | 'chat';
+export type ViewType = 'overview' | 'tasks' | 'agents' | 'projects' | 'activity' | 'approvals' | 'org-chart' | 'office' | 'ipmr' | 'settings' | 'chat';
 
 export const NAV_ITEMS: { id: ViewType; label: string; icon: string }[] = [
   { id: 'overview', label: 'Overview', icon: 'LayoutDashboard' },
+  { id: 'office', label: 'Office', icon: 'Building2' },
   { id: 'tasks', label: 'Tasks', icon: 'ListTodo' },
   { id: 'agents', label: 'Agents', icon: 'Bot' },
   { id: 'projects', label: 'Projects', icon: 'FolderKanban' },
+  { id: 'ipmr', label: 'IPMR', icon: 'ClipboardList' },
   { id: 'activity', label: 'Activity', icon: 'Activity' },
   { id: 'approvals', label: 'Approvals', icon: 'ShieldCheck' },
   { id: 'org-chart', label: 'Org Chart', icon: 'Network' },

@@ -26,6 +26,8 @@ import SettingsView from '@/components/views/SettingsView';
 import SkillsView from '@/components/views/SkillsView';
 import WorkflowView from '@/components/views/WorkflowView';
 import FeedbackTab from '@/components/views/FeedbackTab';
+import { OfficeView } from '@/components/office/OfficeView';
+import { IPMRView } from '@/components/views/IPMRView';
 import { Agent, Task, Activity as ActivityType, Project } from '@/lib/types';
 
 const supabase = createClient(
@@ -50,6 +52,8 @@ export default function Home() {
 
   // Modals
   const [showFeedback, setShowFeedback] = useState(false);
+  const [gatewayConnected, setGatewayConnected] = useState(false);
+  const [gatewayStatus, setGatewayStatus] = useState('offline');
   const [showTaskModal, setShowTaskModal] = useState(false);
   const [showProjectModal, setShowProjectModal] = useState(false);
   const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
@@ -100,6 +104,23 @@ export default function Home() {
   }, []);
 
   useEffect(() => { fetchData(); }, [fetchData]);
+
+  useEffect(() => {
+    const checkGateway = async () => {
+      try {
+        const res = await fetch('/api/gateway-status');
+        const data = await res.json();
+        setGatewayConnected(data.connected || false);
+        setGatewayStatus(data.status || 'offline');
+      } catch {
+        setGatewayConnected(false);
+        setGatewayStatus('offline');
+      }
+    };
+    checkGateway();
+    const interval = setInterval(checkGateway, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleNewTask = () => setShowTaskModal(true);
   const handleNewProject = () => setShowProjectModal(true);
@@ -216,6 +237,10 @@ export default function Home() {
         return <ApprovalsView tasks={tasks} theme={theme} loading={loading} onApprove={handleApproveTask} onReject={handleRejectTask} />;
       case 'feedback':
         return <FeedbackView theme={theme} />;
+      case 'ipmr':
+        return <IPMRView theme={theme} />;
+      case 'office':
+        return <OfficeView theme={theme} agents={agents} gatewayStatus={{ connected: gatewayConnected, status: gatewayStatus }} />;
       case 'settings':
         return <SettingsView theme={theme} />;
       case 'workflow':

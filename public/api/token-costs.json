@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-03-17T15:11:36.582Z",
+  "summary": {
+    "totalCost": 2.3704,
+    "totalTokens": 347566776,
+    "totalCalls": 3530,
+    "avgCostPerCall": 0.0007,
+    "modelCount": 6
+  },
+  "byModel": [
+    {
+      "model": "anthropic/claude-opus-4.6",
+      "calls": 3058,
+      "tokens": 310023875,
+      "cost": 1.7127,
+      "input": 14336099,
+      "output": 406335
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "calls": 58,
+      "tokens": 1056244,
+      "cost": 0.3999,
+      "input": 1033565,
+      "output": 22679
+    },
+    {
+      "model": "gemini-3.1-pro-preview",
+      "calls": 11,
+      "tokens": 102437,
+      "cost": 0.2337,
+      "input": 101185,
+      "output": 1252
+    },
+    {
+      "model": "minimax/minimax-m2.5",
+      "calls": 7,
+      "tokens": 135807,
+      "cost": 0.0241,
+      "input": 48531,
+      "output": 9150
+    },
+    {
+      "model": "delivery-mirror",
+      "calls": 1,
+      "tokens": 0,
+      "cost": 0,
+      "input": 0,
+      "output": 0
+    },
+    {
+      "model": "openrouter/hunter-alpha",
+      "calls": 395,
+      "tokens": 36248413,
+      "cost": 0,
+      "input": 6752300,
+      "output": 130140
+    }
+  ],
+  "last7Days": [
+    {
+      "date": "2026-03-17",
+      "calls": 3419,
+      "tokens": 345261382,
+      "cost": 0
+    },
+    {
+      "date": "2026-03-16",
+      "calls": 11,
+      "tokens": 102437,
+      "cost": 0.2337
+    },
+    {
+      "date": "2026-03-15",
+      "calls": 96,
+      "tokens": 2202957,
+      "cost": 2.1367
+    },
+    {
+      "date": "2026-03-14",
+      "calls": 4,
+      "tokens": 0,
+      "cost": 0
+    }
+  ],
+  "byDay": [
+    {
+      "date": "2026-03-17",
+      "calls": 3419,
+      "tokens": 345261382,
+      "cost": 0
+    },
+    {
+      "date": "2026-03-16",
+      "calls": 11,
+      "tokens": 102437,
+      "cost": 0.2337
+    },
+    {
+      "date": "2026-03-15",
+      "calls": 96,
+      "tokens": 2202957,
+      "cost": 2.1367
+    },
+    {
+      "date": "2026-03-14",
+      "calls": 4,
+      "tokens": 0,
+      "cost": 0
+    }
+  ]
+}

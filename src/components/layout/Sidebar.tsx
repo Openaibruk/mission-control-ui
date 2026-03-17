@@ -15,18 +15,21 @@ import {
   ChevronLeft,
   ChevronRight,
   ClipboardList,
+  Building2,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 
 export type ViewId =
   | 'dashboard'
+  | 'office'
   | 'projects'
   | 'agents'
   | 'tasks'
   | 'onboarding'
   | 'approvals'
   | 'feedback'
+  | 'ipmr'
   | 'settings'
   | 'workflow'
   | 'skills'
@@ -42,12 +45,14 @@ interface SidebarProps {
 
 const NAV_ITEMS: { id: ViewId; label: string; icon: React.ReactNode }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
+  { id: 'office', label: 'Office', icon: <Building2 className="w-4 h-4" /> },
   { id: 'projects', label: 'Projects', icon: <FolderKanban className="w-4 h-4" /> },
   { id: 'agents', label: 'Agents', icon: <Bot className="w-4 h-4" /> },
   { id: 'tasks', label: 'Tasks', icon: <ListTodo className="w-4 h-4" /> },
   { id: 'onboarding', label: 'Onboarding', icon: <ClipboardList className="w-4 h-4" /> },
   { id: 'approvals', label: 'Approvals', icon: <ShieldCheck className="w-4 h-4" /> },
   { id: 'feedback', label: 'Feedback', icon: <MessageSquare className="w-4 h-4" /> },
+  { id: 'ipmr', label: 'IPMR', icon: <ClipboardList className="w-4 h-4" /> },
   { id: 'settings', label: 'Settings', icon: <Settings className="w-4 h-4" /> },
   { id: 'workflow', label: 'Workflow', icon: <GitBranch className="w-4 h-4" /> },
   { id: 'skills', label: 'Skills', icon: <Puzzle className="w-4 h-4" /> },
