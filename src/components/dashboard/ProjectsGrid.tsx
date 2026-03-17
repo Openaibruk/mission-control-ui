@@ -3,15 +3,17 @@
 import { Project } from '@/lib/types';
 import { cn, getStatusBorderColor, getDepartmentColor, timeAgo } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
-import { Folder } from 'lucide-react';
+import { Folder, MoreVertical, CheckCircle, Pause, Play, Archive } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
 
 interface ProjectsGridProps {
   projects: Project[];
   loading?: boolean;
   theme: 'dark' | 'light';
+  onUpdateStatus?: (projectId: string, status: string) => void;
 }
 
-export function ProjectsGrid({ projects, loading, theme }: ProjectsGridProps) {
+export function ProjectsGrid({ projects, loading, theme, onUpdateStatus }: ProjectsGridProps) {
   const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
 
@@ -74,17 +76,50 @@ export function ProjectsGrid({ projects, loading, theme }: ProjectsGridProps) {
                 getStatusBorderColor(project.status)
               )}
             >
-              <div className="flex items-center space-x-2 mb-2">
-                {project.department && (
-                  <span className={cn("text-[9px] font-medium px-2 py-0.5 rounded-full", getDepartmentColor(project.department))}>
-                    {project.department}
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center space-x-2">
+                  {project.department && (
+                    <span className={cn("text-[9px] font-medium px-2 py-0.5 rounded-full", getDepartmentColor(project.department))}>
+                      {project.department}
+                    </span>
+                  )}
+                  <span className={cn("text-[9px] font-medium px-2 py-0.5 rounded-full",
+                    isComplete ? 'bg-emerald-500/15 text-emerald-500' : 'bg-neutral-500/15 text-neutral-400'
+                  )}>
+                    {isComplete ? '✓ Done' : project.status?.replace('_', ' ')}
                   </span>
+                </div>
+                {onUpdateStatus && (
+                  <div className="relative group">
+                    <button className={cn("p-1 rounded transition-colors", isDark ? "hover:bg-white/10" : "hover:bg-gray-100")}>
+                      <MoreVertical className="w-3 h-3" />
+                    </button>
+                    <div className={cn("absolute right-0 top-full mt-1 w-36 rounded-lg shadow-xl border py-1 z-50 hidden group-hover:block", isDark ? "bg-neutral-900 border-neutral-700" : "bg-white border-gray-200")}>
+                      {project.status !== 'complete' && (
+                        <button onClick={() => onUpdateStatus(project.id, 'complete')}
+                          className={cn("w-full flex items-center gap-2 px-3 py-1.5 text-[10px]", isDark ? "hover:bg-white/5" : "hover:bg-gray-50")}>
+                          <CheckCircle className="w-3 h-3 text-emerald-400" /> Mark Complete
+                        </button>
+                      )}
+                      {project.status === 'active' && (
+                        <button onClick={() => onUpdateStatus(project.id, 'paused')}
+                          className={cn("w-full flex items-center gap-2 px-3 py-1.5 text-[10px]", isDark ? "hover:bg-white/5" : "hover:bg-gray-50")}>
+                          <Pause className="w-3 h-3 text-amber-400" /> Pause
+                        </button>
+                      )}
+                      {project.status === 'paused' && (
+                        <button onClick={() => onUpdateStatus(project.id, 'active')}
+                          className={cn("w-full flex items-center gap-2 px-3 py-1.5 text-[10px]", isDark ? "hover:bg-white/5" : "hover:bg-gray-50")}>
+                          <Play className="w-3 h-3 text-blue-400" /> Resume
+                        </button>
+                      )}
+                      <button onClick={() => onUpdateStatus(project.id, 'archived')}
+                        className={cn("w-full flex items-center gap-2 px-3 py-1.5 text-[10px]", isDark ? "hover:bg-white/5" : "hover:bg-gray-50")}>
+                        <Archive className="w-3 h-3 text-neutral-400" /> Archive
+                      </button>
+                    </div>
+                  </div>
                 )}
-                <span className={cn("text-[9px] font-medium px-2 py-0.5 rounded-full", 
-                  isComplete ? 'bg-emerald-500/15 text-emerald-500' : 'bg-neutral-500/15 text-neutral-400'
-                )}>
-                  {isComplete ? '✓ Done' : project.status?.replace('_', ' ')}
-                </span>
               </div>
               
               <h4 className={cn("text-[13px] font-semibold mb-1 line-clamp-1", classes.heading)}>

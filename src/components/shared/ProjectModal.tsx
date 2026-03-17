@@ -22,7 +22,7 @@ export function ProjectModal({ project, isNew = false, tasks, onClose, onSave, o
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const [status, setStatus] = useState<'active' | 'complete' | 'on_hold'>('active');
+  const [status, setStatus] = useState<'active' | 'complete' | 'on_hold' | 'paused' | 'archived'>('active');
   const [department, setDepartment] = useState('');
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export function ProjectModal({ project, isNew = false, tasks, onClose, onSave, o
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className={cn("text-[11px] font-medium mb-1.5 block", classes.muted)}>Status</label>
-              <select value={status} onChange={(e) => setStatus(e.target.value as 'active' | 'complete' | 'on_hold')}
+              <select value={status} onChange={(e) => setStatus(e.target.value as 'active' | 'complete' | 'on_hold' | 'paused' | 'archived')}
                 className={cn("w-full rounded-md px-4 py-2.5 text-[13px] outline-none transition-colors focus:ring-2 focus:ring-violet-500/50", classes.inputBg)}>
                 <option value="active">Active</option><option value="complete">Complete</option><option value="on_hold">On Hold</option>
               </select>

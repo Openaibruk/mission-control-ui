@@ -159,6 +159,7 @@ export default function MC() {
                   loading={db.loading} theme={theme}
                   onEditProject={handleEditProjectClick}
                   onNewProject={handleNewProjectClick}
+                  onUpdateProjectStatus={(id, status) => db.updateProject({ id, status } as Partial<Project> & { id: string })}
                 />
               )}
               {view === 'board' && (

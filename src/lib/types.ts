@@ -34,7 +34,7 @@ export interface Project {
   id: string;
   name: string;
   description?: string;
-  status: 'active' | 'complete' | 'on_hold';
+  status: 'active' | 'complete' | 'on_hold' | 'paused' | 'archived';
   department?: string;
   done_tasks: number;
   total_tasks: number;

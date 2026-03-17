@@ -5,9 +5,11 @@ import { useThemeClasses } from '@/hooks/useTheme';
 import { DashboardStats, Task, Agent, Activity, Project } from '@/lib/types';
 import {
   Wifi, Monitor, Users, Server, Cpu, AlertTriangle, Shield,
-  CheckCircle2, Clock, Inbox, ArrowRight, TrendingUp, FolderOpen, Plus, Pencil
+  CheckCircle2, Clock, Inbox, ArrowRight, TrendingUp, FolderOpen, Plus, Pencil,
+  MoreVertical, Pause, Play, Archive
 } from 'lucide-react';
 import { TokenCostWidget } from './TokenCostWidget';
+import { useState } from 'react';
 
 interface OverviewDashboardProps {
   stats: DashboardStats;
@@ -19,6 +21,7 @@ interface OverviewDashboardProps {
   theme: 'dark' | 'light';
   onEditProject: (project: Project) => void;
   onNewProject: () => void;
+  onUpdateProjectStatus?: (projectId: string, status: string) => void;
 }
 
 function timeAgoShort(dateString: string): string {
@@ -30,8 +33,9 @@ function timeAgoShort(dateString: string): string {
   return `${Math.round(hrs / 24)}d`;
 }
 
-export function OverviewDashboard({ stats, tasks, agents, activities, projects, loading, theme, onEditProject, onNewProject }: OverviewDashboardProps) {
+export function OverviewDashboard({ stats, tasks, agents, activities, projects, loading, theme, onEditProject, onNewProject, onUpdateProjectStatus }: OverviewDashboardProps) {
   const isDark = theme === 'dark';
+  const [statusMenu, setStatusMenu] = useState<string | null>(null);
   const classes = useThemeClasses(isDark);
   const activeAgents = agents.filter(a => a.status === 'active');
   const queueCount = tasks.filter(t => t.status === 'inbox').length;
@@ -154,7 +158,41 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
                     <div className={cn("text-[12px] font-medium truncate", classes.heading)}>{p.name}</div>
                     <div className={cn("text-[10px]", classes.muted)}>{p.done_tasks}/{p.total_tasks} tasks · {pct}%</div>
                   </div>
-                  <span className={cn("text-[9px] px-1.5 py-0.5 rounded", getStatusColor(p.status))}>{p.status}</span>
+                  <div className="relative" onClick={e => e.stopPropagation()}>
+                    <button onClick={() => setStatusMenu(statusMenu === p.id ? null : p.id)}
+                      className={cn("text-[9px] px-1.5 py-0.5 rounded flex items-center gap-1", getStatusColor(p.status))}>
+                      {p.status} <MoreVertical className="w-2.5 h-2.5" />
+                    </button>
+                    {statusMenu === p.id && onUpdateProjectStatus && (
+                      <>
+                        <div className="fixed inset-0 z-40" onClick={() => setStatusMenu(null)} />
+                        <div className={cn("absolute right-0 top-full mt-1 w-32 rounded-lg shadow-xl border py-1 z-50", isDark ? "bg-neutral-900 border-neutral-700" : "bg-white border-gray-200")}>
+                          {p.status !== 'complete' && (
+                            <button onClick={() => { onUpdateProjectStatus(p.id, 'complete'); setStatusMenu(null); }}
+                              className={cn("w-full flex items-center gap-2 px-3 py-1.5 text-[10px]", isDark ? "hover:bg-white/5" : "hover:bg-gray-50")}>
+                              <CheckCircle2 className="w-3 h-3 text-emerald-400" /> Complete
+                            </button>
+                          )}
+                          {p.status === 'active' && (
+                            <button onClick={() => { onUpdateProjectStatus(p.id, 'paused'); setStatusMenu(null); }}
+                              className={cn("w-full flex items-center gap-2 px-3 py-1.5 text-[10px]", isDark ? "hover:bg-white/5" : "hover:bg-gray-50")}>
+                              <Pause className="w-3 h-3 text-amber-400" /> Pause
+                            </button>
+                          )}
+                          {p.status === 'paused' && (
+                            <button onClick={() => { onUpdateProjectStatus(p.id, 'active'); setStatusMenu(null); }}
+                              className={cn("w-full flex items-center gap-2 px-3 py-1.5 text-[10px]", isDark ? "hover:bg-white/5" : "hover:bg-gray-50")}>
+                              <Play className="w-3 h-3 text-blue-400" /> Resume
+                            </button>
+                          )}
+                          <button onClick={() => { onUpdateProjectStatus(p.id, 'archived'); setStatusMenu(null); }}
+                            className={cn("w-full flex items-center gap-2 px-3 py-1.5 text-[10px]", isDark ? "hover:bg-white/5" : "hover:bg-gray-50")}>
+                            <Archive className="w-3 h-3 text-neutral-400" /> Archive
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
               );
             }) : <div className={cn("text-[12px] text-center py-4", classes.muted)}>No projects</div>}
