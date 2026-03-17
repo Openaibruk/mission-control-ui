@@ -75,3 +75,15 @@ export const AVAILABLE_MODELS: ModelOption[] = [
   { id: 'openrouter/auto', label: 'Auto Router', provider: 'OpenRouter', description: 'Best model per task' },
   { id: 'openrouter/minimax/minimax-m2.5', label: 'MiniMax M2.5', provider: 'MiniMax', description: 'Cost efficient' },
 ];
+
+export interface Feedback {
+  id: string;
+  title: string;
+  description: string;
+  category: 'bug' | 'feature' | 'improvement';
+  priority: 'low' | 'medium' | 'high' | 'critical';
+  status: 'submitted' | 'acknowledged' | 'in_progress' | 'project_created' | 'done';
+  created_at: string;
+  updated_at: string;
+  project_id?: string;
+}

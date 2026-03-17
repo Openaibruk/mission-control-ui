@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu, Plus, Settings, FolderPlus, UserPlus } from 'lucide-react';
+import { Menu, Plus, Settings, FolderPlus, UserPlus, MessageSquarePlus, Bell } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 import { NAV_ITEMS, ViewType } from '@/lib/utils';
@@ -13,12 +13,14 @@ interface HeaderProps {
   onNewTask: () => void;
   onNewProject: () => void;
   onNewAgent: () => void;
+  onOpenFeedback?: () => void;
   theme: 'dark' | 'light';
   agents: Agent[];
   tasks: Task[];
+  pendingApprovals?: number;
 }
 
-export function Header({ view, onMenuClick, onNewTask, onNewProject, onNewAgent, theme, agents, tasks }: HeaderProps) {
+export function Header({ view, onMenuClick, onNewTask, onNewProject, onNewAgent, onOpenFeedback, theme, agents, tasks, pendingApprovals = 0 }: HeaderProps) {
   const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
   const [showCreateMenu, setShowCreateMenu] = useState(false);
@@ -58,6 +60,28 @@ export function Header({ view, onMenuClick, onNewTask, onNewProject, onNewAgent,
       </div>
 
       <div className="flex items-center gap-2" ref={menuRef}>
+        <div className="relative">
+          <button className={cn("p-2 rounded-lg transition-colors", isDark ? "hover:bg-white/5" : "hover:bg-neutral-100")}>
+            <Bell className={cn("w-4 h-4", pendingApprovals > 0 ? "text-amber-400" : classes.muted)} />
+            {pendingApprovals > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-amber-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+                {pendingApprovals > 9 ? '9+' : pendingApprovals}
+              </span>
+            )}
+          </button>
+        </div>
+        <button
+          onClick={() => onOpenFeedback?.()}
+          className={cn(
+            "flex items-center space-x-1.5 text-[11px] font-medium px-2.5 py-1.5 rounded-md transition-colors border",
+            isDark
+              ? "border-neutral-700 hover:bg-white/5 text-neutral-300"
+              : "border-neutral-300 hover:bg-neutral-50 text-neutral-600"
+          )}
+        >
+          <MessageSquarePlus className="w-3.5 h-3.5" />
+          <span>Feedback</span>
+        </button>
         <div className="relative">
           <button
             onClick={() => setShowCreateMenu(!showCreateMenu)}

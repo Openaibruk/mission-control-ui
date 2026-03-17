@@ -21,6 +21,7 @@ import { SkillsView } from '@/components/views/SkillsView';
 import { TaskModal } from '@/components/shared/TaskModal';
 import { AgentModal } from '@/components/shared/AgentModal';
 import { ProjectModal } from '@/components/shared/ProjectModal';
+import FeedbackModal from '@/components/shared/FeedbackModal';
 import { NovaWidget } from '@/components/chat/NovaWidget';
 
 export default function MC() {
@@ -37,6 +38,7 @@ export default function MC() {
   const [isNewAgent, setIsNewAgent] = useState(false);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
   const [isNewProject, setIsNewProject] = useState(false);
+  const [showFeedback, setShowFeedback] = useState(false);
 
   const pendingApprovals = db.tasks.filter(t => t.status === 'approval_needed');
 
@@ -141,7 +143,9 @@ export default function MC() {
           view={view} onMenuClick={() => setIsSidebarOpen(true)}
           onNewTask={handleNewTaskClick} onNewProject={handleNewProjectClick}
           onNewAgent={handleNewAgentClick}
+          onOpenFeedback={() => setShowFeedback(true)}
           theme={theme} agents={db.agents} tasks={db.tasks}
+          pendingApprovals={pendingApprovals.length}
         />
         <div className="flex-1 overflow-y-auto custom-scroll">
           {db.error && <div className="p-4 text-red-500 bg-red-100 dark:bg-red-900/20 rounded m-4">Error: {db.error}</div>}
@@ -199,6 +203,7 @@ export default function MC() {
           onClose={() => { setEditingProject(null); setIsNewProject(false); }}
           onSave={handleProjectModalSave} onDelete={handleProjectDelete} theme={theme} />
       )}
+      <FeedbackModal isOpen={showFeedback} onClose={() => setShowFeedback(false)} theme={theme} />
     </div>
   );
 }
