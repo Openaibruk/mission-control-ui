@@ -17,6 +17,8 @@ export function useTheme(): UseThemeReturn {
     const saved = localStorage.getItem('mc-theme') as Theme;
     if (saved) {
       setTheme(saved);
+    } else if (window.matchMedia?.('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
     }
   }, []);
 
