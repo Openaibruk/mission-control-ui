@@ -455,8 +455,8 @@
       "label": "graph-data.json",
       "type": "file",
       "path": "graph-data.json",
-      "size": 1941376,
-      "modified": "2026-03-18T21:00:04.944Z",
+      "size": 1943085,
+      "modified": "2026-03-18T21:30:03.601Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -9565,8 +9565,8 @@
       "label": "graph-scan.log",
       "type": "file",
       "path": "logs/graph-scan.log",
-      "size": 9183,
-      "modified": "2026-03-18T21:30:01.129Z",
+      "size": 10286,
+      "modified": "2026-03-18T22:00:02.026Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -10662,8 +10662,8 @@
       "label": "gateway-status.json",
       "type": "config",
       "path": "mission-control-ui/public/api/gateway-status.json",
-      "size": 355,
-      "modified": "2026-03-18T21:15:02.013Z",
+      "size": 356,
+      "modified": "2026-03-18T22:00:02.896Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -10678,8 +10678,8 @@
       "label": "graph-data.json",
       "type": "file",
       "path": "mission-control-ui/public/api/graph-data.json",
-      "size": 1941376,
-      "modified": "2026-03-18T21:00:04.979Z",
+      "size": 1943085,
+      "modified": "2026-03-18T21:30:03.626Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11312,8 +11312,8 @@
       "label": "ActivityPulse.tsx",
       "type": "file",
       "path": "mission-control-ui/src/components/dashboard/ActivityPulse.tsx",
-      "size": 10025,
-      "modified": "2026-03-18T18:50:53.480Z",
+      "size": 9370,
+      "modified": "2026-03-18T21:52:20.540Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -66446,6 +66446,6 @@
       "skill": 52,
       "script": 7
     },
-    "generatedAt": "2026-03-18T21:30:03.579Z"
+    "generatedAt": "2026-03-18T22:00:04.578Z"
   }
 }
