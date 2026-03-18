@@ -16,9 +16,9 @@ const AVATARS: Record<string, string> = {
   'Bruk': '/bruk.jpg',
   // Core AI Agents
   'Nova': '/nova.jpg',
-  'Cinder': '/cinder.jpg', // dicebear fallback
-  'Kiro': '/kiro.jpg', // dicebear fallback
-  'Onyx': '/onyx.jpg', // dicebear fallback
+  'Cinder': '/cinder.svg',
+  'Kiro': '/kiro.svg',
+  'Onyx': '/onyx.svg',
   // Renamed Agents (display names)
   'Henok': '/henok.jpg',
   'Yonas': '/yonas.jpg',
