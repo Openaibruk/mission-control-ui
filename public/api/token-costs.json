@@ -1,48 +1,48 @@
 {
-  "generatedAt": "2026-03-16T18:04:04.936Z",
+  "generatedAt": "2026-03-17T21:04:22.977Z",
   "summary": {
-    "totalCost": 12.6759,
-    "totalTokens": 58591557,
-    "totalCalls": 612,
-    "avgCostPerCall": 0.0207,
+    "totalCost": 2.3704,
+    "totalTokens": 418859149,
+    "totalCalls": 4192,
+    "avgCostPerCall": 0.0006,
     "modelCount": 6
   },
   "byModel": [
     {
       "model": "anthropic/claude-opus-4.6",
-      "calls": 128,
-      "tokens": 7557726,
-      "cost": 11.9197,
-      "input": 1419733,
-      "output": 71512
+      "calls": 3420,
+      "tokens": 316266374,
+      "cost": 1.7127,
+      "input": 16768406,
+      "output": 464591
     },
     {
       "model": "gemini-2.5-flash",
-      "calls": 65,
-      "tokens": 1143401,
-      "cost": 0.4294,
-      "input": 1119471,
-      "output": 23930
-    },
-    {
-      "model": "minimax/minimax-m2.5",
-      "calls": 26,
-      "tokens": 2243016,
-      "cost": 0.3268,
-      "input": 1021168,
-      "output": 15634
-    },
-    {
-      "model": "delivery-mirror",
-      "calls": 25,
-      "tokens": 0,
-      "cost": 0,
-      "input": 0,
-      "output": 0
+      "calls": 58,
+      "tokens": 1056244,
+      "cost": 0.3999,
+      "input": 1033565,
+      "output": 22679
     },
     {
       "model": "gemini-3.1-pro-preview",
-      "calls": 16,
+      "calls": 11,
+      "tokens": 102437,
+      "cost": 0.2337,
+      "input": 101185,
+      "output": 1252
+    },
+    {
+      "model": "minimax/minimax-m2.5",
+      "calls": 7,
+      "tokens": 135807,
+      "cost": 0.0241,
+      "input": 48531,
+      "output": 9150
+    },
+    {
+      "model": "delivery-mirror",
+      "calls": 1,
       "tokens": 0,
       "cost": 0,
       "input": 0,
@@ -50,25 +50,31 @@
     },
     {
       "model": "openrouter/hunter-alpha",
-      "calls": 352,
-      "tokens": 47647414,
+      "calls": 695,
+      "tokens": 101298287,
       "cost": 0,
-      "input": 5038254,
-      "output": 144968
+      "input": 19642231,
+      "output": 228963
     }
   ],
   "last7Days": [
     {
+      "date": "2026-03-17",
+      "calls": 4083,
+      "tokens": 416553755,
+      "cost": 0
+    },
+    {
       "date": "2026-03-16",
-      "calls": 266,
-      "tokens": 31338416,
-      "cost": 0.6076
+      "calls": 9,
+      "tokens": 102437,
+      "cost": 0.2337
     },
     {
       "date": "2026-03-15",
-      "calls": 342,
-      "tokens": 27253141,
-      "cost": 12.0683
+      "calls": 96,
+      "tokens": 2202957,
+      "cost": 2.1367
     },
     {
       "date": "2026-03-14",
@@ -79,16 +85,22 @@
   ],
   "byDay": [
     {
+      "date": "2026-03-17",
+      "calls": 4083,
+      "tokens": 416553755,
+      "cost": 0
+    },
+    {
       "date": "2026-03-16",
-      "calls": 266,
-      "tokens": 31338416,
-      "cost": 0.6076
+      "calls": 9,
+      "tokens": 102437,
+      "cost": 0.2337
     },
     {
       "date": "2026-03-15",
-      "calls": 342,
-      "tokens": 27253141,
-      "cost": 12.0683
+      "calls": 96,
+      "tokens": 2202957,
+      "cost": 2.1367
     },
     {
       "date": "2026-03-14",
