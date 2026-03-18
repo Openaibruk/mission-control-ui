@@ -9,7 +9,12 @@ import {
   MoreVertical, Pause, Play, Archive
 } from 'lucide-react';
 import { TokenCostWidget } from './TokenCostWidget';
-import { useState } from 'react';
+import { EthiopianCalendar } from './EthiopianCalendar';
+import { NewsFeed } from './NewsFeed';
+import { AgentCommandCenter } from './AgentCommandCenter';
+import { ActivityPulse } from './ActivityPulse';
+import { useGatewayStatus } from '@/hooks/useGatewayStatus';
+import { useState, useEffect } from 'react';
 
 interface OverviewDashboardProps {
   stats: DashboardStats;
@@ -37,6 +42,7 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
   const isDark = theme === 'dark';
   const [statusMenu, setStatusMenu] = useState<string | null>(null);
   const classes = useThemeClasses(isDark);
+  const { data: gwStatus } = useGatewayStatus(30000);
   const activeAgents = agents.filter(a => a.status === 'active');
   const queueCount = tasks.filter(t => t.status === 'inbox').length;
   const inProgressCount = tasks.filter(t => t.status === 'in_progress').length;
@@ -113,15 +119,15 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
       </div>
 
       {/* ── Status Cards Row ── */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-        <div className={cn("p-4 rounded-lg border-l-4 border-emerald-500", classes.card)}>
-          <div className="flex items-center gap-2 mb-2"><Wifi className="w-4 h-4 text-emerald-500" /><span className={cn("text-[10px] uppercase font-semibold tracking-wider", isDark ? "text-emerald-400" : "text-emerald-600")}>Gateway</span></div>
-          <div className="text-xl font-bold text-emerald-500">Online</div>
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+        <div className={cn("p-4 rounded-lg border-l-4", gwStatus?.gateway?.status === 'online' ? 'border-emerald-500' : 'border-red-500', classes.card)}>
+          <div className="flex items-center gap-2 mb-2"><Wifi className={cn("w-4 h-4", gwStatus?.gateway?.status === 'online' ? 'text-emerald-500' : 'text-red-500')} /><span className={cn("text-[10px] uppercase font-semibold tracking-wider", isDark ? "text-emerald-400" : "text-emerald-600")}>Gateway</span></div>
+          <div className={cn("text-xl font-bold", gwStatus?.gateway?.status === 'online' ? 'text-emerald-500' : 'text-red-500')}>{gwStatus?.gateway?.status === 'online' ? 'Online' : 'Offline'}</div>
         </div>
         <div className={cn("p-4 rounded-lg border-l-4 border-cyan-500", classes.card)}>
-          <div className="flex items-center gap-2 mb-2"><Monitor className="w-4 h-4 text-cyan-500" /><span className={cn("text-[10px] uppercase font-semibold tracking-wider", isDark ? "text-cyan-400" : "text-cyan-600")}>Sessions</span></div>
-          <div className={cn("text-xl font-bold", classes.heading)}>1</div>
-          <div className={cn("text-[10px]", classes.muted)}>active</div>
+          <div className="flex items-center gap-2 mb-2"><Monitor className="w-4 h-4 text-cyan-500" /><span className={cn("text-[10px] uppercase font-semibold tracking-wider", isDark ? "text-cyan-400" : "text-cyan-600")}>VPS</span></div>
+          <div className={cn("text-xl font-bold", classes.heading)}>{gwStatus?.vps?.cpu || 0}%</div>
+          <div className={cn("text-[10px]", classes.muted)}>cpu · {gwStatus?.vps?.memory?.percent || 0}% mem</div>
         </div>
         <div className={cn("p-4 rounded-lg border-l-4 border-violet-500", classes.card)}>
           <div className="flex items-center gap-2 mb-2"><Users className="w-4 h-4 text-violet-500" /><span className={cn("text-[10px] uppercase font-semibold tracking-wider", isDark ? "text-violet-400" : "text-violet-600")}>Agents</span></div>
@@ -138,6 +144,18 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
           <div className={cn("text-xl font-bold", classes.heading)}>{projects.length}</div>
           <div className={cn("text-[10px]", classes.muted)}>{projects.filter(p => p.status === 'active').length} active</div>
         </div>
+        <div className={cn("p-4 rounded-lg border-l-4 border-amber-500", classes.card)}>
+          <div className="flex items-center gap-2 mb-2"><Server className="w-4 h-4 text-amber-500" /><span className={cn("text-[10px] uppercase font-semibold tracking-wider", isDark ? "text-amber-400" : "text-amber-600")}>Paperclip</span></div>
+          <div className={cn("text-xl font-bold", gwStatus?.paperclip?.status === 'online' ? 'text-emerald-500' : 'text-red-500')}>{gwStatus?.paperclip?.status === 'online' ? 'Online' : 'Offline'}</div>
+        </div>
+      </div>
+
+      {/* ── LIVE Widgets: Calendar + News + Command Center + Pulse ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
+        <EthiopianCalendar />
+        <NewsFeed />
+        <AgentCommandCenter />
+        <ActivityPulse />
       </div>
 
       {/* ── Three-Column: Projects + Session Router + Activity ── */}
