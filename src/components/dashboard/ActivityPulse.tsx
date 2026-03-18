@@ -3,7 +3,8 @@
 import { cn } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 import { Radio, Waves, Zap, Clock, TrendingUp, ArrowUp, ArrowDown, BarChart3 } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { supabase } from '@/lib/supabase';
 
 interface PulseEvent {
   id: string;
@@ -22,64 +23,74 @@ interface Metric {
   color: string;
 }
 
-const INITIAL_EVENTS: PulseEvent[] = [
-  { id: '1', time: '21:47:32', agent: 'Nova', action: 'Created project: Mission Control Live Dashboard', category: 'task', intensity: 3 },
-  { id: '2', time: '21:47:33', agent: 'Nova', action: 'Created 8 tasks for MC Live Dashboard', category: 'task', intensity: 4 },
-  { id: '3', time: '21:47:35', agent: 'Cinder', action: 'Started page audit — reading OverviewDashboard.tsx', category: 'task', intensity: 2 },
-  { id: '4', time: '21:46:12', agent: 'Nova', action: 'Marketing Strategy project: 7/7 tasks complete', category: 'metric', intensity: 5 },
-  { id: '5', time: '21:45:58', agent: 'Nova', action: 'Deleted duplicate Supabase project entry', category: 'task', intensity: 1 },
-  { id: '6', time: '21:42:10', agent: 'Nova', action: 'Uploaded 4 deliverables to Google Drive folder', category: 'deploy', intensity: 3 },
-  { id: '7', time: '21:38:22', agent: 'Nova', action: 'Fixed project visibility — set department=Marketing', category: 'task', intensity: 2 },
-  { id: '8', time: '21:35:00', agent: 'Henok', action: 'Updated gateway scanner to use /health endpoint', category: 'task', intensity: 3 },
-  { id: '9', time: '21:30:15', agent: 'Nova', action: 'Graph data refresh: 2,209 nodes, 4,286 edges', category: 'metric', intensity: 3 },
-  { id: '10', time: '21:28:00', agent: 'Forge', action: 'Vercel build #86f65ca — deployment queued', category: 'deploy', intensity: 4 },
-  { id: '11', time: '21:25:00', agent: 'Nova', action: 'Gateway cron job updated — 15min interval', category: 'deploy', intensity: 2 },
-  { id: '12', time: '21:20:00', agent: 'Nova', action: 'Agent API endpoints live: neighbors + query', category: 'deploy', intensity: 4 },
-  { id: '13', time: '21:15:00', agent: 'Nahom', action: 'Published customer acquisition strategy document', category: 'task', intensity: 3 },
-  { id: '14', time: '21:10:00', agent: 'Amen', action: 'Published marketing automation plan — 10 automations', category: 'task', intensity: 3 },
-  { id: '15', time: '21:05:00', agent: 'Bini', action: 'Completed marketing audit — 45+ files analyzed', category: 'metric', intensity: 5 },
-];
+function categorizeAction(action: string): PulseEvent['category'] {
+  const lower = action.toLowerCase();
+  if (lower.includes('deploy') || lower.includes('upload') || lower.includes('push') || lower.includes('vercel')) return 'deploy';
+  if (lower.includes('metric') || lower.includes('complete') || lower.includes('task')) return 'metric';
+  if (lower.includes('error') || lower.includes('fail') || lower.includes('broken')) return 'alert';
+  if (lower.includes('message') || lower.includes('chat')) return 'message';
+  return 'task';
+}
 
-const METRICS: Metric[] = [
-  { label: 'Active Tasks', value: 12, change: +3, icon: Zap, color: 'text-emerald-400' },
-  { label: 'Completed', value: 47, change: +8, icon: TrendingUp, color: 'text-blue-400' },
-  { label: 'Deployments', value: 9, change: +2, icon: Radio, color: 'text-violet-400' },
-  { label: 'Token Cost', value: '$2.37', change: 0, icon: BarChart3, color: 'text-amber-400' },
-];
+function categorizeIntensity(action: string): number {
+  const lower = action.toLowerCase();
+  if (lower.includes('project') || lower.includes('complete') || lower.includes('deploy')) return 4;
+  if (lower.includes('created') || lower.includes('fixed') || lower.includes('updated')) return 3;
+  if (lower.includes('checked') || lower.includes('review')) return 2;
+  return 1;
+}
+
+function stripAt(name: string): string {
+  return name.replace(/^@+/, '');
+}
+
+// Metrics are computed from events, not hardcoded
 
 export function ActivityPulse() {
   const isDark = true;
-  const [events, setEvents] = useState<PulseEvent[]>(INITIAL_EVENTS);
+  const [events, setEvents] = useState<PulseEvent[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [pulse, setPulse] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Simulate new events flowing in
-  useEffect(() => {
-    const newEvents = [
-      { agent: 'Nova', action: 'Checking task status updates from Supabase...', category: 'task' as const, intensity: 1 },
-      { agent: 'Cinder', action: 'Page audit: ActivityView.tsx — ✅ live data via realtime', category: 'task' as const, intensity: 2 },
-      { agent: 'Cinder', action: 'Page audit: SettingsView.tsx — ⚠️ static config', category: 'alert' as const, intensity: 3 },
-      { agent: 'Nova', action: 'Gateway status refresh: online ✅', category: 'metric' as const, intensity: 2 },
-      { agent: 'Henok', action: 'Building Ethiopian calendar widget...', category: 'task' as const, intensity: 2 },
-    ];
+  // Fetch real activities from Supabase
+  const loadActivities = useCallback(async () => {
+    try {
+      const { data } = await supabase
+        .from('activities')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(50);
 
+      if (data) {
+        const mapped: PulseEvent[] = data.map((a: any) => {
+          const date = new Date(a.created_at);
+          return {
+            id: a.id,
+            time: date.toTimeString().slice(0, 8),
+            agent: stripAt(a.agent_name || 'Unknown'),
+            action: a.action,
+            category: categorizeAction(a.action),
+            intensity: categorizeIntensity(a.action),
+          };
+        });
+        setEvents(mapped);
+      }
+    } catch (e) {
+      console.error('Failed to load activities:', e);
+    }
+  }, []);
+
+  useEffect(() => {
+    loadActivities();
+    // Poll for new activities every 30s
     const interval = setInterval(() => {
-      const evt = newEvents[Math.floor(Math.random() * newEvents.length)];
-      const now = new Date();
-      const time = now.toTimeString().slice(0, 8);
-      const newPulse: PulseEvent = {
-        id: Date.now().toString(),
-        time,
-        ...evt,
-      };
-      setEvents(prev => [...prev.slice(-60), newPulse]);
+      loadActivities();
       setPulse(true);
       setTimeout(() => setPulse(false), 500);
-    }, 12000);
-
+    }, 30000);
     return () => clearInterval(interval);
-  }, []);
+  }, [loadActivities]);
 
   const categoryColor = (cat: string) => {
     switch (cat) {
@@ -104,6 +115,24 @@ export function ActivityPulse() {
   );
 
   const filtered = selectedCategory === 'all' ? events : events.filter(e => e.category === selectedCategory);
+
+  // Compute real metrics from events
+  const deployCount = events.filter(e => e.category === 'deploy').length;
+  const taskCount = events.filter(e => e.category === 'task').length;
+  const todayEvents = events.filter(e => {
+    const now = new Date();
+    const eventDate = new Date();
+    const [h, m, s] = e.time.split(':').map(Number);
+    eventDate.setHours(h, m, s);
+    return (now.getTime() - eventDate.getTime()) < 86400000;
+  }).length;
+
+  const METRICS: Metric[] = [
+    { label: 'Active Tasks', value: taskCount, change: 0, icon: Zap, color: 'text-emerald-400' },
+    { label: 'Today\'s Events', value: todayEvents, change: 0, icon: TrendingUp, color: 'text-blue-400' },
+    { label: 'Deploys', value: deployCount, change: 0, icon: Radio, color: 'text-violet-400' },
+    { label: 'Total Logged', value: events.length, change: 0, icon: BarChart3, color: 'text-amber-400' },
+  ];
 
   return (
     <div className="rounded-lg border border-neutral-800/50 bg-neutral-900/50 overflow-hidden">
