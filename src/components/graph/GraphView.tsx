@@ -33,7 +33,7 @@ interface GraphViewProps {
 
 // ─── Main Component ──────────────────────────────────────────────────────────
 
-function GraphView({ theme: _theme }: GraphViewProps = {}) {
+export default function GraphView({ theme: _theme }: GraphViewProps = {}) {
   void _theme // reserved for light theme
 
   const containerRef = useRef<HTMLDivElement>(null)
@@ -612,6 +612,5 @@ function GraphView({ theme: _theme }: GraphViewProps = {}) {
   )
 }
 
-// Exports
-export default GraphView
+// Named export for compatibility
 export { GraphView }
