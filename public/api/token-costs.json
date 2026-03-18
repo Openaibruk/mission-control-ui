@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-03-18T13:55:14.544Z",
+  "generatedAt": "2026-03-18T15:04:10.635Z",
   "summary": {
     "totalCost": 2.3704,
-    "totalTokens": 320781377,
-    "totalCalls": 3675,
+    "totalTokens": 326651697,
+    "totalCalls": 3662,
     "avgCostPerCall": 0.0006,
     "modelCount": 6
   },
   "byModel": [
     {
       "model": "anthropic/claude-opus-4.6",
-      "calls": 3592,
-      "tokens": 319395213,
+      "calls": 3509,
+      "tokens": 322394581,
       "cost": 1.7127,
-      "input": 18539606,
-      "output": 499414
+      "input": 16931757,
+      "output": 545031
     },
     {
       "model": "gemini-2.5-flash",
@@ -50,24 +50,24 @@
     },
     {
       "model": "openrouter/healer-alpha",
-      "calls": 5,
-      "tokens": 91676,
+      "calls": 75,
+      "tokens": 2962628,
       "cost": 0,
-      "input": 56131,
-      "output": 744
+      "input": 670830,
+      "output": 25252
     }
   ],
   "last7Days": [
     {
       "date": "2026-03-18",
-      "calls": 280,
-      "tokens": 4425251,
+      "calls": 645,
+      "tokens": 16170123,
       "cost": 0
     },
     {
       "date": "2026-03-17",
-      "calls": 3288,
-      "tokens": 314050732,
+      "calls": 2910,
+      "tokens": 308176180,
       "cost": 0
     },
     {
@@ -92,14 +92,14 @@
   "byDay": [
     {
       "date": "2026-03-18",
-      "calls": 280,
-      "tokens": 4425251,
+      "calls": 645,
+      "tokens": 16170123,
       "cost": 0
     },
     {
       "date": "2026-03-17",
-      "calls": 3288,
-      "tokens": 314050732,
+      "calls": 2910,
+      "tokens": 308176180,
       "cost": 0
     },
     {

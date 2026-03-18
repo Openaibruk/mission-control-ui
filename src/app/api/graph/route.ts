@@ -91,15 +91,12 @@ export async function GET(request: Request) {
       });
     }
 
-    // Scan workspace
+    // Scan workspace — return flat GraphData (component handles Cytoscape formatting)
     const graphData = await scanWorkspace(filter);
 
-    // Convert to Cytoscape format
-    const cytoscape = toCytoscapeElements(graphData);
-
     const response = {
-      nodes: cytoscape.nodes,
-      edges: cytoscape.edges,
+      nodes: graphData.nodes,
+      edges: graphData.edges,
       stats: graphData.stats,
     };
 
