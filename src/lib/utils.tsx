@@ -184,6 +184,7 @@ export const NAV_ITEMS = [
   { id: 'activity', label: 'Activity', icon: 'Activity' },
   { id: 'settings', label: 'Settings', icon: 'Settings' },
   { id: 'feedback', label: 'Feedback', icon: 'MessageSquarePlus' },
+  { id: 'graph', label: 'Graph', icon: 'GitBranch' },
 ] as const;
 
 export type ViewType = typeof NAV_ITEMS[number]['id'];

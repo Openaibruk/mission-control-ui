@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Force webpack builder to avoid Turbopack build issues
+  experimental: {
+    // turbopack removed
+  },
 };
 
 export default nextConfig;

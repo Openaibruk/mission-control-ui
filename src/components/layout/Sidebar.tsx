@@ -3,7 +3,7 @@
 import {
   LayoutDashboard, Users, ListTodo, MessageSquare, Bell,
   Activity, FileText, DollarSign, Server,
-  Clock, Webhook, Github,
+  Clock, Webhook, Github, GitBranch,
   ShieldCheck, Zap, Moon, Sun, ChevronLeft, Settings,
   Terminal, Hammer, FolderOpen, MessageSquarePlus
 } from 'lucide-react';
@@ -45,6 +45,7 @@ const sections: NavSection[] = [
       { id: 'approvals', label: 'Approvals', icon: Bell, real: true },
       { id: 'insights', label: 'Analytics', icon: Activity, real: true },
       { id: 'feedback' as ViewType, label: 'Feedback', icon: MessageSquarePlus, real: true },
+      { id: 'graph' as ViewType, label: 'Graph', icon: GitBranch, real: true },
     ],
   },
   {
