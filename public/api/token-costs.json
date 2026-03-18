@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-03-17T21:04:22.977Z",
+  "generatedAt": "2026-03-18T05:00:16.769Z",
   "summary": {
     "totalCost": 2.3704,
-    "totalTokens": 418859149,
-    "totalCalls": 4192,
+    "totalTokens": 321006777,
+    "totalCalls": 3692,
     "avgCostPerCall": 0.0006,
-    "modelCount": 6
+    "modelCount": 4
   },
   "byModel": [
     {
       "model": "anthropic/claude-opus-4.6",
-      "calls": 3420,
-      "tokens": 316266374,
+      "calls": 3616,
+      "tokens": 319712289,
       "cost": 1.7127,
-      "input": 16768406,
-      "output": 464591
+      "input": 18814768,
+      "output": 502288
     },
     {
       "model": "gemini-2.5-flash",
@@ -39,34 +39,24 @@
       "cost": 0.0241,
       "input": 48531,
       "output": 9150
-    },
-    {
-      "model": "delivery-mirror",
-      "calls": 1,
-      "tokens": 0,
-      "cost": 0,
-      "input": 0,
-      "output": 0
-    },
-    {
-      "model": "openrouter/hunter-alpha",
-      "calls": 695,
-      "tokens": 101298287,
-      "cost": 0,
-      "input": 19642231,
-      "output": 228963
     }
   ],
   "last7Days": [
     {
+      "date": "2026-03-18",
+      "calls": 202,
+      "tokens": 3247017,
+      "cost": 0
+    },
+    {
       "date": "2026-03-17",
-      "calls": 4083,
-      "tokens": 416553755,
+      "calls": 3383,
+      "tokens": 315454366,
       "cost": 0
     },
     {
       "date": "2026-03-16",
-      "calls": 9,
+      "calls": 7,
       "tokens": 102437,
       "cost": 0.2337
     },
@@ -85,14 +75,20 @@
   ],
   "byDay": [
     {
+      "date": "2026-03-18",
+      "calls": 202,
+      "tokens": 3247017,
+      "cost": 0
+    },
+    {
       "date": "2026-03-17",
-      "calls": 4083,
-      "tokens": 416553755,
+      "calls": 3383,
+      "tokens": 315454366,
       "cost": 0
     },
     {
       "date": "2026-03-16",
-      "calls": 9,
+      "calls": 7,
       "tokens": 102437,
       "cost": 0.2337
     },

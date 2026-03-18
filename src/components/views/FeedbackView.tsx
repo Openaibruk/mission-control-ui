@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { cn, timeAgo } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 import { Feedback } from '@/lib/types';
+import { FeedbackStats } from '@/components/feedback/FeedbackStats';
 import {
   MessageSquarePlus, Search, Filter, ChevronDown, ChevronUp,
   AlertTriangle, Lightbulb, Wrench, Clock, CheckCircle2,
@@ -165,6 +166,9 @@ export function FeedbackView({ theme }: FeedbackViewProps) {
           <RefreshCw className={cn("w-4 h-4", classes.muted)} />
         </button>
       </div>
+
+      {/* Stats Cards */}
+      <FeedbackStats feedback={feedback} theme={theme} />
 
       {/* Filters */}
       <div className="flex flex-wrap gap-3 mb-5">
