@@ -8,7 +8,7 @@ interface GraphLegendProps {
 }
 
 // Which types to show in the legend
-const LEGEND_NODE_TYPES = ['file', 'folder', 'project', 'agent', 'task', 'concept', 'tag']
+const LEGEND_NODE_TYPES = ['file', 'folder', 'skill', 'memory', 'doc', 'config', 'script', 'project', 'agent', 'task', 'tag', 'concept']
 const LEGEND_EDGE_TYPES = ['link', 'tag', 'assigned', 'belongs_to', 'contains', 'depends_on']
 
 export function GraphLegend({ stats }: GraphLegendProps) {

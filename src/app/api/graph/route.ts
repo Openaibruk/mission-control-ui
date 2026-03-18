@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
-import { scanWorkspace, toCytoscapeElements } from '@/lib/graphScanner';
+import { scanWorkspace } from '@/lib/graphScanner';
 import type { GraphFilter, NodeType } from '@/lib/graphTypes';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 // ─── Simple in-memory cache ──────────────────────────────────────────────────
 
@@ -35,10 +37,29 @@ function setCache(key: string, data: unknown): void {
   }
 }
 
+// ─── Static graph data (pre-scanned by workspace-scanner.js) ────────────────
+
+const STATIC_DATA_PATH = join(process.cwd(), 'public', 'api', 'graph-data.json');
+
+async function loadStaticGraphData(): Promise<{ nodes: any[]; edges: any[]; stats: any } | null> {
+  try {
+    const raw = await readFile(STATIC_DATA_PATH, 'utf-8');
+    const data = JSON.parse(raw);
+    return {
+      nodes: data.nodes || [],
+      edges: data.edges || [],
+      stats: data.stats || {},
+    };
+  } catch {
+    return null;
+  }
+}
+
 // ─── Valid node types for query param parsing ────────────────────────────────
 
 const VALID_NODE_TYPES: NodeType[] = [
   'file', 'project', 'agent', 'task', 'folder', 'tag', 'concept', 'person', 'event',
+  'skill', 'memory', 'doc', 'config', 'script',
 ];
 
 // ─── API Route ───────────────────────────────────────────────────────────────
@@ -91,7 +112,28 @@ export async function GET(request: Request) {
       });
     }
 
-    // Scan workspace — return flat GraphData (component handles Cytoscape formatting)
+    // ── Try static file first (fast path, no scanning) ──
+    const hasFilters = filter.types?.length || filter.projectId || filter.search;
+
+    if (!hasFilters) {
+      const staticData = await loadStaticGraphData();
+      if (staticData && staticData.nodes.length > 0) {
+        const response = {
+          nodes: staticData.nodes,
+          edges: staticData.edges,
+          stats: staticData.stats,
+        };
+        setCache(cacheKey, response);
+        return NextResponse.json(response, {
+          headers: {
+            'Cache-Control': 'public, max-age=300',
+            'X-Cache': 'STATIC',
+          },
+        });
+      }
+    }
+
+    // ── Fallback: live scan (Supabase-based) ──
     const graphData = await scanWorkspace(filter);
 
     const response = {

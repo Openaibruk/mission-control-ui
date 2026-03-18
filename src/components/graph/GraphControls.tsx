@@ -19,7 +19,7 @@ interface GraphControlsProps {
   currentLayout: string
 }
 
-const ALL_TYPES: NodeType[] = ['file', 'folder', 'project', 'agent', 'task', 'concept', 'tag', 'person', 'event']
+const ALL_TYPES: NodeType[] = ['file', 'folder', 'project', 'agent', 'task', 'skill', 'memory', 'doc', 'config', 'tag', 'concept', 'script', 'person', 'event']
 
 const LAYOUT_OPTIONS = [
   { id: 'fcose' as const, label: 'Force', icon: Circle },
@@ -46,7 +46,9 @@ export function GraphControls({
   const getShortLabel = useCallback((type: NodeType): string => {
     const labels: Record<string, string> = {
       file: 'F', folder: '📁', project: 'P', agent: 'A',
-      task: 'T', concept: 'C', tag: '#', person: '@', event: '📅',
+      task: 'T', skill: 'S', memory: 'M', doc: 'D',
+      config: '⚙', concept: 'C', tag: '#', script: '📜',
+      person: '@', event: '📅',
     }
     return labels[type] || type[0].toUpperCase()
   }, [])

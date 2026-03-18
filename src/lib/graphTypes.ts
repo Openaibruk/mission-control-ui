@@ -14,7 +14,12 @@ export type NodeType =
   | 'tag'        // Tag extracted from frontmatter/hashtags
   | 'concept'    // Named entity from content (unresolved wikilinks, headings)
   | 'person'     // From @mentions / contacts
-  | 'event';     // Calendar events
+  | 'event'      // Calendar events
+  | 'skill'      // Agent skill
+  | 'memory'     // Memory file (curated or daily)
+  | 'doc'        // Document / knowledge base entry
+  | 'config'     // Configuration file
+  | 'script'     // Executable script
 
 // ─── Edge Types ──────────────────────────────────────────────────────────────
 
