@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 import { Terminal, Zap, Send, ChevronRight, Activity, Bot, Shield, Code, BarChart3, Cpu } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { supabase } from '@/lib/supabase';
 
 interface AgentStatus {
   name: string;
@@ -22,31 +23,13 @@ interface LogEntry {
   type: 'task' | 'deploy' | 'alert' | 'info' | 'success';
 }
 
-const AGENTS: AgentStatus[] = [
-  { name: 'Nova', role: 'Orchestrator', status: 'active', currentTask: 'Managing dashboard live updates', emoji: '⚡', lastActive: 'now' },
-  { name: 'Henok', role: 'Dev + DevOps', status: 'idle', emoji: '🔨', lastActive: '5m ago' },
-  { name: 'Cinder', role: 'QA + Review', status: 'active', currentTask: 'Auditing MC pages', emoji: '🔍', lastActive: 'now' },
-  { name: 'Kiro', role: 'Architect', status: 'idle', emoji: '🏗️', lastActive: '10m ago' },
-  { name: 'Nahom', role: 'Marketing Strategy', status: 'idle', emoji: '📈', lastActive: '1h ago' },
-  { name: 'Bini', role: 'Content', status: 'idle', emoji: '✍️', lastActive: '2h ago' },
-  { name: 'Lidya', role: 'Design', status: 'idle', emoji: '🎨', lastActive: '1h ago' },
-  { name: 'Amen', role: 'Analytics', status: 'idle', emoji: '📊', lastActive: '2h ago' },
-  { name: 'Forge', role: 'Execution', status: 'idle', emoji: '⚒️', lastActive: '3h ago' },
-  { name: 'Onyx', role: 'Security', status: 'offline', emoji: '🛡️', lastActive: '1d ago' },
-];
+// Agent status is loaded from Supabase, not hardcoded
+const AGENT_EMOJIS: Record<string, string> = {
+  Nova: '⚡', Henok: '🔨', Cinder: '🔍', Kiro: '🏗️', Nahom: '📈',
+  Bini: '✍️', Lidya: '🎨', Amen: '📊', Forge: '⚒️', Onyx: '🛡️',
+};
 
-const INITIAL_LOGS: LogEntry[] = [
-  { id: '1', time: '21:47', agent: 'Nova', action: 'Project "Mission Control Live Dashboard" created — 8 tasks', type: 'info' },
-  { id: '2', time: '21:47', agent: 'Cinder', action: 'Started audit of all MC pages', type: 'task' },
-  { id: '3', time: '21:45', agent: 'Nova', action: 'Marketing Strategy project completed — 7/7 tasks deployed', type: 'success' },
-  { id: '4', time: '21:42', agent: 'Nova', action: 'Uploaded 4 deliverables to Google Drive', type: 'deploy' },
-  { id: '5', time: '21:38', agent: 'Nova', action: 'Deleted duplicate project entry from Supabase', type: 'info' },
-  { id: '6', time: '21:35', agent: 'Henok', action: 'Fixed gateway status scanner — now reads /health endpoint', type: 'success' },
-  { id: '7', time: '21:30', agent: 'Nova', action: 'Cron job: gateway scanner every 15min — active', type: 'deploy' },
-  { id: '8', time: '21:28', agent: 'Nova', action: 'Graph data refreshed — 2,209 nodes, 4,286 edges', type: 'info' },
-  { id: '9', time: '21:20', agent: 'Forge', action: 'Vercel deployment triggered — build queued', type: 'deploy' },
-  { id: '10', time: '21:15', agent: 'Nahom', action: 'Content strategy document published', type: 'success' },
-];
+const INITIAL_LOGS: LogEntry[] = [];
 
 const QUICK_COMMANDS = [
   { label: 'Refresh Graph', icon: Zap, action: 'refresh-graph' },
@@ -59,38 +42,78 @@ const QUICK_COMMANDS = [
 
 export function AgentCommandCenter() {
   const isDark = true;
-  const [logs, setLogs] = useState<LogEntry[]>(INITIAL_LOGS);
+  const [logs, setLogs] = useState<LogEntry[]>([]);
   const [command, setCommand] = useState('');
   const [executing, setExecuting] = useState(false);
-  const [agentList, setAgentList] = useState<AgentStatus[]>(AGENTS);
+  const [agentList, setAgentList] = useState<AgentStatus[]>([]);
   const logEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     logEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [logs]);
 
-  // Simulate live agent activity
+  // Load real agents from Supabase
   useEffect(() => {
-    const activities = [
-      { agent: 'Cinder', action: 'Checking ProjectsView.tsx for stale data...', type: 'task' as const },
-      { agent: 'Nova', action: 'Updating Mission Control dashboard with live widgets', type: 'task' as const },
-      { agent: 'Henok', action: 'Building Agent Command Center component', type: 'task' as const },
-    ];
+    const loadAgents = async () => {
+      try {
+        const { data: agents } = await supabase.from('agents').select('*');
+        const { data: tasks } = await supabase.from('tasks').select('id,status,assignees').in('status', ['in_progress', 'assigned', 'review']);
+        if (agents) {
+          const mapped: AgentStatus[] = agents.map((a: any) => {
+            const name = (a.name || '').replace(/^@+/, '');
+            const hasActiveTask = tasks?.some((t: any) => t.assignees?.some((as: string) => as.replace(/^@+/, '') === name));
+            return {
+              name,
+              role: a.role || 'Agent',
+              status: hasActiveTask ? 'active' : (a.status || 'offline') as 'active' | 'idle' | 'offline',
+              emoji: AGENT_EMOJIS[name] || '🤖',
+              currentTask: hasActiveTask ? 'Working on tasks' : undefined,
+            };
+          });
+          setAgentList(mapped);
+        }
+      } catch (e) {
+        console.error('Failed to load agents:', e);
+      }
+    };
+    loadAgents();
+    const interval = setInterval(loadAgents, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
-    const interval = setInterval(() => {
-      const activity = activities[Math.floor(Math.random() * activities.length)];
-      const now = new Date();
-      const time = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
-      const newLog: LogEntry = {
-        id: Date.now().toString(),
-        time,
-        agent: activity.agent,
-        action: activity.action,
-        type: activity.type,
-      };
-      setLogs(prev => [...prev.slice(-50), newLog]);
-    }, 15000);
-
+  // Load real activities from Supabase
+  useEffect(() => {
+    const loadActivities = async () => {
+      try {
+        const { supabase } = await import('@/lib/supabase');
+        const { data } = await supabase
+          .from('activities')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(20);
+        if (data) {
+          const mapped: LogEntry[] = data.map((a: any) => {
+            const d = new Date(a.created_at);
+            return {
+              id: a.id,
+              time: d.toTimeString().slice(0, 5),
+              agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
+              action: a.action,
+              type: a.action.includes('✅') || a.action.includes('complete') ? 'success' as const
+                : a.action.includes('deploy') ? 'deploy' as const
+                : a.action.includes('❌') || a.action.includes('error') ? 'alert' as const
+                : 'task' as const,
+            };
+          });
+          setLogs(mapped);
+        }
+      } catch (e) {
+        console.error('Failed to load activities:', e);
+      }
+    };
+    loadActivities();
+    // Refresh every 30s
+    const interval = setInterval(loadActivities, 30000);
     return () => clearInterval(interval);
   }, []);
 
