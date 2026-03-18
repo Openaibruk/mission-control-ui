@@ -456,7 +456,7 @@
       "type": "file",
       "path": "graph-data.json",
       "size": 1943085,
-      "modified": "2026-03-18T21:30:03.601Z",
+      "modified": "2026-03-18T22:00:04.594Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -9565,8 +9565,8 @@
       "label": "graph-scan.log",
       "type": "file",
       "path": "logs/graph-scan.log",
-      "size": 10286,
-      "modified": "2026-03-18T22:00:02.026Z",
+      "size": 11385,
+      "modified": "2026-03-18T22:30:01.709Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -10662,8 +10662,8 @@
       "label": "gateway-status.json",
       "type": "config",
       "path": "mission-control-ui/public/api/gateway-status.json",
-      "size": 356,
-      "modified": "2026-03-18T22:00:02.896Z",
+      "size": 355,
+      "modified": "2026-03-18T22:15:02.483Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -10679,7 +10679,7 @@
       "type": "file",
       "path": "mission-control-ui/public/api/graph-data.json",
       "size": 1943085,
-      "modified": "2026-03-18T21:30:03.626Z",
+      "modified": "2026-03-18T22:00:04.619Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11328,8 +11328,8 @@
       "label": "AgentCommandCenter.tsx",
       "type": "file",
       "path": "mission-control-ui/src/components/dashboard/AgentCommandCenter.tsx",
-      "size": 11584,
-      "modified": "2026-03-18T18:50:32.697Z",
+      "size": 11097,
+      "modified": "2026-03-18T22:18:29.834Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -66446,6 +66446,6 @@
       "skill": 52,
       "script": 7
     },
-    "generatedAt": "2026-03-18T22:00:04.578Z"
+    "generatedAt": "2026-03-18T22:30:05.413Z"
   }
 }
