@@ -38,6 +38,7 @@ const sections: NavSection[] = [
     items: [
       { id: 'dashboard', label: 'Overview', icon: LayoutDashboard, real: true },
       { id: 'agents', label: 'Agents', icon: Users, real: true },
+      { id: 'live-agents' as ViewType, label: 'Live Agents', icon: Users, real: true },
       { id: 'board', label: 'Tasks', icon: ListTodo, real: true },
       { id: 'projects' as ViewType, label: 'Projects', icon: FolderOpen, real: true },
       { id: 'workflow', label: 'Workflow', icon: MessageSquare, real: true },

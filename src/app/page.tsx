@@ -27,6 +27,7 @@ import { ProjectModal } from '@/components/shared/ProjectModal';
 import FeedbackModal from '@/components/shared/FeedbackModal';
 import { NovaWidget } from '@/components/chat/NovaWidget';
 import { QuickTrigger } from '@/components/shared/QuickTrigger';
+import { LiveAgentsView } from '@/components/views/LiveAgentsView';
 
 export default function MC() {
   const { theme, toggle: toggleTheme, isDark } = useTheme();
@@ -179,6 +180,12 @@ export default function MC() {
                   agents={db.agents} tasks={db.tasks}
                   onAgentClick={handleEditAgentClick}
                   onNewAgent={handleNewAgentClick}
+                  loading={db.loading} theme={theme}
+                />
+              )}
+              {view === 'live-agents' && (
+                <LiveAgentsView
+                  agents={db.agents} tasks={db.tasks}
                   loading={db.loading} theme={theme}
                 />
               )}

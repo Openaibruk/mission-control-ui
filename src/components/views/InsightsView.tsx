@@ -3,7 +3,7 @@
 import { Agent, Task, DashboardStats, Project } from '@/lib/types';
 import { cn, getAvatar, getStatusColor } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
-import { CheckCircle2, Check, Users, Zap, FolderOpen, TrendingUp } from 'lucide-react';
+import { CheckCircle2, Check, Users, Zap, FolderOpen, TrendingUp, BarChart3, Activity } from 'lucide-react';
 
 interface InsightsViewProps {
   stats: DashboardStats;
@@ -52,6 +52,92 @@ export function InsightsView({ stats, agents, tasks, projects, loading, theme }:
             </div>
           );
         })}
+      </div>
+
+      {/* Task Distribution Chart */}
+      <div>
+        <h3 className={cn("text-[14px] font-semibold mb-4 flex items-center gap-2", classes.heading)}>
+          <BarChart3 className="w-4 h-4 text-blue-400" /> Task Distribution
+        </h3>
+        <div className={cn("rounded-lg p-5", classes.card)}>
+          <div className="grid grid-cols-4 gap-3">
+            {[
+              { label: 'Done', count: tasks.filter(t => t.status === 'done').length, color: 'bg-emerald-500', textColor: 'text-emerald-400' },
+              { label: 'In Progress', count: tasks.filter(t => t.status === 'in_progress').length, color: 'bg-blue-500', textColor: 'text-blue-400' },
+              { label: 'Inbox', count: tasks.filter(t => t.status === 'inbox').length, color: 'bg-violet-500', textColor: 'text-violet-400' },
+              { label: 'Backlog', count: tasks.filter(t => t.status === 'backlog').length, color: 'bg-red-500', textColor: 'text-red-400' },
+            ].map(item => {
+              const pct = tasks.length > 0 ? Math.round((item.count / tasks.length) * 100) : 0;
+              return (
+                <div key={item.label}>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className={cn("text-xs font-medium", item.textColor)}>{item.label}</span>
+                    <span className={cn("text-xs", classes.muted)}>{item.count}</span>
+                  </div>
+                  <div className={cn("w-full h-2 rounded-full", isDark ? 'bg-neutral-800' : 'bg-neutral-200')}>
+                    <div className={cn("h-2 rounded-full transition-all", item.color)} style={{ width: `${pct}%` }} />
+                  </div>
+                  <span className={cn("text-[10px] mt-0.5 block", classes.muted)}>{pct}%</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Activity Heatmap */}
+      <div>
+        <h3 className={cn("text-[14px] font-semibold mb-4 flex items-center gap-2", classes.heading)}>
+          <Activity className="w-4 h-4 text-emerald-400" /> Activity Heatmap (Last 7 Days)
+        </h3>
+        <div className={cn("rounded-lg p-5 overflow-x-auto", classes.card)}>
+          <div className="flex gap-1 min-w-fit">
+            {/* Hour labels */}
+            <div className="flex flex-col gap-0.5 mr-2">
+              {[0, 4, 8, 12, 16, 20].map(h => (
+                <div key={h} className={cn("text-[9px] h-3 flex items-center", classes.muted)}>
+                  {h.toString().padStart(2, '0')}:00
+                </div>
+              ))}
+            </div>
+            {/* Days */}
+            {Array.from({ length: 7 }, (_, i) => {
+              const date = new Date();
+              date.setDate(date.getDate() - (6 - i));
+              const dayTasks = tasks.filter(t => {
+                if (!t.created_at) return false;
+                const d = new Date(t.created_at);
+                return d.toDateString() === date.toDateString();
+              });
+              const dayLabel = date.toLocaleDateString('en-US', { weekday: 'short' });
+              return (
+                <div key={i} className="flex flex-col items-center">
+                  <div className="flex flex-col gap-0.5">
+                    {Array.from({ length: 24 }, (_, h) => {
+                      const hourTasks = dayTasks.filter(t => new Date(t.created_at!).getHours() === h).length;
+                      const intensity = hourTasks >= 5 ? 4 : hourTasks >= 3 ? 3 : hourTasks >= 2 ? 2 : hourTasks >= 1 ? 1 : 0;
+                      const bgColors = [
+                        isDark ? 'bg-neutral-800' : 'bg-neutral-100',
+                        'bg-emerald-900/50',
+                        'bg-emerald-700/60',
+                        'bg-emerald-500/70',
+                        'bg-emerald-400',
+                      ];
+                      return (
+                        <div
+                          key={h}
+                          className={cn("w-3 h-3 rounded-sm", bgColors[intensity])}
+                          title={`${dayLabel} ${h}:00 — ${hourTasks} tasks`}
+                        />
+                      );
+                    })}
+                  </div>
+                  <span className={cn("text-[9px] mt-1", classes.muted)}>{dayLabel}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       {/* Project Performance */}

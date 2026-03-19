@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-19T16:00:03Z",
+  "generatedAt": "2026-03-19T18:00:03Z",
   "vps": {
     "status": "online",
-    "uptime": 94091,
-    "cpu": 40,
-    "memory": { "total": 3834, "used": 2322, "percent": 61 },
+    "uptime": 101291,
+    "cpu": 42,
+    "memory": { "total": 3834, "used": 2494, "percent": 65 },
     "disk": { "percent": 71 },
-    "load": "0.00"
+    "load": "0.16"
   },
   "gateway": {
     "status": "online",
