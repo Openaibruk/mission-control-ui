@@ -140,7 +140,7 @@ export function AgentCommandCenter() {
         'run-audit': 'Cinder: Audit in progress — checking all pages for stale data',
         'deploy': 'Forge: Triggering Vercel deployment for mission-control-ui...',
         'agent-status': `Nova: ${agentList.filter(a => a.status === 'active').length} active, ${agentList.filter(a => a.status === 'idle').length} idle, ${agentList.filter(a => a.status === 'offline').length} offline`,
-        'token-costs': 'Nova: Total $2.37, 3,530 calls, 6 models — cheapest: healer-alpha ($0/token)',
+        'token-costs': 'Nova: Total $2.37, 3,530 calls, 6 models — cheapest: mimo-v2-pro ($0/token)',
       };
 
       const response = responses[cmd] || `Nova: Command "${cmd}" received — processing...`;
