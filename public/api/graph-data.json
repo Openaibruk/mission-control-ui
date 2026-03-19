@@ -456,7 +456,7 @@
       "type": "file",
       "path": "graph-data.json",
       "size": 2006279,
-      "modified": "2026-03-19T15:30:04.937Z",
+      "modified": "2026-03-19T16:00:04.129Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -10398,8 +10398,8 @@
       "label": "graph-scan.log",
       "type": "file",
       "path": "logs/graph-scan.log",
-      "size": 49850,
-      "modified": "2026-03-19T16:00:01.429Z",
+      "size": 50947,
+      "modified": "2026-03-19T16:30:01.599Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11044,8 +11044,8 @@
       "label": "next-env.d.ts",
       "type": "file",
       "path": "mission-control-ui/next-env.d.ts",
-      "size": 251,
-      "modified": "2026-03-19T10:00:19.014Z",
+      "size": 247,
+      "modified": "2026-03-19T16:00:54.731Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11622,7 +11622,7 @@
       "type": "config",
       "path": "mission-control-ui/public/api/gateway-status.json",
       "size": 355,
-      "modified": "2026-03-19T15:45:02.155Z",
+      "modified": "2026-03-19T16:15:02.371Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11638,7 +11638,7 @@
       "type": "file",
       "path": "mission-control-ui/public/api/graph-data.json",
       "size": 2006279,
-      "modified": "2026-03-19T15:30:04.970Z",
+      "modified": "2026-03-19T16:00:04.150Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -12327,8 +12327,8 @@
       "label": "ActivityPulse.tsx",
       "type": "file",
       "path": "mission-control-ui/src/components/dashboard/ActivityPulse.tsx",
-      "size": 5179,
-      "modified": "2026-03-19T11:30:42.094Z",
+      "size": 5228,
+      "modified": "2026-03-19T16:02:43.359Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -12343,8 +12343,8 @@
       "label": "AgentCommandCenter.tsx",
       "type": "file",
       "path": "mission-control-ui/src/components/dashboard/AgentCommandCenter.tsx",
-      "size": 6444,
-      "modified": "2026-03-19T11:30:30.907Z",
+      "size": 6566,
+      "modified": "2026-03-19T16:02:39.067Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -12759,7 +12759,7 @@
       "type": "file",
       "path": "mission-control-ui/src/components/onboarding/AddDriverModal.tsx",
       "size": 4594,
-      "modified": "2026-03-19T08:06:32.116Z",
+      "modified": "2026-03-19T16:01:41.573Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -12809,7 +12809,7 @@
       "type": "file",
       "path": "mission-control-ui/src/components/onboarding/OnboardingDashboard.tsx",
       "size": 6913,
-      "modified": "2026-03-19T08:06:32.116Z",
+      "modified": "2026-03-19T16:01:41.573Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -12835,7 +12835,7 @@
       "type": "file",
       "path": "mission-control-ui/src/components/shared/AgentModal.tsx",
       "size": 7449,
-      "modified": "2026-03-19T08:06:32.107Z",
+      "modified": "2026-03-19T16:01:41.572Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -12899,7 +12899,7 @@
       "type": "file",
       "path": "mission-control-ui/src/components/shared/ProjectModal.tsx",
       "size": 6171,
-      "modified": "2026-03-19T08:06:32.107Z",
+      "modified": "2026-03-19T16:01:41.572Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -12931,7 +12931,7 @@
       "type": "file",
       "path": "mission-control-ui/src/components/shared/TaskModal.tsx",
       "size": 7684,
-      "modified": "2026-03-19T08:06:32.107Z",
+      "modified": "2026-03-19T16:01:41.572Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -13255,8 +13255,8 @@
       "label": "onboarding.ts",
       "type": "file",
       "path": "mission-control-ui/src/lib/onboarding.ts",
-      "size": 4927,
-      "modified": "2026-03-19T14:57:46.397Z",
+      "size": 4996,
+      "modified": "2026-03-19T16:02:51.341Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -68620,6 +68620,6 @@
       "skill": 53,
       "script": 7
     },
-    "generatedAt": "2026-03-19T16:00:04.107Z"
+    "generatedAt": "2026-03-19T16:30:04.634Z"
   }
 }
