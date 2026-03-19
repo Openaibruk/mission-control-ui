@@ -8,7 +8,7 @@ import { EthDateTime } from 'ethiopian-calendar-date-converter';
 
 const ETHIOPIAN_MONTHS = [
   'Meskerem', 'Tikimt', 'Hidar', 'Tahsas', 'Tir', 'Yekatit',
-  'Miyazya', 'Ginbot', 'Sene', 'Hamle', 'Nehase', 'Pagume'
+  'Megabit', 'Miyazya', 'Ginbot', 'Sene', 'Hamle', 'Nehase', 'Pagume'
 ];
 
 const ETHIOPIAN_HOLIDAYS: Record<string, string> = {
