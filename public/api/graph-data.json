@@ -89,7 +89,7 @@
       "type": "agent",
       "path": "AGENTS.md",
       "size": 1581,
-      "modified": "2026-03-19T08:06:31.891Z",
+      "modified": "2026-03-19T09:17:20.176Z",
       "metadata": {
         "tags": [],
         "headings": [
@@ -455,8 +455,8 @@
       "label": "graph-data.json",
       "type": "file",
       "path": "graph-data.json",
-      "size": 1989908,
-      "modified": "2026-03-19T08:30:04.986Z",
+      "size": 1989992,
+      "modified": "2026-03-19T09:00:05.121Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -10284,8 +10284,8 @@
       "label": "graph-scan.log",
       "type": "file",
       "path": "logs/graph-scan.log",
-      "size": 34460,
-      "modified": "2026-03-19T09:00:02.084Z",
+      "size": 35559,
+      "modified": "2026-03-19T09:30:01.751Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11476,7 +11476,7 @@
       "type": "config",
       "path": "mission-control-ui/public/api/gateway-status.json",
       "size": 355,
-      "modified": "2026-03-19T08:45:02.585Z",
+      "modified": "2026-03-19T09:15:02.458Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11491,8 +11491,8 @@
       "label": "graph-data.json",
       "type": "file",
       "path": "mission-control-ui/public/api/graph-data.json",
-      "size": 1989908,
-      "modified": "2026-03-19T08:30:05.007Z",
+      "size": 1989992,
+      "modified": "2026-03-19T09:00:05.159Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11507,8 +11507,8 @@
       "label": "token-costs.json",
       "type": "config",
       "path": "mission-control-ui/public/api/token-costs.json",
-      "size": 2237,
-      "modified": "2026-03-19T08:07:37.557Z",
+      "size": 2880,
+      "modified": "2026-03-19T09:04:00.964Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -38315,8 +38315,8 @@
       "label": "SKILL.md",
       "type": "skill",
       "path": "skills/datahub-analytics/SKILL.md",
-      "size": 2113,
-      "modified": "2026-03-19T08:29:31.453Z",
+      "size": 3938,
+      "modified": "2026-03-19T09:17:14.711Z",
       "metadata": {
         "tags": [],
         "headings": [
@@ -38327,7 +38327,12 @@
           "Examples",
           "Get operations overview",
           "Get product sales",
-          "Get margin analysis"
+          "Get margin analysis",
+          "DataHub Analytics",
+          "API Tools",
+          "Usage",
+          "Query the server with default last 30 days",
+          "Query with explicit dates"
         ],
         "links": [],
         "mentions": [],
@@ -38350,8 +38355,8 @@
       "label": "query.js",
       "type": "file",
       "path": "skills/datahub-analytics/scripts/query.js",
-      "size": 1508,
-      "modified": "2026-03-19T08:29:45.543Z",
+      "size": 1769,
+      "modified": "2026-03-19T09:17:05.992Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -68065,6 +68070,6 @@
       "skill": 53,
       "script": 7
     },
-    "generatedAt": "2026-03-19T09:00:05.106Z"
+    "generatedAt": "2026-03-19T09:30:04.357Z"
   }
 }
