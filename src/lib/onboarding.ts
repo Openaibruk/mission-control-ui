@@ -86,7 +86,7 @@ export function computeStats(drivers: Driver[]): OnboardingStats {
 
 // --- Supabase queries ---
 
-export async function fetchDrivers(): Promise<{ data: Driver[] | null; error: any }> {
+export async function fetchDrivers(): Promise<{ data: Driver[] | null; error: { message: string } | null }> {
   const { data, error } = await supabase
     .from('driver_onboarding')
     .select('*')
@@ -98,7 +98,7 @@ export async function addDriver(driver: {
   name: string;
   phone: string;
   email?: string;
-}): Promise<{ data: Driver | null; error: any }> {
+}): Promise<{ data: Driver | null; error: { message: string } | null }> {
   const now = new Date().toISOString();
   const stageHistory: StageHistoryEntry[] = [
     { stage: 'registration', entered_at: now },
@@ -119,7 +119,7 @@ export async function addDriver(driver: {
   return { data: data as Driver | null, error };
 }
 
-export async function advanceStage(driver: Driver): Promise<{ data: Driver | null; error: any }> {
+export async function advanceStage(driver: Driver): Promise<{ data: Driver | null; error: { message: string } | null }> {
   const nextStage = getNextStage(driver.current_stage);
   if (!nextStage) return { data: null, error: { message: 'Already at final stage' } };
 
@@ -158,7 +158,7 @@ export async function advanceStage(driver: Driver): Promise<{ data: Driver | nul
   return { data: data as Driver | null, error };
 }
 
-export async function deleteDriver(id: string): Promise<{ error: any }> {
+export async function deleteDriver(id: string): Promise<{ error: { message: string } | null }> {
   const { error } = await supabase
     .from('driver_onboarding')
     .delete()

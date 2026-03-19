@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { useThemeClasses } from '@/hooks/useTheme';
+import { useTheme, useThemeClasses } from '@/hooks/useTheme';
 import { Activity, TrendingUp, Users, Package, AlertTriangle, MessageSquare } from 'lucide-react';
 
 interface PulseEvent {
@@ -34,7 +34,8 @@ const formatTimeGMT3 = (date: Date): string => {
 
 export function ActivityPulse() {
   const [events, setEvents] = useState<PulseEvent[]>([]);
-  const { bg } = useThemeClasses();
+  const { isDark } = useTheme();
+  const { bg } = useThemeClasses(isDark);
 
   useEffect(() => {
     fetch('/api/gateway-status')

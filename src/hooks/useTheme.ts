@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 export type Theme = 'dark' | 'light';
 
@@ -11,16 +11,13 @@ interface UseThemeReturn {
 }
 
 export function useTheme(): UseThemeReturn {
-  const [theme, setTheme] = useState<Theme>('dark');
-
-  useEffect(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'dark';
     const saved = localStorage.getItem('mc-theme') as Theme;
-    if (saved) {
-      setTheme(saved);
-    } else if (window.matchMedia?.('(prefers-color-scheme: light)').matches) {
-      setTheme('light');
-    }
-  }, []);
+    if (saved) return saved;
+    if (window.matchMedia?.('(prefers-color-scheme: light)').matches) return 'light';
+    return 'dark';
+  });
 
   const toggle = useCallback(() => {
     setTheme(prev => {

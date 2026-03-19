@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { useThemeClasses } from '@/hooks/useTheme';
+import { useTheme, useThemeClasses } from '@/hooks/useTheme';
 import { Terminal, Send, Clock, AlertCircle, CheckCircle, Info, Rocket } from 'lucide-react';
 
 interface LogEntry {
@@ -36,7 +36,10 @@ export function AgentCommandCenter() {
   const [command, setCommand] = useState('');
   const [isStreaming, setIsStreaming] = useState(true);
   const [executing, setExecuting] = useState(false);
-  const { bg, text, border } = useThemeClasses();
+  const { isDark } = useTheme();
+  const classes = useThemeClasses(isDark);
+  const { bg, card: cardStyle, divider: border } = classes;
+  const text = cardStyle;
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

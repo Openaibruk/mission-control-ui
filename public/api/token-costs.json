@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-03-19T09:04:00.963Z",
+  "generatedAt": "2026-03-19T15:12:35.448Z",
   "summary": {
-    "totalCost": 51.2997,
-    "totalTokens": 341681272,
-    "totalCalls": 3510,
-    "avgCostPerCall": 0.0146,
-    "modelCount": 9
+    "totalCost": 73.5408,
+    "totalTokens": 351445065,
+    "totalCalls": 3669,
+    "avgCostPerCall": 0.02,
+    "modelCount": 11
   },
   "byModel": [
     {
       "model": "gemini-3.1-pro-preview",
-      "calls": 125,
-      "tokens": 22494258,
-      "cost": 49.163,
-      "input": 22465996,
-      "output": 28262
+      "calls": 230,
+      "tokens": 28783239,
+      "cost": 63.1791,
+      "input": 28724099,
+      "output": 59140
     },
     {
       "model": "anthropic/claude-opus-4.6",
-      "calls": 3303,
-      "tokens": 317960185,
-      "cost": 1.7127,
-      "input": 16384956,
-      "output": 477148
+      "calls": 3316,
+      "tokens": 319989765,
+      "cost": 9.9377,
+      "input": 16770488,
+      "output": 488373
     },
     {
       "model": "gemini-2.5-flash",
@@ -42,7 +42,7 @@
     },
     {
       "model": "delivery-mirror",
-      "calls": 1,
+      "calls": 2,
       "tokens": 0,
       "cost": 0,
       "input": 0,
@@ -50,11 +50,11 @@
     },
     {
       "model": "xiaomi/mimo-v2-pro",
-      "calls": 7,
-      "tokens": 0,
+      "calls": 30,
+      "tokens": 1015192,
       "cost": 0,
-      "input": 0,
-      "output": 0
+      "input": 491297,
+      "output": 3703
     },
     {
       "model": "openrouter/hunter-alpha",
@@ -73,6 +73,22 @@
       "output": 0
     },
     {
+      "model": "google/gemini-2.5-flash",
+      "calls": 12,
+      "tokens": 0,
+      "cost": 0,
+      "input": 0,
+      "output": 0
+    },
+    {
+      "model": "mimo-v2-flash-free",
+      "calls": 5,
+      "tokens": 430040,
+      "cost": 0,
+      "input": 171153,
+      "output": 4423
+    },
+    {
       "model": "openrouter/healer-alpha",
       "calls": 2,
       "tokens": 34778,
@@ -84,14 +100,14 @@
   "last7Days": [
     {
       "date": "2026-03-19",
-      "calls": 263,
-      "tokens": 23595498,
-      "cost": 48.9293
+      "calls": 545,
+      "tokens": 36303599,
+      "cost": 71.1704
     },
     {
       "date": "2026-03-18",
-      "calls": 823,
-      "tokens": 18252355,
+      "calls": 700,
+      "tokens": 15308047,
       "cost": 0
     },
     {
@@ -122,14 +138,14 @@
   "byDay": [
     {
       "date": "2026-03-19",
-      "calls": 263,
-      "tokens": 23595498,
-      "cost": 48.9293
+      "calls": 545,
+      "tokens": 36303599,
+      "cost": 71.1704
     },
     {
       "date": "2026-03-18",
-      "calls": 823,
-      "tokens": 18252355,
+      "calls": 700,
+      "tokens": 15308047,
       "cost": 0
     },
     {
