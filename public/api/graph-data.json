@@ -456,7 +456,7 @@
       "type": "file",
       "path": "graph-data.json",
       "size": 2007085,
-      "modified": "2026-03-19T22:00:04.760Z",
+      "modified": "2026-03-19T22:30:04.108Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -10398,8 +10398,8 @@
       "label": "graph-scan.log",
       "type": "file",
       "path": "logs/graph-scan.log",
-      "size": 64121,
-      "modified": "2026-03-19T22:30:01.779Z",
+      "size": 65218,
+      "modified": "2026-03-19T23:00:01.622Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11625,7 +11625,7 @@
       "type": "config",
       "path": "mission-control-ui/public/api/gateway-status.json",
       "size": 356,
-      "modified": "2026-03-19T22:15:02.621Z",
+      "modified": "2026-03-19T22:45:02.263Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11641,7 +11641,7 @@
       "type": "file",
       "path": "mission-control-ui/public/api/graph-data.json",
       "size": 2007085,
-      "modified": "2026-03-19T22:00:04.786Z",
+      "modified": "2026-03-19T22:30:04.139Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -68645,6 +68645,6 @@
       "skill": 53,
       "script": 7
     },
-    "generatedAt": "2026-03-19T22:30:04.085Z"
+    "generatedAt": "2026-03-19T23:00:03.724Z"
   }
 }
