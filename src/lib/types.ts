@@ -67,12 +67,13 @@ export interface ModelOption {
 }
 
 export const AVAILABLE_MODELS: ModelOption[] = [
-  { id: 'google/gemini-3.1-pro-preview', label: 'Gemini Pro', provider: 'Google', description: 'Fast & capable' },
+  { id: 'openrouter/xiaomi/mimo-v2-pro', label: 'MiMo V2 Pro', provider: 'Xiaomi', description: 'Free, fast reasoning' },
+  { id: 'openrouter/nvidia/nemotron-3-super-120b-a12b', label: 'Nemotron 3 Super', provider: 'NVIDIA', description: '120B MoE powerhouse' },
   { id: 'openrouter/anthropic/claude-opus-4.6', label: 'Claude Opus', provider: 'Anthropic', description: 'Deep reasoning' },
+  { id: 'google/gemini-3.1-pro-preview', label: 'Gemini Pro', provider: 'Google', description: 'Fast & capable' },
+  { id: 'openrouter/auto', label: 'Auto Router', provider: 'OpenRouter', description: 'Best model per task' },
   { id: 'openrouter/anthropic/claude-sonnet-4', label: 'Claude Sonnet', provider: 'Anthropic', description: 'Balanced' },
   { id: 'openrouter/openai/gpt-4.1', label: 'GPT-4.1', provider: 'OpenAI', description: 'General purpose' },
-  { id: 'openrouter/openai/o3', label: 'o3', provider: 'OpenAI', description: 'Reasoning' },
-  { id: 'openrouter/auto', label: 'Auto Router', provider: 'OpenRouter', description: 'Best model per task' },
   { id: 'openrouter/minimax/minimax-m2.5', label: 'MiniMax M2.5', provider: 'MiniMax', description: 'Cost efficient' },
 ];
 

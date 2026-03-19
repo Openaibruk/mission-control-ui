@@ -4,7 +4,8 @@ import { Agent, Task } from '@/lib/types';
 import { cn, getAvatar, getAgentStatusInfo } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 import { useMemo, useState } from 'react';
-import { Plus, UserPlus, Bell, Zap, Crown, Bot, Users, ChevronDown, ChevronUp } from 'lucide-react';
+import { Plus, UserPlus, Bell, Zap, Crown, Bot, Users, ChevronDown, ChevronUp, Play } from 'lucide-react';
+import { AgentTriggerModal } from '@/components/shared/AgentTriggerModal';
 
 interface AgentGridProps {
   agents: Agent[];
@@ -26,6 +27,7 @@ export function AgentGrid({ agents, tasks, onAgentClick, onNewAgent, loading, th
   const classes = useThemeClasses(isDark);
   const [pingedAgents, setPingedAgents] = useState<Set<string>>(new Set());
   const [expandedDepts, setExpandedDepts] = useState<Set<string>>(new Set(['Development', 'Marketing', 'Strategy']));
+  const [triggerAgent, setTriggerAgent] = useState<string | null>(null);
 
   const handlePing = async (agent: Agent, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -201,6 +203,18 @@ export function AgentGrid({ agents, tasks, onAgentClick, onNewAgent, loading, th
                             <span className="text-[10px] text-amber-400">{stats.active}</span>
                           )}
                           <button
+                            onClick={(e) => { e.stopPropagation(); setTriggerAgent(agentName); }}
+                            className={cn(
+                              "p-1.5 rounded-md transition-all",
+                              isDark
+                                ? "hover:bg-emerald-600/20 text-gray-500 hover:text-emerald-400"
+                                : "hover:bg-emerald-50 text-gray-400 hover:text-emerald-600"
+                            )}
+                            title={`Run task for ${agentName}`}
+                          >
+                            <Play className="w-3 h-3" />
+                          </button>
+                          <button
                             onClick={(e) => handlePing(agent, e)}
                             className={cn(
                               "p-1.5 rounded-md transition-all",
@@ -239,6 +253,14 @@ export function AgentGrid({ agents, tasks, onAgentClick, onNewAgent, loading, th
           <span className="text-sm font-medium">Add Agent</span>
         </button>
       </div>
+
+      {/* Agent Trigger Modal */}
+      <AgentTriggerModal
+        agentName={triggerAgent || ''}
+        isOpen={!!triggerAgent}
+        onClose={() => setTriggerAgent(null)}
+        theme={theme}
+      />
     </div>
   );
 }

@@ -26,6 +26,7 @@ import { AgentModal } from '@/components/shared/AgentModal';
 import { ProjectModal } from '@/components/shared/ProjectModal';
 import FeedbackModal from '@/components/shared/FeedbackModal';
 import { NovaWidget } from '@/components/chat/NovaWidget';
+import { QuickTrigger } from '@/components/shared/QuickTrigger';
 
 export default function MC() {
   const { theme, toggle: toggleTheme, isDark } = useTheme();
@@ -202,6 +203,7 @@ export default function MC() {
         </div>
       </div>
       <NovaWidget theme={theme} />
+      <QuickTrigger theme={theme} agents={db.agents} />
       {(isTaskModalOpen || editingTask) && (
         <TaskModal task={editingTask} isNew={isNewTask} projects={db.projects} agents={db.agents}
           onClose={() => { setIsTaskModalOpen(false); setEditingTask(null); }}
