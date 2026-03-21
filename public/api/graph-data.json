@@ -175,8 +175,8 @@
       "label": "HEARTBEAT.md",
       "type": "agent",
       "path": "HEARTBEAT.md",
-      "size": 2017,
-      "modified": "2026-03-19T08:06:31.670Z",
+      "size": 2485,
+      "modified": "2026-03-21T20:50:39.664Z",
       "metadata": {
         "tags": [],
         "headings": [
@@ -185,7 +185,8 @@
           "Auto-Update Task Status",
           "Agent Assignment by Department",
           "Stalled Task Check (5-Minute Rule)",
-          "Final Outcome Formatting"
+          "Final Outcome Formatting",
+          "🔴 CORE RULE: Proactive Daily Research (Idle Time)"
         ],
         "links": [],
         "mentions": [],
@@ -456,7 +457,7 @@
       "type": "file",
       "path": "graph-data.json",
       "size": 2009804,
-      "modified": "2026-03-21T20:00:03.650Z",
+      "modified": "2026-03-21T20:30:04.372Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -10398,8 +10399,8 @@
       "label": "graph-scan.log",
       "type": "file",
       "path": "logs/graph-scan.log",
-      "size": 165069,
-      "modified": "2026-03-21T20:30:01.728Z",
+      "size": 166166,
+      "modified": "2026-03-21T21:00:01.378Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11700,7 +11701,7 @@
       "type": "config",
       "path": "mission-control-ui/public/api/gateway-status.json",
       "size": 356,
-      "modified": "2026-03-21T20:15:02.406Z",
+      "modified": "2026-03-21T20:45:02.026Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -11716,7 +11717,7 @@
       "type": "file",
       "path": "mission-control-ui/public/api/graph-data.json",
       "size": 2009804,
-      "modified": "2026-03-21T20:00:03.676Z",
+      "modified": "2026-03-21T20:30:04.396Z",
       "metadata": {
         "tags": [],
         "headings": [],
@@ -68744,6 +68745,6 @@
       "skill": 53,
       "script": 7
     },
-    "generatedAt": "2026-03-21T20:30:04.356Z"
+    "generatedAt": "2026-03-21T21:00:04.154Z"
   }
 }
