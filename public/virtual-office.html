@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw Virtual Office</title>
+<style>
+:root {
+  --tile-w: 120px;
+  --tile-h: 60px;
+  --bg-dark: #0a0a0f;
+  --neon-cyan: #00f3ff;
+  --neon-purple: #bf5fff;
+  --neon-gold: #ffd700;
+  --neon-orange: #ff9d00;
+  --neon-green: #00ff88;
+  --neon-red: #ff4444;
+  --neon-blue: #4d88ff;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg-dark);
+  color: #fff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+#scene {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  perspective: 2000px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1a1a2f 0%, #0a0a0f 70%);
+}
+#world {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform-style: preserve-3d;
+  /* The world is 2D isometric; we'll position children with translate3d */
+}
+.tile {
+  position: absolute;
+  width: var(--tile-w);
+  height: var(--tile-h);
+  transform-style: preserve-3d;
+}
+.tile .face {
+  position: absolute;
+  width: var(--tile-w);
+  height: var(--tile-h);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,255,255,0.05);
+  box-shadow: inset 0 0 10px rgba(0,255,255,0.03);
+}
+.tile .top {
+  transform: rotateX(90deg) translateZ(1px);
+  background: rgba(0,255,255,0.03);
+}
+/* Buildings: we'll use isometric styling via width/height and borders */
+.building {
+  position: absolute;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.building .cube {
+  position: relative;
+  transform-style: preserve-3d;
+}
+.building .face {
+  position: absolute;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.05);
+}
+.building .top {
+  /* width = building width, height = building depth */
+  transform: rotateX(90deg) translateZ(0);
+  background: inherit;
+  filter: brightness(1.2);
+}
+.building .left {
+  /* width = building width, height = building height */
+  transform: rotateY(-90deg) translateZ(0);
+  background: inherit;
+  filter: brightness(0.7);
+}
+.building .right {
+  transform: rotateY(90deg) translateZ(0);
+  background: inherit;
+  filter: brightness(0.85);
+}
+.building-label {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%) rotateX(-90deg);
+  white-space: nowrap;
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+  pointer-events: none;
+  opacity: 0.9;
+}
+/* Agent avatar */
+.agent {
+  position: absolute;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(-90deg) translateZ(20px);
+  box-shadow: 0 0 10px currentColor;
+  transition: left 0.5s linear, top 0.5s linear;
+  cursor: pointer;
+  z-index: 100;
+}
+.agent::after {
+  content: attr(data-name);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+}
+/* HUD */
+#hud {
+  position: absolute;
+  right: 20px; top: 20px;
+  width: 260px;
+  background: rgba(10,10,15,0.85);
+  border: 1px solid rgba(0,255,255,0.2);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+  backdrop-filter: blur(4px);
+  font-size: 13px;
+}
+#hud h2 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#agent-list {
+  list-style: none;
+}
+#agent-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 6px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+}
+#agent-list li .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 5px currentColor;
+}
+#agent-list li .name { flex:1; color:#fff; }
+#agent-list li .status { font-size:11px; color:rgba(255,255,255,0.6); }
+/* Building tooltip */
+#building-info {
+  position: absolute;
+  left: 20px; top: 20px;
+  width: 300px;
+  background: rgba(10,10,15,0.9);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 0 20px rgba(255,215,0,0.15);
+  display: none;
+}
+#building-info h3 { margin:0 0 8px 0; color: var(--neon-gold); }
+#building-info p { margin:0; color:rgba(255,255,255,0.8); font-size:12px; line-height:1.5; }
+#building-info .projects { margin-top:8px; }
+#building-info .project-tag {
+  display: inline-block;
+  padding: 2px 6px;
+  background: rgba(255,215,0,0.15);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 4px;
+  font-size: 10px;
+  color: var(--neon-gold);
+  margin: 2px 2px 2px 0;
+}
+/* Animations */
+@keyframes pulse {
+  0%,100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.agent { animation: pulse 2s infinite; }
+/* Build grid lines for floor as SVG? */
+#floor {
+  position: absolute;
+  left: 0; top: 0;
+  width: 2000px; height: 2000px;
+  /* grid pattern via CSS */
+  background-image: 
+    linear-gradient(rgba(0,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,255,0.05) 1px, transparent 1px);
+  background-size: var(--tile-w) var(--tile-h);
+  transform: translate(-50%, -50%) rotateX(90deg) translateZ(0);
+}
+</style>
+</head>
+<body>
+<div id="scene">
+  <div id="world"></div>
+</div>
+
+<div id="hud">
+  <h2>Agent Roster</h2>
+  <ul id="agent-list"></ul>
+</div>
+
+<div id="building-info">
+  <h3 id="b-title"></h3>
+  <p id="b-desc"></p>
+  <div class="projects" id="b-projects"></div>
+</div>
+
+<script>
+// Configuration
+const tileW = 120, tileH = 60;
+const world = document.getElementById('world');
+const agentList = document.getElementById('agent-list');
+const buildingInfo = document.getElementById('building-info');
+const bTitle = document.getElementById('b-title');
+const bDesc = document.getElementById('b-desc');
+const bProjects = document.getElementById('b-projects');
+
+// Data
+const domains = [
+  { id:'chipchip', name:'ChipChip Tower', description:'Business & logistics platform for deliveries.', color:'var(--neon-purple)', accent:'var(--neon-gold)', x:0, y:0, width: 3, depth:3, height:180, projects:[
+    'ChipChip Digital Team Strategy',
+    'ChipChip super Group content strategy',
+    'Marketing Team Build',
+    'Ethiopian Kids Animation Exploration'
+  ]},
+  { id:'mission-control', name:'Mission Control', description:'Tech stack & dashboard nerve center.', color:'var(--neon-cyan)', accent:'var(--neon-blue)', x:4, y:4, width:2, depth:2, height:120, projects:[
+    'Dashboard v1/v2/v3',
+    'Feedback Collection System',
+    'Live Nova Chat + Miniverse UI',
+    'Superset SQL Lab Integration'
+  ]},
+  { id:'personal', name:'Personal Lab', description:'Job hunt, research, personal automation.', color:'var(--neon-orange)', accent:'var(--neon-orange)', x:8, y:0, width:2, depth:2, height:100, projects:[
+    'Personal Morning Standup (GWS)',
+    'Zarely.co AI Automation',
+    'HR Recruiter Agent Builder',
+    'Job Finder Agent'
+  ]},
+  { id:'workspace', name:'Workspace Infra', description:'OpenClaw configuration, cost optimization, tools.', color:'var(--neon-green)', accent:'var(--neon-green)', x:4, y:8, width:2, depth:2, height:80, projects:[
+    'Workspace Optimization',
+    'Token & Cost Optimization',
+    'Active Maintenance',
+    'Skill Management'
+  ]}
+];
+
+const agents = [
+  { id:'nova', name:'Nova', color:'var(--neon-blue)', role:'Orchestrator', status:'active', task:null, home:'center' },
+  { id:'forge', name:'Forge', color:'var(--neon-cyan)', role:'Frontend Engineer', status:'active', task:'Dashboard v3', home:'mission-control' },
+  { id:'shuri', name:'Shuri', color:'var(--neon-purple)', role:'Product Analyst', status:'active', task:'UX Feedback on Kanban', home:'chipchip' },
+  { id:'cipher', name:'Cipher', color:'var(--neon-red)', role:'Backend Engineer', status:'active', task:'Supabase optimizations', home:'mission-control' },
+  { id:'loki', name:'Loki', role:'Copywriter', status:'active', task:'Delivery fee messaging', home:'personal' },
+];
+
+// Build the world: grid, buildings, agents
+function isoX(gridX, gridY) { return (gridX - gridY) * tileW/2; }
+function isoY(gridX, gridY) { return (gridX + gridY) * tileH/2; }
+
+function createBuilding(dom) {
+  const el = document.createElement('div');
+  el.className = 'building';
+  const x = isoX(dom.x, dom.y);
+  const y = isoY(dom.x, dom.y);
+  el.style.left = `calc(50% + ${x}px)`;
+  el.style.top = `calc(50% + ${y}px)`;
+  el.dataset.id = dom.id;
+  // size in pixels (width, depth, height)
+  const w = dom.width * tileW; // each tile = 120
+  const d = dom.depth * tileH;
+  const h = dom.height;
+  el.innerHTML = `
+    <div class="cube" style="width:${w}px;height:${h}px;">
+      <div class="face top" style="width:${w}px;height:${d}px; background:${dom.color}; transform:rotateX(90deg) translateZ(${h}px);"></div>
+      <div class="face left" style="width:${w}px;height:${h}px; background:${dom.color}; transform:rotateY(-90deg) translateZ(0);"></div>
+      <div class="face right" style="width:${d}px;height:${h}px; background:${dom.color}; transform:rotateY(90deg) translateZ(${w}px);"></div>
+    </div>
+    <div class="building-label" style="color:${dom.accent}">${dom.name}</div>
+  `;
+  // Hover info
+  el.addEventListener('mouseenter', () => showBuildingInfo(dom));
+  el.addEventListener('mouseleave', () => hideBuildingInfo());
+  return el;
+}
+
+function createAgent(ag) {
+  const el = document.createElement('div');
+  el.className = 'agent';
+  el.dataset.id = ag.id;
+  el.dataset.name = ag.name;
+  el.style.color = ag.color;
+  // position near home building
+  let gridX, gridY;
+  if (ag.home === 'center') {
+    gridX = 4; gridY = 4;
+  } else {
+    const homeDom = domains.find(d => d.id === ag.home);
+    gridX = homeDom.x + homeDom.width/2;
+    gridY = homeDom.y + homeDom.depth/2;
+  }
+  // Add small offset for each agent so they don't stack
+  const offset = (Math.random() - 0.5) * 80;
+  const x = isoX(gridX, gridY) + offset;
+  const y = isoY(gridX, gridY) + offset;
+  el.style.left = `calc(50% + ${x}px)`;
+  el.style.top = `calc(50% + ${y}px)`;
+  // Tooltip on click
+  el.addEventListener('click', () => {
+    alert(`${ag.name} (${ag.role})\nStatus: ${ag.status}\nCurrent task: ${ag.task || 'Idle'}`);
+  });
+  return el;
+}
+
+// HUD
+function renderHUD() {
+  const list = agentList;
+  agents.forEach(ag => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <div class="dot" style="background:${ag.color}"></div>
+      <span class="name">${ag.name} <small>(${ag.role})</small></span>
+      <span class="status">${ag.task || 'Idle'}</span>
+    `;
+    list.appendChild(li);
+  });
+}
+
+// Building info panel
+function showBuildingInfo(dom) {
+  bTitle.textContent = dom.name;
+  bTitle.style.color = dom.accent;
+  bDesc.textContent = dom.description;
+  bProjects.innerHTML = dom.projects.map(p => `<span class="project-tag">${p}</span>`).join('');
+  buildingInfo.style.display = 'block';
+}
+function hideBuildingInfo() {
+  buildingInfo.style.display = 'none';
+}
+
+// Init
+function init() {
+  // create floor tiles (optional)
+  // for demo we skip large grid, just show buildings floating
+  // Buildings
+  domains.forEach(dom => world.appendChild(createBuilding(dom)));
+  // Agents
+  agents.forEach(ag => world.appendChild(createAgent(ag)));
+  // HUD
+  renderHUD();
+}
+init();
+</script>
+</body>
+</html>

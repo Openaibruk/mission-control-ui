@@ -1,0 +1,33 @@
+{
+  "business": {
+    "date": "2026-03-23",
+    "revenue": "73628.68",
+    "orders": 6,
+    "aov": 12271.446666666665,
+    "cp1": "12263.18",
+    "cp1_margin": "16.66%",
+    "cp2": "8238.18",
+    "cp2_margin": "11.19%",
+    "cogs": "61365.50",
+    "warehouse": "2415.00",
+    "delivery": "1610.00"
+  },
+  "news": [
+    {
+      "title": "Ethiopia's Digital Transformation Accelerates with New Tech Hubs",
+      "source": "The Reporter",
+      "date": "2026-03-24",
+      "url": "#",
+      "summary": "Government announces plan to establish 10 new technology hubs across major cities.",
+      "category": "Tech"
+    },
+    {
+      "title": "ChipChip Gross Margin Improved: -45% → -17% in one month",
+      "source": "Internal",
+      "date": "2026-03-24",
+      "url": "#",
+      "summary": "Asset-light orchestration model showing rapid margin improvement.",
+      "category": "Internal"
+    }
+  ]
+}
