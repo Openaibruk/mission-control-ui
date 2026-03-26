@@ -1,0 +1,37 @@
+﻿1. Name 
+(Short answer)
+2. Phone Number
+ (Short answer)
+3. Which area do you usually order from?
+ (Short answer)
+4. Currently we deliver orders to your home. If delivery fees increase, would you still prefer home delivery?
+* Yes
+* No
+* Depends on the delivery fee
+
+5. We are planning to open nearby Pick-Up Hubs where you can collect your order yourself. Would you use this option?
+   * Yes
+   * No
+   * Maybe
+
+6. If the Pick-Up Hub option is available with lower or no delivery fee, which option would you prefer?
+      * Home delivery with delivery fee
+      * Pick up from nearby hub with low / no fee
+      * Both options are fine
+
+7. How far are you willing to walk or travel to collect your order from a Pick-Up Hub?
+         * 5 minutes
+         * 10 minutes
+         * 15 minutes
+         * I prefer home delivery only[a][b]
+
+8. Do you have any suggestions or concerns about delivery fees or Pick-Up Hubs?
+ (Short answer)
+[c][d][e]
+
+
+[a]Do the out put from this question use us ? since we use distance logic ( km ). but, we will just get time duration from this question.
+[b]We can make it Km
+[c]Add e-mail and you can publish the form. i have no other questions.
+[d]👍
+[e]👍

@@ -1,0 +1,55 @@
+product_id,product_name,measuring_unit,sku,group_price,Minimum Kg 
+87bf0a21-0dc3-4cf5-ac27-cce1e971511f,Butter,Kilogram,,720,1 kg
+8c7cc9a4-2782-4e93-bd34-ab98bb31cb12,Cheese 500g,500 Gram,,220,1 kg
+d9bed7fc-166d-45a4-aef2-96602c6b9fd4,Afro EIIDE Exercise Book ,piece,,49,1 Pack 
+4d510235-51e0-4b50-b276-c96b42412f34,Yes Water ,piece,1 Liter,24,1 pack 
+4d510235-51e0-4b50-b276-c96b42412f34,Yes Water ,piece,500 Mililiter ,15.5,1 pack 
+4d510235-51e0-4b50-b276-c96b42412f34,Yes Water ,piece,2 Liter,29,1 pack 
+73e08675-ca0d-47a7-b147-27c8f81c9617,Yes Water (Pack),piece,300 Mililiter,144,1 pack 
+73e08675-ca0d-47a7-b147-27c8f81c9617,Yes Water (Pack),piece,2 Liter,168,1 pack 
+73e08675-ca0d-47a7-b147-27c8f81c9617,Yes Water (Pack),piece,500 Milliliter,186,1 pack 
+73e08675-ca0d-47a7-b147-27c8f81c9617,Yes Water (Pack),piece,1 Liter,144,1 pack 
+bbe9dc01-10ad-4db6-95de-aa0e8e4bfc36,Dania Basmati Rice ,5 Kilogram,,887,1 pcs
+e30d26df-3439-401d-b249-648f9bbc29a9,Duru Soap,piece,,188,1 pcs
+b63daa5d-3df1-4d3a-a9e1-7d94d26f65ae,Foreign’s egg,10 piece,,199,1 pcs
+8abdfb60-6dc1-459d-b5b3-a4553f2c9bd7,Kukulu package ,piece,,1110,1 pcs
+41ee4d44-2957-4a5b-b2fb-8b5ed9472e11,Mix Package,piece,,1697,1 pcs
+1e07e110-da3a-45fa-afd2-85d7bda410fd,Safa Ketchup ,piece,,190,1 pcs
+853e2b0c-8a78-4ce0-b3b7-e08a4232e68e,Salsa Tomato Paste (400g),piece,,167,1 pcs
+364f8f47-2d26-4e26-9fc4-2ed4bde8d9b7,Sheno Lega Ghee ,piece,,737,1 pcs
+40d92104-9951-45c7-ad95-cd821c03a107,Special Defo package ,piece,,910,1 pcs
+244c0de0-3059-45ca-a965-5c4a94b5a505,Yummy Crunchy Peanut Butter ,500 Gram,,304,1 pcs
+39a5a5ba-f6ff-437a-b224-851dbe6aad87,12 piece Chicken,Kilogram,,680,1kg
+f784a0aa-584c-400f-9d89-35211b9db6a8,Bourbon Cream Biscut ,piece,,52,2 pcs
+f4edb8e0-7772-4666-abc3-e6a591f7770c,Girum Cinnamon Tea Bag ,piece,,87,2 pcs
+54787c42-aa64-4675-ba81-972b5a52035c,Rosa Pasta ,piece,,90,2 pcs
+c79414b1-ce0c-4956-8e34-92a22e8f9e51,Rose Laundry Soap (250g),piece,,69,2 pcs
+bf83d6ff-3d57-4dfc-97ea-40bd66a82c33,Shola Table butter,piece,,199,2 pcs
+c85556ad-4dc1-468c-a53f-b71bc3d1101a,Simba Tea Bag,Pack,,66,2 pcs
+4c3a0d31-09d9-476a-85a2-0ae5b4c0367e,Sun Chips (30g),piece,Paprika ,15,2 pcs
+4c3a0d31-09d9-476a-85a2-0ae5b4c0367e,Sun Chips (30g),piece,Tomato,22,2 pcs
+4c3a0d31-09d9-476a-85a2-0ae5b4c0367e,Sun Chips (30g),piece,Habesha Spice ,20,2 pcs
+4c3a0d31-09d9-476a-85a2-0ae5b4c0367e,Sun Chips (30g),piece,#2596be,19,2 pcs
+4c3a0d31-09d9-476a-85a2-0ae5b4c0367e,Sun Chips (30g),piece,#D1001F,19,2 pcs
+1c757ac3-7029-4eda-9167-b736374a11fd,Tea Spice,80 Gram,,148,2 pcs
+9cefc0cf-48e2-4294-b208-a76da6155937,Wakene 1st Level Flour,Kilogram,,109,2 pcs
+ed169ca6-4d1c-479f-98ad-c3b22a873ab1,Wush Wush Tea ,piece,,32,2 pcs
+5a2159dd-8974-479f-91ca-d30c42a83acb,Corn Starch ,Kilogram,,92,2pcs
+2d71cc85-ed4d-4481-a6c2-dd8bdac5d33c,Crown Powder Detergent (180gm),piece,,49,2pcs
+385ef3b6-7eaa-4073-adb2-a3da8623125e,Diana Soap (80gm),piece,,36,2pcs
+40911cca-b1ab-4d16-a26b-09f9889aadfd,Happy Toilet Paper,piece,,39,2pcs
+04d6ce7d-b62c-4f75-8d31-9a4691f08e5b,Kakao Powder ,piece,,259,2pcs
+d0b6ae9a-c85a-4766-9528-2d94e17e2089,MIA Pasta,piece,,91,2pcs
+65e9f2b0-5baf-444a-bf70-7e91fa51b284,Juliet Biscuit ,piece,,14,3 pcs
+9ebb9b55-8875-4019-bb47-954a51eb5252,Knick Knack,piece,,24,3 pcs
+99b0bd22-9b21-4f06-9e46-62a4f7ba7d1b,Zion biscuit,piece,,11,3 pcs 
+e5e97d8f-5b04-433c-968c-0d1ef70055ea,Zion biscuit,piece,,6,3 pcs 
+5f0da5f8-b445-4218-8b7a-b30920a300ac,Happy Toilet Tissue ,piece,,38,3pcs
+53a27306-f65a-4e53-950b-790f7414fefd,Moon Cinnamon Biscuit  ,piece,,16,3pcs
+030b4522-e346-460a-8d83-17806c1d085d,Moon Coffee Biscuit ,piece,,16,3pcs
+5041b475-d138-4170-8d79-d6530a272580,Moon Strawberry Biscuit ,piece,,16,3pcs
+615e62b7-e264-4e5a-b206-01a43193b58a,Moon Vanilla Biscuit ,piece,,16,3pcs
+9795be32-9e90-48dd-823f-2608518f4df1,Simba Tea Bag (Thyme),Pack,,65,3pcs
+1bc5f51f-eea1-4e91-8053-0b629efc8852,Simba Tomato Paste ,piece,,20,3pcs
+7a9b14f1-cfd9-448b-a646-69d4dbcb0ae7,My Kishin / 3 Pieces ,piece,,27,4 pcs
+bdad2cc7-b95a-4e5b-b251-67a1114cf7be,Crown Powder Detergent (30g),piece,,15,5pcs

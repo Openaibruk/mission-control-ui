@@ -1,0 +1,238 @@
+﻿PICK-UP HUB PROJECT DOCUMENT
+                   ChipChip  Super Group Leader (SGL) Model Expansion
+
+
+Project Objective
+To operationalize and scale the Pick-Up Leader model by:
+* Implementing structured commission system
+* Optimizing crate & Scale investment & logistics
+* Defining clear operational responsibilities
+* Improving app delivery flow
+* Reducing operational cost
+* Increasing bulk order handling efficiency
+
+Potential Pick-Up Hubs
+   * Total identified potential hubs: 14
+   * 7 people have signed the contract 
+   * Agreement link https://docs.google.com/document/d/12drqzDyvoJhx1VaHd0GKRx4tPHnjHSRwkf-ARGTcuIY/edit?usp=sharing 
+Legal & Backup Status
+   *  1 person have provided cash backup (amount:  10,000 Birr each)
+   * 4 people provided government-employed guarantors as backup
+This strengthens financial accountability and operational trust
+
+
+
+
+
+
+
+Commission Structure
+
+  
+Dev Team to prepare:
+   * SGL incentive dashboard
+   * Internal commission tracking tool
+
+
+Volume-based compensation tiers (to finalize):
+
+
+Product Type 
+	
+
+	Quantity
+	%
+	Gram   Discrepancy
+	White Cabbage, 
+	
+
+13kg
+	
+
+	Potato
+	2 kg
+	
+
+	Tomato
+	 1kg
+	
+
+	Carrot 
+	1kg
+	
+
+	Onion
+	 1kg
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+Responsible: Getalem, Bruk & Aman
+
+
+
+
+ Create Distribution for Pick up leaders 
+
+Option A
+If we buy creates for each Pick up hubs based on their average orders & Drivers 
+  
+
+Option B
+If we use current creates drop off the creates while delivery and collect the next day
+  
+We choose Option A because it will be 1 time cost. We can save 114,525 Birr also If there will be any damage it will be compensated with their own. 
+
+Option A Cost - Driver ( Rental + Fuel Cost ) + Av kg Create cost ( Drivers & Pickups)
+  Create cost = 47507.72 
+  Driver daily cost = 12225
+   Driver Monthly cost = 366750
+Total= 426,483 Birr
+Base cost = 366,750
+
+
+Option B Cost - Driver ( Rental + Fuel Cost + Collection fuel cost )
+ Rental Monthly cost = 240,000
+ First rout Fuel Monthly cost  = 126,750
+  Collection Fuel Monthly cost  = 126,750
+Total= 493,500Birr
+
+
+- First Day we will send them creates based on there order 
+
+
+
+
+
+
+Scale Distribution for Pick up leaders 
+
+
+Option A –  Buy the small Digital scale for 14 hubs = 105,000 Birr
+ Option B – Buy the small Digital scale for our 4 drivers = 30,000 Birr
+We choose : Option B
+Result:
+      * 75,000 Birr will be saved, The drivers will measure the full kg themselves. 
+
+
+
+
+Logistics Structure
+      * 3 to 4 Dolphin cars
+      * With 2 rout each 
+      * Total: 6 routes will fully cover 
+Capacity:
+      * 1,000 – 1,500 kg per vehicle
+      * Backup larger car for high-volume days 
+Monthly Cost : 366,750
+Current Av Monthly kg : 35630.79
+Current Av Cost per Kg: 10.29306395
+We need to get Av 200 daily kg from each 
+
+
+
+
+
+
+
+Routes structured across 4 area clusters.
+Pick up Hub
+	Location
+	Driver
+	Nunu Walelegn
+	Egzeher Ab
+	Driver 1
+
+
+	Amanuel Mulugeta
+	Kotebe University
+	Abrham Mengesha
+	Gerji Selam Sefer
+	Robel
+	Abado Condominium (Cherkos)
+	Eyobe Habtamu Ewnetu
+	Ayer Tena
+	Driver 2
+	Ibrahim Berdedin Mohammed
+	Anfo 105
+	Hibist Tilahun
+	Asko Gebreal
+	Fozia Seid
+	Goro School
+	Driver 3
+	Azmeraw
+	Bole Arabsa
+	Genet Seife
+	Ayat 03 Condominium
+	Enkutatash Derje
+	Koye Abo Mazoreya
+	Driver 4
+
+	Momina Ali
+	Tulu Dimtu
+	Mulu Abeje
+	Bulbula Meklakiya
+	
+
+
+
+
+
+
+
+
+
+App & Delivery Flow
+Two delivery options:
+      1. Pick-Up Hub (Free)
+      * 14 locations shown
+
+         2. Drop-Off Delivery (Paid)
+         * Applies to group leader & individual
+Area orders:
+         * Warehouse prepares PDF
+PDF: Prepare only the area orders the SGL orders are already on there app ( First page Full KG For each item & Second Page Will list all information group leader name, orders….)
+
+         * Sent to drivers
+    Make sure the PDF and Products are similar 
+
+         * Delivered to SGLs
+    Measure the quantities of each orders for the SGL
+
+         * Total KG shared earlier through Telegram groups 
+    Why? To be prepared there space for morning order 
+Note for Dev team:  If customer chooses Pick-Up → No plastic
+Area orders will have limits based on the pick up capacity[a][b][c][d]
+
+Responsibility Framework
+            * Quality issue → Warehouse
+            * Quantity missing → Logistics
+            * Training → Drivers & Pick-Up Leaders
+            * Return handling → During receiving
+            * Add quantity limit per hub
+            * Delivery fee option (Nati reviewing)
+
+Next Step 
+
+  
+[a]For this feature it will take more time to implement how do you think we should go about it?
+[b]more than 2 weeks ?
+or 3 weeks ?
+[c]Will let you know tomorrow after a meeting estimated yes that would be it
+[d]👍

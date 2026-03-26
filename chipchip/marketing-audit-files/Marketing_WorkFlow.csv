@@ -1,0 +1,12 @@
+,,,
+Tracked Team member ,,,Observation 
+Dagim ,,Abel,"While tracking Abel’s work, we observed that the system records every small action separately. For example, when he works on designs and uses AI tools, each search or generation appears as a different task."
+Abel ,,,"It would be easier if similar actions could be summarized, for example: “AI Design Generation – Total Time: XX minutes”, with the detailed steps shown below if needed."
+,,,
+,,Dagim,"Please make sure the system continues counting time properly after lunch breaks, so tracking resumes accurately."
+,,,
+,,General feedback ,"The system shows detailed steps, which is good. However, for Team Leads it would be easier to see a general summary of total work per task instead of repeated similar tasks."
+,,,"When tasks are grouped by category, similar tasks appear many times with slightly different names. This makes it difficult to clearly see which task took the most time. (Observed on both Abel and Dagim.)"
+,,,It would be helpful to sort tasks based on time sequence (Occurred) so the workflow can be followed step by step.
+,,,"Add a time filter option in “Seen on”, not only date, to allow more detailed time analysis."
+,,,"We also need a way to track working hours for offline meetings, since offline discussions are currently not reflected in the system."

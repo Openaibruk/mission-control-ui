@@ -1,0 +1,230 @@
+Product Standards Red Onion
+Comprehensive Grading & QC Protocol (Phase 1-3)
+
+TEMPLATE INSTRUCTIONS
+How to Use
+Management Note
+This template aligns Quality Control with Operations. Adherence to these percentages is mandatory for export and retail compliance. Deviations must be flagged to the Facility Manager immediately.
+•
+Inputs: Type values into
+•
+Photos: Replace placeholders with real-time inspection photos.
+•
+Flowcharts: Follow the arrows for operational sequence.
+•
+Sign-off: Suppliers must sign each phase before move-to-pack.
+
+Phase 1
+Single Item Grading & Specifications
+
+SINGLE ITEM SPECS
+Size (Diameter)
+> 7.0 cm
+Weight Range
+200g - 350g
+Color
+Deep Purple / Dark Red Glossy
+Texture
+Extremely Firm / Crisp
+Ripeness
+Fully Cured / Tight Neck
+Damage Type
+Zero (No mechanical or fungal)
+Target: Premium retail and export markets. Bulbs must be globular and symmetrical.
+
+GRADE B & C COMPARISON
+Commercial (B)
+Processing (C)
+•
+Size: 5.0 - 6.9 cm | Weight: 150g-200g
+•
+Color: Standard Purple | Firmness: Firm
+•
+Damage: Minor skin scratches (Edible)
+[Placeholder: Grade C Photo]
+•
+Size: < 5cm or > 9cm | Weight: < 150g
+•
+Color: Light Purple | Firmness: Medium
+•
+Damage: Noticeable skin peeling (Edible)
+
+RIPEN & DAMAGE CLASSIFICATION
+Rejection Criteria
+The following items must be removed from the batch immediately to prevent contamination.
+Type
+Classification
+Action
+Sprouting
+Ripen / Over-mature
+Reject Pack
+Soft Rot
+Non-Edible
+Discard
+Black Mold
+Fungal Damage
+Discard
+Deep Cuts
+Critical Mechanical
+Processing
+
+PHASE 1: ITEM INSPECTION TABLE
+Grading Category
+Color Code
+Sample Count (Units)
+Observed Damage Type
+QC Notes
+Grade A
+A
+Qty
+None
+...
+Grade B
+B
+Qty
+Surface Scars
+...
+Grade C
+C
+Qty
+Skin Peeling
+...
+Damaged
+X
+Qty
+Type
+...
+QC Inspector Signature
+Supplier Representative Sign-off
+
+Phase 2
+Full Truck / Bulk Grading Protocol
+
+BULK ACCEPTABILITY THRESHOLDS
+A Batch
+B Batch
+C Batch
+•
+≥ 80% Grade A
+•
+10-15% Grade B
+•
+≤ 5% Grade C
+•
+≤ 3% Damaged
+•
+≥ 80% Grade B
+•
+10% Grade A
+•
+10% Grade C
+•
+≤ 5% Damaged
+•
+≥ 80% Grade C
+•
+10% Grade B
+•
+10% Small / Rippen
+•
+≤ 7% Damaged
+
+QC BULK PROCESS FLOW
+1. Receiving
+2. Grading
+3. Damage Check
+4. Packing
+5. Warehouse
+
+PHASE 2: BULK DATA ENTRY
+Category
+Weight (KG)
+Actual %
+Threshold Status
+Grade A
+KG
+%
+[PASS / FAIL]
+Grade B
+KG
+%
+[PASS / FAIL]
+Grade C
+KG
+%
+[PASS / FAIL]
+Damaged
+KG
+%
+[PASS / FAIL]
+Warehouse Manager
+Supplier Acceptance
+Batch ID:
+Total Weight:
+Total Quantity:
+
+
+Phase 3
+1 KG Packing & Per Unit Grading
+
+PACKING MIX RULES (PER 1 KG)
+*Tolerance level for packing allows for slight overlap to ensure weight consistency.
+A Order Mix
+80 : 10 : 10
+80% A | 10% B | 10% C
+B Order Mix
+80 : 10 : 10
+80% B | 10% A | 10% C
+C Order Mix
+80 : 10 : 10
+80% C | 10% B | 10% A
+
+PACKING QC PROCESS
+1. Prep (1KG)
+2. Mix Grading
+3. Damage Check
+4. Labeling
+5. Outgoing
+
+PHASE 3: PACKING INSPECTION
+Component
+Target (g)
+Actual (g)
+Result
+Primary Grade (80%)
+800g
+___g
+[OK]
+Secondary Grade (10%)
+100g
+___g
+[OK]
+Tertiary Grade (10%)
+100g
+___g
+[OK]
+Order Type:
+Package Weight:
+Deviation Notes:
+
+PROTOCOL FINALIZATION
+Management Certification
+I hereby certify that the red onion batch described in this document has been graded and packed according to Phase 1, 2, and 3 standards. All non-edible damages have been removed.
+Operations Director Signature
+Date: ____/____/202X
+QC Head Signature
+Date: ____/____/202X
+Supplier Representative
+Date: ____/____/202X
+
+IMAGE SOURCES
+https://5.imimg.com/data5/IOS/Default/2025/6/516934300/JB/HG/JQ/128158222/product-jpeg-500x500.jpeg
+Source: www.indiamart.com
+https://storage.googleapis.com/images-prs-prd-c7e7986.prs.prd.v8.commerce.mi9cloud.com/product-images/zoom/00000000040822_1
+Source: www.thefreshgrocer.com
+https://gardenplannerwebsites.azureedge.net/blog/white-rot-garlic-2-2x.jpg
+Source: www.growveg.com.au
+https://s.alicdn.com/@sc02/kf/H636689f4a18c41bf8e89398059b673fex.jpg
+Source: spice.alibaba.com
+https://mullacoonline.com/cdn/shop/products/Red-Onion-Packet-1kg-Fresh-Vegetables.jpg?v=1744290863
+Source: mullacoonline.com

@@ -1,0 +1,167 @@
+ChipChip KPI Booklet
+Quarterly Target View | Fiscal Strategy & Operational Excellence
+Q1 — Q4 TARGETS
+
+Cost Reduction
+Targets aimed at lean operations and expense elimination.
+Growth
+Expansion of volume and revenue across B2B and B2B2C.
+Margin / Mix
+Profitability protection and optimal inventory distribution.
+Finance Truth
+Reconciled data points and structural financial reviews.
+Legend & Strategic Overview
+
+Focus on reducing Refuel Money by 20% in Q4 through strict route optimization.
+KPI
+Objective
+Q1
+Q2
+Q3
+Q4
+Car Rental
+Charge per order
+-15%
+-15%
+-15%
+-15%
+Refuel Money
+Route discipline
+-15%
+-15%
+-15%
+-20%
+Assistant Payment
+Efficiency
+-15%
+-15%
+-15%
+-15%
+Operations: Logistics & Route Discipline
+
+KPI
+Objective
+Q1
+Q2
+Warehouse Rent
+Resize after Q1
+-15%
+-10%
+Warehouse Personnel
+Scale with B2C
+-15%
+-10%
+Daily Labour
+Included in CP1
+-15%
+-5%
+Warehouse OT
+Planned capacity
+-15%
+-5%
+Operations: Warehouse & Capacity Control
+
+KPI Category
+Q1
+Q2
+Q3
+Q4
+B2C Purchase Mix
+32%
+45%
+50%
+60%
+B2B Restaurant
+44%
+45%
+55%
+65%
+B2B Hotel Mix
+50%
+55%
+60%
+70%
+Damage on Arrival
+-15%
+-20%
+-20%
+-20%
+Supply & Sourcing: Quality & Mix Targets
+
+Marketing Expense Reduction Target: Q1 (-35%) → Q4 (-5%) as organic growth takes over.
+Marketing: Strategic Migration Growth
+
+KPI
+Objective
+Q1
+Q2
+Q4
+Farm Coordinator
+Grant-financed
+-15%
+-15%
+-15%
+Vehicle for Visit
+Grant-financed
+-15%
+-20%
+-20%
+Farm Development
+ENABLE only
+-35%
+-25%
+-15%
+Impact & Grants: Grant-Financed Ops
+
+Fixed Salary
+Headcount discipline target: -10% (Q1-Q2) to -5% (Q3-Q4).
+Office Utilities
+Operational control target: -15% (Q1) tapering to -5% (Q4).
+HR: Fixed Cost & Utility Management
+
+Metric
+Objective
+Q1 Target
+Petty Cash
+Zero leakage
+-15%
+Taxes
+Structural review
+-20%
+Other Costs
+Eliminate
+-70%
+Bank Fees
+Bulk negotiation
+-5%
+Finance: Reconciled Costs & Zero Leakage
+
+Target Growth %
+Channel
+Q1
+Q2
+Q4
+B2B Restaurants
++30%
++20%
++10%
+B2B Hotel (Pilot)
++30%
++35%
++35%
+B2B Strategy: Priority Revenue Channels
+
+Major server cost optimization planned for Q2 (-25% reduction).
+KPI
+Objective
+Q1
+Q2
+Tech Costs
+Logistics vs Server
+-15%
+-25%
+Packages
+Reduce B2C calls
+-15%
+-20%
+Technology: Cost Separation & Efficiency

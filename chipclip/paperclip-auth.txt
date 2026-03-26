@@ -1,0 +1,9 @@
+# Paperclip Auth Token for ChipChip
+# Generated: 2026-03-17T02:32:16Z
+# Agent: Bruk (CEO)
+# Company ID: 207bd501-9575-42c1-bc53-4ee5c123e274
+
+export PAPERCLIP_API_URL='http://127.0.0.1:3100'
+export PAPERCLIP_COMPANY_ID='207bd501-9575-42c1-bc53-4ee5c123e274'
+export PAPERCLIP_AGENT_ID='367a5f22-2759-4c74-9ae0-4d60566bed4a'
+export PAPERCLIP_API_KEY='pcp_b0d3dd0d8267ba2e2f75af72486f2461fc57b15277dc144a'

@@ -1,0 +1,136 @@
+﻿Standard Operating Procedure (SOP)
+
+
+Department: Logistics
+
+
+Purpose
+This SOP defines a clear and accountable delivery execution process from order assignment to successful delivery completion. It focuses on driver responsibility, logistics monitoring, penalties for delays, and incentives for good performance to ensure on-time door-to-door delivery.
+
+
+1. Scope
+This SOP applies to:
+* All delivery vehicles (owned or rented)
+* All drivers (permanent, freelance, or third-party)
+* Logistics staff responsible for delivery execution and monitoring
+
+
+This SOP covers the delivery process *from assigned order to completed delivery only*
+
+
+2. Roles & Responsibilities
+
+
+2.1 Logistics – Order Assignment
+* Responsible Person: Solomon Kassahun
+* Ensure orders are assigned on time
+* Share complete delivery details with drivers including arrival time
+* Confirm driver availability before dispatch
+
+
+2.2 Logistics – Monitoring & Reporting
+* Responsible Person: Ermyas Semahegn
+* Monitor driver status throughout delivery
+* Track departure, transit, and arrival times
+* Record any delays or violations
+* Prepare delivery status and incident reports
+* Assign or send an additional vehicle when the previous driver is not delivering properly or is causing delays
+
+
+2.3 Driver Responsibilities
+* Accept assigned order on time
+* Depart without delay
+* Follow assigned route and delivery instructions
+* Keep phone reachable at all times
+* Share status updates as required
+* Report immediately to Logistics and Customer Service departments when any issue occurs during delivery
+* Deliver goods and confirm completion
+
+
+
+
+3. Delivery Process Flow
+
+
+* Order is assigned by logistics on time
+* Driver confirms and departs
+* Driver provides status updates during transit
+* Logistics monitors delivery progress
+* Goods delivered to customer
+* Delivery status is closed and reported
+
+
+4. Driver Negligence Definition
+
+
+4.1 Driver-side delay includes:
+* Late departure without approval
+* Ignoring assigned route
+* Personal errands during delivery
+* Phone switched off or unreachable
+* False status reporting
+* Failure to follow delivery instructions
+
+
+4.2 Driver Tracking & Monitoring
+* Drivers must share live location or regular check-ins
+* Status updates required at:
+* Departure
+* En route
+* Arrival
+* Unreported stoppage over agreed time is flagged
+
+
+5. Driver Delay Handling Process (At Loading & Departure Stage)
+This process applies when the driver arrives late to load, delays loading, or fails to depart on time after loading.
+1. Logistics verifies driver arrival and loading time
+2. Driver reports immediately if he has any delay issue
+3. Any delay at loading or departure is recorded
+4. Driver provides the reason for the delay
+5. Logistics reviews and classifies the delay
+6. Corrective action or penalty is applied
+
+
+Delays are classified as:
+- Justified (traffic, accident, weather)
+- Unjustified (negligence, misconduct)
+
+
+6. Penalty & Disciplinary Framework and Penalty Levels(Driver)
+
+
+1st Offense – Verbal Warning
+- Verbal warning issued
+- Recorded in driver log
+
+
+2nd Offense – Written Warning + 500 Birr Penalty
+- Written warning issued
+- 500 Birr deducted from payment
+
+
+3rd Offense – Full Day Salary Deduction
+- Full day salary deducted
+- Final warning issued
+
+
+4th Offense – Termination
+- Contract terminated
+- Driver removed from active delivery list
+
+
+Penalties apply only for *unjustified delays or negligence*
+Penalties apply only after investigation
+- Evidence must be documented
+- Driver has the right to explain
+
+
+7. Driver Incentives
+
+
+- Drivers with *zero late deliveries* in a working day
+- No return due to "couldn’t reach on time"
+- Receive *50 Birr daily incentive*
+
+
+Incentives are reviewed and approved by logistics management.

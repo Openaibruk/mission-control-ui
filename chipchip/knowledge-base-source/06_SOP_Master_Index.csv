@@ -1,0 +1,19 @@
+SOP ID,Department,SOP Category,SOP Title,Owner,Reviewer,Status,Effective Date,Last Updated,Next Review Date,Criticality,Training Required,Next Update,LINK
+WH-001,Warehouse,Process,Warehouse Receiving,Bruk,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",Warehouse Receiving SOP (WH-001)
+OPS-001,OPS,Work Instruction,"MASTER PRODUCT QUALITY, GATEKEEPING & ACCOUNTABILITY DOCTRINE",Aman,Bruk,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15","MASTER PRODUCT QUALITY, GATEKEEPING & ACCOUNTABILITY DOCTRINE"
+SRC-001,Sourcing,Process,SOURCING & PRE-ARRIVAL CONTROL GATE 0,Aman,Bruk,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",GATE 0- SOURCING & PRE-ARRIVAL CONTROL SOP (SRC-001)
+SRC-002,Sourcing,Process,SUPPLIER TRANSPORT & PRE-QC DAMAGE GATE 1,Aman,Bruk,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",GATE 1- SUPPLIER TRANSPORT & PRE-QC DAMAGE  SOP(SRC-002)
+SRC-003,Sourcing,Process,"QUALITY CONTROL – SAMPLING, ACCEPT / REJECT GATE 2 ",Aman,Bruk,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15","GATE 2 - QUALITY CONTROL – SAMPLING, ACCEPT / REJECT SOP(SRC-003)"
+SRC-004,Sourcing,Process,"WAREHOUSE RECEIPT, GRADING & STORAGE GATE 3&4",Aman,Bruk,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15","GATE 3&4- WAREHOUSE RECEIPT, GRADING & STORAGE  SOP(SRC-003)"
+SRC-005,Sourcing,Process,PACKING & ORDER FULFILLMENT GATE 5,Aman,Bruk,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",GATE 5- PACKING & ORDER FULFILLMENT SOP(SRC-005)
+CS-001,Customer Service,Guideline,SOP — CUSTOMER COMPLAINT MANAGEMENT,Betty,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",SOP — CUSTOMER COMPLAINT MANAGEMENT
+CS-002,Customer Service,Work Instruction,ORDER NOT DELIVERED (ON EXPECTED DATE) SOP,Betty,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",ORDER NOT DELIVERED (ON EXPECTED DATE) SOP(CS-001)
+CS-003,Customer Service,Work Instruction,ORDER QUANTITY MISSING,Betty,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",ORDER QUANTITY MISSING SOP (CS-002)
+CS-004,Customer Service,Work Instruction,PRODUCT QUALITY COMPLAINT SOP,Betty,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",PRODUCT QUALITY COMPLAINT SOP(CS-003)
+CS-005,Customer Service,Work Instruction,WRONG ITEM SENT,Betty,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",WRONG ITEM SENT SOP (CS-004)
+LOG-001,Logistics,Guideline,"LOGISTICS, DELIVERY & DRIVER ACCOUNTABILITY",Solomon,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15","LOGISTICS, DELIVERY & DRIVER ACCOUNTABILITY"
+LOG-002,Logistics,Process,WAREHOUSE ARRIVAL & LOADING SOP ,Solomon,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",WAREHOUSE ARRIVAL & LOADING SOP (LOG-002)
+LOG-003,Logistics,Process,CUSTOMER COMMUNICATION SOP,Solomon,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",CUSTOMER COMMUNICATION SOP(LOG-003)
+LOG-004,Logistics,Process,DELIVERY & HANDOVER SOP,Solomon,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",DELIVERY & HANDOVER SOP(LOG-004)
+LOG-005,Logistics,Process,RETURNS & COMPLAINT HANDLING (CRITICAL),Solomon,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",RETURNS & COMPLAINT HANDLING (CRITICAL) ( LOG-005)
+LOG-006,Logistics,Process,HANDLING UPSET CUSTOMERS,Solomon,Addis,Under Review,2025 February 15,2025 February 15,Quarterly,High,Yes,"Thursday, May 15",HANDLING UPSET CUSTOMERS (LOG-006)

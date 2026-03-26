@@ -1,0 +1,276 @@
+﻿________________
+
+
+INTERNAL PROCESS & ACCOUNTABILITY AGREEMENT
+Meki Supplier Consignment Pilot – ChipChip
+Effective Date: __________
+Pilot Duration: __________
+________________
+
+
+1. Objective
+To define clear operational ownership, accountability, and financial responsibility for the Meki Tomato Consignment Model.
+All departments agree that:
+* Inventory belongs to Supplier until sold.
+* Damage must be categorized accurately.
+* No damage may remain “unassigned”.
+* All communication must be documented.
+________________
+
+
+2. Process Flow & Department Ownership
+________________
+
+
+STAGE 1 — Price Notification & Bidding
+Owner: App Team
+Support: Sourcing Team
+Process:
+1. Supplier sends:
+   * Quantity
+   * Grade expectation
+   * Base price
+   * Dispatch timing
+2. App Team:
+   * Logs price
+   * Benchmarks against:
+      * Sunday market
+      * Local shop prices
+      * ChipChip historical data
+3. Sourcing Team:
+   * Compares with other suppliers
+   * Confirms winning supplier
+No dispatch without confirmation.
+Failure in benchmarking or incorrect price approval → App Team & Sourcing accountable.
+________________
+
+
+STAGE 2 — Transport to Warehouse
+Owner: Supplier
+Internal Monitoring: Warehouse
+Supplier responsible for transport until warehouse arrival.
+Warehouse must:
+* Log arrival time
+* Record visible transport damage
+If internal assistance in transport is provided:
+→ No liability transfer unless agreed in writing.
+________________
+
+
+STAGE 3 — Arrival & QC Grading
+Owner: QC Team
+Oversight: Warehouse Supervisor
+QC must:
+* Record total received KG
+* Record arrival damage %
+* Split into:
+   * Grade A
+   * Grade B
+   * Edible Damage
+   * Waste
+* Upload photos
+* Declare shelf life (24hr / 48hr)
+* Communicate grading completion timeline
+If grading delay occurs without notification and damage increases:
+→ QC accountable.
+Arrival damage must be frozen and cannot be modified later.
+________________
+
+
+STAGE 4 — Inventory & Stock Control
+Owner: Warehouse
+Warehouse must:
+* Physically separate consignment stock
+* Apply FIFO
+* Track batch ID
+* Maintain stock accuracy
+If stock mismatch causes unpicked orders:
+→ Warehouse accountable.
+________________
+
+
+STAGE 5 — Pricing & Run Rate Management
+Owner: App Team
+App Team must:
+* Monitor daily run rate
+* Compare with:
+   * Sunday market
+   * Local shop price
+   * ChipChip trends
+* Notify supplier immediately if movement is slow
+* Document notification timestamp
+If supplier refuses price adjustment:
+→ Supplier carries expiry risk.
+If App Team fails to notify and spoilage occurs:
+→ App Team accountable.
+________________
+
+
+STAGE 6 — Marketing
+Owner: Marketing Team
+Responsibilities:
+* SMS campaigns
+* Push notifications
+* Banner placements
+* Store promotion
+Marketing supports sales but does not guarantee volume.
+Failure to execute approved campaign → Marketing accountable internally.
+________________
+
+
+STAGE 7 — Order Processing & Fulfillment
+Owner: Warehouse
+Support: QC
+Warehouse must:
+* Pick correct batch
+* Check visual quality before dispatch
+* Avoid sending damaged products
+If damaged product sent to customer:
+→ Warehouse accountable for compensation.
+________________
+
+
+STAGE 8 — Last-Mile Delivery
+Owner: Logistics
+Logistics must:
+* Deliver on time
+* Handle goods carefully
+* Record proof of delivery code and quantity and quality approval at the spot
+If product damaged during delivery:
+→ Logistics accountable.
+________________
+
+
+STAGE 9 — Returns Handling
+Owner: QC
+Support: Warehouse
+All returns must be inspected immediately.
+QC must:
+1. Record batch number
+2. Record reason code
+3. Inspect condition
+4. Categorize:
+   * Resellable
+   * Edible
+   * Waste
+5. Assign accountability
+No returned product re-enters inventory without QC tagging.
+________________
+
+
+Return Accountability Matrix
+Cause
+	Responsible
+	Customer unavailable
+	Customer
+	Wrong address
+	Customer
+	Driver mishandling
+	Logistics
+	Late delivery
+	Logistics
+	Warehouse packing issue
+	Warehouse
+	App routing error
+	dev Team
+	No unassigned returns allowed.
+________________
+
+
+STAGE 10 — Financial Processing & Settlement
+Owner: App Team
+Support: Finance
+App Team must:
+* Close batch after selling window
+* Generate batch report:
+   * Opening stock
+   * Sold
+   * Return damage
+   * Expiry
+   * Margin
+* Send settlement report to supplier
+Customers pay upfront.
+Settlement occurs after delivery completion and batch closure.
+Failure in reporting accuracy → App Team accountable.
+________________
+
+
+3. Damage Categories (Mandatory Separation)
+Each batch must track separately:
+1. Arrival Damage
+2. Edible Discount
+3. Warehouse Damage
+4. Fulfillment Damage
+5. Last-Mile Damage
+6. Expiry – Supplier Pricing Refusal
+7. Expiry – Operational Failure
+Mixing categories is prohibited.
+________________
+
+
+4. Financial Accountability Rule
+If department failure causes:
+* Unpicked orders
+* Spoilage
+* Emergency delivery cost
+* Customer compensation
+* Extra KG compensation
+The responsible department head must report incident and accept internal accountability.
+________________
+
+
+5. KPI Framework
+App Team
+* Run rate monitoring accuracy
+* Notification response time
+* Pricing competitiveness index
+* Settlement accuracy
+QC
+* Grading completion time. 
+* Shelf life accuracy
+* Damage classification accuracy
+* 48hr damage risk detection and communication
+Warehouse
+* Stock accuracy %
+* Warehouse damage %
+* Picking accuracy %
+* Missing item
+* Wrong item sent
+
+
+Logistics
+* On-time delivery %
+* Last-mile damage %
+* Late return
+Marketing
+* Campaign execution rate
+* Traffic uplift during promotion
+________________
+
+
+6. Pilot Review
+At end of pilot:
+Management will review:
+* Sales volume
+* Margin sustainability
+* Damage arrival %
+* Warehouse damage %
+* Operational discipline
+Future structure may include:
+* Storage fees
+* Handling fees
+* Revised commission
+* Performance-based incentives
+________________
+
+
+7. Department Sign-Off
+Sourcing Head: ____________________
+App Team Lead: ____________________
+QC Lead: ____________________
+Warehouse Manager: ____________________
+Logistics Manager: ____________________
+Marketing Lead: ____________________
+Finance Lead: ____________________
+Date: ____________________
+________________

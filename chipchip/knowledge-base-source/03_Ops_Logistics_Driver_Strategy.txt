@@ -1,0 +1,91 @@
+LOGISTICS & STRATEGY
+ChipChip Social Delivery Framework
+Matching Driver Intelligence to Customer Segments
+
+Group Buying Evolution
+ChipChip is a transformative force connecting consumers and producers. We redefine shopping through the Group Buying Concept—uniting users to unlock unparalleled discounts.
+Our logistics mission is to digitize supply chains across Ethiopia, ensuring affordability and freshness for urban and suburban communities.
+Mission Overview
+
+Small Orders, Paid Delivery
+•
+Who: Individuals or small households.
+•
+Order Profile: 5–13 kg per drop.
+•
+Trait: High item variety with small basket sizes.
+•
+Logistics: Extremely high drop count; route density is critical.
+Segment 1: B2C Consumers
+
+Vehicle Choice
+Best handled by Damas vans or freelance riders for agile movement.
+Delivery Window
+Ideal for afternoon second rounds after bulk morning runs.
+Route Logic
+Short routes with tight clusters to optimize neighborhood density.
+B2C Driver Strategy
+
+Group Coordinators
+•
+Who: Leaders managing 15+ community 
+•
+Order Profile: 50+ kg average per stop
+•
+Trait: Bulk aggregation (15kg+ per SKU).
+•
+Logistics: Single location drop-off with massive savings impact.
+Segment 2: B2B2C Super Leaders
+
+Vehicle Choice
+Assign to Dolphin vans to accommodate higher weight and volume.
+Delivery Window
+Flexible timing (AM or PM) due to batch-organized nature.
+Efficiency
+Ideal for early-day first rounds to clear bulk inventory quickly.
+B2B2C Driver Strategy
+
+Restaurants & Hotels
+•
+Who: Professional HORECA clients.
+•
+Order Profile: 200 kg average per order.
+•
+Trait: Mixed SKUs (Fruits, Veg, FMCG).
+•
+Logistics: Fewer drops but heavy weight and precise timing.
+Segment 3: B2B Institutional
+
+Driver Profile
+Dolphin full-timers with the highest reliability and compliance.
+Delivery Window
+Morning Only. Must be the first priority of the day.
+Logic
+Reliability over cost. Use dedicated vehicles as volume scales.
+B2B Driver Strategy
+
+Segment
+Vehicle
+Driver Type
+Window
+B2C
+Damas / Freelance
+Freelancers
+Afternoon Preferred
+B2B2C
+Dolphin
+Full-time
+Flexible (AM/PM)
+B2B
+Dolphin
+FT Reliable
+Morning Only
+Driver Matching Matrix
+
+B2B segments require heavy-lifting infrastructure despite lower drop counts.
+Logistics: Average Order Weight
+
+Morning Priority (B2B)
+Mid-Day Flexible (B2B2C)
+Afternoon Density (B2C)
+Daily Priority Distribution

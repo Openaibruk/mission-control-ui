@@ -1,0 +1,47 @@
+# Sprint Status
+
+sprint:
+  number: 1
+  goal: "[Sprint goal]"
+  start_date: "YYYY-MM-DD"
+  end_date: "YYYY-MM-DD"
+  status: active  # active | completed
+
+epics:
+  - epic_id: "EPIC-1"
+    title: "[Epic Title]"
+    status: in_progress  # not_started | in_progress | done
+    stories:
+      - id: "STORY-1"
+        title: "[Story Title]"
+        status: done  # inbox | in_progress | done | blocked
+        points: 3
+        assignee: "@Forge"
+        started: "YYYY-MM-DD"
+        completed: "YYYY-MM-DD"
+      - id: "STORY-2"
+        title: "[Story Title]"
+        status: in_progress
+        points: 5
+        assignee: "@Forge"
+        started: "YYYY-MM-DD"
+      - id: "STORY-3"
+        title: "[Story Title]"
+        status: inbox
+        points: 3
+        assignee: "@Cinder"
+
+metrics:
+  total_points: 11
+  completed_points: 3
+  in_progress_points: 5
+  remaining_points: 3
+  velocity: null  # filled after sprint ends
+
+retrospective:
+  went_well: []
+  to_improve: []
+  action_items: []
+
+---
+_Template based on BMAD-METHOD sprint tracking. Updated by @Nova (SM) during sprint._

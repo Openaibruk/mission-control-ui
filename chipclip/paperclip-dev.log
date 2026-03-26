@@ -1,0 +1,347 @@
+
+> paperclip@ dev /home/ubuntu/.openclaw/workspace/paperclip-server
+> node scripts/dev-runner.mjs watch
+
+[paperclip] dev mode: local_trusted (default)
+
+> paperclip@ db:migrate /home/ubuntu/.openclaw/workspace/paperclip-server
+> pnpm --filter @paperclipai/db migrate
+
+
+> @paperclipai/db@0.3.1 migrate /home/ubuntu/.openclaw/workspace/paperclip-server/packages/db
+> tsx src/migrate.ts
+
+Migrating database via embedded-postgres@54329
+Applying 35 pending migration(s)...
+Migrations complete
+[paperclip] building plugin sdk...
+
+> @paperclipai/plugin-sdk@1.0.0 build /home/ubuntu/.openclaw/workspace/paperclip-server/packages/plugins/sdk
+> pnpm --filter @paperclipai/shared build && tsc
+
+
+> @paperclipai/shared@0.3.1 build /home/ubuntu/.openclaw/workspace/paperclip-server/packages/shared
+> tsc
+
+
+> @paperclipai/server@0.3.1 dev:watch /home/ubuntu/.openclaw/workspace/paperclip-server/server
+> cross-env PAPERCLIP_MIGRATION_PROMPT=never PAPERCLIP_MIGRATION_AUTO_APPLY=true tsx watch --ignore ../ui/node_modules --ignore ../ui/.vite --ignore ../ui/dist src/index.ts
+
+[02:12:46] [32mINFO[39m: [36mUsing embedded PostgreSQL because no DATABASE_URL set (dataDir=/home/ubuntu/.paperclip/instances/default/db, port=54329)[39m
+[02:12:46] [32mINFO[39m: [36mEmbedded PostgreSQL cluster already exists (/home/ubuntu/.paperclip/instances/default/db/PG_VERSION); skipping init[39m
+[02:12:46] [32mINFO[39m: [36mEmbedded PostgreSQL ready[39m
+
+[36m██████╗  █████╗ ██████╗ ███████╗██████╗  ██████╗██╗     ██╗██████╗ [0m
+[36m██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔════╝██║     ██║██╔══██╗[0m
+[36m██████╔╝███████║██████╔╝█████╗  ██████╔╝██║     ██║     ██║██████╔╝[0m
+[36m██╔═══╝ ██╔══██║██╔═══╝ ██╔══╝  ██╔══██╗██║     ██║     ██║██╔═══╝ [0m
+[36m██║     ██║  ██║██║     ███████╗██║  ██║╚██████╗███████╗██║██║     [0m
+[36m╚═╝     ╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝╚═╝     [0m
+[34m  ───────────────────────────────────────────────────────[0m
+[2mMode            [0m [32membedded-postgres[0m  |  [36mvite-dev-middleware[0m
+[2mDeploy          [0m local_trusted (private)
+[2mAuth            [0m [32mready[0m
+[2mServer          [0m 3100
+[2mAPI             [0m http://127.0.0.1:3100/api [2m(health: http://127.0.0.1:3100/api/health)[0m
+[2mUI              [0m http://127.0.0.1:3100
+[2mDatabase        [0m /home/ubuntu/.paperclip/instances/default/db [2m(pg:54329)[0m
+[2mMigrations      [0m already applied
+[2mAgent JWT       [0m [33mmissing (run `pnpm paperclipai onboard`)[0m
+[2mHeartbeat       [0m enabled [2m(30000ms)[0m
+[2mDB Backup       [0m enabled [2m(every 60m, keep 30d)[0m
+[2mBackup Dir      [0m /home/ubuntu/.paperclip/instances/default/data/backups
+[2mConfig          [0m /home/ubuntu/.paperclip/instances/default/config.json
+[33m  ───────────────────────────────────────────────────────[0m
+[34m  ───────────────────────────────────────────────────────[0m
+
+[02:12:48] [32mINFO[39m: [36mplugin job coordinator started — listening to lifecycle events[39m [90m{"service":"plugin-job-coordinator"}[39m
+[02:12:48] [32mINFO[39m: [36mplugin job scheduler started[39m [90m{"service":"plugin-job-scheduler","tickIntervalMs":30000,"maxConcurrentJobs":10}[39m
+[02:12:48] [32mINFO[39m: [36minitializing plugin tool dispatcher[39m [90m{"service":"plugin-tool-dispatcher"}[39m
+[02:12:48] [32mINFO[39m: [36mplugin-loader: loading all ready plugins[39m [90m{"service":"plugin-loader"}[39m
+[02:12:48] [32mINFO[39m: [36mAutomatic database backups enabled[39m [90m{"intervalMinutes":60,"retentionDays":30,"backupDir":"/home/ubuntu/.paperclip/instances/default/data/backups"}[39m
+[02:12:48] [32mINFO[39m: [36mServer listening on 127.0.0.1:3100[39m
+[02:12:48] [32mINFO[39m: [36mloaded tools from ready plugins[39m [90m{"service":"plugin-tool-dispatcher","readyPlugins":0,"registeredTools":0}[39m
+[02:12:48] [32mINFO[39m: [36mplugin tool dispatcher initialized[39m [90m{"service":"plugin-tool-dispatcher","totalTools":0}[39m
+[02:12:48] [32mINFO[39m: [36mplugin-loader: no ready plugins to load[39m [90m{"service":"plugin-loader"}[39m
+[02:12:56] [32mINFO[39m: [36mGET / 200[39m
+[02:12:56] [32mINFO[39m: [36mGET / 200[39m
+[02:14:11] [32mINFO[39m: [36mGET / 200[39m
+[02:28:38] [32mINFO[39m: [36mGET / 200[39m
+[02:28:38] [32mINFO[39m: [36mGET / 200[39m
+[02:28:43] [33mWARN[39m: [36mGET / 404[39m
+[02:28:43] [33mWARN[39m: [36mGET /org 404[39m
+[02:28:43] [33mWARN[39m: [36mGET /company 404[39m
+[02:29:19] [32mINFO[39m: [36mGET / 200[39m
+[02:29:24] [32mINFO[39m: [36mPOST / 201[39m
+[02:29:36] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:29:52] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:02] [33mWARN[39m: [36mPOST /api/companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 400[39m [90m{"reqBody":{"name":"CTO","role":"manager","title":"Chief Technology Officer","reportsTo":"367a5f22-2759-4c74-9ae0-4d60566bed4a","budgetMonthlyCents":150000,"adapterType":"openclaw_gateway","adapterConfig":{},"runtimeConfig":{}},"routePath":"/companies/:companyId/agents"}[39m
+[02:30:03] [33mWARN[39m: [36mPOST /api/companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 400[39m [90m{"reqBody":{"name":"Marketing Head","role":"manager","title":"Head of Marketing","reportsTo":"367a5f22-2759-4c74-9ae0-4d60566bed4a","budgetMonthlyCents":150000,"adapterType":"openclaw_gateway","adapterConfig":{},"runtimeConfig":{}},"routePath":"/companies/:companyId/agents"}[39m
+[02:30:03] [33mWARN[39m: [36mPOST /api/companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 400[39m [90m{"reqBody":{"name":"Ops Head","role":"manager","title":"Head of Operations","reportsTo":"367a5f22-2759-4c74-9ae0-4d60566bed4a","budgetMonthlyCents":150000,"adapterType":"openclaw_gateway","adapterConfig":{},"runtimeConfig":{}},"routePath":"/companies/:companyId/agents"}[39m
+[02:30:12] [32mINFO[39m: [36mGET / 200[39m
+[02:30:12] [33mWARN[39m: [36mPOST /api/companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 400[39m [90m{"reqBody":{"name":"CTO","role":"manager","title":"Chief Technology Officer","reportsTo":"367a5f22-2759-4c74-9ae0-4d60566bed4a","budgetMonthlyCents":150000,"adapterType":"openclaw_gateway","adapterConfig":{},"runtimeConfig":{}},"routePath":"/companies/:companyId/agents"}[39m
+[02:30:27] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:27] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:27] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:36] [32mINFO[39m: [36mGET / 200[39m
+[02:30:40] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:40] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:40] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:40] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:40] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:40] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:40] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 201[39m
+[02:30:45] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/org 200[39m
+[02:30:53] [32mINFO[39m: [36mGET / 200[39m
+[02:30:53] [33mWARN[39m: [36mGET /agents 404[39m
+[02:31:01] [32mINFO[39m: [36mGET / 200[39m
+[02:31:16] [32mINFO[39m: [36mGET /health 200[39m
+[02:31:31] [32mINFO[39m: [36mGET / 200[39m
+[02:31:40] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:31:49] [33mWARN[39m: [36mPOST /auth/login 404[39m [90m{"reqBody":{"username":"admin","password":"admin"}}[39m
+[02:32:02] [33mWARN[39m: [36mGET /dashboard 404[39m
+[02:32:16] [32mINFO[39m: [36mGET /agents/bruk?companyId=207bd501-9575-42c1-bc53-4ee5c123e274 200[39m
+[02:32:16] [32mINFO[39m: [36mPOST /agents/367a5f22-2759-4c74-9ae0-4d60566bed4a/keys 201[39m
+[02:32:20] [32mINFO[39m: [36mGET / 200[39m
+[02:32:20] [32mINFO[39m: [36mGET / 200[39m
+[02:32:23] [33mWARN[39m: [36mGET /api/companies 403[39m [90m{"routePath":"/"}[39m
+[02:32:31] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:32:44] [33mWARN[39m: [36mGET /board-claim 404[39m
+[02:32:44] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/approvals 200[39m
+[02:32:44] [33mWARN[39m: [36mPOST /board-claim 404[39m
+[02:32:44] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/goals 200[39m
+[02:32:44] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/projects 200[39m
+[02:32:44] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues 200[39m
+[02:33:10] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:33:10] [33mWARN[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/invites 404[39m
+[02:33:16] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /agents/f344caff-df44-4105-9ed5-cf1bf6b05ce9 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /agents/f344caff-df44-4105-9ed5-cf1bf6b05ce9 200[39m
+[02:33:29] [32mINFO[39m: [36mPATCH /agents/f344caff-df44-4105-9ed5-cf1bf6b05ce9 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /agents/eef30a19-1cc7-4210-a107-b36f36613d31 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /agents/eef30a19-1cc7-4210-a107-b36f36613d31 200[39m
+[02:33:29] [32mINFO[39m: [36mPATCH /agents/eef30a19-1cc7-4210-a107-b36f36613d31 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /agents/03b0b114-b3f6-4a57-b2f4-7d448f28e866 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /agents/03b0b114-b3f6-4a57-b2f4-7d448f28e866 200[39m
+[02:33:29] [32mINFO[39m: [36mPATCH /agents/03b0b114-b3f6-4a57-b2f4-7d448f28e866 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /agents/f60ea50e-c7c7-40a8-bd1a-d2ce1fb31605 200[39m
+[02:33:29] [32mINFO[39m: [36mGET /agents/f60ea50e-c7c7-40a8-bd1a-d2ce1fb31605 200[39m
+[02:33:30] [32mINFO[39m: [36mPATCH /agents/f60ea50e-c7c7-40a8-bd1a-d2ce1fb31605 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/f88fb2a8-680d-49ba-91c4-b07562a2cc9c 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/f88fb2a8-680d-49ba-91c4-b07562a2cc9c 200[39m
+[02:33:30] [32mINFO[39m: [36mPATCH /agents/f88fb2a8-680d-49ba-91c4-b07562a2cc9c 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/162ede88-c004-457b-8bc9-5afc972feb8e 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/162ede88-c004-457b-8bc9-5afc972feb8e 200[39m
+[02:33:30] [32mINFO[39m: [36mPATCH /agents/162ede88-c004-457b-8bc9-5afc972feb8e 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/e682444f-e7de-4f96-98b0-172235be69ab 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/e682444f-e7de-4f96-98b0-172235be69ab 200[39m
+[02:33:30] [32mINFO[39m: [36mPATCH /agents/e682444f-e7de-4f96-98b0-172235be69ab 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:33:30] [32mINFO[39m: [36mPATCH /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/d174defe-e687-46bf-b873-8ac92433f9e5 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/d174defe-e687-46bf-b873-8ac92433f9e5 200[39m
+[02:33:30] [32mINFO[39m: [36mPATCH /agents/d174defe-e687-46bf-b873-8ac92433f9e5 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/a64f9c52-0672-494c-a1ac-930f5924c47c 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/a64f9c52-0672-494c-a1ac-930f5924c47c 200[39m
+[02:33:30] [32mINFO[39m: [36mPATCH /agents/a64f9c52-0672-494c-a1ac-930f5924c47c 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/367a5f22-2759-4c74-9ae0-4d60566bed4a 200[39m
+[02:33:30] [32mINFO[39m: [36mGET /agents/367a5f22-2759-4c74-9ae0-4d60566bed4a 200[39m
+[02:33:30] [32mINFO[39m: [36mPATCH /agents/367a5f22-2759-4c74-9ae0-4d60566bed4a 200[39m
+[02:33:38] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:33:38] [33mWARN[39m: [36mPOST /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/test-environment 404[39m
+[02:33:50] [32mINFO[39m: [36mPATCH /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:33:55] [32mINFO[39m: [36mPOST /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/heartbeat/invoke 202[39m
+[02:34:11] [33mWARN[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/runs 404[39m
+[02:34:21] [33mWARN[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/runs 404[39m
+[02:34:21] [33mWARN[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/runs/f4a11555-0e15-4dab-9cb7-fff9c3a29296 404[39m
+[02:34:31] [33mWARN[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/runs 404[39m
+[02:34:34] [33mWARN[39m: [36mGET /agents/me 401[39m [90m{"routePath":"/agents/me"}[39m
+[02:34:59] [32mINFO[39m: [36mGET / 200[39m
+[02:35:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":1,"enqueued":1,"skipped":0}[39m
+[02:36:20] [32mINFO[39m: [36mGET / 200[39m
+[02:36:20] [33mWARN[39m: [36mGET /wakeup-requests/4e7fd711-633d-44b8-9457-ef17165fc2b4 404[39m
+[02:36:20] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:36:25] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:36:28] [33mWARN[39m: [36mGET /agents 404[39m
+[02:36:28] [32mINFO[39m: [36mGET / 200[39m
+[02:36:34] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:36:34] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/org 200[39m
+[02:36:36] [33mWARN[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/wakeup-requests 404[39m
+[02:36:36] [33mWARN[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/wakeup-requests?limit=5 404[39m [90m{"reqQuery":{"limit":"5"}}[39m
+[02:36:44] [33mWARN[39m: [36mPOST /agents/e682444f-e7de-4f96-98b0-172235be69ab/heartbeat 404[39m
+[02:36:44] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues 200[39m
+[02:36:56] [32mINFO[39m: [36mPOST /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues 201[39m
+[02:36:58] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/f344caff-df44-4105-9ed5-cf1bf6b05ce9 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/f344caff-df44-4105-9ed5-cf1bf6b05ce9 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/eef30a19-1cc7-4210-a107-b36f36613d31 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/eef30a19-1cc7-4210-a107-b36f36613d31 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/03b0b114-b3f6-4a57-b2f4-7d448f28e866 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/03b0b114-b3f6-4a57-b2f4-7d448f28e866 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/f60ea50e-c7c7-40a8-bd1a-d2ce1fb31605 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/f60ea50e-c7c7-40a8-bd1a-d2ce1fb31605 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/f88fb2a8-680d-49ba-91c4-b07562a2cc9c 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/f88fb2a8-680d-49ba-91c4-b07562a2cc9c 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/162ede88-c004-457b-8bc9-5afc972feb8e 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/162ede88-c004-457b-8bc9-5afc972feb8e 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/e682444f-e7de-4f96-98b0-172235be69ab 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/e682444f-e7de-4f96-98b0-172235be69ab 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/d174defe-e687-46bf-b873-8ac92433f9e5 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/d174defe-e687-46bf-b873-8ac92433f9e5 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/a64f9c52-0672-494c-a1ac-930f5924c47c 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/a64f9c52-0672-494c-a1ac-930f5924c47c 200[39m
+[02:36:58] [32mINFO[39m: [36mGET /agents/367a5f22-2759-4c74-9ae0-4d60566bed4a 200[39m
+[02:36:58] [32mINFO[39m: [36mPATCH /agents/367a5f22-2759-4c74-9ae0-4d60566bed4a 200[39m
+[02:37:04] [32mINFO[39m: [36mPATCH /issues/d1b98140-6a67-4c69-be36-3b4d43d78814 200[39m
+[02:37:08] [32mINFO[39m: [36mGET /agents/me 200[39m
+[02:37:11] [33mWARN[39m: [36mPOST /api/issues/d1b98140-6a67-4c69-be36-3b4d43d78814/checkout 400[39m [90m{"routePath":"/issues/:id/checkout"}[39m
+[02:37:16] [33mWARN[39m: [36mGET / 404[39m
+[02:37:16] [33mWARN[39m: [36mPOST /issues/d1b98140-6a67-4c69-be36-3b4d43d78814/dispatch 404[39m
+[02:37:18] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues?assigneeAgentId=3805b9cb-2700-45fe-a5f9-c2de21c30d4f&status=todo,in_progress,blocked 200[39m
+[02:37:35] [32mINFO[39m: [36mGET /instance/scheduler-heartbeats 200[39m
+[02:37:43] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/runtime-state 200[39m
+[02:37:58] [32mINFO[39m: [36mPATCH /issues/d1b98140-6a67-4c69-be36-3b4d43d78814 200[39m
+[02:38:08] [32mINFO[39m: [36mGET /agents/me 200[39m
+[02:38:16] [33mWARN[39m: [36mPOST /issues/d1b98140-6a67-4c69-be36-3b4d43d78814/checkout 403[39m [90m{"reqBody":{"agentId":"e682444f-e7de-4f96-98b0-172235be69ab","expectedStatuses":["todo","backlog","blocked"]},"reqParams":{"id":"d1b98140-6a67-4c69-be36-3b4d43d78814"},"routePath":"/issues/:id/checkout"}[39m
+[02:38:24] [33mWARN[39m: [36mPOST /api/issues/d1b98140-6a67-4c69-be36-3b4d43d78814/checkout 409[39m [90m{"reqBody":{"agentId":"3805b9cb-2700-45fe-a5f9-c2de21c30d4f","expectedStatuses":["todo","backlog","blocked"]},"routePath":"/issues/:id/checkout"}[39m
+[02:38:30] [32mINFO[39m: [36mGET /issues/d1b98140-6a67-4c69-be36-3b4d43d78814 200[39m
+[02:38:37] [33mWARN[39m: [36mPOST /api/agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/keys 400[39m [90m{"routePath":"/agents/:id/keys"}[39m
+[02:38:38] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues?assigneeAgentId=3805b9cb-2700-45fe-a5f9-c2de21c30d4f&status=todo,in_progress,blocked 200[39m
+[02:38:45] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues?status=todo,in_progress,blocked 200[39m
+[02:38:51] [32mINFO[39m: [36mGET /issues/d1b98140-6a67-4c69-be36-3b4d43d78814/comments 200[39m
+[02:38:53] [32mINFO[39m: [36mPOST /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f/keys 201[39m
+[02:39:03] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/f344caff-df44-4105-9ed5-cf1bf6b05ce9 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/f344caff-df44-4105-9ed5-cf1bf6b05ce9 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/eef30a19-1cc7-4210-a107-b36f36613d31 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/eef30a19-1cc7-4210-a107-b36f36613d31 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/03b0b114-b3f6-4a57-b2f4-7d448f28e866 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/03b0b114-b3f6-4a57-b2f4-7d448f28e866 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/f60ea50e-c7c7-40a8-bd1a-d2ce1fb31605 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/f60ea50e-c7c7-40a8-bd1a-d2ce1fb31605 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/f88fb2a8-680d-49ba-91c4-b07562a2cc9c 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/f88fb2a8-680d-49ba-91c4-b07562a2cc9c 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/162ede88-c004-457b-8bc9-5afc972feb8e 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/162ede88-c004-457b-8bc9-5afc972feb8e 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/d174defe-e687-46bf-b873-8ac92433f9e5 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/d174defe-e687-46bf-b873-8ac92433f9e5 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/a64f9c52-0672-494c-a1ac-930f5924c47c 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/a64f9c52-0672-494c-a1ac-930f5924c47c 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/e682444f-e7de-4f96-98b0-172235be69ab 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/e682444f-e7de-4f96-98b0-172235be69ab 200[39m
+[02:39:03] [32mINFO[39m: [36mGET /agents/367a5f22-2759-4c74-9ae0-4d60566bed4a 200[39m
+[02:39:03] [32mINFO[39m: [36mPATCH /agents/367a5f22-2759-4c74-9ae0-4d60566bed4a 200[39m
+[02:39:09] [32mINFO[39m: [36mPATCH /agents/3805b9cb-2700-45fe-a5f9-c2de21c30d4f 200[39m
+[02:39:14] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/org 200[39m
+[02:39:18] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/agents 200[39m
+[02:39:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":9,"skipped":0}[39m
+[02:39:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:40:32] [32mINFO[39m: [36mGET /agents/eef30a19-1cc7-4210-a107-b36f36613d31 200[39m
+[02:40:33] [32mINFO[39m: [36mGET /agents/f88fb2a8-680d-49ba-91c4-b07562a2cc9c 200[39m
+[02:40:33] [32mINFO[39m: [36mGET /agents/d174defe-e687-46bf-b873-8ac92433f9e5 200[39m
+[02:40:33] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues?status=todo,in_progress,blocked 200[39m
+[02:43:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:43:29] [32mINFO[39m: [36mGET /agents/me 200[39m
+[02:43:29] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues?assigneeAgentId=3805b9cb-2700-45fe-a5f9-c2de21c30d4f&status=todo,in_progress,blocked 200[39m
+[02:44:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:44:28] [32mINFO[39m: [36mGET /agents/me 200[39m
+[02:44:28] [32mINFO[39m: [36mGET /companies/207bd501-9575-42c1-bc53-4ee5c123e274/issues?assigneeAgentId=e682444f-e7de-4f96-98b0-172235be69ab&status=todo,in_progress,blocked 200[39m
+[02:44:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:45:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":9,"skipped":0}[39m
+[02:45:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":9,"skipped":0}[39m
+[02:46:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":10,"skipped":0}[39m
+[02:46:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":9,"skipped":0}[39m
+[02:47:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:48:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:49:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:49:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:50:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:50:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:51:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:52:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":9,"skipped":0}[39m
+[02:52:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":10,"skipped":0}[39m
+[02:58:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:58:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[02:59:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":2,"skipped":0}[39m
+[02:59:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":10,"skipped":0}[39m
+[03:00:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:00:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":10,"skipped":0}[39m
+[03:01:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":10,"skipped":0}[39m
+[03:01:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":9,"skipped":0}[39m
+[03:02:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[03:10:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:11:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:11:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:12:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:12:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:12:49] [32mINFO[39m: [36mAutomatic database backup complete: /home/ubuntu/.paperclip/instances/default/data/backups/paperclip-20260317-061249.sql (891.0K)[39m [90m{"backupFile":"/home/ubuntu/.paperclip/instances/default/data/backups/paperclip-20260317-061249.sql","sizeBytes":912335,"prunedCount":0,"backupDir":"/home/ubuntu/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[03:18:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:18:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:19:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:29:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:29:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:30:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:36:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:37:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:43:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:44:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:44:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:51:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:51:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:57:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:58:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[03:58:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:05:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:05:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:06:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:12:48] [32mINFO[39m: [36mAutomatic database backup complete: /home/ubuntu/.paperclip/instances/default/data/backups/paperclip-20260317-071248.sql (1.8M)[39m [90m{"backupFile":"/home/ubuntu/.paperclip/instances/default/data/backups/paperclip-20260317-071248.sql","sizeBytes":1867251,"prunedCount":0,"backupDir":"/home/ubuntu/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[04:13:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:14:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:21:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:21:48] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:22:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":2,"skipped":0}[39m
+[04:27:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":10,"skipped":0}[39m
+[04:34:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:41:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:47:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:53:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[04:59:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":10,"skipped":0}[39m
+[05:05:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[05:11:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[05:12:48] [32mINFO[39m: [36mAutomatic database backup complete: /home/ubuntu/.paperclip/instances/default/data/backups/paperclip-20260317-081248.sql (2.8M)[39m [90m{"backupFile":"/home/ubuntu/.paperclip/instances/default/data/backups/paperclip-20260317-081248.sql","sizeBytes":2956488,"prunedCount":0,"backupDir":"/home/ubuntu/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[05:17:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[05:18:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[05:23:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[05:29:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":9,"skipped":0}[39m
+[05:30:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":3,"skipped":0}[39m
+[05:40:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[05:46:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[05:53:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[05:59:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:00:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":7,"skipped":0}[39m
+[06:07:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:07:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:08:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[06:12:49] [32mINFO[39m: [36mAutomatic database backup complete: /home/ubuntu/.paperclip/instances/default/data/backups/paperclip-20260317-091249.sql (3.7M)[39m [90m{"backupFile":"/home/ubuntu/.paperclip/instances/default/data/backups/paperclip-20260317-091249.sql","sizeBytes":3835287,"prunedCount":0,"backupDir":"/home/ubuntu/.paperclip/instances/default/data/backups","retentionDays":30}[39m
+[06:13:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":10,"skipped":0}[39m
+[06:14:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:14:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:15:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:15:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:16:18] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":1,"skipped":0}[39m
+[06:20:41] [32mINFO[39m: [36mGET / 200[39m
+[06:23:49] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:24:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:30:19] [32mINFO[39m: [36mheartbeat timer tick enqueued runs[39m [90m{"checked":11,"enqueued":11,"skipped":0}[39m
+[06:30:29] [32mINFO[39m: [36mGET / 200[39m
+/home/ubuntu/.openclaw/workspace/paperclip-server/server:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @paperclipai/server@0.3.1 dev:watch: `cross-env PAPERCLIP_MIGRATION_PROMPT=never PAPERCLIP_MIGRATION_AUTO_APPLY=true tsx watch --ignore ../ui/node_modules --ignore ../ui/.vite --ignore ../ui/dist src/index.ts`
+Command failed with signal "SIGTERM"
+ ELIFECYCLE  Command failed.
+9:30:43 AM [tsx] Previous process hasn't exited yet. Force killing...

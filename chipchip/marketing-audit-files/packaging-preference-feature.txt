@@ -1,0 +1,98 @@
+﻿Packaging Preference Feature (structure & Survey)
+
+Project Overview
+This project introduces a Packaging Preference option (With / Without packaging) in our ordering and delivery process. The goal is to reduce plastic bag usage, give customers choice, and test operational feasibility through a survey before full rollout.
+Objectives
+* Reduce single-use plastic bags
+* Give customers flexibility and cost transparency
+* Test customer willingness to choose no-packaging options
+* Understand operational impact (delivery, madaberiya, timing)
+* Collect data to support product and policy decisions
+Scope
+* Applies to selected products and locations (pilot phase)
+* Covers delivery and madaberiya (pickup point) options
+* Includes cost, timing, and quantity handling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Feature Structure
+A. Packaging Preference Option (at checkout)
+Customers must choose one option:
+Option 1: With Packaging
+* Packaging cost added to order to all members 25 birr each 
+* Standard packaging (plastic or eco, based on availability)
+* Normal delivery process
+* No change to delivery time
+Option 2: Without Packaging
+* Only the group leader will pay 25 birr 
+* Product delivered without plastic packaging
+* Delivery options:
+   * 1 pack (pickup point)  no Splitting 
+   * Direct delivery (only where feasible)
+* Check buffer time (add only if necessary)
+* Full quantity delivered as is
+
+
+Operational Considerations
+* Product suitability (dry vs liquid, fragile vs non-fragile)
+* Hygiene and quality control
+* Delivery partner awareness and training
+* Clear labeling: “No Packaging – Customer Accepted”
+* Customer responsibility acknowledgment
+
+
+Risks & Mitigation
+* Risk: Product damage → Limit to suitable products
+* Risk: Delivery confusion → Clear system tags & training
+* Risk: Customer complaints → Clear explanation before checkout
+
+
+
+
+Survey Guideline – Packaging Preference Feature
+* This survey is about the Packaging Preference option (With / Without packaging) that is being implemented.
+* The feature will go live, this survey is to check if the option is clear, acceptable, and workable for your role.
+* Please answer based on your real work experience, not assumptions.
+* There are no right or wrong answers, honest feedback is important.
+* If something is unclear or difficult, mention it so we can fix it early.
+* Focus on operations, delivery, quality, and customer experience.
+* Use the comment sections to share specific issues or suggestions.
+* Your feedback will be used to improve execution, not to evaluate performance.
+  
+📍 Survey Link 
+📍Packaging Preference Feature (structure & Survey) 
+
+
+Key Points to Tell Customers
+* They have a choice: At checkout, they can pick either:
+
+   * With Cotton Bag (15 Birr) – reusable, eco-friendly
+
+   * Without Packaging (Free) – delivered directly without splitting crates
+
+      * Why this matters:
+
+         * Promotes sustainability and reduces plastic waste
+
+         * Gives flexibility depending on their needs
+
+            * How it works:
+
+               * First order: encourage buying the 15 Birr reusable bag to introduce the concept
+
+               * Next orders: they can freely choose free packaging since the cotton bag is reusable
+
+                  * No pressure: Buying the cotton bag is optional, not mandatory
+
+                  * Safety & convenience: Products will still be delivered safely, whether packaged or not

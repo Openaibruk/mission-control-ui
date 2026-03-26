@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1080">
+    <title>Social Post - Square</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 1080px;
+            height: 1080px;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0A0E1A 0%, #1A2744 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 48px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00D4FF;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #0066FF;
+            border-radius: 8px;
+        }
+        
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .headline {
+            font-size: 56px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.1;
+            max-width: 900px;
+            margin-bottom: 24px;
+        }
+        
+        .subhead {
+            font-size: 24px;
+            font-weight: 400;
+            color: #00D4FF;
+            max-width: 700px;
+        }
+        
+        .cta {
+            margin-top: 48px;
+            background: #0066FF;
+            color: white;
+            padding: 16px 48px;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #6B7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <div class="logo-icon"></div>
+        OpenClaw
+    </div>
+    
+    <div class="content">
+        <div class="headline">Your AI Assistant, Evolved.</div>
+        <div class="subhead">Stop chatting. Start accomplishing.</div>
+        <a href="#" class="cta">Get Started →</a>
+    </div>
+    
+    <div class="footer">
+        <span>openclaw.io</span>
+        <span>@OpenClawAI</span>
+    </div>
+</body>
+</html>

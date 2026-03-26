@@ -1,0 +1,554 @@
+﻿SECTION 1: EXECUTIVE LEADERSHIP
+________________
+
+
+1. Chief Executive Officer (CEO)
+Reports To:
+Board / Founders
+Mission:
+Drive ChipChip to CP2 breakeven and scale sustainably through structural discipline, not aggressive growth.
+Core Responsibilities:
+* Define and protect company-level strategy
+
+* Enforce RUN / IMPROVE / ENABLE separation
+
+* Chair weekly CP1 / CP2 performance review
+
+* Resolve cross-functional conflicts
+
+* Approve new strategic initiatives
+
+* Protect culture and execution rhythm
+
+KPIs:
+   * CP2 (Contribution Profit 2)
+
+   * Cash runway
+
+   * B2B share of volume
+
+   * Cost per kg trend
+
+Authority:
+      * Freeze growth
+
+      * Stop unprofitable routes
+
+      * Override incentives
+
+      * Reassign leadership responsibility
+
+Cultural Standard:
+Leads by discipline. Pays double in accountability. No tolerance for ambiguity.
+________________
+
+
+SECTION 2: FINANCE & GOVERNANCE
+(Truth & Veto Layer)
+________________
+
+
+2. Finance Lead (Truth & Veto Owner)
+Reports To:
+CEO
+Mission:
+Protect CP1, CP2, and cash truth at all times.
+Responsibilities:
+         * Weekly CP1 & CP2 reporting
+
+         * System vs cash reconciliation
+
+         * BNPL cap management
+
+         * Margin validation for B2B
+
+         * Approval of pricing floors
+
+         * Grant vs RUN cost separation
+
+KPIs:
+            * CP1 ≥ 0 on all SKUs
+
+            * CP2 variance vs plan
+
+            * Reconciliation accuracy
+
+            * Days to monthly close
+
+Veto Power:
+               * Stop campaigns breaking CP1
+
+               * Cap BNPL immediately
+
+               * Block unprofitable discounts
+
+________________
+
+
+3. Senior Accountant
+Mission:
+Ensure accurate financial recording and compliance.
+Responsibilities:
+                  * Ledger management
+
+                  * Bank reconciliation
+
+                  * Vendor payments
+
+                  * Payroll processing
+
+                  * Tax compliance
+
+KPIs:
+                     * Zero unexplained variance
+
+                     * Monthly close timeline
+
+                     * Audit readiness
+
+________________
+
+
+4. Governance & Compliance Officer
+Mission:
+Ensure legal, regulatory, and contractual integrity.
+Responsibilities:
+                        * Contract review
+
+                        * BNPL compliance
+
+                        * Regulatory filings
+
+                        * Risk documentation
+
+KPIs:
+                           * Zero compliance breaches
+
+                           * Contract turnaround time
+
+________________
+
+
+SECTION 3: OPERATIONS (FLOW & COST)
+________________
+
+
+5. Operations Lead
+Reports To:
+CEO
+Mission:
+Deliver lowest cost/kg with maximum reliability.
+Responsibilities:
+                              * Sourcing coordination
+
+                              * Warehouse efficiency
+
+                              * Route density optimization
+
+                              * Damage & spoilage reduction
+
+                              * SLA enforcement
+
+KPIs:
+                                 * Cost per kg
+
+                                 * Route density
+
+                                 * On-time delivery rate
+
+                                 * Refund %
+
+Authority:
+                                    * Block inefficient routes
+
+                                    * Stop low-density dispatches
+
+________________
+
+
+6. Warehouse Manager
+Mission:
+Turn warehouse into control tower, not bottleneck.
+Responsibilities:
+                                       * Inbound grading & QC
+
+                                       * Stock accuracy
+
+                                       * Overtime control
+
+                                       * SKU routing logic
+
+KPIs:
+                                          * Warehouse cost/kg
+
+                                          * Damage %
+
+                                          * Inventory mismatch %
+
+________________
+
+
+7. Logistics Manager
+Mission:
+Ensure delivery efficiency and density.
+Responsibilities:
+                                             * Route planning
+
+                                             * Rider allocation
+
+                                             * Fuel control
+
+                                             * Last-mile optimization
+
+KPIs:
+                                                * Drops per route
+
+                                                * Cost per route
+
+                                                * Fuel efficiency
+
+________________
+
+
+8. Quality & Stock Control Officer
+Mission:
+Protect margin through quality control.
+Responsibilities:
+                                                   * Shrink buffer enforcement
+
+                                                   * Supplier damage scoring
+
+                                                   * Inventory audits
+
+KPIs:
+                                                      * Damage %
+
+                                                      * QC compliance rate
+
+________________
+
+
+SECTION 4: SUPPLY & CHAIN
+________________
+
+
+9. Supply Lead
+Reports To:
+Operations Lead
+Mission:
+Protect CP1 at input level.
+Responsibilities:
+                                                         * Supplier negotiation
+
+                                                         * Reliability scoring
+
+                                                         * Direct sourcing
+
+                                                         * Remove intermediaries
+
+KPIs:
+                                                            * Purchase cost/kg
+
+                                                            * Supplier SLA compliance
+
+                                                            * Damage %
+
+________________
+
+
+10. Farm Sourcing Specialist
+Responsibilities:
+                                                               * Onboard farmers & cooperatives
+
+                                                               * Digitize supply lots
+
+                                                               * Validate capacity & quality
+
+KPIs:
+                                                                  * Active supplier volume
+
+                                                                  * On-time supply %
+
+________________
+
+
+11. FMCG Sourcing Specialist
+Responsibilities:
+                                                                     * Onboard FMCG brands
+
+                                                                     * Negotiate distributor margins
+
+                                                                     * Expand SKU mix
+
+KPIs:
+                                                                        * FMCG volume share
+
+                                                                        * Gross margin per SKU
+
+________________
+
+
+SECTION 5: GROWTH (DEMAND QUALITY)
+________________
+
+
+12. Growth Lead
+Reports To:
+CEO
+Mission:
+Grow profitable volume only.
+Responsibilities:
+                                                                           * B2B expansion
+
+                                                                           * Super Leader migration
+
+                                                                           * Incentive design
+
+                                                                           * Order size optimization
+
+KPIs:
+                                                                              * B2B volume %
+
+                                                                              * Retention rate
+
+                                                                              * Average order size
+
+                                                                              * CP1 compliance
+
+________________
+
+
+13. B2B Operations Lead
+Mission:
+Scale restaurant & hotel accounts profitably.
+Responsibilities:
+                                                                                 * Manage recurring orders
+
+                                                                                 * SLA reliability
+
+                                                                                 * Margin validation
+
+KPIs:
+                                                                                    * B2B revenue
+
+                                                                                    * Repeat rate
+
+                                                                                    * Gross margin per account
+
+________________
+
+
+14. B2B Cash Collection Officer
+Mission:
+Protect cash from BNPL leakage.
+Responsibilities:
+                                                                                       * Payment follow-up
+
+                                                                                       * Aging reports
+
+                                                                                       * Credit cap monitoring
+
+KPIs:
+                                                                                          * Days sales outstanding
+
+                                                                                          * Default rate
+
+________________
+
+
+15. Sales Agent (Market Activator)
+Mission:
+Acquire and mature customers into independent ecosystem players.
+Responsibilities:
+                                                                                             * Recruit customers & Super Leaders
+
+                                                                                             * Drive repeat orders
+
+                                                                                             * Educate on system use
+
+                                                                                             * Migrate B2C → B2B/B2B2C
+
+KPIs:
+                                                                                                * Quality activations
+
+                                                                                                * Retention milestone release
+
+                                                                                                * Migration rate
+
+________________
+
+
+SECTION 6: MARKETING
+________________
+
+
+16. Marketing Lead
+Mission:
+Build trust & migrate demand intelligently.
+Responsibilities:
+                                                                                                   * Messaging discipline
+
+                                                                                                   * B2C → Super Leader education
+
+                                                                                                   * Complaint reduction
+
+KPIs:
+                                                                                                      * Migration rate
+
+                                                                                                      * Complaint %
+
+                                                                                                      * Campaign ROI
+
+________________
+
+
+17. Brand Communication Manager
+Responsibilities:
+                                                                                                         * Campaign messaging
+
+                                                                                                         * Brand tone consistency
+
+                                                                                                         * Trust communication
+
+________________
+
+
+18. Graphic Designer
+Responsibilities:
+                                                                                                            * Campaign creatives
+
+                                                                                                            * Super Leader educational materials
+
+                                                                                                            * B2B sales collateral
+
+________________
+
+
+SECTION 7: TECHNOLOGY / PRODUCT
+(Enforcement & Automation Layer)
+________________
+
+
+19. Technology Lead
+Reports To:
+CEO
+Mission:
+Eliminate manual dependency and enforce discipline via code.
+Responsibilities:
+                                                                                                               * CP1 block logic
+
+                                                                                                               * BNPL enforcement
+
+                                                                                                               * Reconciliation automation
+
+                                                                                                               * Alert systems
+
+                                                                                                               * KPI auto-generation
+
+KPIs:
+                                                                                                                  * Manual steps eliminated
+
+                                                                                                                  * Detection time
+
+                                                                                                                  * % KPIs auto-generated
+
+                                                                                                                  * System vs cash variance
+
+________________
+
+
+20. Frontend Developer
+Responsibilities:
+                                                                                                                     * Aggregator dashboard
+
+                                                                                                                     * B2B portal
+
+                                                                                                                     * Consumer interface
+
+________________
+
+
+21. Data & Automation Engineer
+Responsibilities:
+                                                                                                                        * Data pipelines
+
+                                                                                                                        * Real-time dashboards
+
+                                                                                                                        * Reconciliation engine
+
+________________
+
+
+SECTION 8: CUSTOMER SERVICE
+________________
+
+
+22. Customer Service Lead
+Mission:
+Convert complaints into system fixes.
+Responsibilities:
+                                                                                                                           * Complaint categorization
+
+                                                                                                                           * Escalation loop
+
+                                                                                                                           * Root-cause reporting
+
+KPIs:
+                                                                                                                              * Resolution time
+
+                                                                                                                              * Repeat complaint rate
+
+________________
+
+
+23. Call Center Agent
+Responsibilities:
+                                                                                                                                 * Order confirmation
+
+                                                                                                                                 * Complaint intake
+
+                                                                                                                                 * Feedback capture
+
+________________
+
+
+SECTION 9: IMPACT & PARTNERSHIPS
+________________
+
+
+24. Impact & Partnerships Lead
+Mission:
+Secure non-dilutive capital without distorting RUN economics.
+Responsibilities:
+                                                                                                                                    * Grants
+
+                                                                                                                                    * Government partnerships
+
+                                                                                                                                    * Impact reporting
+
+KPIs:
+                                                                                                                                       * Capital secured
+
+                                                                                                                                       * Cost offset
+
+________________
+
+
+SECTION 10: HR & PEOPLE
+________________
+
+
+25. HR Lead
+Mission:
+Ensure role clarity & accountability.
+Responsibilities:
+                                                                                                                                          * Hiring & onboarding
+
+                                                                                                                                          * Performance reviews
+
+                                                                                                                                          * KPI ownership tracking
+
+KPIs:
+                                                                                                                                             * Time to productivity
+
+                                                                                                                                             * Execution compliance

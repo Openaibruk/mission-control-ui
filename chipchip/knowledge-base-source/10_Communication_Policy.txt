@@ -1,0 +1,160 @@
+Official Communication Policy
+Mandatory for all staff, contractors, and collaborators.
+
+ChipChip operates with clear ownership of tools.
+If information is not in the right place, it does not exist.
+Telegram: Execution & alerts
+Calendar: Time & commitments
+Documents: Decisions & records
+Dashboards: Numbers & performance
+1. Purpose: One Source of Truth
+
+This document aims to:
+All work-related communication must follow this policy.
+Reduce noise and confusion
+Protect decision authority
+Ensure clarity, accountability, and speed
+Align all teams with a single execution system
+Goal of the Policy
+
+One Purpose
+Every channel exists for a specific reason.
+Authority First
+Decisions follow the org structure.
+Facts Only
+Execution channels are factual and concise.
+Accountability
+Decisions must include owner and deadline.
+No Shadow Ops
+Decisions outside official channels are invalid.
+Alignment
+We move as one team.
+2. Core Principles (Non-Negotiable)
+
+Use Only For:
+Do NOT Use For:
+Tasks & Updates
+Binary decisions (Yes / No)
+Alerts
+Brainstorming
+Strategy debates
+Long discussions
+Voice notes
+3.1 Telegram: Execution, Not Thinking
+
+Rules:
+The 60-Second Rule
+If a message cannot be understood and acted upon in under 60 seconds, it does not belong in Telegram.
+Post only in the correct group
+Follow group description and target
+No cross-posting screenshots
+No voice notes for decisions
+Telegram Discipline
+
+Single Source of Truth for:
+KPIs and metrics
+Financial tracking (CP1 / CP2 / cash)
+Operational logs and registers
+Planning tables
+Rule: One owner per file. No parallel versions. Telegram must reference the sheet link.
+3.2 Excel / Sheets: System of Record
+
+Use For:
+Rules:
+External partners, vendors, banks
+Legal or compliance
+Formal approvals
+Internal execution must not rely on email
+Email is not a substitute for Telegram
+3.3 Email: External & Formal
+
+Every decision shared must include 3 elements. If any are missing, the decision is invalid.
+What is decided
+Who owns it
+By when it must be executed
+4.1 Mandatory Decision Format
+
+Skipping levels creates confusion and will be corrected.
+4.2 Escalation Path
+
+Strictly Prohibited:
+Operational debates in announcement groups
+Decisions made in private chats
+Re-opening closed decisions without new data
+Using multiple tools for the same purpose
+Emotional or accusatory language
+5. What Is Not Allowed
+
+Everyone is responsible for:
+Managers: Must enforce this policy.Repeated violations will be treated as execution issues.
+Using the correct channel
+Respecting decision authority
+Keeping communication clear and professional
+6. Accountability
+
+Teams may create groups for focused execution (e.g., rollout, pilot, incident).
+Rules:
+Must have a single purpose & end condition
+Must be owned by a team lead
+Must reference an official core group as parent
+Must be archived when completed
+8. Temporary Channels
+
+The Admin (Lead) is responsible for:
+Enforcing the group purpose
+Redirecting off-topic messages
+Ensuring outputs are produced
+If a group loses clarity, the admin must intervene immediately.
+9. Group Ownership
+
+Group
+Output
+Founders
+Decisions
+Executive
+Action + owner + deadline
+Weekly Planning
+Approved priorities
+HR
+People actions
+10. Index: Executive & Governance
+
+Group
+Purpose
+Staff (Announce)
+Company updates
+Ops Leads
+Planning/Escalations
+Supply Leads
+Pricing/Performance
+Finance Leads
+Veto/Policy enforcement
+Index: Company & Leads
+
+Group
+Output
+Yazz (Ops)
+Route & staffing
+Customer Svc
+Order status & recovery
+Ops + Finance
+Cost validation
+Supply + Fin
+Price validation
+Index: Operations
+
+Supply Mgmt
+Forecasts & Quality
+DC / Agent
+Receiving & Dispatch
+Marketing
+Campaigns & Review
+Social Buying
+Bugs & Usage
+CP1 + CP2
+Margin & Veto
+Index: Supply, Marketing, Tech
+
+7. Final Note
+"Clear communication is not bureaucracy — it is how ChipChip moves fast without chaos."
+If a message does not help execution, alignment, or decision-making, do not send it.

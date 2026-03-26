@@ -1,0 +1,529 @@
+﻿Strategic Product Manager (SPM)
+Job Description – Strategic Product Manager (SPM)
+Position Title: Strategic Product Manager
+Department: Product Management
+Reports To: Head of Product / Operations Manager
+Location: Addis Ababa
+________________
+
+
+Role Purpose
+The Strategic Product Manager is responsible for ensuring profitable pricing, minimizing spoilage, maintaining accurate product listings, and coordinating all operational activities related to stock, flash sales, and sourcing decisions. This role focuses on real-time market monitoring, margin protection, and operational efficiency across all products.
+________________
+
+
+Key Responsibilities
+1. Pricing & Market Monitoring
+* Review daily market benchmarks, including farm prices, DC prices, Sunday market trends, and local shop comparisons.
+
+* Adjust selling prices proactively based on expected replacement cost and stock situation.
+
+* Ensure pricing decisions protect margins and reduce unnecessary subsidies.
+
+* Flag cost changes and prevent scenarios where selling price is lower than upcoming purchase price.
+
+2. Stock Movement & Damage Control
+   * Monitor product freshness, shelf life, and stock rotation.
+
+   * Launch flash sales to accelerate movement of products at risk of spoilage.
+
+   * Keep damage percentage within target by making timely pricing or sales decisions.
+
+   * Incorporate the 48-hour delivery cycle into all pricing and movement decisions.
+
+3. App & Product Listing Management
+      * Maintain accurate product listings, including descriptions, images, units, and visibility.
+
+      * Ensure all price changes are reflected in the app without delay.
+
+      * Monitor product performance on the platform and fix any display or listing issues.
+
+4. Bidding & Supplier Coordination
+         * Initiate purchase bids for all products based on forecasted demand and stock levels.
+
+         * After sourcing decisions are approved (farm or agent), follow up with the selected supplier.
+
+         * Coordinate with the warehouse for arrival times, quality checks, and intake scheduling.
+
+         * Maintain clear and timely communication between suppliers and warehouse teams.
+
+5. Warehouse & Fulfillment Support
+            * Confirm expected delivery times and product availability with the warehouse.
+
+            * Respond immediately to packing-time shortages by arranging additional quantities.
+
+            * Track all purchase data per product: date, quantity, source, unit price, and notes.
+
+            * Support warehouse scheduling and ensure packing is based on accurate stock levels.
+
+6. Price & Margin Tracking
+               * Track selling prices, purchasing prices, and per-product margins daily.
+
+               * Identify margin drops early and take immediate corrective action.
+
+               * Provide weekly margin insights to the Head of Product and Procurement PMs.
+
+               * Recommend pricing strategies to improve profitability.
+
+________________
+
+
+Key Performance Indicators (KPIs)
+                  * Accuracy and timeliness of price updates
+
+                  * Margin protection and reduction of loss incidents
+
+                  * Damage and spoilage percentage
+
+                  * Flash sale execution timing and stock turnover rate
+
+                  * App listing accuracy (image, description, visibility)
+
+                  * Purchase data completeness and accuracy
+
+                  * Coordination efficiency with warehouse and suppliers
+
+
+Product Manager (PPM)
+
+Job Description – Product Sourcing Specialist (PSS)
+Position Title: Product Sourcing Specialist (PSS)
+Department: Farm Souring
+Reports To: Farm Manager
+Location: Addis Ababa
+________________
+
+
+Role Purpose
+The Product Sourcing Specialist (PSS) is responsible for supplier onboarding, farm sourcing, agent coordination, and volume generation for assigned products. This role ensures stable supply, competitive costs, high-quality delivery, and strong supplier performance.
+________________
+
+
+Key Responsibilities
+1. Supplier Onboarding & Relationship Management
+                     * Identify and onboard new suppliers for assigned product categories.
+
+                     * Manage supplier contracts, agreements, and performance standards.
+
+                     * Maintain regular communication with suppliers to ensure reliability and consistency.
+
+                     * Evaluate supplier competitiveness based on price, quality, delivery time, and volume capacity.
+
+2. Direct Farm & Agent Sourcing
+                        * Source products directly from farms or agents according to demand forecasts.
+
+                        * Implement best sourcing option based on quality, cost, and availability.
+
+                        * Monitor seasonal harvest patterns and supply risks.
+
+                        * Negotiate prices and delivery conditions to improve procurement cost.
+
+3. Volume, Quality & Delivery Control
+                           * Ensure products are sourced in the right quantity and delivered on time.
+
+                           * Maintain volume contribution targets for all assigned products.
+
+                           * Monitor quality at arrival and coordinate with warehouse for any rejections or downgrades.
+
+                           * Work with the warehouse to manage damage percentages and reduce spoilage.
+
+4. Supplier Performance Tracking
+                              * Track price competitiveness vs. market benchmarks.
+
+                              * Monitor damage percentage per supplier.
+
+                              * Evaluate on-time delivery rates and quality consistency.
+
+                              * Provide monthly supplier performance reports.
+
+5. Data & Reporting
+                                 * Record all sourcing-related data: quantities, prices, supplier names, delivery time, and quality.
+
+                                 * Track per-product volume over time and identify trends or supply gaps.
+
+                                 * Provide sourcing insights to the Strategic PM to support pricing decisions.
+
+                                 * Share weekly summaries with the Head of Product.
+
+________________
+
+
+Key Performance Indicators (KPIs)
+                                    * Total volume sourced per product and per PM
+
+                                    * Supplier reliability and quality score
+
+                                    * Damage percentage for each product
+
+                                    * Price competitiveness vs. benchmarks
+
+                                    * On-time delivery rate
+
+                                    * Contribution to overall profitability
+
+
+PSS Incentive System – One-Page Overview
+Objective
+Reward Product Sourcing Specialists (PSS) for:
+                                       * Maintaining supply across all products (high/mid/low runners)
+
+                                       * Ensuring low-runner coverage
+
+                                       * Supplier competition & onboarding
+
+                                       * Farm sourcing (>70%)
+
+                                       * Damage <5% per purchase
+
+                                       * Competitive pricing vs local shops
+
+________________
+
+
+KPI Categories & Weights
+KPI
+	Weight
+	Target / Notes
+	Volume Contribution
+	40%
+	% of total category volume sourced (High / Mid / Low runners); Low-runner coverage ≥60%
+	Price Competitiveness
+	15%
+	Selling price vs local shop: High ≤25%, Mid ≤40%, Low ≤60% below
+	Supplier Competition & Active Suppliers
+	15%
+	Maintain ≥3 active suppliers per product
+	Damage & Quality
+	20%
+	Damage <5% per purchase
+	Farm vs DC Sourcing
+	10%
+	≥70% from farms → full points
+	________________
+
+
+Supplier Onboarding Bonus
+                                          * Milestones per product for new suppliers/farmers/agents:
+
+                                             * 10 → bonus
+
+                                             * 15 → higher bonus
+
+                                             * 20 → max bonus
+
+________________
+
+
+Ranking / Competitive Multiplier
+                                                * Monthly ranking by total weighted KPI score:
+
+                                                   * 1st → 1.1×
+
+                                                   * 2nd → 1.05×
+
+                                                   * 3rd → 1×
+
+                                                   * 4th → 0.95×
+
+                                                   * 5th → 0.9×
+
+________________
+
+
+Total Incentive Formula
+Final Incentive=Base Incentive×Weighted KPI Score×Rank Multiplier+Supplier Onboarding Bonus\text{Final Incentive} = \text{Base Incentive} \times \text{Weighted KPI Score} \times \text{Rank Multiplier} + \text{Supplier Onboarding Bonus}Final Incentive=Base Incentive×Weighted KPI Score×Rank Multiplier+Supplier Onboarding Bonus
+                                                      * Weighted KPI Score includes:
+
+                                                         * Volume contribution (all categories + low-runner coverage)
+
+                                                         * Price competitiveness vs local shops
+
+                                                         * Active suppliers
+
+                                                         * Damage <5%
+
+                                                         * Farm vs DC sourcing
+
+
+Weekly Incentive Scenario (5 PSS)
+ Weekly Incentive Scenario (5 PSS)
+Average weekly volume: 50,000–60,000 kg
+Payment cycle: Every 2 weeks
+Metrics & Weight:
+                                                            * 40% Volume Contribution
+
+                                                            * 20% Low-Runner Coverage
+
+                                                            * 20% New Supplier Onboarding
+
+                                                            * 10% Farm vs DC
+
+                                                            * 10% Damage Control (Penalty)
+
+                                                            * Price-Down Bonus: separate
+
+Price-Down Targets:
+                                                               * High runners: 25% cheaper than local shops
+
+                                                               * Mid runners: 40% cheaper
+
+                                                               * Low runners: 60% cheaper
+
+                                                               * All met: 3,000 ETB bonus
+
+                                                               * Partial met: 1,500 ETB
+
+________________
+
+
+1. Volume Contribution (40%)
+Total weekly volume: 50,000 kg (30k high + 15k mid + 5k low)
+PSS
+	High
+	Mid
+	Low
+	% Volume → Weighted (40%)
+	Aman
+	12k
+	8k
+	2k
+	32%
+	Hana
+	9k
+	6k
+	1k
+	26%
+	Sami
+	5k
+	4k
+	2k
+	18%
+	Bini
+	3k
+	4.5k
+	0
+	13%
+	Robel
+	1k
+	2k
+	3k
+	11%
+	________________
+
+
+2. Low-Runner Coverage (20%)
+Target: Each PSS must cover ≥50% of low-runner products
+PSS
+	Coverage
+	Weighted %
+	Aman
+	100%
+	20%
+	Hana
+	50%
+	10%
+	Sami
+	100%
+	20%
+	Bini
+	0%
+	0%
+	Robel
+	100%
+	20%
+	________________
+
+
+3. Supplier Onboarding (20%)
+Milestone % → weighted incentive:
+PSS
+	Suppliers added
+	% of target
+	Weighted %
+	Aman
+	12
+	33%
+	6.6%
+	Hana
+	18
+	66%
+	13.3%
+	Sami
+	6
+	0%
+	0%
+	Bini
+	10
+	33%
+	6.6%
+	Robel
+	3
+	0%
+	0%
+	________________
+
+
+4. Farm vs DC (10%)
+Target: ≥70% purchases from farm = full 10%; otherwise 0%
+PSS
+	Farm%
+	Weighted %
+	Aman
+	85%
+	10%
+	Hana
+	72%
+	10%
+	Sami
+	90%
+	10%
+	Bini
+	60%
+	0%
+	Robel
+	50%
+	0%
+	________________
+
+
+5. Damage Control (10%)
+Penalty-based:
+                                                                  * ≤1% damage → full 10%
+
+                                                                  * 1–2% → 5%
+
+                                                                  * 2–3% → 0%
+
+                                                                  * 3% → –5%
+
+
+PSS
+	Damage %
+	Weighted %
+	Aman
+	0.8%
+	10%
+	Hana
+	1.5%
+	5%
+	Sami
+	2.5%
+	0%
+	Bini
+	4%
+	–5%
+	Robel
+	3.5%
+	–5%
+	________________
+
+
+6. Price-Down Bonus (Separate)
+PSS
+	Price-Down Met
+	Bonus ETB
+	Aman
+	All categories
+	3,000
+	Hana
+	Partial
+	1,500
+	Sami
+	All
+	3,000
+	Bini
+	None
+	0
+	Robel
+	Low-runner only
+	1,500
+	________________
+
+
+7. Total % Before Money
+PSS
+	Volume
+	Low-Runner
+	Supplier
+	Farm%
+	Damage
+	Total %
+	Aman
+	32
+	20
+	6.6
+	10
+	10
+	78.6%
+	Hana
+	26
+	10
+	13.3
+	10
+	5
+	64.3%
+	Sami
+	18
+	20
+	0
+	10
+	0
+	48%
+	Bini
+	13
+	0
+	6.6
+	0
+	–5
+	14.6%
+	Robel
+	11
+	20
+	0
+	0
+	–5
+	26%
+	________________
+
+
+8. Incentive Pay (2-Week Pool: 100,000 ETB)
+Formula:
+\text{PSS Incentive} = \frac{\text{PSS %}}{\text{Sum of All %}} \times 100,000
+Sum of % = 231.5
+PSS
+	Incentive ETB
+	Price-Down
+	Total Earned
+	Aman
+	33,900
+	3,000
+	36,900
+	Hana
+	27,700
+	1,500
+	29,200
+	Sami
+	20,700
+	3,000
+	23,700
+	Bini
+	6,300
+	0
+	6,300
+	Robel
+	11,300
+	1,500
+	12,800
+	________________
+
+
+Short Interpretation
+                                                                     * Aman = top performer (high volume + low-runner coverage + farm + low damage + full price-down)
+
+                                                                     * Hana = strong but slightly weaker on low-runners
+
+                                                                     * Sami = good low-runner coverage, but damage and supplier onboarding reduce %
+
+                                                                     * Robel = strong on low-runners only
+
+                                                                     * Bini = fails low-runner, farm%, and damage penalty reduces earnings

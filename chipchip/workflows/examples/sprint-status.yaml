@@ -1,0 +1,47 @@
+# Sprint Status — Pilot Sprint
+
+sprint:
+  number: 0
+  goal: "Pilot sprint: Build Driver Onboarding Tracker using BMAD workflow"
+  start_date: "2026-03-16"
+  end_date: "2026-03-16"
+  status: active
+
+epics:
+  - epic_id: "EPIC-001"
+    title: "Driver Onboarding Tracker"
+    status: in_progress
+    stories:
+      - id: "STORY-001"
+        title: "Add New Driver to Pipeline"
+        status: in_progress
+        points: 3
+        assignee: "@Forge"
+        started: "2026-03-16"
+      - id: "STORY-002"
+        title: "Progress Driver Through Stages"
+        status: inbox
+        points: 3
+        assignee: "@Forge"
+      - id: "STORY-003"
+        title: "Kanban Pipeline View"
+        status: inbox
+        points: 5
+        assignee: "@Forge"
+      - id: "STORY-004"
+        title: "Pipeline Statistics Bar"
+        status: inbox
+        points: 2
+        assignee: "@Forge"
+
+metrics:
+  total_points: 13
+  completed_points: 0
+  in_progress_points: 3
+  remaining_points: 10
+  velocity: null
+
+retrospective:
+  went_well: []
+  to_improve: []
+  action_items: []

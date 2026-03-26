@@ -1,0 +1,246 @@
+﻿INTERNAL PROCESS – B2B GARMENT OUTSOURCING
+Supplier: Sami[a]
+________________
+
+
+1️⃣ PRICING PROCESS
+A. Price Update
+App Team
+* Must update supplier prices every Monday & Thursday
+
+* All updates completed before 10:00 AM
+
+* Sheet must include:
+
+   * SKU
+
+   * Unit price
+
+   * Availability
+
+   * Last updated time
+
+If price changes on any other day:
+      * Supplier must notify App Team immediately
+
+      * If we sell before notification → supplier fulfills at sold price
+
+No negotiation.
+________________
+
+
+2️⃣ ORDER FLOW
+A. Sales & Cutoff
+B2B Team
+         * Adds ChipChip commission
+
+         * Collects restaurant orders
+
+         * Final confirmed orders must be submitted before 9:00–10:00 PM
+
+         * 10:00 PM = order acceptance cutoff
+
+No changes after 10:00 PM.
+________________
+
+
+B. Order Structure (Important Change)
+Orders must be:
+✅ Per restaurant
+❌ Not consolidated
+Each restaurant must have:
+            * SKU
+
+            * Exact KG
+
+            * Special notes if any
+
+B2B → sends per-restaurant breakdown to App Team
+App Team → [b]forwards directly to Supplier + DC Coordinator
+________________
+
+
+3️⃣ SUPPLIER PACKING PROCESS
+Supplier must:
+               * Pack per restaurant
+
+               * Label clearly per restaurant
+
+               * Conduct internal quality check
+
+               * Prepare dispatch sheet per restaurant
+
+Deadline:
+                  * Packing & QC finished by 5:30 AM
+
+________________
+
+
+4️⃣ MORNING CONTROL FLOW
+A. DC Coordinator Check
+Time: Before truck departure
+DC must verify:
+                     * KG per restaurant
+
+                     * Quality (visual + random weight check)
+
+                     * Packing integrity
+
+If quality issue:
+                        * Supplier must replace immediately
+
+If supplier cannot replace:
+                           * DC fulfills from backup supplier
+
+                           * Incident logged
+
+                           * Supplier accountable
+
+If DC misses defect:[c]
+                              * DC responsible for extra KG compensation
+
+                              * Warning issued
+
+________________
+
+
+5️⃣ LOADING & DRIVER CONTROL
+Supplier loads with driver.
+Driver must:
+                                 * Verify KG per restaurant
+
+                                 * Match dispatch sheet
+
+                                 * Report shortage immediately
+
+If driver fails to report:
+                                    * Driver accountable
+
+                                    * Incident recorded
+
+________________
+
+
+6️⃣ DELIVERY & REJECTION PROCESS
+At restaurant:
+Customer must:
+                                       * Check quantity
+
+                                       * Check quality
+
+                                       * Confirm before driver leaves
+
+If rejected:
+                                          * Driver documents:
+
+                                             * Photo
+
+                                             * Reason
+
+                                             * KG rejected
+
+                                                * Inform Supplier + Internal Team immediately
+
+                                                * Return product same day
+
+________________
+
+
+7️⃣ COMPENSATION STRUCTURE (STRONG VERSION)
+A. If Supplier Fails Quantity
+Compensation includes:
+                                                   1. ChipChip lost margin
+
+                                                   2. Extra KG compensation per affected restaurant
+
+Not optional.
+________________
+
+
+B. If Quality Reject
+Supplier must:
+                                                      * Replace immediately
+
+If cannot:
+                                                         * DC fulfills from backup
+
+                                                         * Supplier pays:
+
+                                                            * Price difference
+
+                                                            * Transport difference
+
+                                                            * Extra KG if needed
+
+________________
+
+
+C. Unpicked Orders
+If supplier causes unpicked:
+                                                               * Compensation required
+
+                                                               * Warning issued
+
+After 5 warnings → replacement process starts.
+________________
+
+
+8️⃣ FINAL QUANTITY RECONCILIATION (Ownership Clarified)
+Owner: DC Coordinator
+Process:
+                                                                  * Compare:
+
+                                                                     * B2B order sheet
+
+                                                                     * Supplier dispatch sheet
+
+                                                                     * Driver confirmation sheet
+
+                                                                     * Restaurant signed delivery
+
+Any mismatch:
+                                                                        * Investigate same day
+
+                                                                        * Assign responsibility (Supplier / DC / Driver)
+
+No next-day reconciliation allowed.
+________________
+
+
+9️⃣ ACCOUNTABILITY MATRIX (Clear & Simple)
+Stage
+	Responsible
+	Accountable If Failure
+	Price update
+	App Team
+	App Team
+	Late price notice
+	Supplier
+	Supplier
+	Order submission
+	B2B
+	B2B
+	Packing
+	Supplier
+	Supplier
+	Quality before dispatch
+	DC
+	DC
+	Loading accuracy
+	Driver
+	Driver
+	Restaurant confirmation
+	Driver
+	Driver
+	Final reconciliation
+	DC
+	DC
+	
+
+
+
+[a]are we only planning to work with sami or other suppliers as well??
+1 total reaction
+Samuel Belihu reacted with 👍 at 2026-03-05 13:53 PM
+[b]Currenty we are sending orders per products, what are the ways we planned to send orders per restaurant.
+[c]what if the dc guy himself is  unavailable and unreachable, are we sure we have guys that knows the system and are trained will be assigned and will be a smooth operations ?

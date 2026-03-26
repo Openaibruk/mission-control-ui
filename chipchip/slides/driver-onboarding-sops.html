@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Driver Onboarding SOPs — ChipChip</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0f0f0f; color: #fff; }
+  .slide {
+    width: 960px; height: 540px; margin: 40px auto; padding: 44px 52px;
+    background: linear-gradient(135deg, #1a2a3a 0%, #0d2137 50%, #0a1929 100%);
+    border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative; overflow: hidden; page-break-after: always;
+  }
+  .slide::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00b4d8, #48cae4, #90e0ef);
+  }
+  .slide-number { position: absolute; bottom: 16px; right: 24px; font-size: 12px; color: #1a4a6a; }
+  .chipchip-badge { position: absolute; bottom: 16px; left: 24px; font-size: 11px; color: #1a4a6a; text-transform: uppercase; letter-spacing: 2px; }
+  h1 { font-size: 30px; font-weight: 800; margin-bottom: 8px; line-height: 1.2; }
+  h2 { font-size: 20px; font-weight: 700; margin-bottom: 12px; color: #48cae4; }
+  h3 { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #90e0ef; }
+  p, li { font-size: 12px; line-height: 1.5; color: #a8c8d8; }
+  ul { padding-left: 16px; }
+  li { margin-bottom: 4px; }
+  .accent { color: #e74c3c; }
+  .green { color: #2ecc71; }
+  .yellow { color: #f1c40f; }
+  .blue { color: #48cae4; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px; }
+  .grid-5 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(72,202,228,0.2);
+    border-radius: 8px; padding: 12px;
+  }
+  .card h3 { margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 11px; }
+  th { background: rgba(72,202,228,0.15); color: #48cae4; text-align: left; padding: 5px 10px; font-weight: 600; }
+  td { padding: 4px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #a8c8d8; }
+  .phase-card { text-align: center; padding: 10px 8px; }
+  .phase-num { font-size: 20px; font-weight: 800; color: #48cae4; }
+  .phase-title { font-size: 11px; font-weight: 600; color: #90e0ef; margin-top: 2px; }
+  .phase-day { font-size: 10px; color: #5a8a9a; }
+  .flow-arrow { color: #48cae4; font-size: 16px; }
+  .sop-badge { display: inline-block; background: rgba(72,202,228,0.2); color: #48cae4; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; }
+  .checklist { list-style: none; padding: 0; }
+  .checklist li::before { content: "☐ "; color: #48cae4; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title -->
+<div class="slide" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <h1 style="font-size:34px;">Driver Onboarding<br><span class="blue">Standard Operating Procedures</span></h1>
+  <p style="font-size:15px; color:#90e0ef; margin-top:12px;">6 SOPs for Efficient Driver Processing</p>
+  <p style="color:#1a4a6a; margin-top:24px; font-size:12px;">Version 1.0 • March 16, 2026 • Operations Team</p>
+  <div class="slide-number">1 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 2: Onboarding Flow -->
+<div class="slide">
+  <h2>Driver Onboarding Flow</h2>
+  <div style="display:flex; gap:8px; margin-top:20px; align-items:center;">
+    <div class="card phase-card" style="flex:1;">
+      <div class="phase-num">1</div>
+      <div class="phase-title">Pre-Registration</div>
+      <div class="phase-day">Day 0</div>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="card phase-card" style="flex:1;">
+      <div class="phase-num">2</div>
+      <div class="phase-title">Account Setup</div>
+      <div class="phase-day">Day 1</div>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="card phase-card" style="flex:1;">
+      <div class="phase-num">3</div>
+      <div class="phase-title">Training</div>
+      <div class="phase-day">Day 1-2</div>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="card phase-card" style="flex:1;">
+      <div class="phase-num">4</div>
+      <div class="phase-title">First Week</div>
+      <div class="phase-day">Day 3-7</div>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="card phase-card" style="flex:1;">
+      <div class="phase-num">5</div>
+      <div class="phase-title">Full Activation</div>
+      <div class="phase-day">Day 8+</div>
+    </div>
+  </div>
+  <div style="margin-top:20px;">
+    <h2>SOP Coverage</h2>
+    <div class="grid-5" style="margin-top:8px;">
+      <div class="card" style="text-align:center;"><span class="sop-badge">SOP-001</span><p style="font-size:10px; margin-top:4px;">New Driver Registration</p></div>
+      <div class="card" style="text-align:center;"><span class="sop-badge">SOP-002</span><p style="font-size:10px; margin-top:4px;">Training &amp; Assessment</p></div>
+      <div class="card" style="text-align:center;"><span class="sop-badge">SOP-003</span><p style="font-size:10px; margin-top:4px;">First Week Support</p></div>
+      <div class="card" style="text-align:center;"><span class="sop-badge">SOP-004</span><p style="font-size:10px; margin-top:4px;">Driver Activation</p></div>
+      <div class="card" style="text-align:center;"><span class="sop-badge">SOP-005/6</span><p style="font-size:10px; margin-top:4px;">Incidents &amp; Exit</p></div>
+    </div>
+  </div>
+  <div class="slide-number">2 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 3: SOP-001 Registration -->
+<div class="slide">
+  <h2><span class="sop-badge">SOP-001</span> New Driver Registration</h2>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="card">
+      <h3>📥 Application Receipt</h3>
+      <ul style="font-size:11px;">
+        <li>Driver submits via app or in-person</li>
+        <li>System generates Driver ID (CC-XXXX)</li>
+        <li>Confirmation SMS/email sent</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🔍 Document Verification (24h)</h3>
+      <ul style="font-size:11px;">
+        <li>Driver's license authenticity</li>
+        <li>Vehicle registration validity</li>
+        <li>Insurance coverage check</li>
+        <li>Background check via approved provider</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⚖️ Eligibility Decision</h3>
+      <ul style="font-size:11px;">
+        <li class="green"><strong>Approved:</strong> → Account setup</li>
+        <li style="color:#f1c40f;"><strong>Conditional:</strong> Request missing docs</li>
+        <li class="accent"><strong>Rejected:</strong> Notification + appeal process</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⚙️ Account Provisioning</h3>
+      <ul style="font-size:11px;">
+        <li>Create driver profile</li>
+        <li>Assign delivery zone</li>
+        <li>Set tier to Bronze</li>
+        <li>Enable training module access</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:12px;">
+    <h3>🚨 Escalation Path</h3>
+    <p style="font-size:11px;">Doc issues → Ops Lead (4h) • Background flags → Compliance (immediate) • System errors → Tech Support (1h)</p>
+  </div>
+  <div class="slide-number">3 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 4: SOP-002 Training -->
+<div class="slide">
+  <h2><span class="sop-badge">SOP-002</span> Training &amp; Assessment</h2>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="card">
+      <h3>📚 Training Access</h3>
+      <ul style="font-size:11px;">
+        <li>Send app download + training login</li>
+        <li>Schedule orientation (within 7 days)</li>
+        <li>Assign training materials</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📊 Completion Tracking</h3>
+      <ul style="font-size:11px;">
+        <li>Monitor via admin dashboard</li>
+        <li>Reminder if not started in 48h</li>
+        <li>Auto-unlock quiz after all modules</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>✅ Assessment</h3>
+      <ul style="font-size:11px;">
+        <li>Quiz: <span class="green">≥80%</span> to pass</li>
+        <li>Failed: 24h cooldown → retake</li>
+        <li>Max 3 attempts → in-person review</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🚗 Practical Assessment</h3>
+      <ul style="font-size:11px;">
+        <li>Supervised delivery (recommended)</li>
+        <li>Eval: navigation, customer interaction</li>
+        <li>Document feedback in profile</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:12px;">
+    <h3>📋 Training Modules</h3>
+    <p style="font-size:11px;">App navigation • Order management • GPS navigation • Customer communication • Delivery confirmation • Issue reporting • Package handling • COD procedures • Safety protocols</p>
+  </div>
+  <div class="slide-number">4 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 5: SOP-003 First Week -->
+<div class="slide">
+  <h2><span class="sop-badge">SOP-003</span> First Week Driver Support</h2>
+  <div class="grid-3" style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+    <div class="card" style="text-align:center;">
+      <h3 style="color:#48cae4;">📅 Day 3 Check-in</h3>
+      <ul style="font-size:11px; text-align:left;">
+        <li>Automated: "How's it going?"</li>
+        <li>Review first delivery metrics</li>
+        <li>If no deliveries → phone call</li>
+      </ul>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3 style="color:#f1c40f;">📅 Day 5 Review</h3>
+      <ul style="font-size:11px; text-align:left;">
+        <li>Pull: deliveries, avg rating, response</li>
+        <li>Rating &lt; 3.5 → coaching call</li>
+        <li>0 deliveries → investigate barriers</li>
+      </ul>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3 style="color:#2ecc71;">📅 Day 7 Week 1 Review</h3>
+      <ul style="font-size:11px; text-align:left;">
+        <li>Comprehensive performance summary</li>
+        <li>Identify strengths &amp; improvements</li>
+        <li>Set goals for week 2</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:16px;">
+    <h2>Minimum Week 1 Standards</h2>
+    <div style="display:flex; gap:16px; margin-top:8px;">
+      <div class="card" style="flex:1; text-align:center;"><div style="font-size:22px; font-weight:800; color:#48cae4;">5+</div><p style="font-size:10px;">Deliveries</p></div>
+      <div class="card" style="flex:1; text-align:center;"><div style="font-size:22px; font-weight:800; color:#2ecc71;">≥ 4.0</div><p style="font-size:10px;">Avg Rating</p></div>
+      <div class="card" style="flex:1; text-align:center;"><div style="font-size:22px; font-weight:800; color:#f1c40f;">≥ 95%</div><p style="font-size:10px;">Success Rate</p></div>
+      <div class="card" style="flex:1; text-align:center;"><div style="font-size:22px; font-weight:800; color:#90e0ef;">&lt; 2min</div><p style="font-size:10px;">Response Time</p></div>
+    </div>
+  </div>
+  <div class="slide-number">5 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 6: SOP-004 Activation -->
+<div class="slide">
+  <h2><span class="sop-badge">SOP-004</span> Driver Activation</h2>
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card">
+      <h3>✅ Eligibility Check</h3>
+      <ul style="font-size:11px;">
+        <li>All onboarding phases completed</li>
+        <li>Training quiz passed</li>
+        <li>Week 1 minimums met</li>
+        <li>No outstanding compliance issues</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⚙️ System Updates</h3>
+      <ul style="font-size:11px;">
+        <li>Remove "new driver" flag</li>
+        <li>Expand delivery zone access</li>
+        <li>Enable full features (peak hours, long-dist)</li>
+        <li>Add to active driver pool</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>👥 Community Onboarding</h3>
+      <ul style="font-size:11px;">
+        <li>Add to driver WhatsApp/Telegram group</li>
+        <li>Invite to next community meetup</li>
+        <li>Assign mentor (Gold/Platinum tier)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🔔 Notifications</h3>
+      <ul style="font-size:11px;">
+        <li>Send activation confirmation to driver</li>
+        <li>Notify team lead of new active driver</li>
+        <li>Log activation date for tracking</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-number">6 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 7: SOP-005 Incidents -->
+<div class="slide">
+  <h2><span class="sop-badge">SOP-005</span> Incident Handling During Onboarding</h2>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="card">
+      <h3>⚠️ Incident Types</h3>
+      <ul style="font-size:11px;">
+        <li>Document fraud detected</li>
+        <li>Safety violation during training</li>
+        <li>Vehicle inspection failure</li>
+        <li>Customer complaint (supervised delivery)</li>
+        <li>Driver injury during training</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🚨 Immediate Response</h3>
+      <ul style="font-size:11px;">
+        <li>Suspend onboarding process</li>
+        <li>Document incident details</li>
+        <li>Notify Ops Manager within 1h</li>
+        <li>Ensure driver safety (medical if needed)</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:12px;">
+    <h2>Resolution Matrix</h2>
+    <table>
+      <tr><th>Severity</th><th>Action</th><th>Example</th></tr>
+      <tr><td><span class="green">Low</span></td><td>Warning + additional training</td><td>Minor procedure deviation</td></tr>
+      <tr><td><span style="color:#f1c40f;">Medium</span></td><td>Extended probation + monitoring</td><td>Customer complaint</td></tr>
+      <tr><td><span class="accent">High</span></td><td>Suspension pending review</td><td>Safety violation</td></tr>
+      <tr><td><span style="color:#ff0000;">Critical</span></td><td>Immediate termination + legal</td><td>Document fraud, injury</td></tr>
+    </table>
+  </div>
+  <div class="slide-number">7 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 8: SOP-006 Exit -->
+<div class="slide">
+  <h2><span class="sop-badge">SOP-006</span> Driver Exit Process</h2>
+  <div class="grid-3" style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+    <div class="card">
+      <h3 style="color:#2ecc71;">🟢 Voluntary Exit</h3>
+      <ul style="font-size:11px;">
+        <li>Receive notice (app/phone/in-person)</li>
+        <li>Exit interview</li>
+        <li>Final payment (within 7 days)</li>
+        <li>Deactivate + reclaim materials</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#f1c40f;">🟡 Involuntary (Performance)</h3>
+      <ul style="font-size:11px;">
+        <li>Document issues with evidence</li>
+        <li>2 written warnings (7-day intervals)</li>
+        <li>Final review with Ops Manager</li>
+        <li>Deactivate + final payment</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#e74c3c;">🔴 Involuntary (Violation)</h3>
+      <ul style="font-size:11px;">
+        <li>Immediate suspension</li>
+        <li>Investigation within 48h</li>
+        <li>Reinstatement or termination</li>
+        <li>Final payment (minus penalties)</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:16px;">
+    <h2>Post-Exit Checklist</h2>
+    <div style="display:flex; gap:12px;">
+      <div class="card" style="flex:1;"><p style="font-size:11px;">☐ Remove from all driver groups</p></div>
+      <div class="card" style="flex:1;"><p style="font-size:11px;">☐ Reclaim physical materials (ID, stickers)</p></div>
+      <div class="card" style="flex:1;"><p style="font-size:11px;">☐ Archive records (retain 2 years)</p></div>
+      <div class="card" style="flex:1;"><p style="font-size:11px;">☐ Update driver database</p></div>
+    </div>
+  </div>
+  <div class="slide-number">8 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 9: UX Review Findings -->
+<div class="slide">
+  <h2>UX Review — Friction Points</h2>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="card" style="border-color:rgba(231,76,60,0.5);">
+      <h3 style="color:#e74c3c;">🔴 Critical Issues</h3>
+      <ul style="font-size:11px;">
+        <li><strong>Document Upload Bottleneck</strong> — 7 docs required upfront, no save-and-resume. Fix: partial registration within 48h</li>
+        <li><strong>No Mobile Scanning</strong> — Pre-scanned docs required. Fix: in-app camera + OCR</li>
+        <li><strong>Quiz 80% Threshold</strong> — No retake policy. Fix: unlimited retakes with cooldown</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:rgba(241,196,15,0.5);">
+      <h3 style="color:#f1c40f;">🟡 Moderate Issues</h3>
+      <ul style="font-size:11px;">
+        <li>Rigid 5-day check-in schedule → flexible windows</li>
+        <li>No self-service progress tracking → progress bar</li>
+        <li>Ambiguous background check timeline → 24-48h expectation</li>
+        <li>Welcome kit timing unspecified → ship Day 1</li>
+        <li>No peer mentor → assign buddy driver</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:12px;">
+    <h2>Metrics to Track</h2>
+    <table>
+      <tr><th>Metric</th><th>Target</th><th>Owner</th></tr>
+      <tr><td>Registration completion rate</td><td>&gt;85%</td><td>Product</td></tr>
+      <tr><td>Time to first delivery</td><td>&lt;48h</td><td>Ops</td></tr>
+      <tr><td>Week 1 retention</td><td>&gt;90%</td><td>Ops</td></tr>
+      <tr><td>Training quiz 1st try pass rate</td><td>&gt;70%</td><td>Training</td></tr>
+      <tr><td>Driver satisfaction (onboarding)</td><td>&gt;4.2/5</td><td>Product</td></tr>
+    </table>
+  </div>
+  <div class="slide-number">9 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 10: Thank You -->
+<div class="slide" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <h1 style="font-size:34px;"><span class="blue">Driver Onboarding</span><br>Operations Package</h1>
+  <div style="display:flex; gap:32px; margin-top:32px;">
+    <div style="text-align:center;"><div style="font-size:28px; font-weight:800; color:#48cae4;">6</div><div style="font-size:11px; color:#1a4a6a;">SOPs</div></div>
+    <div style="text-align:center;"><div style="font-size:28px; font-weight:800; color:#48cae4;">5</div><div style="font-size:11px; color:#1a4a6a;">Phases</div></div>
+    <div style="text-align:center;"><div style="font-size:28px; font-weight:800; color:#48cae4;">8</div><div style="font-size:11px; color:#1a4a6a;">UX Fixes ID'd</div></div>
+    <div style="text-align:center;"><div style="font-size:28px; font-weight:800; color:#48cae4;">5</div><div style="font-size:11px; color:#1a4a6a;">Metrics to Track</div></div>
+  </div>
+  <p style="color:#1a4a6a; margin-top:32px; font-size:12px;">Created by @Nova &amp; @Yonas • March 16, 2026</p>
+  <div class="slide-number">10 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+</body>
+</html>

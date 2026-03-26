@@ -1,0 +1,33 @@
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Phase 1 ,,w1,,,w2,,,w3,,,w4,,,,New SGL,Migration to SGL ,Cost per New SGL,Cost per Migration SGL
+,,Target,Com Per,Total ,Target,Com Per,Total ,Target,Com Per,Total ,Target,Target,Total ,1 Sales ,28,42,43,39
+,New SGL ,4,50,200,8,50,208,8,50,400,8,50,400,10 Sales ,280,420,,
+,Migration to SGL ,6,45,270,12,45,282,12,45,540,12,45,540,,Net Salary ,"Commission
+New SGL","Commission
+Migration to SGL ",Total Payment 
+,,,,470,,,490,,,940,,,940,1 Sales ,4000,1208,1632,6840
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,W1,W3,W6,W8,,,,,,,,,,,,,
+,SGL,50,65,85,110,,,,,,,,,,,,,
+,Migrated SGL,45,59,76,99,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Example ,Column 1,W1,Target ,W3,Target ,W6,Target ,W8,Target ,Commission ,Column 2,Column 3,,,,,,
+,SGL,50,4,65,2,84.5,1,109.85,1,524.35,200,3290,,,,,,
+,Migrated SGL,45,6,59,3,76.05,1,98.865,1,620.415,270,,,,,,,
+,,W1,Target ,W3,Target ,W6,Target ,W8,Target ,,#VALUE!,,,,,,,
+,SGL,50,8,65,4,84.5,2,109.85,2,1048.7,400,,,,,,,
+,Migrated SGL,45,12,59,3,76.05,2,98.865,2,1065.33,540,,,,,,,
+,,W1,Target ,W3,Target ,W6,Target ,W8,Target ,,#VALUE!,,,,,,,
+,SGL,50,8,65,4,84.5,2,109.85,2,1048.7,400,,,,,,,
+,Migrated SGL,45,12,59,3,76.05,2,98.865,2,1065.33,540,,,,,,,
+,,W1,Target ,W3,Target ,W6,Target ,W8,Target ,,#VALUE!,,,,,,,
+,SGL,50,8,65,4,84.5,2,109.85,2,1048.7,400,,,,,,,
+,Migrated SGL,45,12,59,3,76.05,2,98.865,2,1065.33,540,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,Total Commission,Base Salary ,Total ,,,,,,
+,,,,,,,,,,7486.855,4000,11486.855,,,,,,

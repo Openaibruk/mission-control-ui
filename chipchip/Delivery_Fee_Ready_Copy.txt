@@ -1,0 +1,65 @@
+CHIPCHIP DELIVERY FEE ROLLOUT – READY-TO-SEND COPY
+
+==========================================
+ENGLISH TELEGRAM ANNOUNCEMENT (T-7 Days)
+==========================================
+🚨 Smart Savings Alert from ChipChip!
+
+Starting next week, we're excited to bring you a new way to save: **FREE Super Leader Pickup** at all our local pickup points!
+
+What's changing?
+- Home delivery will now be a nominal 3 Birr to help support our delivery partners.
+- But you can **always** select "Super Leader Pickup" at checkout and get 100% FREE delivery.
+
+Choose your community. Choose savings. #ChipChipSmart
+
+👉 [Link to FAQ / App Update]
+
+==========================================
+ENGLISH SMS BLAST (T-1 Day)
+==========================================
+ChipChip: Reminder! Starting tomorrow, home delivery = 3 Birr. Choose FREE Super Leader pickup and skip the fee. Save money, support community. [Link to app] Reply STOP to opt out
+
+==========================================
+AMHARIC TELEGRAM ANNOUNCEMENT (T-7 Days)
+==========================================
+🚨 የብር መቋረጫ መረጃ!
+
+በቀን ተረባባይ ቤት መላክ ከዚህ በኋላ 3 ብር ይወሰዳል።
+
+ነገር ግን በሚቀርብለት የብር ቤት ነጭ ቤት (Super Leader) መላክ በነጻ ይጠቀማሉ!
+
+ቤት መላክን መምረጥ ቀን ብር አያስፈልግም።
+
+👉 [የFAQ አገናኝ]
+
+==========================================
+AMHARIC SMS BLAST (T-1 Day)
+==========================================
+ቻፕቺፕ፡ ቀን ብር ቤት መላክ ከዚህ በላይ 3 ብር ይወሰዳል። ነጭ ቤት ቤንሳ (Super Leader) መምረጥ ነጻ ይሆናል። [አፕ አገናኝ]
+
+==========================================
+IN-APP NOTIFICATION (Checkout)
+==========================================
+Title: Choose Your Delivery Option
+
+Body: 
+Home delivery: 3 Birr
+Free Super Leader Pickup: 0 Birr
+
+[Select Pickup] [Select Delivery]
+
+==========================================
+FAQ SHORT ANSWERS (for support)
+==========================================
+Q: Why is home delivery no longer free?
+A: To maintain quality service for our delivery partners, we introduced a small fee. However, we are committed to keeping pickup options free for the community.
+
+Q: Is Super Leader pickup really free?
+A: Yes! It's always free. Just select your local Super Leader at checkout and you'll never pay a delivery fee.
+
+Q: Will my favorite Super Leader still be available?
+A: Absolutely. All current Super Leaders remain active and free to use.
+
+Q: Can I get free delivery if I spend a lot?
+A: Yes! Orders over 500 Birr qualify for free home delivery as a loyalty perk.

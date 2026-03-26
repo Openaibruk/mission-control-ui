@@ -1,0 +1,276 @@
+﻿CONSIGNMENT SALES & OPERATIONS AGREEMENT
+Between ChipChip and [Supplier Name – Meki Tomato Supplier]
+Effective Date: __________
+Test Phase Duration: __________
+________________
+
+
+1. Business Model
+1.1 Model Type
+This arrangement is a Consignment Marketplace Model.
+* Inventory ownership remains with the Supplier until sold to the final customer.
+* ChipChip provides:
+   * App store profile
+   * Marketing support
+   * Warehousing
+   * Fulfillment
+   * Delivery
+   * Settlement processing
+________________
+
+
+2. Store Profile & Marketing
+2.1 Dedicated Store
+ChipChip will create a separate store profile under Supplier name.
+Products will be listed under this store.
+________________
+
+
+2.2 Marketing Support
+ChipChip Marketing Team will support by:
+* SMS campaigns
+* Push notifications
+* In-app banners
+* Store promotion
+* Customer communication
+Marketing does not guarantee sales volume but aims to improve visibility and run rate.
+________________
+
+
+3. Pre-Dispatch & Bidding Process
+3.1 Price Notification
+Before dispatch, Supplier must notify App Team:
+* Quantity (KG)
+* Grade expectation
+* Base price (e.g., 26 birr/kg)
+* Expected dispatch date
+________________
+
+
+3.2 Competitive Review
+App Team will:
+* Submit Supplier price into Sourcing comparison
+* Benchmark against:
+   * Other suppliers
+   * Sunday market price
+   * Local shop prices
+   * ChipChip historical trends
+If Supplier wins:
+→ Dispatch confirmed.
+If Supplier loses:
+Options:
+1. Request price discount
+2. Supply product from alternative supplier and allow Meki Supplier to resell via store
+No shipment without price approval confirmation.
+________________
+
+
+4. Transport to Warehouse
+* Supplier responsible for transport to Addis warehouse.
+* Transport damage risk: Supplier.
+* ChipChip may assist with transport contacts but holds no transport liability.
+________________
+
+
+5. Arrival, Grading & Shelf Life
+5.1 Intake Recording
+Upon arrival, QC will record:
+* Total KG received
+* Arrival damage %
+* Grade breakdown:
+   * Grade A
+   * Grade B
+   * Edible Damage
+   * Waste (non-sellable)
+Arrival damage = Supplier responsibility.
+________________
+
+
+5.2 Edible Damage
+Edible damage:
+* Slight cosmetic or softness defect
+* Sold at discount
+* Must include:
+   * Real product image
+   * Description from QC
+Revenue remains Supplier’s (minus margin).
+________________
+
+
+5.3 Shelf Life Declaration
+QC will declare:
+* Selling window (24 or 48 hours)
+* Grading completion timeline
+If grading cannot be completed same day:
+* Timeline must be communicated
+* Progress updated in system
+If operational delay without communication causes spoilage:
+→ ChipChip may bear responsibility.
+________________
+
+
+6. Pricing & Margin
+6.1 Selling Price Formula
+Supplier Base Price: e.g., 26 birr/kg
+ChipChip adds 5–10% margin on top.
+Example:
+26 birr + 10% = 28.6 birr selling price.
+________________
+
+
+6.2 Market Monitoring
+App Team will monitor:
+* Sunday market price
+* Local shop price
+* ChipChip trends
+* Run rate
+If slow movement:
+→ Supplier notified immediately.
+If Supplier refuses adjustment and spoilage occurs:
+→ Supplier bears loss.
+If ChipChip fails to notify:
+→ ChipChip may share/absorb loss.
+All communication documented.
+________________
+
+
+7. Order & Delivery Model
+7.1 Prepaid Orders
+* Customers pay first.
+* Delivery happens after payment.
+* Settlement occurs only after delivery completion and batch closure.
+________________
+
+
+7.2 Return Scenarios
+Returns may occur due to:
+* Customer postponement
+* Wrong location
+* Customer unreachable
+* Refusal
+Returned products go directly to QC for inspection.
+________________
+
+
+7.3 Return Inspection
+QC will:
+* Inspect immediately
+* Categorize:
+   * Re-sellable
+   * Edible discount
+   * Waste
+* Record:
+   * Batch number
+   * Customer ID
+   * Driver ID
+   * Damage %
+________________
+
+
+7.4 Return Accountability
+Cause
+	Responsible
+	Customer unavailable
+	Customer
+	Wrong location
+	Customer
+	Driver mishandling
+	Logistics
+	Late delivery
+	Logistics
+	Warehouse packing issue
+	Warehouse
+	App routing error
+	ChipChip
+	The supplier is not responsible for delivery-stage damage unless the arrival defect is proven.
+________________
+
+
+8. Unsold Policy (24–48 Hour Window)
+Based on shelf life:
+If spoilage caused by:
+Operational failure (system, warehouse delay, no communication):
+→ ChipChip covers loss.
+Supplier pricing refusal after notification:
+→ Supplier covers loss.
+Joint discount agreement:
+→ Shared loss if documented.
+________________
+
+
+9. Damage Responsibility Summary
+Damage Type
+	Responsible
+	Farm quality
+	Supplier
+	Transport to warehouse
+	Supplier
+	Arrival reject
+	Supplier
+	Edible discount
+	Supplier
+	Warehouse mishandling
+	ChipChip
+	Fulfillment delay
+	ChipChip
+	Last-mile damage
+	Logistics
+	Expiry due to pricing refusal
+	Supplier
+	Expiry due to operational failure
+	ChipChip
+	Damage categories must be recorded separately.
+________________
+
+
+10. Batch-Based Settlement
+Each shipment is treated as a Batch.
+Settlement occurs when:
+* Batch sold out OR
+* Selling window expired
+Settlement calculation:
+Total Sold KG × Selling Price
+– ChipChip Margin (5–10%)
+= Net Payable to Supplier
+Inventory not sold remains Supplier property.
+Payment Term: __________
+________________
+
+
+11. Reporting & Transparency
+ChipChip will provide Supplier:
+Daily:
+* Stock level
+* Sales
+* Damage breakdown
+* Run rate
+* Market comparison
+Weekly:
+* Batch summary
+* Settlement statement
+________________
+
+
+12. Test Phase Review
+After test phase:
+Parties will review:
+* Sales performance
+* Damage %
+* Profitability
+* Operational performance
+Future adjustments may include:
+* Commission structure
+* Storage fee
+* Handling fee
+* Revised margin model
+________________
+
+
+13. Signatures
+Supplier Name: ____________________
+Signature: ____________________
+Date: ____________________
+ChipChip Representative: ____________________
+Signature: ____________________
+Date: ____________________
+________________

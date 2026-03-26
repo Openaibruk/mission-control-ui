@@ -1,0 +1,188 @@
+﻿📘 ChipChip Weekly KPI Meeting — 
+1-Pager SOP
+Meeting: Weekly KPI Review
+Day: Friday
+Total Duration: 2 Hours
+Owner: Chief of Staff
+Purpose: Enforce decisions, protect CP1/CP2, stop KPI drift
+________________
+
+
+🎯 Core Principle (Non-Negotiable)
+KPI meetings are for decisions, not explanations.
+ Explanations happen before executives join.
+________________
+
+
+🧱 Meeting Structure (3 Blocks)
+🔹 Block 1 — Operator KPI Review 
+Duration: 60 min
+Participants: Team Leads only (Finance, Ops, Supply, Growth/B2B, Marketing, Tech)
+Executives: ❌ Not allowed
+Objective:
+* Validate data
+
+* Identify 🔴 KPIs
+
+* Prepare exec-ready decisions
+
+
+
+
+
+
+
+Flow:
+   1. KPI Health Scan (20 min)
+
+      * Each KPI labeled 🟢 / 🟡 / 🔴
+
+      * Max 60 seconds per KPI
+
+         2. Red KPI Resolution (30 min)
+ For each 🔴 KPI:
+
+            * Root cause (1 sentence)
+
+            * Proposed action
+
+            * Owner
+
+            * Expected impact next week
+
+               3. Exec Pack Prep (10 min)
+
+                  * Max 8 slides
+
+                  * Only 🔴 KPIs + decisions needed
+
+Rules:
+                     * ✅ Finance validates numbers live
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+🔹 Block 2 — Executive KPI Review
+Duration: 45 min
+Participants: Executives + Finance + relevant Team Leads only
+Objective:
+ Make decisions, apply vetoes, freeze actions.
+Flow:
+                        1. Executive Snapshot (10 min)
+
+                           * CP1
+
+                           * CP2
+
+                           * Cash position
+
+
+                              2. Red KPI Decisions (25 min)
+ For each 🔴 KPI:
+
+                                 * Owner states problem + proposal
+
+                                 * Executives decide:
+
+                                    * ✅ Approve
+
+                                    * ❌ Block
+
+                                    * 🔁 Modify
+
+                                       3. Veto & Freeze (10 min)
+ Executives may:
+
+                                          * Freeze channels
+
+                                          * Block discounts
+
+                                          * Stop routes
+
+                                          * Pause spend
+
+                                          * Enforce automation
+
+________________
+
+
+🔹 Block 3 — Decision Lock
+Duration: 15 min
+Participants: Executives + CoS
+Output (MANDATORY):
+
+- Sent within 30 minutes after meeting
+
+                                             * Becomes next week’s follow-up list
+
+________________
+
+
+🚦 Status Rules (Company-Wide)
+                                                * 🟢 = On target / improving
+
+                                                * 🟡 = Off target, corrective action active
+
+                                                * 🔴 = Off target, no credible fix
+
+🔴 KPI for 2 consecutive weeks → automatic escalation
+________________
+
+
+❌ What Is NOT Allowed
+                                                   * Open-ended discussions
+
+                                                   * KPIs without owners
+
+________________
+
+
+✅ Success Criteria
+A good KPI meeting ends with:
+                                                      * Fewer KPIs discussed next week
+
+                                                      * Clear blocks & freezes applied
+
+                                                      * Executives spending <45 minutes
+
+                                                      * No “we’ll follow up later”
+
+________________
+
+
+🧠 Final Rule
+If the same KPI appears red for 3 weeks, the system not the team has failed.
+
+
+
+
+= ChipChip Operational Costs Overview ( Review KPi per team and put if we can prepare or when we can prepare ) ( Then merge the Weekly report with KPI selected ) 
+
+
+= Thursday - Wednesday ( Week range for KPI ) 
+
+= Thursday night Ops team

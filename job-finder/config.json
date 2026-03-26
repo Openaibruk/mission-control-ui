@@ -1,0 +1,54 @@
+{
+  "name": "job-finder",
+  "version": "1.0.0",
+  "description": "Automated job search and application tracking system for Bruk",
+  "scripts": {
+    "search": "node scripts/daily-job-search.js",
+    "apply": "node scripts/apply-to-job.js",
+    "research": "node scripts/research-company.js",
+    "status": "node scripts/follow-up-tracker.js"
+  },
+  "preferences": {
+    "targetRoles": [
+      "Business Analyst",
+      "Operations Manager - Banking/Fintech",
+      "Compliance Consultant",
+      "Project Manager - Financial Services"
+    ],
+    "locations": [
+      "Addis Ababa",
+      "Remote",
+      "East Africa",
+      "Global Remote"
+    ],
+    "jobBoards": [
+      "LinkedIn",
+      "Indeed",
+      "RemoteOK",
+      "WeWorkRemotely",
+      "EthioJobs",
+      "BrighterMonday"
+    ],
+    "salaryExpectation": "Competitive with banking sector",
+    "workPreference": "Hybrid or Remote preferred"
+  },
+  "automation": {
+    "dailySearch": {
+      "enabled": true,
+      "time": "09:00",
+      "timezone": "Africa/Addis_Ababa",
+      "channels": ["webchat"]
+    },
+    "weeklyReport": {
+      "enabled": true,
+      "day": "monday",
+      "time": "08:00",
+      "channels": ["webchat"]
+    },
+    "followUpReminders": {
+      "enabled": true,
+      "daysAfterApply": 5,
+      "channels": ["webchat"]
+    }
+  }
+}

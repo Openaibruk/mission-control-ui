@@ -1,0 +1,60 @@
+﻿Restaurant Registration Info Request Form
+1. Current Restaurant Database ( Sheet )
+* Restaurant Name:
+
+* Contact Person:
+
+* Phone Number:
+
+* Location / Sub-city:
+
+* Restaurant Type / Category:
+
+* Status (active / inactive / pending / rejected):
+
+2. Area Coverage
+   * Areas Already Covered:
+
+   * Areas Not Yet Covered:
+
+3. Restaurant Objections
+      * Why restaurants usually refuse: they have a partner they trust, 
+
+      * Most common complaints: 1,delivery time  2nd, product quality 3rd price.  4, receipts  
+
+      * Price issues:Some specific products prices are attractive by the other sellers, Eg, they highly increase some products price while decreasing some products to make the price attractive and customer compare only the lower prices of the other delivery company rather than the actual market price  
+
+      * Quality concerns:products are not consistent with quality every time due to different sourcing and seasons.  
+
+      * Delivery concerns:delivery time issues ,
+
+4. Product Demand
+         * Most common products ordered by restaurants:
+
+         * Top Fresh items:potato for chips with 70% , redonion, fruits and leafly herbs
+
+         * Top FMCG items: detergents , tissues  
+
+5. Price List
+            * Where / how to get official price list: sourcing team updates it after each weeks purchase or purchasing market price
+
+            * Who updates it:sourcing team and sales team add margin and adjust the prices to fit the current demand and needs  
+
+            * How often prices change: twice a week 
+
+6. Delivery Process
+               * Standard delivery time (24hr / 48hr): after 24 hours 
+
+               * Cutoff order time: orders are only accepted before 8 pm every day 
+
+               * Delivery days / schedule: every weekdays and weekend mornings 
+
+               * Pick-up options: only delivery at their locations
+
+7. Payment Process
+                  * Payment methods accepted: pre payment , 7 days for credit after a contract signed with both parties , and bank transfers on delivery 
+
+                  * Payment timing (before / on delivery / after):
+
+                  * Credit eligibility rules: customer with a large amount of order volume, with a licence
+                  * Invoice & receipt process:prepared after customer fully receiving the product and conforming with a signature on the order sheet paper

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChipChip Content Strategy — Super Group</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0f0f0f; color: #fff; }
+  .slide {
+    width: 960px; height: 540px; margin: 40px auto; padding: 48px 56px;
+    background: linear-gradient(135deg, #1b2a1b 0%, #1a2e1a 50%, #0f3a0f 100%);
+    border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative; overflow: hidden; page-break-after: always;
+  }
+  .slide::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #2ecc71, #27ae60, #1abc9c, #16a085);
+  }
+  .slide-number { position: absolute; bottom: 16px; right: 24px; font-size: 12px; color: #5a7a5a; }
+  .chipchip-badge { position: absolute; bottom: 16px; left: 24px; font-size: 11px; color: #5a7a5a; text-transform: uppercase; letter-spacing: 2px; }
+  h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; line-height: 1.2; }
+  h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #2ecc71; }
+  h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: #1abc9c; }
+  p, li { font-size: 13px; line-height: 1.6; color: #b8d4b8; }
+  ul { padding-left: 18px; }
+  li { margin-bottom: 5px; }
+  .accent { color: #e74c3c; }
+  .green { color: #2ecc71; }
+  .yellow { color: #f1c40f; }
+  .blue { color: #3498db; }
+  .subtitle { font-size: 16px; color: #1abc9c; margin-bottom: 24px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(46,204,113,0.2);
+    border-radius: 8px; padding: 14px;
+  }
+  .card h3 { margin-bottom: 6px; }
+  .card p { font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 11px; }
+  th { background: rgba(46,204,113,0.2); color: #2ecc71; text-align: left; padding: 6px 10px; font-weight: 600; }
+  td { padding: 5px 10px; border-bottom: 1px solid rgba(255,255,255,0.06); color: #b8d4b8; }
+  .metric-box { text-align: center; }
+  .metric-box .number { font-size: 24px; font-weight: 800; color: #2ecc71; }
+  .metric-box .label { font-size: 10px; color: #1abc9c; margin-top: 2px; }
+  .pillar-icon { font-size: 28px; margin-bottom: 6px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+  .tag-b2c { background: rgba(52,152,219,0.3); color: #3498db; }
+  .tag-sl { background: rgba(46,204,113,0.3); color: #2ecc71; }
+  .tag-b2b { background: rgba(241,196,15,0.3); color: #f1c40f; }
+  .msg-box {
+    background: rgba(46,204,113,0.1); border-left: 3px solid #2ecc71; padding: 10px 14px;
+    border-radius: 0 6px 6px 0; margin-top: 8px; font-style: italic; font-size: 12px; color: #d4e8d4;
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title -->
+<div class="slide" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <h1 style="font-size:36px;">ChipChip <span class="green">Content Strategy</span></h1>
+  <p class="subtitle" style="font-size:18px;">Super Group Channel &amp; Messaging Framework</p>
+  <p style="color:#5a7a5a; margin-top:24px;">Prepared by Nahom (Marketing Strategy)</p>
+  <p style="color:#5a7a5a; font-size:12px;">March 16, 2026</p>
+  <div class="slide-number">1 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 2: Company Overview -->
+<div class="slide">
+  <h2>What is ChipChip?</h2>
+  <p style="font-size:15px; margin-bottom:16px;">Ethiopian food supply chain platform — <span class="yellow">asset-light orchestration model</span></p>
+  <p style="font-size:16px; font-weight:600; color:#fff; margin-bottom:16px;">"ChipChip stops touching products and starts controlling flows."</p>
+  <div class="grid-4">
+    <div class="metric-box card"><div class="number">7.4M</div><div class="label">ETB Monthly Sales</div></div>
+    <div class="metric-box card"><div class="number">83,731</div><div class="label">Total Orders</div></div>
+    <div class="metric-box card"><div class="number">153,989</div><div class="label">kg Volume</div></div>
+    <div class="metric-box card"><div class="number">-16.7%</div><div class="label">Gross Margin (↑)</div></div>
+  </div>
+  <div class="grid-3" style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+    <div class="card" style="text-align:center;"><h3>Trade Margin</h3><p style="font-size:20px; font-weight:700; color:#2ecc71;">50%</p></div>
+    <div class="card" style="text-align:center;"><h3>Financing/BNPL</h3><p style="font-size:20px; font-weight:700; color:#f1c40f;">35%</p></div>
+    <div class="card" style="text-align:center;"><h3>Supplier Tools</h3><p style="font-size:20px; font-weight:700; color:#3498db;">15%</p></div>
+  </div>
+  <div class="slide-number">2 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 3: Target Segments -->
+<div class="slide">
+  <h2>Four Customer Segments</h2>
+  <div class="grid-2">
+    <div class="card">
+      <span class="tag tag-b2c">B2C</span>
+      <h3 style="margin-top:6px;">Individual Consumers</h3>
+      <p><strong>70.9%</strong> volume • <strong>72.4%</strong> revenue</p>
+      <p>~2.14 kg/order • 88 ETB/order • 85.7% of orders</p>
+      <p style="color:#e74c3c; font-size:11px;">Pain: High delivery (150 ETB), unreliable supply</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-sl">Super Leaders</span>
+      <h3 style="margin-top:6px;">Community Aggregators</h3>
+      <p><strong>15.5%</strong> volume • <strong>11.6%</strong> revenue</p>
+      <p>30kg+ orders • 5% GMV commission</p>
+      <p style="color:#2ecc71; font-size:11px;">Growth: Driver-led recruitment + milestones</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-b2b">B2B</span>
+      <h3 style="margin-top:6px;">Restaurants &amp; HORECA</h3>
+      <p><strong>11%</strong> volume • <strong>15.8%</strong> revenue</p>
+      <p>100kg+ orders • Credit access, reliability</p>
+      <p style="color:#f1c40f; font-size:11px;">Strategy: Contracts, BNPL, credit-inclusive pricing</p>
+    </div>
+    <div class="card">
+      <span class="tag tag-b2b">B2B</span>
+      <h3 style="margin-top:6px;">B2B Captains</h3>
+      <p>Restaurant aggregators</p>
+      <p>Collect weekly demand • Recurring orders</p>
+      <p style="color:#3498db; font-size:11px;">Role: Bridge between ChipChip &amp; restaurants</p>
+    </div>
+  </div>
+  <div class="slide-number">3 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 4: Content Pillars -->
+<div class="slide">
+  <h2>5 Content Pillars</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr; gap:10px; margin-top:16px;">
+    <div class="card" style="text-align:center;">
+      <div class="pillar-icon">💰</div>
+      <h3>Pricing as Discipline</h3>
+      <p style="font-size:11px;">"Prices demand into discipline"</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="pillar-icon">👑</div>
+      <h3>Super Leader Opportunity</h3>
+      <p style="font-size:11px;">"Earn aggregating community demand"</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="pillar-icon">🍽️</div>
+      <h3>Restaurant Reliability</h3>
+      <p style="font-size:11px;">"Reliable supply + cash flow"</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="pillar-icon">🚀</div>
+      <h3>Asset-Light Innovation</h3>
+      <p style="font-size:11px;">"Tech-first, no warehouse"</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="pillar-icon">🤝</div>
+      <h3>Community &amp; Trust</h3>
+      <p style="font-size:11px;">"Affordable groceries, public trust"</p>
+    </div>
+  </div>
+  <div class="slide-number">4 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 5: Key Messages by Segment -->
+<div class="slide">
+  <h2>Key Messages by Segment</h2>
+  <div class="msg-box" style="margin-top:12px;">
+    <strong style="color:#3498db;">For Consumers:</strong> "Save up to 25% by joining your local Super Group" • "Free delivery when your group hits 50kg"
+  </div>
+  <div class="msg-box">
+    <strong style="color:#2ecc71;">For Super Leaders:</strong> "Your community needs a hub. Be that hub." • "Earn 5% on every kg your group orders"
+  </div>
+  <div class="msg-box">
+    <strong style="color:#f1c40f;">For Restaurants:</strong> "Reliable supply. Predictable prices. Flexible payments." • "Order by 7PM, delivered next morning"
+  </div>
+  <div class="msg-box">
+    <strong style="color:#9b59b6;">For Suppliers:</strong> "Sell large quantities, get paid safely" • "Digital payment, immutable records"
+  </div>
+  <div style="margin-top:16px; text-align:center;">
+    <p style="font-size:14px; font-weight:600; color:#fff;">Positioning: <span class="green">"Demand-aggregating, credit-scored network that routes food supply efficiently — farm to fork — using technology instead of warehouses."</span></p>
+  </div>
+  <div class="slide-number">5 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 6: Weekly Content Calendar -->
+<div class="slide">
+  <h2>Weekly Content Calendar</h2>
+  <table style="margin-top:12px;">
+    <tr><th>Day</th><th>Content Type</th><th>Pillar</th><th>Example</th></tr>
+    <tr><td>Monday</td><td>Pricing Update</td><td>💰 Pricing</td><td>Weekly price drop / Market rates</td></tr>
+    <tr><td>Tuesday</td><td>SL Spotlight</td><td>👑 Super Leader</td><td>"Meet your local Super Leader"</td></tr>
+    <tr><td>Wednesday</td><td>Educational</td><td>🚀 Asset-Light</td><td>How the orchestration model works</td></tr>
+    <tr><td>Thursday</td><td>Restaurant Feature</td><td>🍽️ B2B</td><td>Partner spotlight / Menu tips</td></tr>
+    <tr><td>Friday</td><td>Community Update</td><td>🤝 Trust</td><td>Open supply data / Quality metrics</td></tr>
+    <tr><td>Saturday</td><td>Engagement</td><td>All</td><td>Polls / Volume challenges</td></tr>
+    <tr><td>Sunday</td><td>Week in Review</td><td>All</td><td>Metrics, highlights, upcoming drops</td></tr>
+  </table>
+  <div class="slide-number">6 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 7: Channel Strategy -->
+<div class="slide">
+  <h2>Channel Strategy</h2>
+  <table style="margin-top:8px;">
+    <tr><th>Channel</th><th>Purpose</th><th>Mix</th><th>Success Metric</th></tr>
+    <tr><td><strong>Super Group</strong></td><td>Core conversion</td><td>60% promo, 30% edu</td><td>Group order volume</td></tr>
+    <tr><td><strong>WhatsApp</strong></td><td>Direct comms</td><td>70% transactional</td><td>Open rate, CTR</td></tr>
+    <tr><td><strong>Facebook</strong></td><td>Community</td><td>40% community</td><td>New SL sign-ups</td></tr>
+    <tr><td><strong>Instagram</strong></td><td>Brand trust</td><td>50% storytelling</td><td>Follower growth</td></tr>
+    <tr><td><strong>TikTok</strong></td><td>Youth acquisition</td><td>70% entertainment</td><td>Views, shares</td></tr>
+    <tr><td><strong>Email (B2B)</strong></td><td>Retention</td><td>70% transactional</td><td>B2B order frequency</td></tr>
+  </table>
+  <div style="margin-top:16px; text-align:center;">
+    <p style="font-size:12px; color:#1abc9c;">📱 WhatsApp: Max 3x/week to avoid fatigue • Facebook: Respond to comments within 2h</p>
+  </div>
+  <div class="slide-number">7 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 8: Pricing Model -->
+<div class="slide">
+  <h2>Pricing Model</h2>
+  <table style="margin-top:12px;">
+    <tr><th>Segment</th><th>Price Logic</th><th>Delivery Fee</th><th>Strategic Intent</th></tr>
+    <tr><td>Individual</td><td class="accent">+25% Margin</td><td>150 ETB</td><td>Discourage default B2C</td></tr>
+    <tr><td>Group Member</td><td class="green">≥15% Discount</td><td>10 ETB/order</td><td>Incentivize aggregation</td></tr>
+    <tr><td>High-Volume (5kg+)</td><td class="green">Tiered discount</td><td>FREE (1x/day)</td><td>Reward basket size</td></tr>
+    <tr><td>Super Groups (50kg+)</td><td class="green">Bulk discount</td><td>FREE</td><td>Maximize drop efficiency</td></tr>
+    <tr><td>Bulk Booster</td><td class="green">5%+ discount</td><td>Free single drop</td><td>High-tonnage efficiency</td></tr>
+  </table>
+  <div style="margin-top:16px; display:flex; justify-content:center; gap:32px;">
+    <div class="metric-box"><div class="number">85.7%</div><div class="label">Normal B2C Orders</div></div>
+    <div class="metric-box"><div class="number">14.1%</div><div class="label">Super Group Orders</div></div>
+    <div class="metric-box"><div class="number">0.2%</div><div class="label">B2B Orders</div></div>
+  </div>
+  <div class="slide-number">8 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 9: Primary KPIs -->
+<div class="slide">
+  <h2>Primary KPIs &amp; Targets</h2>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="card">
+      <h3>📦 Pickup/Group Share</h3>
+      <p style="font-size:24px; font-weight:800; color:#2ecc71;">&gt;30%</p>
+      <p>of total orders via pickup/groups</p>
+    </div>
+    <div class="card">
+      <h3>👑 Super Leader Growth</h3>
+      <p style="font-size:24px; font-weight:800; color:#2ecc71;">+20/mo</p>
+      <p>net new Super Leaders monthly</p>
+    </div>
+    <div class="card">
+      <h3>🍽️ B2B Revenue Share</h3>
+      <p style="font-size:24px; font-weight:800; color:#f1c40f;">&gt;25%</p>
+      <p>of total revenue from B2B/HORECA</p>
+    </div>
+    <div class="card">
+      <h3>📊 CP1 Target</h3>
+      <p style="font-size:24px; font-weight:800; color:#3498db;">&gt;5%</p>
+      <p>positive contribution profit</p>
+    </div>
+  </div>
+  <div style="margin-top:16px;">
+    <table>
+      <tr><th>Secondary KPI</th><th>Target</th></tr>
+      <tr><td>Super Leader Retention</td><td>&gt;85% (30 days)</td></tr>
+      <tr><td>B2C → Super Group Migration</td><td>&gt;15% monthly</td></tr>
+      <tr><td>Free Delivery Conversion</td><td>&gt;50% of orders</td></tr>
+      <tr><td>BNPL Repayment Rate</td><td>&gt;95% on-time</td></tr>
+    </table>
+  </div>
+  <div class="slide-number">9 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 10: 10-Week Goals -->
+<div class="slide">
+  <h2>10-Week Strategic Goals</h2>
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card">
+      <h3>🌍 External Goals</h3>
+      <ul>
+        <li>Shift volume into better channels</li>
+        <li>Reduce low-quality expensive volume</li>
+        <li>Improve route density &amp; warehouse-light execution</li>
+        <li>Validate better-margin channel performance</li>
+        <li>Begin export-readiness for East Africa</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>⚙️ Internal Goals</h3>
+      <ul>
+        <li>Track team activity structuredly</li>
+        <li>Mine workflows for repeated manual work</li>
+        <li>Prioritize automation opportunities</li>
+        <li>Launch company-wide feedback loop</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:20px; text-align:center;">
+    <p style="font-size:14px; font-weight:600; color:#fff;">Strategic Shift: <span class="green">"Own the flow digitally, not physically"</span></p>
+  </div>
+  <div class="slide-number">10 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 11: Reporting Cadence -->
+<div class="slide">
+  <h2>Reporting Cadence</h2>
+  <div class="grid-3" style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+    <div class="card" style="text-align:center;">
+      <h3 style="color:#e74c3c;">📅 Daily</h3>
+      <ul style="text-align:left; font-size:11px;">
+        <li>Order volume</li>
+        <li>Group share %</li>
+        <li>Cutoff compliance</li>
+      </ul>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3 style="color:#f1c40f;">📅 Weekly</h3>
+      <ul style="text-align:left; font-size:11px;">
+        <li>SL activation rate</li>
+        <li>Content performance</li>
+        <li>Channel engagement</li>
+      </ul>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3 style="color:#2ecc71;">📅 Monthly</h3>
+      <ul style="text-align:left; font-size:11px;">
+        <li>Full P&amp;L analysis</li>
+        <li>CP1 breakdown</li>
+        <li>Segment analysis</li>
+        <li>Channel ROI</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:24px;">
+    <h2>Next Steps</h2>
+    <div style="display:flex; gap:12px; margin-top:8px;">
+      <div class="card" style="flex:1;"><p style="font-size:12px;">1️⃣ Approve content pillars &amp; messaging</p></div>
+      <div class="card" style="flex:1;"><p style="font-size:12px;">2️⃣ Finalize content calendar with dates</p></div>
+      <div class="card" style="flex:1;"><p style="font-size:12px;">3️⃣ Begin content production</p></div>
+      <div class="card" style="flex:1;"><p style="font-size:12px;">4️⃣ Set up KPI dashboard</p></div>
+    </div>
+  </div>
+  <div class="slide-number">11 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 12: Thank You -->
+<div class="slide" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <h1 style="font-size:36px;"><span class="green">Thank You</span></h1>
+  <p style="font-size:16px; color:#b8d4b8; margin-top:16px;">ChipChip Content Strategy — Super Group Channel</p>
+  <div style="display:flex; gap:32px; margin-top:32px;">
+    <div class="metric-box"><div class="number">5</div><div class="label">Content Pillars</div></div>
+    <div class="metric-box"><div class="number">6</div><div class="label">Channels</div></div>
+    <div class="metric-box"><div class="number">7</div><div class="label">Days/Week Calendar</div></div>
+  </div>
+  <p style="color:#5a7a5a; margin-top:32px; font-size:12px;">Report by Nahom • March 16, 2026</p>
+  <div class="slide-number">12 / 12</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+</body>
+</html>

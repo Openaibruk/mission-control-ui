@@ -1,0 +1,159 @@
+# Paperclip Onboarding Report — ChipChip
+
+**Date:** 2026-03-17
+**Status:** ✅ Complete (previously onboarded, verified & auth token generated)
+
+---
+
+## Server Status
+
+- **URL:** http://127.0.0.1:3100
+- **Health:** ✅ `ok`
+- **Deployment Mode:** `local_trusted`
+- **Exposure:** `private`
+- **Auth Ready:** `true`
+- **Bootstrap Status:** `ready`
+
+---
+
+## Company Setup
+
+| Field | Value |
+|-------|-------|
+| **Name** | ChipChip |
+| **Description** | ChipChip - Ethiopian e-commerce platform |
+| **Status** | active |
+| **ID** | `207bd501-9575-42c1-bc53-4ee5c123e274` |
+| **Issue Prefix** | CHI |
+| **Monthly Budget** | $10,000 (1,000,000 cents) |
+| **Board Approval for New Agents** | required |
+
+---
+
+## Agents Created (12 total)
+
+### Executive Leadership
+| Agent | Role | Title | Reports To | Budget |
+|-------|------|-------|------------|--------|
+| **Bruk** | `ceo` | CEO | — | $2,000/mo |
+
+### C-Suite
+| Agent | Role | Title | Reports To | Budget |
+|-------|------|-------|------------|--------|
+| **CTO** | `cto` | Chief Technology Officer | Bruk | $1,500/mo |
+| **CMO** | `cmo` | Chief Marketing Officer | Bruk | $1,500/mo |
+| **Ops Head** | `general` | Head of Operations | Bruk | $1,500/mo |
+
+### Engineering Team (reports to CTO)
+| Agent | Role | Title | Budget |
+|-------|------|-------|--------|
+| **Nova** | `engineer` | Lead AI Engineer | $750/mo |
+| **Henok** | `engineer` | Backend Engineer | $750/mo |
+| **Kiro** | `engineer` | Frontend Engineer | $750/mo |
+| **Cinder** | `devops` | DevOps Engineer | $750/mo |
+
+### Marketing Team (reports to CMO)
+| Agent | Role | Title | Budget |
+|-------|------|-------|--------|
+| **Nahom** | `general` | Marketing Strategist | $750/mo |
+| **Bini** | `general` | Content Lead | $750/mo |
+| **Lidya** | `general` | Growth Manager | $750/mo |
+
+### Total Monthly Budget: ~$11,750/mo
+
+---
+
+## Organization Chart
+
+```
+                    Bruk (CEO)
+                   /     |      \
+                CTO    CMO    Ops Head
+              / | \ \    | \ \
+           Nova Henok Kiro Cinder  Nahom Bini Lidya
+```
+
+---
+
+## Auth Credentials
+
+**Generated API Key (Bruk/CEO):**
+- Key ID: `8ddb8c59-0dba-4e32-b0c2-2d425f7696b9`
+- Token: `pcp_b0d3dd0d8267ba2e2f75af72486f2461fc57b15277dc144a`
+- Saved to: `chipclip/paperclip-auth.txt`
+
+**Note:** In `local_trusted` mode, localhost requests don't require auth headers. The token above is for non-localhost or authenticated-mode access.
+
+---
+
+## Available API Endpoints (key ones)
+
+### Companies
+- `GET /api/companies` — List companies
+- `GET /api/companies/:id` — Get company details
+- `DELETE /api/companies/:id` — Delete company
+
+### Agents
+- `GET /api/companies/:id/agents` — List agents for company
+- `GET /api/agents/:id` — Get single agent
+- `GET /api/agents/me` — Current agent info
+- `GET /api/agents/:id/keys` — List API keys
+- `DELETE /api/agents/:id/keys/:keyId` — Revoke key
+- `GET /api/agents/:id/configuration` — Agent configuration
+- `GET /api/agents/:id/runtime-state` — Runtime state
+- `GET /api/agents/:id/task-sessions` — Task sessions
+
+### Issues & Projects
+- `GET/POST /api/companies/:id/issues` — List/create issues
+- `GET/PUT/DELETE /api/issues/:id` — CRUD issue
+- `GET/POST /api/companies/:id/projects` — List/create projects
+- `GET/PUT/DELETE /api/projects/:id` — CRUD project
+
+### Goals
+- `GET/POST /api/companies/:id/goals` — List/create goals
+- `DELETE /api/goals/:id` — Delete goal
+
+### Approvals
+- `GET /api/companies/:id/approvals` — List approvals
+- `GET /api/approvals/:id` — Get approval
+- `GET /api/approvals/:id/comments` — Approval comments
+- `GET /api/approvals/:id/issues` — Approval issues
+
+### Activity & Budget
+- `GET /api/companies/:id/activity` — Activity log
+- `GET /api/companies/:id/budgets/overview` — Budget overview
+- `GET /api/companies/:id/costs/by-agent` — Costs by agent
+
+### Other
+- `GET /api/health` — Health check
+- `GET /api/agents/me/inbox-lite` — Inbox summary
+- `POST /api/companies/:id/secrets` — Manage secrets
+- `GET /api/companies/:id/labels` — Labels
+- `POST /api/companies/:id/plugins` — Plugins
+
+---
+
+## Current State
+
+- ✅ Company "ChipChip" created and active
+- ✅ 12 agents created with proper org hierarchy
+- ✅ All agents configured with `openclaw_gateway` adapter type
+- ✅ All agents in `idle` status (ready to be activated)
+- ✅ API key generated for CEO (Bruk)
+- ⚠️ No goals, projects, or issues created yet
+- ⚠️ Agents not yet connected to OpenClaw gateway (device keys generated but not paired)
+
+---
+
+## Next Steps
+
+1. **Connect agents to OpenClaw gateway** — Pair each agent's device key with the gateway
+2. **Create initial goals** — Set company objectives via API
+3. **Create first project** — Bootstrap a starter project with issues
+4. **Activate agents** — Transition agents from `idle` to `active` status
+5. **Set up heartbeat monitoring** — Enable agent heartbeat checks
+6. **Configure board approval workflow** — Since `requireBoardApprovalForNewAgents` is true
+
+---
+
+*Report generated by Henok (Dev + DevOps Agent)*

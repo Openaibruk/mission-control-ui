@@ -1,0 +1,23 @@
+END-TO-END OPERATIONAL WORKFLOW (WITH DECISIONS),,,,,,
+Time,Phase,Owner,Action,Decision / Rule,Output / Proof,what to compensate if fail
+20:00–00:00,Night Prep,App Team,"Check stock, run rate, shelf life",If urgent / low MOQ → DC,Stock check log,"subsidies/extra cost, and, or compensation for the custmer per member"
+0:00,DC Order,App Team,Calculate required KG + damage buffer,Buffer mandatory,DC KG request,"subsidies/extra cost, and, or compensation for the custmer per member"
+00:00–01:00,DC Request,App Team → DC Coord,Send KG to DC,—,Request sent,"subsidies/extra cost, and, or compensation for the custmer per member"
+00:00–01:00,DC Share,DC Coordinator,Share KG to suppliers,—,Supplier requests,"subsidies/extra cost, and, or compensation for the custmer per member"
+2:00,DC Pricing,DC Coordinator,Collect prices,Best price + availability,Price comparison,"subsidies/extra cost, and, or compensation for the custmer per member"
+Rule,System,System,At least 3 bids per product,If <3 → flag,System validation,"subsidies/extra cost, and, or compensation for the custmer per member"
+02:30–04:00,DC Collection,DC Coordinator,"Collect, QC, load",Quality must pass,QC + loading proof,"subsidies/extra cost, and, or compensation for the custmer per member"
+04:00–04:30,Request purchase before it arrive warehouse,App Team,request each pruchase in the supply system,"if not requested, it will not be accpets",,"subsidies/extra cost, and, or compensation for the custmer per member"
+5:00,Arrival,DC Coordinator,Truck arrives warehouse,—,Arrival confirmation,"subsidies/extra cost, and, or compensation for the custmer per member"
+05:00–07:30,Gap Control,App Team,Check ordered vs arrived KG,If gap → pivot DC or inform CS,Adjustment report,"subsidies/extra cost, and, or compensation for the custmer per member"
+Decision,App Team,App Team,Check fulfillment time,If late → unpicked + comp,CS & logistics notice,"subsidies/extra cost, and, or compensation for the custmer per member"
+6:00,Farm Bid Start,App Team,Initiate farm bid (pre-alerted only),24h/48h alert mandatory,Bid opened,"subsidies/extra cost, and, or compensation for the custmer per member"
+06:00–07:00,Farm Pricing,Sourcing / DC / Farm Coord,Collect farm prices & benchmarks,≥3 bids required,Submitted bids,"subsidies/extra cost, and, or compensation for the custmer per member"
+8:00,Cutoff,System,Close bidding,Late bids invalid,Bid lock,"subsidies/extra cost, and, or compensation for the custmer per member"
+08:00–09:00,Farm Approval,Farm Network Leader,Review & approve bids and inform souricng team,Competitive vs market,Approval / rejection and inform the winner and app team,"subsidies/extra cost, and, or compensation for the custmer per member"
+09:00–16:00,Request purchase before it arrive warehouse,App Team,Check fulfillment time,,,"subsidies/extra cost, and, or compensation for the custmer per member"
+09:00–16:00,Sales & Pricing,App Team,Price check vs benchmark,Meet margin target,Price update log,"subsidies/extra cost, and, or compensation for the custmer per member"
+09:00–16:00,Risk Control,App Team,Monitor spoilage risk,Flash sale if <48h,Flash sale approval,"subsidies/extra cost, and, or compensation for the custmer per member"
+During Day,Pre-Alert,App Team,Notify farm purchase (24–48h),Mandatory,Pre-alert proof,"subsidies/extra cost, and, or compensation for the custmer per member"
+End of Day,Reporting,App Team,Compile daily report,All issues included,Sent to Supply Lead,"subsidies/extra cost, and, or compensation for the custmer per member"
+Night,Reset,App Team,Prepare next DC/farm orders,Loop restarts,Next cycle ready,

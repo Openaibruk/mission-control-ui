@@ -1,0 +1,52 @@
+# Paperclip Agent API Keys - ChipChip
+# Generated: 2026-03-17
+# Company: 5746d174-95f0-42f3-bd98-a0ed78e4f5a3
+
+## Henok
+Agent ID: f3390083-f469-4db3-9802-49c0186e37a9
+API Key: pcp_ad65e2d54e33f995337f793d07c7bbd51d85d1f326f2b2d5
+
+## Cinder
+Agent ID: 7290be18-a075-4d6d-bea3-73c024dba1d8
+API Key: pcp_8465f96c57de35da09e6b6f9b0af7e524b0e20cdb35d261c
+
+## Onyx
+Agent ID: 61394bc5-8ae9-421d-bfb4-ca4805da043a
+API Key: pcp_0a7a694ae38d32753ba3c4a140c6e3f2906bff40a906a00f
+
+## Forge
+Agent ID: 2c3558d4-142e-46bf-8933-bb79a8309b4b
+API Key: pcp_6d7cffb4c4ee1dcd7e066c230267f519425bce5818300cb1
+
+## Yonas
+Agent ID: 5342a143-9ab3-4744-8804-8e123d7554da
+API Key: pcp_0025b2b98a780afaa51340f228b9c4c48727cb93014dfeef
+
+## Bini
+Agent ID: 0e41c5ca-a599-4bbf-98ea-38017e97ecf0
+API Key: pcp_bb3f72f9f98eb1b9a37e2d28f04a6d6556522fa3379c75ef
+
+## Lidya
+Agent ID: 5de36b7f-adf5-451f-91bd-3f9685623fba
+API Key: pcp_2e1a9e73cd6480f97cafe21f19f7ce34d032e385428aa694
+
+## Amen
+Agent ID: 91e60d3a-64c3-4fc7-b78d-f143d19fa2b9
+API Key: pcp_dd6524bd9e11a1fc09b988e7e13fe03a10c4a5c55f7db1c8
+
+## Kiro
+Agent ID: 02e52821-0d3a-4f05-a23c-62d3c8127a1b
+API Key: pcp_1472392ee67ddd920a00b117d6a6b8dc4fa1bcfb398817af
+
+## Nahom
+Agent ID: 7847949d-95f5-4d88-b3f6-d8a2294fb222
+API Key: pcp_5fa61c01123f40a5a2cd65041eb82c67d3213f9dc421e29f
+
+## Pulse
+Agent ID: 12aba59b-8ce1-401c-a763-f84c115142ec
+API Key: pcp_e5086b344138a11b7dd572660c4909f7e47680b7f5a31817
+
+## Nova
+Agent ID: bb3a602b-71f1-455e-ad1a-1d598e50e1fa
+API Key: pcp_215c04c765cfb24c4c535558120fbeba96a41cf0ef98d6af
+

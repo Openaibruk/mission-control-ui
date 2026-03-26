@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChipChip Dev Team Playbook</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #0f0f0f; color: #fff; }
+  .slide {
+    width: 960px; height: 540px; margin: 40px auto; padding: 44px 52px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #1a0a3e 100%);
+    border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative; overflow: hidden; page-break-after: always;
+  }
+  .slide::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, #9b59b6, #8e44ad, #6c3483, #bb8fce);
+  }
+  .slide-number { position: absolute; bottom: 16px; right: 24px; font-size: 12px; color: #6c3483; }
+  .chipchip-badge { position: absolute; bottom: 16px; left: 24px; font-size: 11px; color: #6c3483; text-transform: uppercase; letter-spacing: 2px; }
+  h1 { font-size: 30px; font-weight: 800; margin-bottom: 8px; line-height: 1.2; }
+  h2 { font-size: 20px; font-weight: 700; margin-bottom: 14px; color: #bb8fce; }
+  h3 { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #d7bde2; }
+  p, li { font-size: 12px; line-height: 1.5; color: #c4b0d0; }
+  ul { padding-left: 16px; }
+  li { margin-bottom: 4px; }
+  .accent { color: #e74c3c; }
+  .green { color: #2ecc71; }
+  .yellow { color: #f1c40f; }
+  .purple { color: #bb8fce; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px; }
+  .grid-5 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(155,89,182,0.2);
+    border-radius: 8px; padding: 12px;
+  }
+  .card h3 { margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 11px; }
+  th { background: rgba(155,89,182,0.2); color: #bb8fce; text-align: left; padding: 6px 10px; font-weight: 600; }
+  td { padding: 5px 10px; border-bottom: 1px solid rgba(255,255,255,0.06); color: #c4b0d0; }
+  .agent-card { text-align: center; padding: 10px; }
+  .agent-name { font-size: 16px; font-weight: 800; color: #fff; }
+  .agent-role { font-size: 10px; color: #bb8fce; margin-top: 2px; }
+  .agent-tasks { font-size: 10px; color: #a088b0; margin-top: 4px; }
+  .phase-box {
+    background: rgba(155,89,182,0.15); border: 1px solid rgba(155,89,182,0.3);
+    border-radius: 8px; padding: 12px; text-align: center;
+  }
+  .phase-name { font-size: 14px; font-weight: 700; color: #d7bde2; }
+  .flow-arrow { color: #bb8fce; font-size: 20px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+  .tag-full { background: rgba(231,76,60,0.3); color: #e74c3c; }
+  .tag-quick { background: rgba(46,204,113,0.3); color: #2ecc71; }
+  .tag-bug { background: rgba(241,196,15,0.3); color: #f1c40f; }
+  .tag-adr { background: rgba(52,152,219,0.3); color: #3498db; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title -->
+<div class="slide" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <h1 style="font-size:34px;">Dev Team <span class="purple">Playbook</span></h1>
+  <p style="font-size:16px; color:#d7bde2; margin-top:8px;">Agent Mapping &amp; Workflow Templates</p>
+  <p style="font-size:13px; color:#bb8fce; margin-top:16px;">Based on BMAD-METHOD's structured agile framework</p>
+  <p style="color:#6c3483; margin-top:24px; font-size:12px;">ChipChip • Dev Team • v1.0</p>
+  <div class="slide-number">1 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 2: 4-Phase Model -->
+<div class="slide">
+  <h2>BMAD's 4-Phase Model</h2>
+  <div style="display:flex; gap:12px; margin-top:24px; align-items:center;">
+    <div class="phase-box" style="flex:1;">
+      <div class="phase-name">Phase 1: ANALYSIS</div>
+      <p style="margin-top:8px; font-size:11px;">Brainstorming<br>Research<br>Product Brief</p>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="phase-box" style="flex:1;">
+      <div class="phase-name">Phase 2: PLANNING</div>
+      <p style="margin-top:8px; font-size:11px;">PRD Creation<br>UX Design<br>User Stories</p>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="phase-box" style="flex:1;">
+      <div class="phase-name">Phase 3: SOLUTIONING</div>
+      <p style="margin-top:8px; font-size:11px;">Architecture<br>Epics &amp; Stories<br>Readiness Check</p>
+    </div>
+    <span class="flow-arrow">→</span>
+    <div class="phase-box" style="flex:1;">
+      <div class="phase-name">Phase 4: BUILD</div>
+      <p style="margin-top:8px; font-size:11px;">Sprint Planning<br>Story Cycles<br>Retrospective</p>
+    </div>
+  </div>
+  <div style="margin-top:24px;">
+    <h2>Key Insight</h2>
+    <p style="font-size:14px; color:#fff;">BMAD uses 12 specialized agents. We consolidate into <span class="purple">5 core agents</span> with clear separation of concerns.</p>
+  </div>
+  <div class="slide-number">2 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 3: Agent Mapping -->
+<div class="slide">
+  <h2>Agent Role Mapping: BMAD → ChipChip</h2>
+  <div class="grid-5" style="margin-top:16px;">
+    <div class="card agent-card">
+      <div class="agent-name" style="color:#bb8fce;">Nova</div>
+      <div class="agent-role">Planning &amp; Orchestration</div>
+      <div class="agent-tasks">Analyst + PM + SM<br>+ Scribe + UX</div>
+    </div>
+    <div class="card agent-card">
+      <div class="agent-name" style="color:#3498db;">Henok</div>
+      <div class="agent-role">Build &amp; Deploy</div>
+      <div class="agent-tasks">Dev + DevOps</div>
+    </div>
+    <div class="card agent-card">
+      <div class="agent-name" style="color:#e74c3c;">Cinder</div>
+      <div class="agent-role">Quality &amp; Review</div>
+      <div class="agent-tasks">QA + Reviewer</div>
+    </div>
+    <div class="card agent-card">
+      <div class="agent-name" style="color:#2ecc71;">Kiro</div>
+      <div class="agent-role">Architecture</div>
+      <div class="agent-tasks">System Design + ADRs</div>
+    </div>
+    <div class="card agent-card">
+      <div class="agent-name" style="color:#f1c40f;">Onyx</div>
+      <div class="agent-role">Security</div>
+      <div class="agent-tasks">Compliance + Vuln</div>
+    </div>
+  </div>
+  <table style="margin-top:16px;">
+    <tr><th>BMAD (12 agents)</th><th>ChipChip (5 agents)</th><th>Responsibilities</th></tr>
+    <tr><td>Analyst + PM + SM + Scribe + UX</td><td class="purple"><strong>Nova</strong></td><td>Planning, research, PRDs, sprint management, docs</td></tr>
+    <tr><td>Dev + DevOps</td><td style="color:#3498db;"><strong>Henok</strong></td><td>Code implementation, CI/CD, deployment, infra</td></tr>
+    <tr><td>QA + Reviewer</td><td style="color:#e74c3c;"><strong>Cinder</strong></td><td>Code review, quality gates, acceptance validation</td></tr>
+    <tr><td>Architect</td><td style="color:#2ecc71;"><strong>Kiro</strong></td><td>System design, tech stack, ADRs, readiness checks</td></tr>
+    <tr><td>Security</td><td style="color:#f1c40f;"><strong>Onyx</strong></td><td>Security review, compliance, vulnerability assessment</td></tr>
+  </table>
+  <div class="slide-number">3 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 4: Template 1 - Full Feature -->
+<div class="slide">
+  <h2><span class="tag tag-full">FULL FEATURE</span> Template 1 — 10+ Story Points</h2>
+  <table style="margin-top:12px;">
+    <tr><th>Step</th><th>Agent</th><th>Action</th><th>Output</th></tr>
+    <tr><td>1</td><td style="color:#bb8fce;">Nova</td><td>Brainstorm &amp; research the feature</td><td>brief.md</td></tr>
+    <tr><td>2</td><td style="color:#bb8fce;">Nova</td><td>Create PRD with requirements</td><td>prd-[feature].md</td></tr>
+    <tr><td>3</td><td style="color:#2ecc71;">Kiro</td><td>Design architecture</td><td>architecture-[feature].md</td></tr>
+    <tr><td>4</td><td style="color:#bb8fce;">Nova</td><td>Break into epics &amp; stories</td><td>Tasks in Supabase</td></tr>
+    <tr><td>5</td><td style="color:#2ecc71;">Kiro</td><td>Readiness check</td><td>PASS / CONCERNS / FAIL</td></tr>
+    <tr><td>6</td><td style="color:#bb8fce;">Nova</td><td>Sprint planning</td><td>sprint-status.yaml</td></tr>
+    <tr><td>7</td><td style="color:#3498db;">Henok</td><td>Implement stories (loop)</td><td>Code + tests</td></tr>
+    <tr><td>8</td><td style="color:#e74c3c;">Cinder</td><td>Code review per story</td><td>Approved / changes needed</td></tr>
+    <tr><td>9</td><td style="color:#bb8fce;">Nova</td><td>Sprint retrospective</td><td>Retro notes</td></tr>
+  </table>
+  <div class="slide-number">4 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 5: Template 2 & 3 -->
+<div class="slide">
+  <h2>Workflow Templates 2–4</h2>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="card">
+      <span class="tag tag-quick">QUICK FLOW</span>
+      <h3 style="margin-top:6px;">Template 2 — 1-5 Points</h3>
+      <table>
+        <tr><td style="color:#bb8fce;">1. Nova</td><td>Write tech spec</td><td>→ tech-spec.md</td></tr>
+        <tr><td style="color:#3498db;">2. Henok</td><td>Implement directly</td><td>→ Code + tests</td></tr>
+        <tr><td style="color:#e74c3c;">3. Cinder</td><td>Quick review</td><td>→ Approved</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <span class="tag tag-bug">BUG FIX</span>
+      <h3 style="margin-top:6px;">Template 3 — Bug Reports</h3>
+      <table>
+        <tr><td style="color:#e74c3c;">1. Cinder</td><td>Reproduce &amp; analyze</td><td>→ Bug analysis</td></tr>
+        <tr><td style="color:#3498db;">2. Henok</td><td>Fix + regression test</td><td>→ Code fix</td></tr>
+        <tr><td style="color:#e74c3c;">3. Cinder</td><td>Verify fix</td><td>→ Done</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px;">
+    <span class="tag tag-adr">ADR</span>
+    <h3 style="margin-top:6px;">Template 4 — Architecture Decision</h3>
+    <div style="display:flex; gap:24px; margin-top:8px;">
+      <p><span style="color:#2ecc71;">1. Kiro</span> — Research &amp; evaluate options → ADR doc</p>
+      <p><span style="color:#bb8fce;">2. Nova</span> — Assess business impact → Impact summary</p>
+      <p><span style="color:#f1c40f;">3. Onyx</span> — Security review (if applicable)</p>
+      <p><span style="color:#2ecc71;">4. Kiro</span> — Final ADR with recommendation</p>
+    </div>
+  </div>
+  <div class="slide-number">5 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 6: Sprint Workflow -->
+<div class="slide">
+  <h2>Sprint Planning Workflow</h2>
+  <div class="grid-3" style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+    <div class="card">
+      <h3 style="color:#e74c3c;">📋 Before Sprint</h3>
+      <ul style="font-size:11px;">
+        <li>Nova: Review backlog, prioritize</li>
+        <li>Nova: Create sprint goal</li>
+        <li>Nova: Generate sprint tasks</li>
+        <li>Kiro: Flag arch dependencies</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#f1c40f;">⚙️ During Sprint</h3>
+      <ul style="font-size:11px;">
+        <li>Henok: Pick highest-priority task</li>
+        <li>Henok: Implement → in_progress → done</li>
+        <li>Cinder: Review completed work</li>
+        <li>Nova: Monitor blockers</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#2ecc71;">🔄 After Sprint</h3>
+      <ul style="font-size:11px;">
+        <li>Nova: Run retrospective</li>
+        <li>Nova: Carry over unfinished stories</li>
+        <li>Nova: Plan next sprint</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:20px;">
+    <h2>Task Status Flow</h2>
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:12px;">
+      <div style="background:rgba(52,152,219,0.3); padding:8px 16px; border-radius:6px; font-weight:600;">inbox</div>
+      <span class="flow-arrow">→</span>
+      <div style="background:rgba(241,196,15,0.3); padding:8px 16px; border-radius:6px; font-weight:600;">in_progress</div>
+      <span class="flow-arrow">→</span>
+      <div style="background:rgba(46,204,113,0.3); padding:8px 16px; border-radius:6px; font-weight:600;">done</div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:8px;">
+      <div style="background:rgba(231,76,60,0.2); padding:6px 12px; border-radius:4px; font-size:11px; color:#e74c3c;">blocked (stalled > 1h) → [resolve] → in_progress</div>
+    </div>
+  </div>
+  <div class="slide-number">6 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 7: Document Templates -->
+<div class="slide">
+  <h2>Document Templates &amp; Examples</h2>
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="card">
+      <h3>📁 Templates</h3>
+      <ul style="font-size:11px;">
+        <li><strong>prd-template.md</strong> — Product Requirements Document</li>
+        <li><strong>architecture-template.md</strong> — System design + ADRs</li>
+        <li><strong>tech-spec-template.md</strong> — Quick flow specification</li>
+        <li><strong>epic-template.md</strong> — Epic + user stories breakdown</li>
+        <li><strong>sprint-status.yaml</strong> — Sprint tracking config</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📁 Pilot Sprint Example</h3>
+      <p style="font-size:11px; margin-bottom:8px;">Driver Onboarding Tracker — full BMAD lifecycle:</p>
+      <ul style="font-size:11px;">
+        <li class="green">✅ Phase 1 (Nova): PRD with 4 user stories</li>
+        <li class="green">✅ Phase 2 (Kiro): Architecture + 3 ADRs</li>
+        <li class="green">✅ Phase 3 (Nova): 4 stories, 13 points</li>
+        <li class="green">✅ Phase 4 (Henok): 7 files, build passing</li>
+        <li style="color:#f1c40f;">🟡 Review (Cinder): Pending Supabase table</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:16px;">
+    <h2>ROI: Before vs After BMAD-Inspired Workflow</h2>
+    <table>
+      <tr><th>Metric</th><th>Before (Ad-hoc)</th><th>After (Structured)</th></tr>
+      <tr><td>Planning consistency</td><td style="color:#e74c3c;">Variable</td><td style="color:#2ecc71;">Structured templates</td></tr>
+      <tr><td>Sprint tracking</td><td style="color:#e74c3c;">Manual</td><td style="color:#2ecc71;">sprint-status.yaml</td></tr>
+      <tr><td>Architecture decisions</td><td style="color:#e74c3c;">Informal</td><td style="color:#2ecc71;">ADRs in arch doc</td></tr>
+      <tr><td>Agent role clarity</td><td style="color:#f1c40f;">Overlapping</td><td style="color:#2ecc71;">Clear 5-agent mapping</td></tr>
+    </table>
+  </div>
+  <div class="slide-number">7 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 8: How to Use -->
+<div class="slide">
+  <h2>How to Use This Playbook</h2>
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card">
+      <h3>🆕 New Feature Request</h3>
+      <ol style="font-size:11px;">
+        <li>Determine track size:
+          <ul>
+            <li><span class="green">Quick Flow</span> (1-5 pts) → Template 2</li>
+            <li><span class="accent">Full Feature</span> (10+ pts) → Template 1</li>
+          </ul>
+        </li>
+        <li>Create project in Mission Control</li>
+        <li>Create tasks following template steps</li>
+        <li>Assign to right agent per mapping</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>🐛 Bug Report</h3>
+      <ol style="font-size:11px;">
+        <li>Use Template 3 (Bug Fix)</li>
+        <li>Log bug as task with severity:
+          <ul>
+            <li><span class="accent">critical</span> / high / medium / low</li>
+          </ul>
+        </li>
+        <li>Assign to <span style="color:#e74c3c;">Cinder</span> (QA) first</li>
+      </ol>
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px;">
+    <h3>🏗️ Tech Decision</h3>
+    <ol style="font-size:11px;">
+      <li>Use Template 4 (ADR)</li>
+      <li>Create task with <strong>[ADR]</strong> prefix</li>
+      <li>Assign to <span style="color:#2ecc71;">Kiro</span> (Architect)</li>
+      <li>Security review by <span style="color:#f1c40f;">Onyx</span> if applicable</li>
+    </ol>
+  </div>
+  <div style="margin-top:16px; text-align:center;">
+    <p style="font-size:13px; color:#d7bde2;">📁 Templates: <code>chipchip/workflows/templates/</code> &nbsp;|&nbsp; 📁 Examples: <code>chipchip/workflows/examples/</code></p>
+  </div>
+  <div class="slide-number">8 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 9: Next Steps -->
+<div class="slide">
+  <h2>Next Steps</h2>
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card">
+      <h3 class="green">✅ Completed</h3>
+      <ul style="font-size:11px;">
+        <li>Agent role mapping complete</li>
+        <li>Workflow templates created (4)</li>
+        <li>Pilot sprint executed</li>
+        <li>Document templates ready (5)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#f1c40f;">📋 Short-term (2 weeks)</h3>
+      <ul style="font-size:11px;">
+        <li>Create Supabase driver_onboarding table</li>
+        <li>Run Cinder code review on pilot</li>
+        <li>Use Quick Flow for next small feature</li>
+        <li>Refine templates based on usage</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 class="purple">🔮 Medium-term (1-2 months)</h3>
+      <ul="font-size:11px;" style="font-size:11px;">
+        <li>Workflow automation (auto-assign)</li>
+        <li>Nova skill: workflow guidance helper</li>
+        <li>Sprint velocity tracking</li>
+        <li>Custom agents via BMAD Builder</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#3498db;">🚀 Long-term</h3>
+      <ul style="font-size:11px;">
+        <li>Re-evaluate BMAD package (if fixed)</li>
+        <li>Phase 4 automation features</li>
+        <li>Dedicated Architect/QA personas</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:16px; text-align:center;">
+    <p style="font-size:13px; font-weight:600; color:#fff;">Cost: <span class="green">$0</span> &nbsp;|&nbsp; Time: <span class="yellow">~2 hours</span> &nbsp;|&nbsp; Deliverables: <span class="purple">10+ files</span></p>
+  </div>
+  <div class="slide-number">9 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+<!-- SLIDE 10: Thank You -->
+<div class="slide" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+  <h1 style="font-size:34px;"><span class="purple">Dev Team Playbook</span></h1>
+  <p style="font-size:15px; color:#d7bde2; margin-top:12px;">Structured Agile for AI Agent Teams</p>
+  <div style="display:flex; gap:32px; margin-top:32px;">
+    <div style="text-align:center;"><div style="font-size:28px; font-weight:800; color:#bb8fce;">5</div><div style="font-size:11px; color:#6c3483;">Agents</div></div>
+    <div style="text-align:center;"><div style="font-size:28px; font-weight:800; color:#bb8fce;">4</div><div style="font-size:11px; color:#6c3483;">Templates</div></div>
+    <div style="text-align:center;"><div style="font-size:28px; font-weight:800; color:#bb8fce;">4</div><div style="font-size:11px; color:#6c3483;">Phases</div></div>
+    <div style="text-align:center;"><div style="font-size:28px; font-weight:800; color:#bb8fce;">1</div><div style="font-size:11px; color:#6c3483;">Pilot Sprint</div></div>
+  </div>
+  <p style="color:#6c3483; margin-top:32px; font-size:12px;">Playbook v1.0 • @Nova • March 16, 2026</p>
+  <div class="slide-number">10 / 10</div>
+  <div class="chipchip-badge">ChipChip</div>
+</div>
+
+</body>
+</html>
