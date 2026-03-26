@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
+import { cn, timeAgo } from '@/lib/utils';
 import { useTheme, useThemeClasses } from '@/hooks/useTheme';
-import { Activity, TrendingUp, Users, Package, AlertTriangle, MessageSquare } from 'lucide-react';
+import { Activity, TrendingUp, Users } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 interface PulseEvent {
   id: string;
@@ -21,46 +22,14 @@ interface Metric {
   color: string;
 }
 
-const formatTimeGMT3 = (date: Date): string => {
-  const options: Intl.DateTimeFormatOptions = {
-    timeZone: 'Africa/Addis_Ababa',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false
-  };
-  return new Intl.DateTimeFormat('en-US', options).format(date);
-};
-
 export function ActivityPulse() {
   const [events, setEvents] = useState<PulseEvent[]>([]);
+  const [loading, setLoading] = useState(true);
   const { isDark } = useTheme();
   const { bg } = useThemeClasses(isDark);
 
-  useEffect(() => {
-    fetch('/api/gateway-status')
-      .then(res => res.json())
-      .then(data => {
-        if (data.activity) {
-          const formatted = data.activity.map((a: any) => {
-            const date = new Date(a.created_at);
-            return {
-              id: a.id,
-              time: formatTimeGMT3(date),
-              agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
-              action: a.action,
-              category: categorizeAction(a.action),
-              intensity: categorizeIntensity(a.action),
-            };
-          });
-          setEvents(formatted.slice(-20));
-        }
-      })
-      .catch(() => {});
-  }, []);
-
   const categorizeAction = (action: string): 'task' | 'deploy' | 'message' | 'metric' | 'alert' => {
-    const lower = action.toLowerCase();
+    const lower = action?.toLowerCase() || '';
     if (lower.includes('deploy') || lower.includes('release')) return 'deploy';
     if (lower.includes('error') || lower.includes('fail') || lower.includes('❌')) return 'alert';
     if (lower.includes('chat') || lower.includes('message')) return 'message';
@@ -69,13 +38,45 @@ export function ActivityPulse() {
   };
 
   const categorizeIntensity = (action: string): number => {
-    const lower = action.toLowerCase();
+    const lower = action?.toLowerCase() || '';
     if (lower.includes('error') || lower.includes('fail')) return 5;
     if (lower.includes('deploy') || lower.includes('release')) return 4;
     if (lower.includes('complete') || lower.includes('✅')) return 3;
     if (lower.includes('start') || lower.includes('running')) return 2;
     return 1;
   };
+
+  useEffect(() => {
+    async function loadActivities() {
+      try {
+        const { data, error } = await supabase
+          .from('activities')
+          .select('id, agent_name, action, created_at')
+          .order('created_at', { ascending: false })
+          .limit(15);
+
+        if (error) throw error;
+
+        const formatted = (data || []).map((a: any) => ({
+          id: a.id,
+          time: new Date(a.created_at).toISOString(),
+          agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
+          action: a.action,
+          category: categorizeAction(a.action),
+          intensity: categorizeIntensity(a.action),
+        }));
+        setEvents(formatted.reverse()); // Bottom is the newest
+      } catch (e) {
+        console.error("Error loading activities for pulse:", e);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadActivities();
+    const interval = setInterval(loadActivities, 15000); // 15 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   const METRICS: Metric[] = [
     { label: 'Activity', value: events.length.toString(), icon: Activity, color: 'text-cyan-400' },
@@ -105,7 +106,7 @@ export function ActivityPulse() {
   );
 
   return (
-    <div className={`${bg} rounded-lg p-4`}>
+    <div className={`${bg} rounded-lg p-4 h-full flex flex-col`}>
       <div className="flex items-center gap-2 mb-3">
         <Activity className="w-4 h-4 text-cyan-400" />
         <span className="text-[11px] font-semibold text-cyan-400 uppercase tracking-wider">Activity Pulse</span>
@@ -120,27 +121,27 @@ export function ActivityPulse() {
         </div>
       </div>
 
-      <div className="space-y-1">
-        {events.length === 0 ? (
-          <div className="text-neutral-500 text-[10px] text-center py-4">
-            No events in the last 24 hours
-          </div>
+      <div className="space-y-1 flex-1 overflow-y-auto">
+        {loading ? (
+          <div className="text-neutral-500 text-[10px] text-center py-4">Loading real-time events...</div>
+        ) : events.length === 0 ? (
+          <div className="text-neutral-500 text-[10px] text-center py-4">No events found.</div>
         ) : (
-          events.slice(-15).map((evt, i) => (
+          events.map((evt, i) => (
             <div
               key={evt.id}
               className={cn(
                 'flex items-center gap-2 py-1 px-2 rounded text-[10px]',
-                i === 0 && 'ring-1 ring-cyan-500/20'
+                i === events.length - 1 && 'ring-1 ring-cyan-500/20 bg-cyan-900/10' // Highlight newest
               )}
             >
-              <span className="text-[9px] text-neutral-600 font-mono shrink-0 mt-0.5">
-                {evt.time.slice(0, 5)}
+              <span className="text-[9px] text-neutral-500 font-mono shrink-0 mt-0.5 w-12 text-right">
+                {timeAgo(evt.time)}
               </span>
-              <span className="text-[9px] text-neutral-300 font-semibold shrink-0 w-10 truncate">
+              <span className="text-[9px] text-neutral-300 font-semibold shrink-0 w-12 truncate">
                 {evt.agent}
               </span>
-              <span className="text-[10px] text-neutral-400 flex-1 leading-tight truncate">
+              <span className="text-[10px] text-neutral-400 flex-1 leading-tight truncate" title={evt.action}>
                 {evt.action}
               </span>
               {intensityBars(evt.intensity)}

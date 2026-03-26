@@ -182,7 +182,6 @@ export const NAV_ITEMS = [
   { id: 'agents', label: 'Agents', icon: 'UserCircle' },
   { id: 'live-agents', label: 'Live Agents', icon: 'Users' },
   { id: 'approvals', label: 'Approvals', icon: 'AlertCircle' },
-  { id: 'workflow', label: 'Workflow', icon: 'Network' },
   { id: 'skills', label: 'Skills', icon: 'Wrench' },
   { id: 'insights', label: 'Analytics', icon: 'TrendingUp' },
   { id: 'virtual', label: 'Virtual Office', icon: 'Building2' },

@@ -42,7 +42,6 @@ const sections: NavSection[] = [
       { id: 'live-agents' as ViewType, label: 'Live Agents', icon: Users, real: true },
       { id: 'board', label: 'Tasks', icon: ListTodo, real: true },
       { id: 'projects' as ViewType, label: 'Projects', icon: FolderOpen, real: true },
-      { id: 'workflow', label: 'Workflow', icon: MessageSquare, real: true },
       { id: 'skills', label: 'Skills', icon: Hammer, real: true },
       { id: 'approvals', label: 'Approvals', icon: Bell, real: true },
       { id: 'insights', label: 'Analytics', icon: Activity, real: true },

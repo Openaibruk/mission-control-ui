@@ -199,7 +199,6 @@ export default function MC() {
                 />
               )}
               {view === 'approvals' && <ApprovalsView />}
-              {view === 'workflow' && <WorkflowView />}
               {view === 'skills' && <SkillsView theme={theme} />}
               {view === 'insights' && <AnalyticsView />}
               {view === 'activity' && <ActivityView activities={db.activities} agents={db.agents} loading={db.loading} theme={theme} />}

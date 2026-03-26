@@ -41,7 +41,7 @@ export function TokenCostWidget({ theme }: TokenCostWidgetProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/token-costs')
+    fetch('/api/token-costs.json')
       .then(r => r.ok ? r.json() : null)
       .then(d => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
