@@ -1,32 +1,32 @@
 {
   "business": {
-    "date": "2026-03-23",
-    "revenue": "73628.68",
-    "orders": 6,
-    "aov": 12271.446666666665,
-    "cp1": "12263.18",
-    "cp1_margin": "16.66%",
-    "cp2": "8238.18",
-    "cp2_margin": "11.19%",
-    "cogs": "61365.50",
-    "warehouse": "2415.00",
-    "delivery": "1610.00"
+    "date": "2026-03-26",
+    "revenue": "17885.46",
+    "orders": 3,
+    "aov": 5961.82,
+    "cp1": "2785.96",
+    "cp1_margin": "15.58%",
+    "cp2": "2187.46",
+    "cp2_margin": "12.23%",
+    "cogs": "15099.50",
+    "warehouse": "598.50",
+    "delivery": "399.00"
   },
   "news": [
     {
-      "title": "Ethiopia's Digital Transformation Accelerates with New Tech Hubs",
-      "source": "The Reporter",
-      "date": "2026-03-24",
-      "url": "#",
-      "summary": "Government announces plan to establish 10 new technology hubs across major cities.",
+      "title": "Ethiopia FDI hits $18.6B in 5 years",
+      "source": "Shega",
+      "date": "2026-03-26",
+      "url": "https://shega.co",
+      "summary": "Ethiopia attracts significant foreign investment over past half-decade.",
       "category": "Tech"
     },
     {
-      "title": "ChipChip Gross Margin Improved: -45% → -17% in one month",
+      "title": "ChipChip Gross Margin stands at 15.58%",
       "source": "Internal",
-      "date": "2026-03-24",
+      "date": "2026-03-26",
       "url": "#",
-      "summary": "Asset-light orchestration model showing rapid margin improvement.",
+      "summary": "Asset-light orchestration model showing continuous monitoring.",
       "category": "Internal"
     }
   ]
