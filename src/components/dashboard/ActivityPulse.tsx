@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { cn, timeAgo } from '@/lib/utils';
 import { useTheme, useThemeClasses } from '@/hooks/useTheme';
-import { Activity, TrendingUp, Users } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
+import { Activity as ActivityIcon, TrendingUp, Users } from 'lucide-react';
+import { Activity } from '@/lib/types';
 
 interface PulseEvent {
   id: string;
@@ -22,9 +22,7 @@ interface Metric {
   color: string;
 }
 
-export function ActivityPulse() {
-  const [events, setEvents] = useState<PulseEvent[]>([]);
-  const [loading, setLoading] = useState(true);
+export function ActivityPulse({ activities = [] }: { activities?: Activity[] }) {
   const { isDark } = useTheme();
   const { bg } = useThemeClasses(isDark);
 
@@ -46,40 +44,19 @@ export function ActivityPulse() {
     return 1;
   };
 
-  useEffect(() => {
-    async function loadActivities() {
-      try {
-        const { data, error } = await supabase
-          .from('activities')
-          .select('id, agent_name, action, created_at')
-          .order('created_at', { ascending: false })
-          .limit(15);
-
-        if (error) throw error;
-
-        const formatted = (data || []).map((a: any) => ({
-          id: a.id,
-          time: new Date(a.created_at).toISOString(),
-          agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
-          action: a.action,
-          category: categorizeAction(a.action),
-          intensity: categorizeIntensity(a.action),
-        }));
-        setEvents(formatted.reverse()); // Bottom is the newest
-      } catch (e) {
-        console.error("Error loading activities for pulse:", e);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadActivities();
-    const interval = setInterval(loadActivities, 15000); // 15 seconds
-    return () => clearInterval(interval);
-  }, []);
+  const events = useMemo(() => {
+    return activities.slice(-15).map(a => ({
+      id: a.id,
+      time: new Date(a.created_at).toISOString(),
+      agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
+      action: a.action,
+      category: categorizeAction(a.action),
+      intensity: categorizeIntensity(a.action),
+    }));
+  }, [activities]);
 
   const METRICS: Metric[] = [
-    { label: 'Activity', value: events.length.toString(), icon: Activity, color: 'text-cyan-400' },
+    { label: 'Activity', value: events.length.toString(), icon: ActivityIcon, color: 'text-cyan-400' },
     { label: 'Intensity', value: Math.max(...events.map(e => e.intensity), 1).toString(), icon: TrendingUp, color: 'text-emerald-400' },
     { label: 'Agents', value: new Set(events.map(e => e.agent)).size.toString(), icon: Users, color: 'text-purple-400' },
   ];
@@ -108,7 +85,7 @@ export function ActivityPulse() {
   return (
     <div className={`${bg} rounded-lg p-4 h-full flex flex-col`}>
       <div className="flex items-center gap-2 mb-3">
-        <Activity className="w-4 h-4 text-cyan-400" />
+        <ActivityIcon className="w-4 h-4 text-cyan-400" />
         <span className="text-[11px] font-semibold text-cyan-400 uppercase tracking-wider">Activity Pulse</span>
         <div className="flex-1" />
         <div className="flex items-center gap-2">
@@ -122,9 +99,7 @@ export function ActivityPulse() {
       </div>
 
       <div className="space-y-1 flex-1 overflow-y-auto">
-        {loading ? (
-          <div className="text-neutral-500 text-[10px] text-center py-4">Loading real-time events...</div>
-        ) : events.length === 0 ? (
+        {events.length === 0 ? (
           <div className="text-neutral-500 text-[10px] text-center py-4">No events found.</div>
         ) : (
           events.map((evt, i) => (

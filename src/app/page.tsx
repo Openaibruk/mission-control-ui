@@ -28,7 +28,7 @@ import { LiveAgentsView } from '@/components/views/LiveAgentsView';
 import { AnalyticsView } from '@/components/views/AnalyticsView';
 import { NovaWidget } from '@/components/chat/NovaWidget';
 import { QuickTrigger } from '@/components/shared/QuickTrigger';
-import VirtualOfficePage from '@/app/virtual-office/page';
+import { VirtualOfficeView } from '@/components/views/VirtualOfficeView';
 
 export default function MC() {
   const { theme, toggle: toggleTheme, isDark } = useTheme();
@@ -206,7 +206,7 @@ export default function MC() {
               {view === 'feedback' && <FeedbackView theme={theme} />}
               {view === 'graph' && <GraphView theme={theme} />}
               {view === 'hyperlearn' && <HyperLearnView />}
-              {view === 'virtual' && <VirtualOfficePage />}
+              {view === 'virtual' && <VirtualOfficeView agents={db.agents} tasks={db.tasks} activities={db.activities} theme={theme} />}
             </>
           )}
         </div>

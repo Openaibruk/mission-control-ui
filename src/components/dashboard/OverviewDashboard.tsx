@@ -170,7 +170,7 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
         <EthiopianCalendar />
         <NewsFeed />
         <AgentCommandCenter />
-        <ActivityPulse />
+        <ActivityPulse activities={activities} />
       </div>
 
       {/* ── Context Domains ── */}
