@@ -169,7 +169,7 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
         <EthiopianCalendar />
         <NewsFeed />
-        <AgentCommandCenter />
+        <AgentCommandCenter activities={activities} />
         <ActivityPulse activities={activities} />
       </div>
 

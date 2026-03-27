@@ -31,7 +31,9 @@ const formatTimeGMT3 = (date: Date): string => {
   return new Intl.DateTimeFormat('en-US', options).format(date);
 };
 
-export function AgentCommandCenter() {
+import { Activity } from '@/lib/types';
+
+export function AgentCommandCenter({ activities = [] }: { activities?: Activity[] }) {
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [command, setCommand] = useState('');
   const [isStreaming, setIsStreaming] = useState(true);
@@ -43,29 +45,25 @@ export function AgentCommandCenter() {
   const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Fetch initial activity log
-    fetch('/api/gateway-status')
-      .then(res => res.json())
-      .then(data => {
-        if (data.activity) {
-          const formattedLogs: LogEntry[] = data.activity.map((a: ActivityLog) => {
-            const d = new Date(a.created_at);
-            return {
-              id: a.id,
-              time: formatTimeGMT3(d),
-              agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
-              action: a.action,
-              type: a.action.includes('✅') || a.action.includes('complete') ? 'success' as const
-                : a.action.includes('deploy') ? 'deploy' as const
-                : a.action.includes('❌') || a.action.includes('error') ? 'alert' as const
-                : 'info' as const,
-            };
-          });
-          setLogs(formattedLogs.slice(-50));
-        }
-      })
-      .catch(() => {});
-  }, []);
+    if (activities.length > 0) {
+      const formattedLogs: LogEntry[] = [...activities]
+        .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime())
+        .map(a => {
+          const d = new Date(a.created_at);
+          return {
+            id: a.id,
+            time: formatTimeGMT3(d),
+            agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
+            action: a.action,
+            type: a.action.includes('✅') || a.action.includes('complete') ? 'success' as const
+              : a.action.includes('deploy') ? 'deploy' as const
+              : a.action.includes('❌') || a.action.includes('error') ? 'alert' as const
+              : 'info' as const,
+          };
+        });
+      setLogs(formattedLogs.slice(-50));
+    }
+  }, [activities]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
