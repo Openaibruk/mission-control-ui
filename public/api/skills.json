@@ -433,6 +433,14 @@
       "source": "workspace"
     },
     {
+      "id": "cli-anything",
+      "name": "cli-anything",
+      "description": "Use when the user wants OpenClaw to build, refine, test, or validate a CLI-Anything harness for a GUI application or source repository. Adapts the CLI-Anything methodology to OpenClaw without changing the generated Python harness format.",
+      "category": "Core",
+      "path": "/home/ubuntu/.openclaw/workspace/skills/cli-anything/SKILL.md",
+      "source": "workspace"
+    },
+    {
       "id": "telegram-supplier-communicator",
       "name": "telegram-supplier-communicator",
       "description": "A skill to send automated messages to farmers/suppliers via a Telegram bot API.",
@@ -822,6 +830,14 @@
       "description": "Send and receive emails autonomously via Nova's official AgentMail inbox (novamars@agentmail.to). Useful for verifying accounts, checking inbox messages, getting authentication codes, sending outbound emails, and reading full email content.",
       "category": "Core",
       "path": "/home/ubuntu/.openclaw/workspace/skills/agentmail/SKILL.md",
+      "source": "workspace"
+    },
+    {
+      "id": "cli-hub-meta-skill",
+      "name": "cli-hub-meta-skill",
+      "description": ">-",
+      "category": "Core",
+      "path": "/home/ubuntu/.openclaw/workspace/skills/cli-hub-meta-skill/SKILL.md",
       "source": "workspace"
     },
     {
