@@ -45,14 +45,17 @@ export function ActivityPulse({ activities = [] }: { activities?: Activity[] }) 
   };
 
   const events = useMemo(() => {
-    return activities.slice(-15).map(a => ({
-      id: a.id,
-      time: new Date(a.created_at).toISOString(),
-      agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
-      action: a.action,
-      category: categorizeAction(a.action),
-      intensity: categorizeIntensity(a.action),
-    }));
+    return [...activities]
+      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+      .slice(0, 15)
+      .map(a => ({
+        id: a.id,
+        time: new Date(a.created_at).toISOString(),
+        agent: (a.agent_name || 'Unknown').replace(/^@+/, ''),
+        action: a.action,
+        category: categorizeAction(a.action),
+        intensity: categorizeIntensity(a.action),
+      }));
   }, [activities]);
 
   const METRICS: Metric[] = [
@@ -107,7 +110,7 @@ export function ActivityPulse({ activities = [] }: { activities?: Activity[] }) 
               key={evt.id}
               className={cn(
                 'flex items-center gap-2 py-1 px-2 rounded text-[10px]',
-                i === events.length - 1 && 'ring-1 ring-cyan-500/20 bg-cyan-900/10' // Highlight newest
+                i === 0 && 'ring-1 ring-cyan-500/20 bg-cyan-900/10' // Highlight newest at the top
               )}
             >
               <span className="text-[9px] text-neutral-500 font-mono shrink-0 mt-0.5 w-12 text-right">
