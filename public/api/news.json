@@ -1,30 +1,30 @@
 {
   "business": {
-    "date": "2026-03-26",
-    "revenue": "17885.46",
-    "orders": 3,
-    "aov": 5961.82,
-    "cp1": "2785.96",
-    "cp1_margin": "15.58%",
-    "cp2": "2187.46",
-    "cp2_margin": "12.23%",
-    "cogs": "15099.50",
-    "warehouse": "598.50",
-    "delivery": "399.00"
+    "date": "2026-03-27",
+    "revenue": "26725.98",
+    "orders": 4,
+    "aov": 6681.5,
+    "cp1": "4132.98",
+    "cp1_margin": "15.46%",
+    "cp2": "3052.98",
+    "cp2_margin": "11.42%",
+    "cogs": "22593.00",
+    "warehouse": "1080.00",
+    "delivery": "720.00"
   },
   "news": [
     {
       "title": "Ethiopia FDI hits $18.6B in 5 years",
       "source": "Shega",
-      "date": "2026-03-26",
+      "date": "2026-03-27",
       "url": "https://shega.co",
       "summary": "Ethiopia attracts significant foreign investment over past half-decade.",
       "category": "Tech"
     },
     {
-      "title": "ChipChip Gross Margin stands at 15.58%",
+      "title": "ChipChip Gross Margin stands at 15.46%",
       "source": "Internal",
-      "date": "2026-03-26",
+      "date": "2026-03-27",
       "url": "#",
       "summary": "Asset-light orchestration model showing continuous monitoring.",
       "category": "Internal"
