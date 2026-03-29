@@ -4,9 +4,11 @@ import path from 'path'
 
 export const dynamic = 'force-dynamic';
 
-const WORKSPACE_ROOT = '/home/ubuntu/.openclaw/workspace'
+const VPS_ROOT = '/home/ubuntu/.openclaw/workspace'
+const WORKSPACE_ROOT = fs.existsSync(VPS_ROOT) ? VPS_ROOT : process.cwd()
 
 function walkDir(dir: string, fileList: any[] = []) {
+  if (!fs.existsSync(dir)) return fileList;
   const files = fs.readdirSync(dir)
   for (const file of files) {
     if (file === 'node_modules' || file === '.git' || file === '.next') continue;

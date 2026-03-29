@@ -4,7 +4,9 @@ import path from 'path'
 
 export const dynamic = 'force-dynamic';
 
-const WORKSPACE_ROOT = '/home/ubuntu/.openclaw/workspace'
+// Attempt to use the VPS path if it exists, otherwise fallback to the current working directory of the Vercel app
+const VPS_ROOT = '/home/ubuntu/.openclaw/workspace'
+const WORKSPACE_ROOT = fs.existsSync(VPS_ROOT) ? VPS_ROOT : process.cwd()
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
@@ -13,7 +15,7 @@ export async function GET(request: NextRequest) {
 
   try {
     if (!fs.existsSync(fullPath)) {
-      return NextResponse.json({ error: 'Directory not found' }, { status: 404 })
+      return NextResponse.json({ items: [] })
     }
 
     const stats = fs.statSync(fullPath)
