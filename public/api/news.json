@@ -1,6 +1,6 @@
 {
   "business": {
-    "date": "2026-03-27",
+    "date": "2026-03-29",
     "revenue": "26725.98",
     "orders": 4,
     "aov": 6681.5,
@@ -16,7 +16,7 @@
     {
       "title": "Ethiopia FDI hits $18.6B in 5 years",
       "source": "Shega",
-      "date": "2026-03-27",
+      "date": "2026-03-29",
       "url": "https://shega.co",
       "summary": "Ethiopia attracts significant foreign investment over past half-decade.",
       "category": "Tech"
@@ -24,7 +24,7 @@
     {
       "title": "ChipChip Gross Margin stands at 15.46%",
       "source": "Internal",
-      "date": "2026-03-27",
+      "date": "2026-03-29",
       "url": "#",
       "summary": "Asset-light orchestration model showing continuous monitoring.",
       "category": "Internal"

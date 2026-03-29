@@ -16,19 +16,41 @@ interface AgentGridProps {
   theme: 'dark' | 'light';
 }
 
-const departments = [
-  { name: 'Development', color: 'bg-blue-500', textColor: 'text-blue-500', borderColor: 'border-blue-500', agents: ['Henok', 'Cinder', 'Kiro', 'Onyx'] },
-  { name: 'Marketing', color: 'bg-pink-500', textColor: 'text-pink-500', borderColor: 'border-pink-500', agents: ['Nahom', 'Bini', 'Lidya', 'Amen'] },
-  { name: 'Strategy', color: 'bg-violet-500', textColor: 'text-violet-500', borderColor: 'border-violet-500', agents: ['Vision', 'Cipher', 'Loki'] },
-  { name: 'Analytics', color: 'bg-orange-500', textColor: 'text-orange-500', borderColor: 'border-orange-500', agents: ['Orion', 'Lyra'] },
-];
-
-export function AgentGrid({ agents, tasks, onAgentClick, onNewAgent, loading, theme }: AgentGridProps) {
-  const isDark = theme === 'dark';
+const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
   const [pingedAgents, setPingedAgents] = useState<Set<string>>(new Set());
-  const [expandedDepts, setExpandedDepts] = useState<Set<string>>(new Set(['Development', 'Marketing', 'Strategy']));
   const [triggerAgent, setTriggerAgent] = useState<string | null>(null);
+
+  const departments = useMemo(() => {
+    const map = new Map<string, Agent[]>();
+    agents.forEach(agent => {
+      if (agent.name === 'Nova' || agent.name === 'Bruk') return;
+      // Extract department from role or use a fallback. A simple split by space could work, or just use the role name.
+      const deptName = agent.role ? agent.role.split(' ')[0] : 'General';
+      if (!map.has(deptName)) map.set(deptName, []);
+      map.get(deptName)!.push(agent);
+    });
+    
+    return Array.from(map.entries()).map(([name, deptAgents], index) => {
+      const colors = [
+        { bg: 'bg-blue-500', text: 'text-blue-500', border: 'border-blue-500' },
+        { bg: 'bg-pink-500', text: 'text-pink-500', border: 'border-pink-500' },
+        { bg: 'bg-violet-500', text: 'text-violet-500', border: 'border-violet-500' },
+        { bg: 'bg-orange-500', text: 'text-orange-500', border: 'border-orange-500' },
+        { bg: 'bg-emerald-500', text: 'text-emerald-500', border: 'border-emerald-500' },
+      ];
+      const colorSet = colors[index % colors.length];
+      return {
+        name,
+        color: colorSet.bg,
+        textColor: colorSet.text,
+        borderColor: colorSet.border,
+        agents: deptAgents.map(a => a.name)
+      };
+    });
+  }, [agents]);
+
+  const [expandedDepts, setExpandedDepts] = useState<Set<string>>(new Set(departments.map(d => d.name)));
 
   const handlePing = async (agent: Agent, e: React.MouseEvent) => {
     e.stopPropagation();
