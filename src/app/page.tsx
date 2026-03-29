@@ -23,6 +23,7 @@ import HyperLearnView from '@/components/views/HyperLearnView';
 import { TaskModal } from '@/components/shared/TaskModal';
 import { AgentModal } from '@/components/shared/AgentModal';
 import { ProjectModal } from '@/components/shared/ProjectModal';
+import { ProjectDetailView } from '@/components/views/ProjectDetailView';
 import FeedbackModal from '@/components/shared/FeedbackModal';
 import { LiveAgentsView } from '@/components/views/LiveAgentsView';
 import { AnalyticsView } from '@/components/views/AnalyticsView';
@@ -44,6 +45,7 @@ export default function MC() {
   const [editingAgent, setEditingAgent] = useState<Agent | null>(null);
   const [isNewAgent, setIsNewAgent] = useState(false);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
+  const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [isNewProject, setIsNewProject] = useState(false);
   const [showFeedback, setShowFeedback] = useState(false);
 
@@ -126,7 +128,7 @@ export default function MC() {
   }, []);
 
   const handleEditProjectClick = useCallback((project: Project) => {
-    setEditingProject(project);
+    setActiveProject(project);
     setIsNewProject(false);
   }, []);
 
@@ -175,7 +177,14 @@ export default function MC() {
         <div className={cn("flex-1 overflow-y-auto custom-scroll transition-colors duration-300", activeDomain === 'ChipChip' ? "bg-white text-black font-sans" : "")}>
           {db.error && <div className="p-4 text-red-500 bg-red-100 dark:bg-red-900/20 rounded m-4">Error: {db.error}</div>}
           {db.loading && !db.error && <div className="p-4 text-center text-violet-500">Loading data...</div>}
-          {!db.loading && !db.error && (
+          {!db.loading && !db.error && activeProject ? (
+            <ProjectDetailView
+              project={activeProject} tasks={filteredTasks} activities={filteredActivities} agents={db.agents} theme={theme}
+              onClose={() => setActiveProject(null)}
+              onEdit={() => { setEditingProject(activeProject); setIsNewProject(false); }}
+              onEditTask={handleEditTaskClick}
+            />
+          ) : !db.loading && !db.error && (
             <>
               {view === 'dashboard' && (
                 <OverviewDashboard

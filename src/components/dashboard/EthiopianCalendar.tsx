@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { useThemeClasses } from '@/hooks/useTheme';
+import { useTheme, useThemeClasses } from '@/hooks/useTheme';
 import { Calendar, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { EthDateTime } from 'ethiopian-calendar-date-converter';
@@ -30,6 +30,8 @@ function getDaysInEthiopianMonth(year: number, month: number): number {
 }
 
 export function EthiopianCalendar() {
+  const { isDark } = useTheme();
+  const classes = useThemeClasses(isDark);
   const [now, setNow] = useState(new Date());
   const [viewMonth, setViewMonth] = useState<{ year: number; month: number } | null>(null);
 
@@ -99,28 +101,28 @@ export function EthiopianCalendar() {
   const todayHoliday = ETHIOPIAN_HOLIDAYS[holidayKey];
 
   return (
-    <div className="rounded-lg border border-neutral-800/50 bg-neutral-900/50 p-4">
+    <div className={cn("p-4", classes.card)}>
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <Globe className="w-4 h-4 text-emerald-400" />
           <span className="text-[11px] font-semibold text-emerald-400 uppercase tracking-wider">Ethiopian Calendar</span>
         </div>
-        <button onClick={goToday} className="text-[9px] text-neutral-500 hover:text-neutral-300 px-2 py-1 rounded bg-neutral-800 transition-colors">
+        <button onClick={goToday} className={cn("text-[9px] px-2 py-1 rounded transition-colors", isDark ? "text-neutral-500 hover:text-neutral-300 bg-neutral-800" : "text-neutral-600 hover:text-neutral-900 bg-neutral-200")}>
           Today
         </button>
       </div>
 
       {/* Current date info */}
       <div className="text-center mb-3">
-        <div className="text-[18px] font-bold text-white">
+        <div className={cn("text-[18px] font-bold", classes.heading)}>
           {ETHIOPIAN_MONTHS[ethNow.month - 1]} {ethNow.date}, {ethNow.year}
         </div>
-        <div className="text-[10px] text-neutral-500 mt-0.5">
+        <div className={cn("text-[10px] mt-0.5", classes.muted)}>
           {now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
         </div>
         {todayHoliday && (
-          <div className="mt-2 text-[11px] text-amber-400 bg-amber-500/10 rounded-md px-3 py-1.5 inline-block">
+          <div className="mt-2 text-[11px] text-amber-500 bg-amber-500/10 rounded-md px-3 py-1.5 inline-block">
             {todayHoliday}
           </div>
         )}
@@ -128,21 +130,21 @@ export function EthiopianCalendar() {
 
       {/* Month navigation */}
       <div className="flex items-center justify-between mb-2">
-        <button onClick={prevMonth} className="p-1 hover:bg-neutral-800 rounded transition-colors cursor-pointer">
-          <ChevronLeft className="w-4 h-4 text-neutral-400" />
+        <button onClick={prevMonth} className={cn("p-1 rounded transition-colors cursor-pointer", isDark ? "hover:bg-neutral-800" : "hover:bg-neutral-200")}>
+          <ChevronLeft className={cn("w-4 h-4", classes.muted)} />
         </button>
-        <span className="text-[12px] font-semibold text-neutral-300">
+        <span className={cn("text-[12px] font-semibold", isDark ? "text-neutral-300" : "text-neutral-700")}>
           {ETHIOPIAN_MONTHS[currentMonth.month - 1]} {currentMonth.year}
         </span>
-        <button onClick={nextMonth} className="p-1 hover:bg-neutral-800 rounded transition-colors cursor-pointer">
-          <ChevronRight className="w-4 h-4 text-neutral-400" />
+        <button onClick={nextMonth} className={cn("p-1 rounded transition-colors cursor-pointer", isDark ? "hover:bg-neutral-800" : "hover:bg-neutral-200")}>
+          <ChevronRight className={cn("w-4 h-4", classes.muted)} />
         </button>
       </div>
 
       {/* Calendar grid */}
       <div className="grid grid-cols-7 gap-px text-center">
         {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(d => (
-          <div key={d} className="text-[9px] text-neutral-600 font-semibold py-1">{d}</div>
+          <div key={d} className={cn("text-[9px] font-semibold py-1", classes.subtle)}>{d}</div>
         ))}
         {weeks.flat().map((day, i) => {
           const isToday = day === ethNow.date && currentMonth.month === ethNow.month && currentMonth.year === ethNow.year;
@@ -152,9 +154,9 @@ export function EthiopianCalendar() {
           return (
             <div key={i} className={cn(
               'text-[11px] py-1 rounded relative cursor-default transition-colors',
-              day ? 'text-neutral-300 hover:bg-neutral-800/50' : 'text-transparent',
-              isToday && 'bg-emerald-500/20 text-emerald-400 font-bold hover:bg-emerald-500/30',
-              hasHoliday && !isToday && 'bg-amber-500/10 text-amber-400 hover:bg-amber-500/20'
+              day ? (isDark ? 'text-neutral-300 hover:bg-neutral-800/50' : 'text-neutral-700 hover:bg-neutral-200/50') : 'text-transparent',
+              isToday && 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-bold hover:bg-emerald-500/30',
+              hasHoliday && !isToday && 'bg-amber-500/10 text-amber-600 dark:text-amber-400 hover:bg-amber-500/20'
             )}>
               {day || '·'}
               {hasHoliday && <span className="absolute -top-0.5 -right-0.5 text-[6px]">🎉</span>}

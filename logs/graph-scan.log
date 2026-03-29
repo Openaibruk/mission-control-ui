@@ -1,0 +1,761 @@
+[update-graph 2026-03-29 02:00:02] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 02:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 03:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 03:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 04:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 04:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 05:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 05:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 06:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 06:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 07:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 07:30:01] Starting graph scan...
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 08:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 08:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 09:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 09:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 10:00:02] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 10:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 11:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 11:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 12:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 12:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 13:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 13:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 14:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 14:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 15:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 15:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 16:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 16:30:02] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 17:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 17:32:42] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 18:00:02] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 18:30:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 19:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/sh: 1: /home/ubuntu/.openclaw/workspace/scripts/update-graph.sh: not found
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+[update-graph 2026-03-29 20:00:01] Starting graph scan...
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module '/home/ubuntu/.openclaw/workspace/scripts/workspace-scanner.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1025:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1030:22)
+    at Function._load (node:internal/modules/cjs/loader:1192:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.22.1
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/sh: 1: /home/ubuntu/.openclaw/workspace/scripts/update-graph.sh: not found
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory

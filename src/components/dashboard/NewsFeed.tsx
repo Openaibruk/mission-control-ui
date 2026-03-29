@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { useThemeClasses } from '@/hooks/useTheme';
+import { useTheme, useThemeClasses } from '@/hooks/useTheme';
 import { Newspaper, RefreshCw, TrendingUp } from 'lucide-react';
 import { useState, useEffect, useCallback } from 'react';
 
@@ -29,7 +29,8 @@ interface BusinessMetrics {
 }
 
 export function NewsFeed() {
-  const isDark = true;
+  const { isDark } = useTheme();
+  const classes = useThemeClasses(isDark);
   const [items, setItems] = useState<NewsItem[]>([]);
   const [business, setBusiness] = useState<BusinessMetrics | null>(null);
   const [filter, setFilter] = useState<'all' | 'internal'>('all');
@@ -75,7 +76,7 @@ export function NewsFeed() {
   };
 
   return (
-    <div className="rounded-lg border border-neutral-800/50 bg-neutral-900/50 p-4">
+    <div className={cn("p-4", classes.card)}>
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
@@ -85,8 +86,8 @@ export function NewsFeed() {
         <div className="flex items-center gap-1">
           {(['all', 'internal'] as const).map(f => (
             <button key={f} onClick={() => setFilter(f)}
-              className={cn('text-[9px] px-2 py-1 rounded capitalize',
-                filter === f ? 'bg-blue-500/20 text-blue-400' : 'text-neutral-500 hover:text-neutral-300')}>
+              className={cn('text-[9px] px-2 py-1 rounded capitalize transition-colors',
+                filter === f ? (isDark ? 'bg-blue-500/20 text-blue-400' : 'bg-blue-100 text-blue-700') : cn(classes.muted, isDark ? 'hover:text-neutral-300' : 'hover:text-neutral-900'))}>
               {f}
             </button>
           ))}
@@ -98,18 +99,18 @@ export function NewsFeed() {
 
       {/* Business Metrics Card (if present) */}
       {business && (
-        <div className="mb-4 p-3 rounded-lg bg-neutral-800/60 border border-neutral-700/50">
+        <div className={cn("mb-4 p-3 rounded-lg border", isDark ? "bg-neutral-800/60 border-neutral-700/50" : "bg-neutral-50 border-neutral-200")}>
           <div className="flex items-center gap-2 mb-2">
             <TrendingUp className="w-4 h-4 text-emerald-400" />
             <span className="text-[11px] font-semibold text-emerald-400">Business Snapshot — {business.date}</span>
           </div>
           <div className="grid grid-cols-4 gap-2 text-[9px]">
-            <div><span className="text-neutral-500">Revenue</span><div className="font-mono text-white">${Number(business.revenue).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
-            <div><span className="text-neutral-500">Orders</span><div className="font-mono text-white">{business.orders}</div></div>
-            <div><span className="text-neutral-500">AOV</span><div className="font-mono text-white">${Number(business.aov).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
-            <div><span className="text-neutral-500">COGS</span><div className="font-mono text-white">${Number(business.cogs).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
-            <div className="col-span-2"><span className="text-neutral-500">CP1 (Gross Margin)</span><div className="font-mono text-emerald-400">{business.cp1} ({business.cp1_margin})</div></div>
-            <div className="col-span-2"><span className="text-neutral-500">CP2 (Net Margin)</span><div className="font-mono text-amber-400">{business.cp2} ({business.cp2_margin})</div></div>
+            <div><span className={classes.muted}>Revenue</span><div className={cn("font-mono", classes.heading)}>${Number(business.revenue).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
+            <div><span className={classes.muted}>Orders</span><div className={cn("font-mono", classes.heading)}>{business.orders}</div></div>
+            <div><span className={classes.muted}>AOV</span><div className={cn("font-mono", classes.heading)}>${Number(business.aov).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
+            <div><span className={classes.muted}>COGS</span><div className={cn("font-mono", classes.heading)}>${Number(business.cogs).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}</div></div>
+            <div className="col-span-2"><span className={classes.muted}>CP1 (Gross Margin)</span><div className="font-mono text-emerald-400">{business.cp1} ({business.cp1_margin})</div></div>
+            <div className="col-span-2"><span className={classes.muted}>CP2 (Net Margin)</span><div className="font-mono text-amber-400">{business.cp2} ({business.cp2_margin})</div></div>
           </div>
         </div>
       )}
@@ -117,27 +118,27 @@ export function NewsFeed() {
       {/* News items */}
       <div className="space-y-2 max-h-[300px] overflow-y-auto custom-scrollbar">
         {filtered.slice(0, 10).map((item, i) => (
-          <div key={i} className="group rounded-md bg-neutral-800/30 hover:bg-neutral-800/60 p-2.5 transition-colors cursor-pointer">
+          <div key={i} className={cn("group rounded-md p-2.5 transition-colors cursor-pointer", isDark ? "bg-neutral-800/30 hover:bg-neutral-800/60" : "bg-neutral-50 hover:bg-neutral-100")}>
             <div className="flex items-start gap-2">
               <div className="flex-1 min-w-0">
-                <div className="text-[11px] font-medium text-neutral-200 leading-tight group-hover:text-white transition-colors">
+                <div className={cn("text-[11px] font-medium leading-tight transition-colors", isDark ? "text-neutral-200 group-hover:text-white" : "text-neutral-700 group-hover:text-black")}>
                   {item.title}
                 </div>
                 {item.summary && (
-                  <div className="text-[10px] text-neutral-500 mt-1 line-clamp-1">{item.summary}</div>
+                  <div className={cn("text-[10px] mt-1 line-clamp-1", classes.muted)}>{item.summary}</div>
                 )}
                 <div className="flex items-center gap-2 mt-1.5">
                   <span className={cn('text-[8px] font-semibold px-1.5 py-0.5 rounded', categoryColor(item.category))}>
                     {item.source}
                   </span>
-                  <span className="text-[9px] text-neutral-600">{item.date}</span>
+                  <span className={cn("text-[9px]", classes.subtle)}>{item.date}</span>
                 </div>
               </div>
             </div>
           </div>
         ))}
         {filtered.length === 0 && !loading && (
-          <div className="text-xs text-neutral-500 text-center py-4">No news found</div>
+          <div className={cn("text-xs text-center py-4", classes.muted)}>No news found</div>
         )}
       </div>
     </div>

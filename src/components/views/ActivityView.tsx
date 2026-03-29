@@ -3,7 +3,7 @@
 import { Activity, Agent } from '@/lib/types';
 import { cn, timeAgo, getAvatar } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
-import { Activity as ActivityIcon, Filter } from 'lucide-react';
+import { Activity as ActivityIcon, Filter, Search } from 'lucide-react';
 import { useState, useMemo } from 'react';
 
 interface ActivityViewProps {
@@ -17,6 +17,7 @@ export function ActivityView({ activities, agents, loading, theme }: ActivityVie
   const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
   const [filter, setFilter] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const agentNames = useMemo(() => {
     const names = new Set(activities.map(a => a.agent_name));
@@ -24,9 +25,16 @@ export function ActivityView({ activities, agents, loading, theme }: ActivityVie
   }, [activities]);
 
   const filtered = useMemo(() => {
-    const list = filter === 'all' ? activities : activities.filter(a => a.agent_name === filter);
+    let list = activities;
+    if (filter !== 'all') {
+      list = list.filter(a => a.agent_name === filter);
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      list = list.filter(a => a.action.toLowerCase().includes(q) || a.agent_name.toLowerCase().includes(q));
+    }
     return [...list].reverse();
-  }, [activities, filter]);
+  }, [activities, filter, searchQuery]);
 
   if (loading) {
     return (
@@ -43,15 +51,27 @@ export function ActivityView({ activities, agents, loading, theme }: ActivityVie
 
   return (
     <div className="p-4 md:p-8 max-w-3xl mx-auto">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
         <h2 className={cn("text-[14px] font-semibold flex items-center gap-2", classes.heading)}>
           <ActivityIcon className="w-4 h-4 text-violet-400" /> Activity Log ({filtered.length})
         </h2>
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}
-          className={cn("text-[11px] rounded-md px-3 py-1.5 outline-none", classes.inputBg)}>
-          <option value="all">All Agents</option>
-          {agentNames.map(name => <option key={name} value={name}>@{name}</option>)}
-        </select>
+        <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="relative flex-1 sm:w-48">
+            <Search className={cn("absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5", classes.muted)} />
+            <input 
+              type="text" 
+              placeholder="Search activity..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={cn("w-full text-[11px] rounded-md pl-8 pr-3 py-1.5 outline-none transition-colors", classes.inputBg)}
+            />
+          </div>
+          <select value={filter} onChange={(e) => setFilter(e.target.value)}
+            className={cn("text-[11px] rounded-md px-3 py-1.5 outline-none shrink-0", classes.inputBg)}>
+            <option value="all">All Agents</option>
+            {agentNames.map(name => <option key={name} value={name}>@{name}</option>)}
+          </select>
+        </div>
       </div>
 
       <div className="space-y-2">
