@@ -20,6 +20,8 @@ import { SkillsView } from '@/components/views/SkillsView';
 import { FeedbackView } from '@/components/views/FeedbackView';
 import { GraphView } from '@/components/graph/GraphView';
 import HyperLearnView from '@/components/views/HyperLearnView';
+import { FilesView } from '@/components/views/FilesView';
+import { WorkspaceView } from '@/components/views/WorkspaceView';
 import { TaskModal } from '@/components/shared/TaskModal';
 import { AgentModal } from '@/components/shared/AgentModal';
 import { ProjectModal } from '@/components/shared/ProjectModal';
@@ -236,6 +238,8 @@ export default function MC() {
               {view === 'graph' && <GraphView theme={theme} />}
               {view === 'hyperlearn' && <HyperLearnView />}
               {view === 'virtual' && <VirtualOfficeView agents={db.agents} tasks={filteredTasks} activities={db.activities} theme={theme} />}
+              {view === 'files' && <FilesView theme={theme} />}
+              {view === 'workspace' && <WorkspaceView theme={theme} />}
             </>
           )}
         </div>

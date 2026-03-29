@@ -5,7 +5,7 @@ import {
   Activity, FileText, DollarSign, Server,
   Clock, Webhook, Github, GitBranch,
   ShieldCheck, Zap, Moon, Sun, ChevronLeft, Settings,
-  Terminal, Hammer, FolderOpen, MessageSquarePlus, Box
+  Terminal, Hammer, FolderOpen, MessageSquarePlus, Box, HardDrive
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ViewType } from '@/lib/utils';
@@ -47,6 +47,8 @@ const sections: NavSection[] = [
       { id: 'insights', label: 'Analytics', icon: Activity, real: true },
       { id: 'feedback' as ViewType, label: 'Feedback', icon: MessageSquarePlus, real: true },
       { id: 'graph' as ViewType, label: 'Graph', icon: GitBranch, real: true },
+      { id: 'files' as ViewType, label: 'Files', icon: HardDrive, real: true },
+      { id: 'workspace' as ViewType, label: 'Workspace', icon: Box, real: true },
     ],
   },
   {
