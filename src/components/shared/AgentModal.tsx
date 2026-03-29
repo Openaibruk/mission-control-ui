@@ -220,4 +220,3 @@ export function AgentModal({ agent, isNew = false, tasks, onClose, onSave, onDel
     </div>
   );
 }
-}

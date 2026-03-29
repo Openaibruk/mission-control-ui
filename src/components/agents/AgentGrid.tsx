@@ -16,7 +16,8 @@ interface AgentGridProps {
   theme: 'dark' | 'light';
 }
 
-const isDark = theme === 'dark';
+export function AgentGrid({ agents, tasks, onAgentClick, onNewAgent, loading, theme }: AgentGridProps) {
+  const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
   const [pingedAgents, setPingedAgents] = useState<Set<string>>(new Set());
   const [triggerAgent, setTriggerAgent] = useState<string | null>(null);
