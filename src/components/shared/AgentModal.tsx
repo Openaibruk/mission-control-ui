@@ -42,7 +42,7 @@ export function AgentModal({ agent, isNew = false, tasks, onClose, onSave, onDel
 
   useEffect(() => {
     // Fetch SOUL.md
-    fetch('/api/files?path=SOUL.md')
+    fetch('/api/files?path=SOUL.md&t=' + Date.now())
       .then(res => res.text())
       .then(text => setSoulContent(text))
       .catch(err => console.error('Failed to load SOUL.md:', err));

@@ -29,6 +29,8 @@ export async function GET(request: NextRequest) {
   // Fallback: check public/ directory (bundled by Vercel for static serving)
   else {
     let searchPaths = [
+      path.join(process.cwd(), "public", cleanPath),
+      path.join(process.cwd(), cleanPath),
       path.join(process.cwd(), 'public', cleanPath),
       path.join(process.cwd(), cleanPath),
     ];
@@ -52,7 +54,7 @@ export async function GET(request: NextRequest) {
   }
 
   if (!content) {
-    return NextResponse.json({ error: 'File not found - Deploy Check 2', path: filePath, searched: searchPaths || [] }, { status: 404 })
+    return NextResponse.json({ error: 'File not found - Deploy Check 2', path: filePath }, { status: 404 })
   }
 
   try {
