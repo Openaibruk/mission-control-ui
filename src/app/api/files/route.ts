@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
   }
 
   if (!content) {
-    return NextResponse.json({ error: 'File not found', path: filePath }, { status: 404 })
+    return NextResponse.json({ error: 'File not found - Deploy Check 2', path: filePath, searched: searchPaths || [] }, { status: 404 })
   }
 
   try {
