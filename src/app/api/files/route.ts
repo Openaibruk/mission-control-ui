@@ -34,11 +34,9 @@ export async function GET(request: NextRequest) {
     ];
     
     // Add uppercase variant (e.g. SOUL.md instead of soul.md)
-    if (cleanPath.toLowerCase() === cleanPath) {
-      const upperPath = cleanPath.toUpperCase();
-      searchPaths.push(path.join(process.cwd(), 'public', upperPath));
-      searchPaths.push(path.join(process.cwd(), upperPath));
-    }
+    const upperBase = path.basename(cleanPath, path.extname(cleanPath)).toUpperCase() + path.extname(cleanPath).toLowerCase();
+    searchPaths.push(path.join(process.cwd(), 'public', upperBase));
+    searchPaths.push(path.join(process.cwd(), upperBase));
 
     for (const pp of searchPaths) {
       try {
