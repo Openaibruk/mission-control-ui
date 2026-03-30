@@ -4,6 +4,9 @@ import path from 'path'
 
 export const dynamic = 'force-dynamic';
 
+const VPS_ROOT = '/home/ubuntu/.openclaw/workspace'
+const WORKSPACE_ROOT = fs.existsSync(VPS_ROOT) ? VPS_ROOT : process.cwd()
+
 export async function POST(request: NextRequest) {
   try {
     const { path: filePath, content } = await request.json()
@@ -15,7 +18,7 @@ export async function POST(request: NextRequest) {
     // Since we are writing SOUL.md, we assume it's in the workspace
     // Ensure the path is relative and within the workspace directory
     const cleanPath = filePath.replace(/^(\.\.(\/|\\|$))+/, '')
-    const localVPSPath = path.join('/home/ubuntu/.openclaw/workspace', cleanPath)
+    const localVPSPath = path.join(WORKSPACE_ROOT, cleanPath)
 
     // Make sure the directory exists
     const dir = path.dirname(localVPSPath)

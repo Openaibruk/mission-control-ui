@@ -4,6 +4,9 @@ import path from 'path'
 
 export const dynamic = 'force-dynamic';
 
+const VPS_ROOT = '/home/ubuntu/.openclaw/workspace'
+const WORKSPACE_ROOT = fs.existsSync(VPS_ROOT) ? VPS_ROOT : process.cwd()
+
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
   const filePath = searchParams.get('path')
@@ -13,23 +16,22 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'path parameter required' }, { status: 400 })
   }
 
-  // When deployed to Vercel, try to fetch from the local public/workspace directory
-  // In a real production setup, this would be a Supabase Storage bucket fetch
-  const publicPath = path.join(process.cwd(), 'public', 'workspace', filePath)
-  const localVPSPath = path.join('/home/ubuntu/.openclaw/workspace', filePath)
+  const cleanPath = filePath.replace(/^(\.\.(\/|\\|$))+/, '')
+  const fullPath = path.join(WORKSPACE_ROOT, cleanPath)
 
   let content: Buffer | null = null;
   let size = 0;
 
-  // Try VPS local path first (if running on EC2)
-  if (fs.existsSync(localVPSPath)) {
-    content = fs.readFileSync(localVPSPath)
-    size = fs.statSync(localVPSPath).size
-  } 
-  // Fallback to Vercel public/workspace bundle
-  else if (fs.existsSync(publicPath)) {
-    content = fs.readFileSync(publicPath)
-    size = fs.statSync(publicPath).size
+  if (fs.existsSync(fullPath)) {
+    content = fs.readFileSync(fullPath)
+    size = fs.statSync(fullPath).size
+  } else {
+    // Fallback to public/workspace if needed for Vercel
+    const publicPath = path.join(process.cwd(), 'public', 'workspace', cleanPath)
+    if (fs.existsSync(publicPath)) {
+      content = fs.readFileSync(publicPath)
+      size = fs.statSync(publicPath).size
+    }
   }
 
   if (!content) {
