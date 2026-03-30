@@ -38,6 +38,20 @@ export async function GET(request: NextRequest) {
         size = fs.statSync(pp).size;
         break;
       }
+      
+      // Case-insensitive fallback for specific well-known files like SOUL.md
+      const dir = path.dirname(pp);
+      const base = path.basename(pp);
+      if (fs.existsSync(dir)) {
+        const files = fs.readdirSync(dir);
+        const match = files.find(f => f.toLowerCase() === base.toLowerCase());
+        if (match) {
+          const ciPath = path.join(dir, match);
+          content = fs.readFileSync(ciPath);
+          size = fs.statSync(ciPath).size;
+          break;
+        }
+      }
     }
   }
 
