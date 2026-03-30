@@ -25,12 +25,19 @@ export async function GET(request: NextRequest) {
   if (fs.existsSync(fullPath)) {
     content = fs.readFileSync(fullPath)
     size = fs.statSync(fullPath).size
-  } else {
-    // Fallback to public/workspace if needed for Vercel
-    const publicPath = path.join(process.cwd(), 'public', 'workspace', cleanPath)
-    if (fs.existsSync(publicPath)) {
-      content = fs.readFileSync(publicPath)
-      size = fs.statSync(publicPath).size
+  } 
+  // Fallback: check public/ directory (bundled by Vercel for static serving)
+  else {
+    const publicPaths = [
+      path.join(process.cwd(), 'public', cleanPath),
+      path.join(process.cwd(), cleanPath),
+    ];
+    for (const pp of publicPaths) {
+      if (fs.existsSync(pp)) {
+        content = fs.readFileSync(pp);
+        size = fs.statSync(pp).size;
+        break;
+      }
     }
   }
 
