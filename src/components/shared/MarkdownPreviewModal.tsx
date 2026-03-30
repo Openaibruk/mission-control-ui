@@ -18,7 +18,7 @@ export function MarkdownPreviewModal({ isOpen, onClose, filePath, theme }: { isO
       setLoading(true);
       setError('');
       // Using our existing API for reading workspace files
-      fetch(`/api/files?path=${encodeURIComponent(filePath)}`)
+      fetch(`/api/files?path=${encodeURIComponent(filePath)}&cb=${Date.now()}`)
         .then(res => {
           if (!res.ok) throw new Error(`Failed to load file (${res.status})`);
           return res.text();
