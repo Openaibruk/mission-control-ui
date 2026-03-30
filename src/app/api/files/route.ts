@@ -28,29 +28,27 @@ export async function GET(request: NextRequest) {
   } 
   // Fallback: check public/ directory (bundled by Vercel for static serving)
   else {
-    const publicPaths = [
+    let searchPaths = [
       path.join(process.cwd(), 'public', cleanPath),
       path.join(process.cwd(), cleanPath),
     ];
-    for (const pp of publicPaths) {
-      if (fs.existsSync(pp)) {
-        content = fs.readFileSync(pp);
-        size = fs.statSync(pp).size;
-        break;
-      }
-      
-      // Case-insensitive fallback for specific well-known files like SOUL.md
-      const dir = path.dirname(pp);
-      const base = path.basename(pp);
-      if (fs.existsSync(dir)) {
-        const files = fs.readdirSync(dir);
-        const match = files.find(f => f.toLowerCase() === base.toLowerCase());
-        if (match) {
-          const ciPath = path.join(dir, match);
-          content = fs.readFileSync(ciPath);
-          size = fs.statSync(ciPath).size;
+    
+    // Add uppercase variant (e.g. SOUL.md instead of soul.md)
+    if (cleanPath.toLowerCase() === cleanPath) {
+      const upperPath = cleanPath.toUpperCase();
+      searchPaths.push(path.join(process.cwd(), 'public', upperPath));
+      searchPaths.push(path.join(process.cwd(), upperPath));
+    }
+
+    for (const pp of searchPaths) {
+      try {
+        if (fs.existsSync(pp)) {
+          content = fs.readFileSync(pp);
+          size = fs.statSync(pp).size;
           break;
         }
+      } catch (e) {
+        // ignore
       }
     }
   }
