@@ -27,8 +27,8 @@ export function ProjectDetailView({
 
   const projectTasks = tasks.filter(t => t.project_id === project.id);
   // Simple heuristic for project activities: activities by agents assigned to project tasks
-  const projectAgentNames = new Set(projectTasks.flatMap(t => t.assignees || []).map(a => a.replace(/^@+/, '')));
-  const projectActivities = activities.filter(a => a.agent_name && projectAgentNames.has(a.agent_name.replace(/^@+/, '')));
+  const projectAgentNames = new Set(projectTasks.flatMap(t => (t.assignees || []).filter(Boolean).map(a => a.replace(/^@+/, ''))));
+  const projectActivities = activities.filter(a => a.agent_name && typeof a.agent_name === 'string' && projectAgentNames.has(a.agent_name.replace(/^@+/, '')));
 
   const doneCount = projectTasks.filter(t => t.status === 'done').length;
   const progress = projectTasks.length > 0 ? Math.round((doneCount / projectTasks.length) * 100) : 0;
