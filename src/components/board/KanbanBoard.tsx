@@ -355,7 +355,7 @@ export function KanbanBoard({ tasks, agents, onTaskClick, onMoveTask, onNewTask,
     <MarkdownPreviewModal
       isOpen={!!previewFile}
       onClose={() => setPreviewFile(null)}
-      filePath={previewFile || ''}
+      filePath={previewFile ? (previewFile + '&t=' + Date.now()) : ''}
       theme={theme}
     />
     </div>

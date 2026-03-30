@@ -210,7 +210,7 @@ export function TaskModal({ task, isNew = false, projects, agents, onClose, onSa
       <MarkdownPreviewModal 
         isOpen={previewOpen} 
         onClose={() => setPreviewOpen(false)} 
-        filePath={outputUrl} 
+        filePath={outputUrl ? (outputUrl + '&t=' + Date.now()) : ''} 
         theme={theme} 
       />
     </>
