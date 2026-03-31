@@ -412,10 +412,14 @@ export default function VirtualOfficePage() {
             {(() => {
               const room = ROOMS.find(r => r.id === selectedRoom);
               if (!room) return null;
-              const roomAgents = room.agents.map(name => ({
-                name,
-                ...(agents.find(a => a.name === name) || { role: 'Agent', status: 'offline' }),
-              }));
+              const roomAgents = room.agents.map(name => {
+                const found = agents.find(a => a.name === name);
+                return {
+                  name,
+                  role: found?.role || 'Agent',
+                  status: found?.status || 'offline',
+                };
+              });
               return (
                 <div>
                   <h3 className="font-semibold text-white text-sm mb-3" style={{ color: room.color }}>
