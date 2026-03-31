@@ -49,16 +49,16 @@ export async function GET() {
     news,
     business: {
       date: today,
-      revenue: "26725.98",
-      orders: 4,
-      aov: 6681.5,
-      cp1: "4132.98",
-      cp1_margin: "15.46%",
-      cp2: "3052.98", 
-      cp2_margin: "11.42%",
-      cogs: "22593.00",
-      warehouse: "1080.00",
-      delivery: "720.00"
+      revenue: "0",
+      orders: 0,
+      aov: 0,
+      cp1: "0",
+      cp1_margin: "0%",
+      cp2: "0", 
+      cp2_margin: "0%",
+      cogs: "0",
+      warehouse: "0",
+      delivery: "0"
     }
   });
 }
