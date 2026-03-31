@@ -254,21 +254,15 @@ export default function MC() {
       </div>
       <NovaWidget theme={theme} />
       <QuickTrigger theme={theme} agents={db.agents} />
-      {(isTaskModalOpen || editingTask) && (
-        <TaskModal task={editingTask} isNew={isNewTask} projects={filteredProjects} agents={db.agents}
-          onClose={() => { setIsTaskModalOpen(false); setEditingTask(null); }}
-          onSave={handleTaskModalSave} onDelete={handleTaskDelete} theme={theme} />
-      )}
-      {(editingAgent || isNewAgent) && (
-        <AgentModal agent={editingAgent} isNew={isNewAgent} tasks={filteredTasks}
-          onClose={() => { setEditingAgent(null); setIsNewAgent(false); }}
-          onSave={handleAgentModalSave} onDelete={handleAgentDelete} theme={theme} />
-      )}
-      {(editingProject || isNewProject) && (
-        <ProjectModal project={editingProject} isNew={isNewProject} tasks={filteredTasks}
-          onClose={() => { setEditingProject(null); setIsNewProject(false); }}
-          onSave={handleProjectModalSave} onDelete={handleProjectDelete} theme={theme} />
-      )}
+      <TaskModal isOpen={isTaskModalOpen || !!editingTask} task={editingTask} isNew={isNewTask} projects={filteredProjects} agents={db.agents}
+        onClose={() => { setIsTaskModalOpen(false); setEditingTask(null); }}
+        onSave={handleTaskModalSave} onDelete={handleTaskDelete} theme={theme} />
+      <AgentModal isOpen={!!editingAgent || isNewAgent} agent={editingAgent} isNew={isNewAgent} tasks={filteredTasks}
+        onClose={() => { setEditingAgent(null); setIsNewAgent(false); }}
+        onSave={handleAgentModalSave} onDelete={handleAgentDelete} theme={theme} />
+      <ProjectModal isOpen={!!editingProject || isNewProject} project={editingProject} isNew={isNewProject} tasks={filteredTasks}
+        onClose={() => { setEditingProject(null); setIsNewProject(false); }}
+        onSave={handleProjectModalSave} onDelete={handleProjectDelete} theme={theme} />
       <FeedbackModal isOpen={showFeedback} onClose={() => setShowFeedback(false)} theme={theme} />
     </div>
   );

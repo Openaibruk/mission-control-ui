@@ -9,6 +9,7 @@ import { ModalWrapper } from './ModalWrapper';
 
 interface ProjectModalProps {
   project: Project | null;
+  isOpen?: boolean;
   isNew?: boolean;
   tasks: Task[];
   onClose: () => void;
@@ -17,7 +18,7 @@ interface ProjectModalProps {
   theme: 'dark' | 'light';
 }
 
-export function ProjectModal({ project, isNew = false, tasks, onClose, onSave, onDelete, theme }: ProjectModalProps) {
+export function ProjectModal({ project, isOpen = false, isNew = false, tasks, onClose, onSave, onDelete, theme }: ProjectModalProps) {
   const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
 
@@ -55,7 +56,7 @@ export function ProjectModal({ project, isNew = false, tasks, onClose, onSave, o
     : totalProjectTasks > 0 ? Math.round((doneTasks / totalProjectTasks) * 100) : 0;
 
   return (
-    <ModalWrapper isOpen={true} onClose={onClose}>
+    <ModalWrapper isOpen={isOpen} onClose={onClose}>
       {({ animationPhase }) => (
         <div className={cn(
           "relative modal-panel p-6 shadow-2xl max-h-[90vh] overflow-y-auto rounded-xl border w-full max-w-md",
