@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +23,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -30,5 +36,17 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "skills", "scripts", "chipchip", "exploration"]
+  "exclude": [
+    "node_modules",
+    "skills",
+    "scripts",
+    "chipchip",
+    "exploration",
+    "deliverables",
+    "apps",
+    ".clawhub",
+    "skills/*",
+    "deliverables/*",
+    "apps/*"
+  ]
 }
