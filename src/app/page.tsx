@@ -150,6 +150,14 @@ export default function MC() {
     setIsNewProject(false);
   }, [db]);
 
+  // Auto-scroll to top on navigation
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // Also scroll the internal content area
+    const content = document.querySelector('.overflow-y-auto');
+    if (content) content.scrollTop = 0;
+  }, [view]);
+
   useEffect(() => {
     document.body.style.overflow = isSidebarOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };

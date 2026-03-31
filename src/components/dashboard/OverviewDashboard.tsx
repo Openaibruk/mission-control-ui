@@ -14,6 +14,7 @@ import { NewsFeed } from './NewsFeed';
 import { AgentCommandCenter } from './AgentCommandCenter';
 import { ActivityPulse } from './ActivityPulse';
 import { DomainsWidget } from './DomainsWidget';
+import { LiveClockWidget } from './LiveClockWidget';
 import { useGatewayStatus } from '@/hooks/useGatewayStatus';
 import { useState, useEffect } from 'react';
 
@@ -165,6 +166,9 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
           <div className={cn("text-xl font-bold", gwStatus?.paperclip?.status === 'online' ? 'text-emerald-500' : 'text-red-500')}>{gwStatus?.paperclip?.status === 'online' ? 'Online' : 'Offline'}</div>
         </div>
       </div>
+
+      {/* ── Live Clock + Quote Widget ── */}
+      <LiveClockWidget theme={theme} />
 
       {/* ── LIVE Widgets: Calendar + News + Command Center + Pulse ── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">

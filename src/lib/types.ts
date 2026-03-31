@@ -28,6 +28,15 @@ export interface Agent {
   prompt?: string;
   cost_tokens?: number;
   created_at?: string;
+  // Extended fields for org chart & personalized profiles
+  department?: string;
+  subTeam?: string;
+  skills?: string[];
+  purpose?: string;
+  soulContent?: string;
+  lastActivityAt?: string;
+  tasksCompleted?: number;
+  tasksActive?: number;
 }
 
 export interface Project {

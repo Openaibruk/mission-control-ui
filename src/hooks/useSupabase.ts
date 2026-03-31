@@ -66,7 +66,7 @@ export function useSupabase(): UseSupabaseReturn {
         supabase.from('tasks').select('*').order('created_at', { ascending: false }),
         supabase.from('agents').select('*'),
         supabase.from('projects').select('*').order('created_at', { ascending: false }),
-        supabase.from('activities').select('*').order('created_at', { ascending: true }).limit(200),
+        supabase.from('activities').select('*').gt('created_at', new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString()).order('created_at', { ascending: false }).limit(15),
       ]);
       if (tasksRes.error) throw tasksRes.error;
       if (agentsRes.error) throw agentsRes.error;
@@ -96,7 +96,12 @@ export function useSupabase(): UseSupabaseReturn {
       if (p.eventType === 'DELETE') setTasks(prev => { const n = prev.filter(t => t.id !== p.old.id); calculateStats(n); return n; });
     }).subscribe();
     const ch2 = supabase.channel('activities-rt').on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'activities' }, (p) => {
-      setActivities(prev => [...prev, p.new as Activity]);
+      setActivities(prev => {
+        const newAct = p.new as Activity;
+        const isRecent = (Date.now() - new Date(newAct.created_at).getTime()) < 48 * 60 * 60 * 1000;
+        if (!isRecent) return prev;
+        return [...prev, newAct];
+      });
     }).subscribe();
     const ch3 = supabase.channel('projects-rt').on('postgres_changes', { event: '*', schema: 'public', table: 'projects' }, (p) => {
       if (p.eventType === 'INSERT') setProjects(prev => [p.new as Project, ...prev]);
