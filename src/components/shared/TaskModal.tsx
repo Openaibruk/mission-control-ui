@@ -191,18 +191,44 @@ export function TaskModal({ task, isNew = false, projects, agents, onClose, onSa
               </>
             )}
             {isDoneView && (
-              <div className="flex gap-2 pt-2">
-                <button onClick={() => { onClose(); }} className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md py-2.5 text-[13px] font-semibold flex items-center justify-center space-x-2 transition-colors min-h-[44px]">
-                  Close
-                </button>
-                <button onClick={() => { 
-                  // Reopen task: set status back to in_progress
-                  setStatus('in_progress');
-                  onSave({ ...task, status: 'in_progress' });
-                }} className="flex-1 bg-violet-600 hover:bg-violet-700 text-white rounded-md py-2.5 text-[13px] font-semibold flex items-center justify-center space-x-2 transition-colors min-h-[44px]">
-                  Reopen Task
-                </button>
-              </div>
+              <>
+                <div className={cn("mb-4 p-4 rounded-xl border", isDark ? "bg-blue-900/10 border-blue-800/30" : "bg-blue-50 border-blue-200")}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <ExternalLink className="w-4 h-4 text-blue-500" />
+                    <span className={cn("text-[12px] font-semibold", isDark ? "text-blue-400" : "text-blue-700")}>Deliverable</span>
+                  </div>
+                  {outputUrl && (
+                    <button onClick={() => setPreviewOpen(true)}
+                      className={cn("w-full flex items-center justify-between p-3 rounded-lg transition-all border",
+                        isDark ? "bg-blue-800/30 hover:bg-blue-800/50 border-blue-700/30" : "bg-white hover:bg-blue-50 border-blue-300")}>
+                      <div className="flex items-center gap-2">
+                        {outputUrl.endsWith('.pptx') && <span className="text-xl">📊</span>}
+                        {(outputUrl.endsWith('.md') || outputUrl.endsWith('.txt')) && <span className="text-xl">📄</span>}
+                        {(outputUrl.endsWith('.docx') || outputUrl.endsWith('.doc')) && <span className="text-xl">📝</span>}
+                        <div>
+                          <div className="text-[12px] font-medium">Preview File</div>
+                          <div className="text-[10px] opacity-70">{outputUrl.split('/').pop()}</div>
+                        </div>
+                      </div>
+                      <ExternalLink className="w-4 h-4 text-blue-500" />
+                    </button>
+                  )}
+                  {!outputUrl && (
+                    <p className={cn("text-[11px] text-center", classes.muted)}>No output file attached</p>
+                  )}
+                </div>
+                <div className="flex gap-2 pt-2">
+                  <button onClick={() => { onClose(); }} className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md py-2.5 text-[13px] font-semibold flex items-center justify-center space-x-2 transition-colors min-h-[44px]">
+                    Close
+                  </button>
+                  <button onClick={() => { 
+                    setStatus('in_progress');
+                    onSave({ ...task, status: 'in_progress' });
+                  }} className="flex-1 bg-violet-600 hover:bg-violet-700 text-white rounded-md py-2.5 text-[13px] font-semibold flex items-center justify-center space-x-2 transition-colors min-h-[44px]">
+                    Reopen Task
+                  </button>
+                </div>
+              </>
             )}
           </div>
         </div>

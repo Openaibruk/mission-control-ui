@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search, Download, FileText, FileJson, File, X, RefreshCw, Eye, HardDrive, Filter, Clock } from 'lucide-react';
+import { Search, Download, FileText, FileJson, File, X, RefreshCw, Eye, HardDrive, Filter, Clock, ExternalLink, CheckCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 
@@ -42,6 +42,20 @@ export function FilesView({ theme = 'dark' }: FilesViewProps) {
   const [previewContent, setPreviewContent] = useState<string | null>(null);
   const [previewLoading, setPreviewLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  
+  // Deliverables state
+  interface DeliverableItem { name: string; url: string; type: string; size: string; driveId?: string; project: string; status: string }
+  const [deliverables, setDeliverables] = useState<DeliverableItem[]>([]);
+  const [loadingDeliverables, setLoadingDeliverables] = useState(true);
+  const [showDeliverablesView, setShowDeliverablesView] = useState(false);
+
+  // Fetch deliverables on mount
+  useEffect(() => {
+    fetch('/api/deliverables')
+      .then(res => res.json())
+      .then(data => { setDeliverables(data.files || []); setLoadingDeliverables(false); })
+      .catch(() => setLoadingDeliverables(false));
+  }, []);
 
   const fetchFiles = async () => {
     setLoading(true);
