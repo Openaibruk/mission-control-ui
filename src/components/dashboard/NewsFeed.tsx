@@ -40,7 +40,7 @@ export function NewsFeed() {
   const loadNews = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/news.json?' + Date.now()); // cache bust
+      const res = await fetch('/api/news?' + Date.now()); // dynamic API endpoint
       if (res.ok) {
         const data = await res.json();
         if (data.news && Array.isArray(data.news)) {
