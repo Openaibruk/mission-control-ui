@@ -35,6 +35,7 @@ export function NewsFeed() {
   const [business, setBusiness] = useState<BusinessMetrics | null>(null);
   const [filter, setFilter] = useState<'all' | 'internal'>('all');
   const [loading, setLoading] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState<string>('');
 
   const loadNews = useCallback(async () => {
     setLoading(true);
@@ -48,6 +49,9 @@ export function NewsFeed() {
         if (data.business && typeof data.business === 'object') {
           setBusiness(data.business as BusinessMetrics);
         }
+        if (data.updatedAt) {
+          setLastUpdated(data.updatedAt);
+        }
       }
     } catch (e) {
       console.error('Failed to load news', e);
@@ -55,6 +59,24 @@ export function NewsFeed() {
       setLoading(false);
     }
   }, []);
+
+  const triggerManualUpdate = useCallback(async () => {
+    setLoading(true);
+    try {
+      // Hit the news fetch endpoint if available, fallback to a proxy
+      const res = await fetch('/api/news-fetch', { method: 'POST' });
+      if (res.ok) {
+        // Refresh the news data
+        await loadNews();
+      } else {
+        // Just reload existing
+        await loadNews();
+      }
+    } catch (e) {
+      // Fallback: just refresh existing data
+      await loadNews();
+    }
+  }, [loadNews]);
 
   useEffect(() => { loadNews(); }, [loadNews]);
 
