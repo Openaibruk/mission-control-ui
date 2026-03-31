@@ -10,16 +10,18 @@ export async function GET() {
   try {
     const raw = await readFile(CONFIG_PATH, 'utf-8');
     const config = JSON.parse(raw);
-    // The primary model is at agents.defaults.model.primary
-    const primary = config?.agents?.defaults?.model?.primary || 'unknown';
+    // Model can be a string or an object with .primary
+    const modelCfg = config?.agents?.defaults?.model;
+    const primary = (typeof modelCfg === 'string') ? modelCfg : (modelCfg?.primary || 'unknown');
     // Also grab the main agent's override if it exists
     const mainAgent = config?.agents?.list?.find((a: { id: string }) => a.id === 'main');
     const mainModel = mainAgent?.model || null;
+    const fallbacks = (typeof modelCfg === 'object') ? (modelCfg?.fallbacks || []) : [];
     return NextResponse.json({
       primary,
       mainAgentModel: mainModel,
       activeModel: mainModel || primary,
-      fallbacks: config?.agents?.defaults?.model?.fallbacks || [],
+      fallbacks,
       availableModels: Object.keys(config?.agents?.defaults?.models || {}),
     });
   } catch (err) {
