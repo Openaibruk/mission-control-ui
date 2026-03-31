@@ -5,8 +5,10 @@ import { cn, timeAgo, getStatusColor, getAvatar } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 import { 
   ArrowLeft, Edit3, FolderOpen, CheckCircle2, Clock, 
-  AlertCircle, Play, Pause, Archive, CheckSquare, Activity as ActivityIcon
+  AlertCircle, Play, Pause, Archive, CheckSquare, Activity as ActivityIcon,
+  ExternalLink, FileText, Image, Download, Loader2
 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface ProjectDetailViewProps {
   project: Project;
@@ -32,6 +34,21 @@ export function ProjectDetailView({
 
   const doneCount = projectTasks.filter(t => t.status === 'done').length;
   const progress = projectTasks.length > 0 ? Math.round((doneCount / projectTasks.length) * 100) : 0;
+
+  // Deliverables state
+  const [deliverables, setDeliverables] = useState<{name: string; url: string; type: string; size: string; driveId?: string}[]>([]);
+  const [loadingDeliverables, setLoadingDeliverables] = useState(true);
+
+  useEffect(() => {
+    // Fetch deliverables for this project from the API
+    fetch(`/api/deliverables?project=${encodeURIComponent(project.name)}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.files) setDeliverables(data.files);
+        setLoadingDeliverables(false);
+      })
+      .catch(() => setLoadingDeliverables(false));
+  }, [project.name]);
 
   return (
     <div className="p-4 md:p-8 max-w-[1400px] mx-auto space-y-6">
