@@ -1,1 +1,75 @@
-{"lastChecked": "2026-03-30T01:00:00Z", "models": [{"id": "nvidia/nemotron-3-super-120b-a12b:free", "context": 262144, "name": "NVIDIA Nemotron 3 Super 120B", "notes": "Largest free model, 262k context"}, {"id": "qwen/qwen3-next-80b-a3b-instruct:free", "context": 262144, "name": "Qwen3 Next 80B", "notes": "262k context, MoE"}, {"id": "qwen/qwen3-coder:free", "context": 262000, "name": "Qwen3 Coder 480B", "notes": "262k context, coding focused"}, {"id": "stepfun/step-3.5-flash:free", "context": 256000, "name": "StepFun Step 3.5 Flash", "notes": "256k context, fast"}, {"id": "nvidia/nemotron-3-nano-30b-a3b:free", "context": 256000, "name": "NVIDIA Nemotron 3 Nano 30B", "notes": "256k context, smaller/faster"}, {"id": "openrouter/free", "context": 200000, "name": "Free Models Router", "notes": "Auto-routes to best available free model"}], "recommended": {"general": "stepfun/step-3.5-flash:free", "coding": "qwen/qwen3-coder:free", "heavy": "nvidia/nemotron-3-super-120b-a12b:free", "auto": "openrouter/free"}}
+{
+  "lastChecked": "2026-03-31T01:00:00Z",
+  "models": [
+    {
+      "id": "qwen/qwen3.6-plus-preview:free",
+      "context": 1000000,
+      "name": "Qwen3.6 Plus Preview",
+      "modality": "text->text",
+      "notes": "NEW 2026-03-31: 1M context, next-gen Qwen Plus, strong reasoning and agentic coding"
+    },
+    {
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "context": 262144,
+      "name": "NVIDIA Nemotron 3 Super 120B",
+      "modality": "text->text",
+      "notes": "Largest free model, 262k context, Mamba-Transformer MoE"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct:free",
+      "context": 262144,
+      "name": "Qwen3 Next 80B",
+      "modality": "text->text",
+      "notes": "262k context, MoE"
+    },
+    {
+      "id": "qwen/qwen3-coder:free",
+      "context": 262000,
+      "name": "Qwen3 Coder 480B",
+      "modality": "text->text",
+      "notes": "262k context, coding focused"
+    },
+    {
+      "id": "stepfun/step-3.5-flash:free",
+      "context": 256000,
+      "name": "StepFun Step 3.5 Flash",
+      "modality": "text->text",
+      "notes": "256k context, fast"
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b:free",
+      "context": 256000,
+      "name": "NVIDIA Nemotron 3 Nano 30B",
+      "modality": "text->text",
+      "notes": "256k context, smaller/faster"
+    },
+    {
+      "id": "openrouter/free",
+      "context": 200000,
+      "name": "Free Models Router",
+      "modality": "text+image->text",
+      "notes": "Auto-routes to best available free model"
+    }
+  ],
+  "alsoFree": [
+    {
+      "id": "google/lyria-3-pro-preview",
+      "context": 1048576,
+      "modality": "text+image->text+audio",
+      "notes": "Audio/music generation, 1M context, not a text LLM"
+    },
+    {
+      "id": "google/lyria-3-clip-preview",
+      "context": 1048576,
+      "modality": "text+image->text+audio",
+      "notes": "Audio/music clips, 1M context, not a text LLM"
+    }
+  ],
+  "recommended": {
+    "general": "stepfun/step-3.5-flash:free",
+    "coding": "qwen/qwen3-coder:free",
+    "heavy": "nvidia/nemotron-3-super-120b-a12b:free",
+    "new-flagship": "qwen/qwen3.6-plus-preview:free",
+    "auto": "openrouter/free"
+  }
+}

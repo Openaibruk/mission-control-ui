@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { readFile, writeFile, access } from 'fs/promises';
-import { exec } from 'child_process';
+import { readFile } from 'fs/promises';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,7 +8,6 @@ const CONFIG_PATH = '/home/ubuntu/.openclaw/openclaw.json';
 // Helper to get model config from VPS or fallback
 async function getConfig() {
   try {
-    await access(CONFIG_PATH);
     const raw = await readFile(CONFIG_PATH, 'utf-8');
     return JSON.parse(raw);
   } catch {
@@ -38,13 +36,12 @@ export async function GET() {
       });
     }
 
-    // Model can be a string or an object with .primary
     const modelCfg = config?.agents?.defaults?.model;
     const primary = (typeof modelCfg === 'string') ? modelCfg : (modelCfg?.primary || 'unknown');
     const mainAgent = config?.agents?.list?.find((a: { id: string }) => a.id === 'main');
     const mainModel = mainAgent?.model || null;
     const fallbacks = (typeof modelCfg === 'object') ? (modelCfg?.fallbacks || []) : [];
-    
+
     return NextResponse.json({
       primary,
       mainAgentModel: mainModel,
@@ -67,55 +64,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing model parameter' }, { status: 400 });
     }
 
-    const config = await getConfig();
-    if (!config) {
-      return NextResponse.json({ error: 'Cannot update model on Vercel (VPS config not accessible)', source: 'vercel' }, { status: 503 });
-    }
-
-    if (!config.agents) config.agents = {};
-    if (!config.agents.defaults) config.agents.defaults = {};
-
-    // Handle both string and object model formats
-    const currentModel = config.agents.defaults.model;
-    if (typeof currentModel === 'object' && currentModel !== null) {
-      config.agents.defaults.model.primary = model;
-    } else {
-      config.agents.defaults.model = model;
-    }
-
-    // Also update the main agent entry if it exists
-    if (config.agents.list) {
-      const mainIdx = config.agents.list.findIndex((a: { id: string }) => a.id === 'main');
-      if (mainIdx >= 0) {
-        config.agents.list[mainIdx].model = model;
-      }
-    }
-
-    // Ensure the model is in the models registry
-    if (!config.agents.defaults.models) config.agents.defaults.models = {};
-    if (!config.agents.defaults.models[model]) {
-      config.agents.defaults.models[model] = {};
-    }
-
-    // Write back
-    await writeFile(CONFIG_PATH, JSON.stringify(config, null, 2), 'utf-8');
-
-    // Restart gateway
-    const restartResult = await new Promise<string>((resolve) => {
-      exec('openclaw gateway restart', { timeout: 15000 }, (error, stdout, stderr) => {
-        if (error) {
-          resolve(`error: ${error.message}`);
-        } else {
-          resolve(stdout || stderr || 'restarted');
-        }
-      });
-    });
-
+    // We cannot update config or restart gateway when running on Vercel (serverless)
     return NextResponse.json({
-      success: true,
-      model,
-      restart: restartResult.trim(),
-    });
+      error: 'Model changes require deployment update. Edit the model configuration and redeploy the application.',
+      hint: 'Use openclaw CLI or edit openclaw.json on the host machine.',
+    }, { status: 503 });
   } catch (err) {
     console.error('Failed to update model:', err);
     return NextResponse.json({ error: 'Failed to update model config' }, { status: 500 });

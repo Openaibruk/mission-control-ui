@@ -18,7 +18,7 @@ interface KanbanBoardProps {
 }
 
 function isStalled(task: Task): boolean {
-  const age = Date.now() - new Date(task.created_at).getTime();
+  const age = Date.now() - new Date(task.updated_at || task.created_at).getTime();
   if (task.status === 'in_progress' && age > 3600000) return true;
   if (task.status === 'assigned' && age > 7200000) return true;
   return false;

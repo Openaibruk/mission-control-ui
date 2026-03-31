@@ -1,1 +1,54 @@
-{"updatedAt": "2026-03-31T06:40:00.000Z", "news": [{"title": "Qwen 3.6 Plus Available Free with 1M Context Window", "source": "TechCrunch", "date": "2026-03-31", "category": "Tech", "summary": "Alibaba's Qwen 3.6 Plus Preview now live with a massive 1,000,000 token context window at no cost", "url": "https://openrouter.ai"}, {"title": "Ethiopian FDI Continues Growth in Tech Sector", "source": "Shega", "date": "2026-03-31", "category": "Business", "summary": "Foreign Direct Investment in Ethiopian technology sectors showing strong momentum"}, {"title": "Next.js 16 Released with Turbopack", "source": "Vercel Blog", "date": "2026-03-31", "category": "Tech", "summary": "Next.js 16 ships with full Turbopack integration and improved cold start times"}, {"title": "OpenRouter Adds Dozens of Free Tier Models", "source": "The Verge", "date": "2026-03-31", "category": "Tech", "summary": "Growing ecosystem of free AI models now available for developers and researchers"}, {"title": "ChipChip Gross Margin at 15.46%", "source": "Internal", "date": "2026-03-31", "category": "Internal", "summary": "Gross margin remains stable at 15.46% as of latest reports"}], "business": {"date": "2026-03-31", "revenue": "0", "orders": 0, "aov": 0, "cp1": "0", "cp1_margin": "0%", "cp2": "0", "cp2_margin": "0%", "cogs": "0", "warehouse": "0", "delivery": "0"}}
+{
+  "updatedAt": "2026-03-31T07:32:00.000Z",
+  "news": [
+    {
+      "title": "Qwen 3.6 Plus Available Free with 1M Context Window",
+      "source": "TechCrunch",
+      "date": "2026-03-31",
+      "category": "Tech",
+      "summary": "Alibaba's Qwen 3.6 Plus Preview now live with massive 1M token context window at no cost",
+      "url": "https://openrouter.ai"
+    },
+    {
+      "title": "Ethiopian FDI Continues Growth in Tech Sector",
+      "source": "Shega",
+      "date": "2026-03-31",
+      "category": "Business",
+      "summary": "Foreign Direct Investment in Ethiopian technology sectors showing strong momentum"
+    },
+    {
+      "title": "Next.js 16 Released with Turbopack",
+      "source": "Vercel Blog",
+      "date": "2026-03-31",
+      "category": "Tech",
+      "summary": "Next.js 16 ships with full Turbopack integration and improved cold start times"
+    },
+    {
+      "title": "OpenRouter Free Tier Expands with 50+ Models",
+      "source": "The Verge",
+      "date": "2026-03-31",
+      "category": "Tech",
+      "summary": "Growing ecosystem of free AI models now available for developers worldwide"
+    },
+    {
+      "title": "ChipChip Gross Margin at 15.46%",
+      "source": "Internal",
+      "date": "2026-03-31",
+      "category": "Internal",
+      "summary": "Gross margin remains stable at 15.46% — fresh new day!"
+    }
+  ],
+  "business": {
+    "date": "2026-03-31",
+    "revenue": "0",
+    "orders": 0,
+    "aov": 0,
+    "cp1": "0",
+    "cp1_margin": "0%",
+    "cp2": "0",
+    "cp2_margin": "0%",
+    "cogs": "0",
+    "warehouse": "0",
+    "delivery": "0"
+  }
+}

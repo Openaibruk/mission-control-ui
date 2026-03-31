@@ -152,6 +152,83 @@ export function FilesView({ theme = 'dark' }: FilesViewProps) {
 
       <div className="flex flex-1 min-h-0">
         <div className={cn("flex-1 overflow-auto custom-scroll p-4", selectedFile && "hidden md:block md:w-2/3 border-r", classes.divider)}>
+          {/* Deliverables Section */}
+          <div className={cn("mb-6 p-4 rounded-xl border", isDark ? "bg-gradient-to-br from-violet-900/10 to-blue-900/10 border-violet-800/30" : "bg-gradient-to-br from-violet-50 to-blue-50 border-violet-200")}>
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <FolderOpen className="w-5 h-5 text-violet-500" />
+                <h2 className={cn("text-[16px] font-bold", classes.heading)}>Deliverables</h2>
+                {!loadingDeliverables && deliverables.length > 0 && (
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-400 font-semibold">
+                    {deliverables.length}
+                  </span>
+                )}
+              </div>
+              <button
+                onClick={() => setShowDeliverablesView(!showDeliverablesView)}
+                className={cn(
+                  "text-[11px] px-3 py-1.5 rounded-md font-medium transition-colors",
+                  isDark ? "bg-violet-600/20 text-violet-400 hover:bg-violet-600/30" : "bg-violet-100 text-violet-700 hover:bg-violet-200"
+                )}
+              >
+                {showDeliverablesView ? 'Hide' : 'Show'}
+              </button>
+            </div>
+            
+            {showDeliverablesView && (
+              <div className="space-y-2">
+                {loadingDeliverables ? (
+                  <div className={cn("text-[12px] py-4 text-center", classes.muted)}>Loading deliverables...</div>
+                ) : deliverables.length === 0 ? (
+                  <div className={cn("text-[12px] py-4 text-center", classes.muted)}>No deliverables yet. They appear when tasks are completed.</div>
+                ) : (
+                  deliverables.map((d, i) => (
+                    <div key={i} className={cn(
+                      "flex items-center justify-between p-3 rounded-lg border transition-colors",
+                      isDark ? "bg-[#0f172a]/60 border-white/5 hover:bg-white/5" : "bg-white border-neutral-200 hover:bg-neutral-50"
+                    )}>
+                      <div className="flex items-center gap-3 min-w-0">
+                        {d.type === 'pptx' && <span className="text-lg flex-shrink-0">📊</span>}
+                        {d.type === 'doc' && <span className="text-lg flex-shrink-0">📄</span>}
+                        {d.type === 'md' && <span className="text-lg flex-shrink-0">📝</span>}
+                        <div className="truncate">
+                          <div className={cn("text-[12px] font-medium truncate", classes.heading)}>{d.name}</div>
+                          <div className="flex items-center gap-2 text-[10px]">
+                            <span className={classes.muted}>{d.size}</span>
+                            {d.driveId && (
+                              <>
+                                <span className={classes.muted}>•</span>
+                                <CheckCircle className="w-3 h-3 text-emerald-500 flex-shrink-0" />
+                                <span className="text-emerald-500">On Drive</span>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {d.driveId && (
+                          <a href={`https://drive.google.com/file/d/${d.driveId}/view`} target="_blank" rel="noopener noreferrer"
+                            className={cn(
+                              "flex items-center gap-1.5 px-2 py-1 rounded-md text-[10px] font-medium transition-colors",
+                              isDark ? "bg-blue-600/20 text-blue-400 hover:bg-blue-600/30" : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+                            )}
+                          >
+                            <ExternalLink className="w-3 h-3" /> Open
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+            )}
+            
+            {!showDeliverablesView && !loadingDeliverables && deliverables.length > 0 && (
+              <div className={cn("text-[11px]", classes.muted)}>
+                Click <strong>Show</strong> to view {deliverables.length} deliverable{deliverables.length !== 1 ? 's' : ''} with download links.
+              </div>
+            )}
+          </div>
           {error ? (
             <div className="p-4 text-red-500 bg-red-500/10 rounded-md border border-red-500/20">{error}</div>
           ) : loading ? (
