@@ -1,9 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Agent, Activity, Task } from '@/lib/types';
-import { getAvatar, getAgentStatusInfo } from '@/lib/utils';
-import { useThemeClasses } from '@/hooks/useTheme';
+import { getAvatar } from '@/lib/utils';
 
 interface Room {
   id: string;
@@ -25,10 +24,10 @@ const ROOMS: Room[] = [
   { id: 'marketing', label: 'Creative Studio', icon: '🎨', agents: ['Nahom', 'Bini', 'Lidya'], x: 40, y: 240, w: 280, h: 155, color: '#f59e0b', glow: 'rgba(245,158,11,0.15)' },
   { id: 'security', label: 'Security Vault', icon: '🔒', agents: ['Onyx'], x: 350, y: 240, w: 180, h: 155, color: '#ef4444', glow: 'rgba(239,68,68,0.15)' },
   { id: 'integration', label: 'Integration Hub', icon: '🔗', agents: ['Loki'], x: 560, y: 240, w: 180, h: 155, color: '#06b6d4', glow: 'rgba(6,182,212,0.15)' },
-  { id: 'lounge', label: 'Break Lounge', icon: '☕', agents: [], x: 770, y: 240, w: 140, h: 155, color: '#a855f7', glow: 'rgba(168,85,247,0.15)' },
+  { id: 'lounge', label: 'Break Lounge', icon: '☕', agents: ['Aroma'], x: 770, y: 240, w: 140, h: 155, color: '#a855f7', glow: 'rgba(168,85,247,0.15)' },
   { id: 'meeting', label: 'Meeting Room', icon: '🗣️', agents: [], x: 40, y: 425, w: 250, h: 120, color: '#64748b', glow: 'rgba(100,116,139,0.1)' },
   { id: 'server', label: 'Server Room', icon: '🖥️', agents: [], x: 320, y: 425, w: 250, h: 120, color: '#0ea5e9', glow: 'rgba(14,165,233,0.1)' },
-  { id: 'data', label: 'Data Warehouse', icon: '🗄️', agents: [], x: 600, y: 425, w: 310, h: 120, color: '#84cc16', glow: 'rgba(132,204,22,0.1)' },
+  { id: 'data', label: 'Data Warehouse', icon: '🗄️', agents: ['Autoscientist'], x: 600, y: 425, w: 310, h: 120, color: '#84cc16', glow: 'rgba(132,204,22,0.1)' },
 ];
 
 function AgentAvatar({ name, status, x, y, color }: { name: string; status: string; x: number; y: number; color: string }) {
