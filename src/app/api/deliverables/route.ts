@@ -7,8 +7,16 @@ export const dynamic = 'force-dynamic';
  * Works on both VPS (can read filesystem) and Vercel (returns Drive metadata only).
  */
 
-// Master list of all deliverables with Drive links
-const ALL_DELIVERABLES = [
+interface DeliverableFile {
+  name: string;
+  filename: string;
+  type: string;
+  size: string;
+  driveId?: string;
+  project: string;
+}
+
+const ALL_DELIVERABLES: DeliverableFile[] = [
   {
     name: 'Strategic Review Q1 2026 (DOC)',
     filename: 'chipchip-strategic-review-q1-2026.md',
@@ -46,7 +54,7 @@ const ALL_DELIVERABLES = [
     size: '11 KB',
     project: 'ChipChip Strategic Review Q1 2026',
   },
-] as const;
+];
 
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);

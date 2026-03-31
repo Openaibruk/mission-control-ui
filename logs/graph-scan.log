@@ -991,3 +991,4 @@ Node.js v22.22.1
 /bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
 /bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory
 /bin/sh: 1: /home/ubuntu/.openclaw/workspace/scripts/update-graph.sh: not found
+/bin/bash: /home/ubuntu/.openclaw/workspace/scripts/gateway-status-scanner.sh: No such file or directory

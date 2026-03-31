@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Task, TaskStatus, Project, Agent } from '@/lib/types';
 import { cn, ALL_STATUSES } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
-import { X, Save, Trash2, Eye, CheckCircle2 } from 'lucide-react';
+import { X, Save, Trash2, Eye, CheckCircle2, ExternalLink } from 'lucide-react';
 import { MarkdownPreviewModal } from './MarkdownPreviewModal';
 
 interface TaskModalProps {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search, Download, FileText, FileJson, File, X, RefreshCw, Eye, HardDrive, Filter, Clock, ExternalLink, CheckCircle } from 'lucide-react';
+import { Search, Download, FileText, FileJson, File, X, RefreshCw, Eye, HardDrive, Filter, Clock, ExternalLink, CheckCircle, FolderOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 
