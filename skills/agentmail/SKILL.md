@@ -1,6 +1,11 @@
 ---
-name: agentmail
-description: "Send and receive emails autonomously via Nova's official AgentMail inbox (novamars@agentmail.to). Useful for verifying accounts, checking inbox messages, getting authentication codes, sending outbound emails, and reading full email content."
+name: "agentmail"
+description: "Manage email via AgentMail API — check inbox, read messages, send outbound emails from novamars@agentmail.to"
+when_to_use: "Use when: user asks to check email, read messages, send an email, verify an account, or retrieve an auth code. The inbox is novamars@agentmail.to. Do NOT use for Google Workspace email (use gws-gmail skill)."
+allowed-tools:
+  - Read
+  - Bash(node:*)
+  - Bash(AGENTMAIL_API_KEY)
 category: "Utilities"
 ---
 

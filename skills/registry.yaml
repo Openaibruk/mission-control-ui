@@ -1,0 +1,70 @@
+# Skill Registry — OpenClaw Workspace
+# Last updated: 2026-04-01
+# Format: Inspired by markdown.engineering skill discovery pattern
+
+## Core Skills (Workspace Root)
+- **task-completer**: Complete Mission Control Supabase tasks end-to-end; optimal model selection by task type
+- **pptx-generator**: Create/edit/read PowerPoint presentations (PptxGenJS, XML, markitdown)
+- **ai-image-prompts**: AI image generation prompt recommendations (1,900+ library)
+- **cli-hub-meta-skill**: Discover agent-native CLIs for professional software
+- **agentmail**: Manage email via AgentMail API (novamars@agentmail.to)
+
+## Vendor Skills
+- **github-cli**: GitHub operations via gh CLI
+- **vercel-cli**: Vercel deployment management
+- **model-usage**: Model selection and cost optimization across providers
+- **cost-optimizer**: Reduce token costs and model spend
+- **chipchip-supplier-comm**: ChipChip supplier communication workflows
+- **output-uploads**: Upload deliverables to storage
+- **mission-control-db**: Mission Control Supabase database operations
+
+## MiniMax Document Skills
+- **minimax-pdf**: PDF creation/editing via MiniMax
+- **minimax-docx**: DOCX creation/editing via MiniMax
+- **minimax-xlsx**: XLSX creation/editing via MiniMax
+- **minimax-multimodal-toolkit**: Image, video, music, TTS generation
+
+## PPTX Generator (Custom)
+- **pptx-generator**: Slide creation from scratch and editing (see core skills)
+
+## Google Workspace Skills (gws)
+- **gws-drive**: Google Drive file operations
+- **gws-drive-upload**: Upload files to Drive
+- **gws-docs**: Google Docs read/write
+- **gws-docs-write**: Write content to Google Docs
+- **gws-sheets**: Google Sheets operations
+- **gws-sheets-read**: Read Sheets data
+- **gws-sheets-append**: Append rows to Sheets
+- **gws-slides**: Google Slides operations
+- **gws-gmail**: Gmail management
+- **gws-gmail-send**: Send emails via Gmail
+- **gws-gmail-reply**: Reply to Gmail
+- **gws-gmail-reply-all**: Reply-all via Gmail
+- **gws-gmail-forward**: Forward Gmail
+- **gws-gmail-triage**: Triage and categorize inbox
+- **gws-gmail-watch**: Watch for new Gmail
+- **gws-calendar**: Google Calendar operations
+- **gws-calendar-insert**: Insert calendar events
+- **gws-calendar-agenda**: Get calendar agenda
+- **gws-events**: Google Calendar events
+- **gws-events-subscribe**: Subscribe to event notifications
+- **gws-events-renew**: Renew event subscriptions
+- **gws-tasks**: Google Tasks
+- **gws-people**: Google People/Contacts
+- **gws-forms**: Google Forms
+- **gws-chat**: Google Chat
+- **gws-chat-send**: Send Google Chat messages
+- **gws-classroom**: Google Classroom
+- **gws-admin-reports**: Admin console reports
+- **gws-meet**: Google Meet operations
+- **gws-keep**: Google Keep notes
+- **gws-shared**: Shared Drive operations
+- **gws-modelarmor**: Model Armor prompt/response sanitization (multiple skills)
+
+## Workflow Automation Skills
+- **gws-workflow**: General workflow automation
+- **gws-workflow-standup-report**: Daily standup reports
+- **gws-workflow-weekly-digest**: Weekly digest generation
+- **gws-workflow-meeting-prep**: Meeting preparation automation
+- **gws-workflow-file-announce**: File change announcements
+- **gws-workflow-email-to-task**: Convert emails to tasks

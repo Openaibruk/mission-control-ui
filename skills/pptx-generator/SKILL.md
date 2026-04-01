@@ -1,9 +1,21 @@
 ---
-name: pptx-generator
-description: "Generate, edit, and read PowerPoint presentations. Create from scratch with PptxGenJS (cover, TOC, content, section divider, summary slides), edit existing PPTX via XML workflows, or extract text with markitdown. Triggers: PPT, PPTX, PowerPoint, presentation, slide, deck, slides."
+name: "pptx-generator"
+description: "Create, edit, and read PowerPoint PPTX files — from scratch (PptxGenJS), via XML editing, or text extraction (markitdown)"
+when_to_use: "Use when: user asks to create/edit a presentation, mentions PPT/PPTX/PowerPoint/slides/deck. Examples: 'make a pitch deck about ChipChip', 'edit this presentation', 'extract text from slides.pptx'. Do NOT use for Google Slides (use gws-slides skill) or PDF reports."
+arguments: topic audience style
+argument-hint: "[topic] [audience] [style]"
+allowed-tools:
+  - Read
+  - Write
+  - Bash(node:*)
+  - Bash(npm:*)
+  - Bash(pip:*)
+  - Bash(python:*)
+  - Bash(markitdown:*)
+effort: high
 license: MIT
 metadata:
-  version: "1.0"
+  version: "1.1"
   category: productivity
   sources:
     - https://gitbrent.github.io/PptxGenJS/

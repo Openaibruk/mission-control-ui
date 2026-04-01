@@ -1,45 +1,89 @@
 {
-  "updatedAt": "2026-03-31T07:32:00.000Z",
+  "updatedAt": "2026-04-01T05:00:00.000Z",
   "news": [
     {
-      "title": "Qwen 3.6 Plus Available Free with 1M Context Window",
-      "source": "TechCrunch",
-      "date": "2026-03-31",
+      "title": "March 2026 AI Roundup: MCP Hits 97 Million Installs",
+      "source": "Digital Applied",
+      "date": "2026-03-27",
       "category": "Tech",
-      "summary": "Alibaba's Qwen 3.6 Plus Preview now live with massive 1M token context window at no cost",
-      "url": "https://openrouter.ai"
+      "summary": "The Model Context Protocol crossed 97 million installations, cementing its transition from experimental standard to foundational agentic infrastructure. March delivered a wave of new AI models pushing boundaries of capability, efficiency, and accessibility.",
+      "url": "https://www.digitalapplied.com/blog/march-2026-ai-roundup-month-that-changed-everything"
     },
     {
-      "title": "Ethiopian FDI Continues Growth in Tech Sector",
-      "source": "Shega",
+      "title": "Neuromorphic Computers Solve Complex Physics Simulations",
+      "source": "ScienceDaily",
+      "date": "2026-03-30",
+      "category": "Tech",
+      "summary": "Neuromorphic computers modeled after the human brain can now solve complex equations behind physics simulations — once thought possible only with energy-hungry supercomputers.",
+      "url": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/"
+    },
+    {
+      "title": "CoreWeave Secures $8.5B Loan as AI Cloud Demand Surges",
+      "source": "Tech Startups",
       "date": "2026-03-31",
       "category": "Business",
-      "summary": "Foreign Direct Investment in Ethiopian technology sectors showing strong momentum"
+      "summary": "CoreWeave locks in $8.5 billion in new financing through a delayed-draw term loan facility, months after Nvidia's $2B investment, as demand for AI cloud infrastructure accelerates.",
+      "url": "https://techstartups.com/2026/03/31/coreweave-secures-8-5b-loan-as-ai-cloud-demand-surges-months-after-nvidias-2b-bet/"
     },
     {
-      "title": "Next.js 16 Released with Turbopack",
-      "source": "Vercel Blog",
-      "date": "2026-03-31",
+      "title": "Starcloud Raises $170M for Orbital AI Data Centers",
+      "source": "Tech Startups",
+      "date": "2026-03-30",
       "category": "Tech",
-      "summary": "Next.js 16 ships with full Turbopack integration and improved cold start times"
+      "summary": "Redmond-based orbital AI infrastructure startup Starcloud raises $170M at $1.1B valuation, hitting unicorn status just 17 months after Y Combinator demo day. Plans to launch AI data centers in orbit as Earth-based compute demand outpaces limits.",
+      "url": "https://techstartups.com/2026/03/30/starcloud-raises-170m-at-1-1b-valuation-to-launch-orbital-ai-data-centers-as-demand-for-compute-outpaces-earths-limits/"
     },
     {
-      "title": "OpenRouter Free Tier Expands with 50+ Models",
-      "source": "The Verge",
+      "title": "VivaTech AfricaTech Award 2026: Nigeria, Kenya, Egypt Lead",
+      "source": "PR Newswire",
+      "date": "2026-03-26",
+      "category": "Business",
+      "summary": "Europe's largest startup event VivaTech reveals Top 30 of AfricaTech Award 2026, with Nigeria, Kenya, and Egypt as the three most represented countries. Recognition for startups building tech solutions addressing Africa's economic challenges.",
+      "url": "https://www.prnewswire.com/news-releases/vivatech-unveils-the-top-30-of-the-5th-edition-of-the-africatech-award-2026-nigeria-kenya-and-egypt-are-the-three-most-represented-countries-302726058.html"
+    },
+    {
+      "title": "Africa's Emerging Silicon Valleys: Lagos, Nairobi, Cape Town",
+      "source": "WBN Digital",
+      "date": "2026-04-01",
+      "category": "Business",
+      "summary": "Across Africa, cities like Lagos, Nairobi, and Cape Town emerge as dynamic technology hubs, earning recognition as the continent's new Silicon Valleys. A powerful tech shift underway driven by young, entrepreneurial talent.",
+      "url": "https://www.wbn.digital/africas-rising-tech-powerhouses-inside-the-continents-new-silicon-valleys/"
+    },
+    {
+      "title": "AI Startup Axiom Valued at $1.6B Building Mistake-Checking Systems",
+      "source": "The New York Times",
       "date": "2026-03-31",
-      "category": "Tech",
-      "summary": "Growing ecosystem of free AI models now available for developers worldwide"
+      "category": "Business",
+      "summary": "Tiny startup Axiom valued at $1.6 billion is building AI systems that can autonomously check for mistakes in code, documents, and data. A growing niche as enterprises seek reliable AI verification.",
+      "url": "https://www.nytimes.com/spotlight/artificial-intelligence"
     },
     {
-      "title": "ChipChip Gross Margin at 15.46%",
+      "title": "Eswatini's Growing Fintech Ecosystem in 2026",
+      "source": "The Fintech Times",
+      "date": "2026-03-31",
+      "category": "Business",
+      "summary": "A look at the economic development and fintech landscape in Eswatini, as the nation builds its digital finance infrastructure and positions itself within Africa's expanding fintech corridor.",
+      "url": "https://thefintechtimes.com/african-nation-of-eswatini-and-its-fintech-ecosystem-in-2026/"
+    },
+    {
+      "title": "IQM Quantum Computers Raises €50M from BlackRock Funds",
+      "source": "Tech Startups",
+      "date": "2026-03-30",
+      "category": "Tech",
+      "summary": "Finnish quantum hardware startup IQM Quantum Computers secures €50 million ($57.6M) in venture funding from BlackRock-managed funds, accelerating European quantum computing race.",
+      "url": "https://techstartups.com/2026/03/30/top-startup-and-tech-funding-news-march-30-2025/"
+    },
+    {
+      "title": "ChipChip Gross Margin Stable at 15.46%",
       "source": "Internal",
-      "date": "2026-03-31",
+      "date": "2026-04-01",
       "category": "Internal",
-      "summary": "Gross margin remains stable at 15.46% — fresh new day!"
+      "summary": "ChipChip's gross margin remains steady at 15.46% — fresh new day, continuing the grind!",
+      "url": ""
     }
   ],
   "business": {
-    "date": "2026-03-31",
+    "date": "2026-04-01",
     "revenue": "0",
     "orders": 0,
     "aov": 0,

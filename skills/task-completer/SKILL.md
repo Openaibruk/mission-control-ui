@@ -1,12 +1,15 @@
 ---
-name: task-completer
-description: "Automatically complete Mission Control tasks using optimal model selection based on task type. Handles: video production specs (seedance-1-5-pro), documentation/strategy (step-3.5-flash), code/architecture (qwen-coder), emergency SOPs, marketing plans. Creates deliverables, uploads to Google Drive, updates task status to done."
-metadata:
-  openclaw:
-    category: "Core"
-    requires:
-      bins: ["node", "gws"]
-    cliHelp: "node scripts/task-completer.js <task_id>"
+name: "task-completer"
+description: "Complete Mission Control Supabase tasks end-to-end: generate deliverable, upload to Drive (gws), update task status to done"
+when_to_use: "Use when a user references a task ID in Mission Control, asks to complete/pick up a task, or needs deliverables generated for a tracked task. Triggers: 'task 123', 'complete task', 'finish the deliverable', MCP analytics showing new tasks."
+arguments: task_id
+allowed-tools:
+  - Read
+  - Write
+  - Bash(node:*)
+  - Bash(gws:*)
+  - Bash(vercel:*)
+effort: high
 ---
 
 # Task Completer
