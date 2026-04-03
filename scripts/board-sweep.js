@@ -1,80 +1,84 @@
-import { createClient } from '@supabase/supabase-js';
-import { config } from 'dotenv';
-config({ path: '.env' });
+#!/usr/bin/env node
+const { createClient } = require('@supabase/supabase-js');
+const fs = require('fs');
+const path = require('path');
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_ANON_KEY;
-if (!supabaseUrl || !supabaseKey) {
-  console.error('SUPABASE_URL and SUPABASE_ANON_KEY required in .env');
-  process.exit(1);
+// Load .env
+const envPath = path.resolve(process.cwd(), '.env');
+const envContent = fs.readFileSync(envPath, 'utf-8');
+const env = {};
+for (const line of envContent.split('\n')) {
+  const [key, ...rest] = line.split('=');
+  if (key) env[key.trim()] = rest.join('=').trim().replace(/^["']|["']$/g, '');
 }
-const supabase = createClient(supabaseUrl, supabaseKey);
 
-async function sweep() {
+const supabase = createClient(env.SUPABASE_URL, env.SUPABASE_ANON_KEY);
+
+async function sweepBoard() {
   const now = new Date();
-  const moved = [];
+  const moved = {};
 
-  // 1) in_progress > 4h with no updates → todo
-  // Assuming 'updated_at' column exists; if not, use created_at. We'll try updated_at first.
+  // 1. in_progress > 4 hours (based on created_at) → reset to todo
   const fourHoursAgo = new Date(now.getTime() - 4 * 60 * 60 * 1000).toISOString();
   const { data: staleInProgress, error: err1 } = await supabase
     .from('tasks')
-    .select('id, status, updated_at, created_at')
+    .select('id')
     .eq('status', 'in_progress')
-    .lt('updated_at', fourHoursAgo);
-  if (err1) console.error('Error fetching in_progress tasks:', err1.message);
-
-  if (staleInProgress && staleInProgress.length > 0) {
+    .lt('created_at', fourHoursAgo);
+  if (err1) throw err1;
+  if (staleInProgress && staleInProgress.length) {
     const ids = staleInProgress.map(t => t.id);
-    const { error: upErr } = await supabase
-      .from('tasks')
-      .update({ status: 'todo' })
-      .in('id', ids);
-    if (upErr) console.error('Failed to reset in_progress tasks:', upErr.message);
-    else moved.push(`Reset ${ids.length} tasks from in_progress → todo (stale >4h)`);
+    await supabase.from('tasks').update({ status: 'todo' }).in('id', ids);
+    moved['in_progress→todo'] = ids.length;
+    console.log(`Reset ${ids.length} in_progress → todo`);
   }
 
-  // 2) assigned > 24h with no updates → inbox
+  // 2. assigned > 24 hours → reset to inbox
   const dayAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
-  const { data: oldAssigned, error: err2 } = await supabase
+  const { data: staleAssigned, error: err2 } = await supabase
     .from('tasks')
-    .select('id, status, updated_at, created_at')
+    .select('id')
     .eq('status', 'assigned')
-    .lt('updated_at', dayAgo);
-  if (err2) console.error('Error fetching assigned tasks:', err2.message);
-
-  if (oldAssigned && oldAssigned.length > 0) {
-    const ids = oldAssigned.map(t => t.id);
-    const { error: upErr } = await supabase
-      .from('tasks')
-      .update({ status: 'inbox' })
-      .in('id', ids);
-    if (upErr) console.error('Failed to reset assigned tasks:', upErr.message);
-    else moved.push(`Reset ${ids.length} tasks from assigned → inbox (stale >24h)`);
+    .lt('created_at', dayAgo);
+  if (err2) throw err2;
+  if (staleAssigned && staleAssigned.length) {
+    const ids = staleAssigned.map(t => t.id);
+    await supabase.from('tasks').update({ status: 'inbox' }).in('id', ids);
+    moved['assigned→inbox'] = ids.length;
+    console.log(`Reset ${ids.length} assigned → inbox`);
   }
 
-  // 3) review > 48h → in_progress with notification (we'll just move to in_progress)
+  // 3. review > 48 hours → move to in_progress (also log activity)
   const twoDaysAgo = new Date(now.getTime() - 48 * 60 * 60 * 1000).toISOString();
-  const { data: oldReview, error: err3 } = await supabase
+  const { data: staleReview, error: err3 } = await supabase
     .from('tasks')
-    .select('id, status, updated_at, created_at')
+    .select('id')
     .eq('status', 'review')
-    .lt('updated_at', twoDaysAgo);
-  if (err3) console.error('Error fetching review tasks:', err3.message);
-
-  if (oldReview && oldReview.length > 0) {
-    const ids = oldReview.map(t => t.id);
-    const { error: upErr } = await supabase
-      .from('tasks')
-      .update({ status: 'in_progress' })
-      .in('id', ids);
-    if (upErr) console.error('Failed to move review tasks:', upErr.message);
-    else moved.push(`Moved ${ids.length} tasks from review → in_progress (stale >48h)`);
+    .lt('created_at', twoDaysAgo);
+  if (err3) throw err3;
+  if (staleReview && staleReview.length) {
+    const ids = staleReview.map(t => t.id);
+    await supabase.from('tasks').update({ status: 'in_progress' }).in('id', ids);
+    // Log activity
+    await supabase.from('activities').insert(
+      ids.map(id => ({ agent_name: 'System', action: `Auto-unstuck: review→in_progress` }))
+    );
+    moved['review→in_progress'] = ids.length;
+    console.log(`Reset ${ids.length} review → in_progress`);
   }
 
-  console.log('\n=== Board Sweep Report ===');
-  console.log(moved.length ? moved.join('\n') : 'No stale tasks found.');
-  console.log(`Total tasks moved: ${moved.reduce((sum, msg) => sum + parseInt(msg.match(/\d+/)?.[0] || '0'), 0)}`);
+  return moved;
 }
 
-sweep().catch(console.error);
+sweepBoard()
+  .then(moved => {
+    const total = Object.values(moved).reduce((a, b) => a + b, 0);
+    console.log('\n=== Board Sweep Complete ===');
+    console.log(`Total tasks moved: ${total}`);
+    console.log('Breakdown:', moved);
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error('Sweep failed:', err);
+    process.exit(1);
+  });

@@ -24,7 +24,7 @@ interface AgentFileProfile {
   soulSnippet: string;
   agentConfig: string;
   department: string;
-  subTeam: string;
+  subteam: string;
 }
 
 // Department → Subteam taxonomy
@@ -40,27 +40,27 @@ const DEPARTMENT_SUBTEAM_MAP: Record<string, string[]> = {
 };
 
 // Agent → Department/Subteam override mapping (high-priority source)
-const AGENT_DEPT_OVERRIDE: Record<string, { department: string; subTeam: string }> = {
-  Nova: { department: 'Orchestration', subTeam: 'Coordination' },
-  Henok: { department: 'Engineering', subTeam: 'Build' },
-  Forge: { department: 'Engineering', subTeam: 'Build' },
-  Kiro: { department: 'Engineering', subTeam: 'Architecture' },
-  Cipher: { department: 'Engineering', subTeam: 'Integration' },
-  Loki: { department: 'Engineering', subTeam: 'Infrastructure' },
-  Cinder: { department: 'Quality & Safety', subTeam: 'QA' },
-  Yonas: { department: 'Quality & Safety', subTeam: 'QA' },
-  Onyx: { department: 'Quality & Safety', subTeam: 'Security' },
-  Amen: { department: 'Analytics & Insights', subTeam: 'Data Science' },
-  Orion: { department: 'Analytics & Insights', subTeam: 'Operations Analytics' },
-  Lyra: { department: 'Analytics & Insights', subTeam: 'Business Intelligence' },
-  Nahom: { department: 'Marketing & Content', subTeam: 'Strategy' },
-  Bini: { department: 'Marketing & Content', subTeam: 'Content' },
-  Lidya: { department: 'Marketing & Content', subTeam: 'Design' },
-  Autoscientist: { department: 'Research', subTeam: 'Deep Research' },
-  Aria: { department: 'Unassigned', subTeam: 'Unassigned' },
-  Aroma: { department: 'Unassigned', subTeam: 'Unassigned' },
-  Vision: { department: 'Inactive', subTeam: 'Inactive' },
-  Pulse: { department: 'Unassigned', subTeam: 'Unassigned' },
+const AGENT_DEPT_OVERRIDE: Record<string, { department: string; subteam: string }> = {
+  Nova: { department: 'Orchestration', subteam: 'Coordination' },
+  Henok: { department: 'Engineering', subteam: 'Build' },
+  Forge: { department: 'Engineering', subteam: 'Build' },
+  Kiro: { department: 'Engineering', subteam: 'Architecture' },
+  Cipher: { department: 'Engineering', subteam: 'Integration' },
+  Loki: { department: 'Engineering', subteam: 'Infrastructure' },
+  Cinder: { department: 'Quality & Safety', subteam: 'QA' },
+  Yonas: { department: 'Quality & Safety', subteam: 'QA' },
+  Onyx: { department: 'Quality & Safety', subteam: 'Security' },
+  Amen: { department: 'Analytics & Insights', subteam: 'Data Science' },
+  Orion: { department: 'Analytics & Insights', subteam: 'Operations Analytics' },
+  Lyra: { department: 'Analytics & Insights', subteam: 'Business Intelligence' },
+  Nahom: { department: 'Marketing & Content', subteam: 'Strategy' },
+  Bini: { department: 'Marketing & Content', subteam: 'Content' },
+  Lidya: { department: 'Marketing & Content', subteam: 'Design' },
+  Autoscientist: { department: 'Research', subteam: 'Deep Research' },
+  Aria: { department: 'Unassigned', subteam: 'Unassigned' },
+  Aroma: { department: 'Unassigned', subteam: 'Unassigned' },
+  Vision: { department: 'Inactive', subteam: 'Inactive' },
+  Pulse: { department: 'Unassigned', subteam: 'Unassigned' },
   // Default fallback for any other agent
 };
 
@@ -108,15 +108,15 @@ export function AgentGrid({ agents, tasks, onAgentClick, onNewAgent, loading, th
       let sub = 'Unassigned';
       if (AGENT_DEPT_OVERRIDE[agent.name]) {
         dept = AGENT_DEPT_OVERRIDE[agent.name].department;
-        sub = AGENT_DEPT_OVERRIDE[agent.name].subTeam;
-      } else if (agent.department && agent.subTeam) {
+        sub = AGENT_DEPT_OVERRIDE[agent.name].subteam;
+      } else if (agent.department && agent.subteam) {
         // 2. Use DB fields if present
         dept = agent.department;
-        sub = agent.subTeam;
-      } else if (agentFileProfiles[agent.name]?.department && agentFileProfiles[agent.name]?.subTeam) {
+        sub = agent.subteam;
+      } else if (agentFileProfiles[agent.name]?.department && agentFileProfiles[agent.name]?.subteam) {
         // 3. Use extracted file profile
         dept = agentFileProfiles[agent.name].department;
-        sub = agentFileProfiles[agent.name].subTeam;
+        sub = agentFileProfiles[agent.name].subteam;
       } else if (agent.role) {
         // 4. Fallback: infer from role
         const role = agent.role.toLowerCase();
