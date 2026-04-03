@@ -101,7 +101,7 @@ interface AgentProfile {
   soulSnippet: string;
   agentConfig: string;
   department: string;
-  subteam: string;
+  subTeam: string;
 }
 
 export async function GET(request: NextRequest) {
@@ -185,7 +185,7 @@ export async function GET(request: NextRequest) {
       profile.purpose = extractPurpose(soulContent);
       profile.skills = extractSkills(soulContent);
       profile.department = extractDepartment(soulContent);
-      profile.subteam = extractSubTeam(soulContent);
+      profile.subTeam = extractSubTeam(soulContent);
     } else {
       // Fallback: check workspace root for shared SOUL.md (legacy)
       const sharedSoulPath = join(process.cwd(), 'SOUL.md');
@@ -208,7 +208,7 @@ export async function GET(request: NextRequest) {
       
       // Extract department/subteam from agent config if not already found
       if (!profile.department) profile.department = extractDepartment(agentsContent);
-      if (!profile.subteam) profile.subteam = extractSubTeam(agentsContent);
+      if (!profile.subTeam) profile.subTeam = extractSubTeam(agentsContent);
     } else {
       // Fallback to workspace root
       const sharedAgentsPath = join(process.cwd(), 'AGENTS.md');

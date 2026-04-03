@@ -30,7 +30,7 @@ export interface Agent {
   created_at?: string;
   // Extended fields for org chart & personalized profiles
   department?: string;
-  subteam?: string;
+  subTeam?: string;
   skills?: string[];
   purpose?: string;
   soulContent?: string;

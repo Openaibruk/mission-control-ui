@@ -78,7 +78,7 @@ export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClos
   const [model, setModel] = useState('');
   const [prompt, setPrompt] = useState('');
   const [department, setDepartment] = useState('');
-  const [subteam, setSubteam] = useState('');
+  const [subTeam, setSubTeam] = useState('');
   const [soulContent, setSoulContent] = useState('');
   const [isSavingSoul, setIsSavingSoul] = useState(false);
   const [skills, setSkills] = useState<any[]>([]);
@@ -92,9 +92,9 @@ export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClos
     if (agent && !isNew) {
       setName(agent.name); setRole(agent.role || ''); setStatus(agent.status);
       setModel(agent.model || ''); setPrompt(agent.prompt || '');
-      setDepartment(agent.department || ''); setSubteam(agent.subteam || '');
+      setDepartment(agent.department || ''); setSubTeam(agent.subTeam || '');
     } else {
-      setName(''); setRole(''); setStatus('active'); setModel(''); setPrompt(''); setDepartment(''); setSubteam('');
+      setName(''); setRole(''); setStatus('active'); setModel(''); setPrompt(''); setDepartment(''); setSubTeam('');
     }
   }, [agent, isNew]);
 
@@ -144,7 +144,7 @@ export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClos
       status,
       model,
       department: department || undefined,
-      subteam: subteam || undefined,
+      subTeam: subTeam || undefined,
     };
     if (!isNew && agent) data.id = agent.id;
     onSave(data);
@@ -284,7 +284,7 @@ export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClos
                   </div>
                   <div>
                     <label className={cn("text-[11px] font-medium mb-1.5 block", classes.muted)}>Subteam</label>
-                    <select value={subteam} onChange={(e) => setSubteam(e.target.value)}
+                    <select value={subTeam} onChange={(e) => setSubTeam(e.target.value)}
                       className={cn("w-full rounded-md px-3 py-2.5 text-[13px] outline-none transition-colors focus:ring-2 focus:ring-violet-500/50", classes.inputBg)}>
                       <option value="">Select subteam</option>
                       {department && DEPARTMENT_SUBTEAM_MAP[department]?.map(st => (
