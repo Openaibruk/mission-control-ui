@@ -51,7 +51,7 @@ async function populateAgents() {
     if (mapping) {
       const { error: updateErr } = await supabase
         .from('agents')
-        .update({ department: mapping.department, subteam: mapping.subTeam })
+        .update({ department: mapping.department, subTeam: mapping.subTeam })
         .eq('id', agent.id);
       if (updateErr) {
         console.error(`Failed to update ${agent.name}:`, updateErr.message);
@@ -63,7 +63,7 @@ async function populateAgents() {
       // Set unassigned if not in mapping
       const { error: updateErr } = await supabase
         .from('agents')
-        .update({ department: 'Unassigned', subteam: 'Unassigned' })
+        .update({ department: 'Unassigned', subTeam: 'Unassigned' })
         .eq('id', agent.id);
       if (!updateErr) {
         updated++;
