@@ -3,7 +3,7 @@
 import { Agent, Task } from '@/lib/types';
 import { cn, getAvatar, getAgentStatusInfo } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Plus, UserPlus, Bell, Zap, Crown, Bot, Users, ChevronDown, ChevronUp, Play } from 'lucide-react';
 import { AgentTriggerModal } from '@/components/shared/AgentTriggerModal';
 
@@ -16,42 +16,190 @@ interface AgentGridProps {
   theme: 'dark' | 'light';
 }
 
+interface AgentFileProfile {
+  hasSoul: boolean;
+  hasAgents: boolean;
+  purpose: string;
+  skills: string[];
+  soulSnippet: string;
+  agentConfig: string;
+  department: string;
+  subTeam: string;
+}
+
+// Department → Subteam taxonomy
+const DEPARTMENT_SUBTEAM_MAP: Record<string, string[]> = {
+  'Orchestration': ['Coordination'],
+  'Engineering': ['Build', 'Architecture', 'Integration', 'Infrastructure'],
+  'Quality & Safety': ['QA', 'Security'],
+  'Analytics & Insights': ['Data Science', 'Business Intelligence', 'Operations Analytics'],
+  'Marketing & Content': ['Strategy', 'Content', 'Design'],
+  'Research': ['Deep Research'],
+  'Unassigned': ['Unassigned'],
+  'Inactive': ['Inactive'],
+};
+
+// Agent → Department/Subteam override mapping (high-priority source)
+const AGENT_DEPT_OVERRIDE: Record<string, { department: string; subTeam: string }> = {
+  Nova: { department: 'Orchestration', subTeam: 'Coordination' },
+  Henok: { department: 'Engineering', subTeam: 'Build' },
+  Forge: { department: 'Engineering', subTeam: 'Build' },
+  Kiro: { department: 'Engineering', subTeam: 'Architecture' },
+  Cipher: { department: 'Engineering', subTeam: 'Integration' },
+  Loki: { department: 'Engineering', subTeam: 'Infrastructure' },
+  Cinder: { department: 'Quality & Safety', subTeam: 'QA' },
+  Yonas: { department: 'Quality & Safety', subTeam: 'QA' },
+  Onyx: { department: 'Quality & Safety', subTeam: 'Security' },
+  Amen: { department: 'Analytics & Insights', subTeam: 'Data Science' },
+  Orion: { department: 'Analytics & Insights', subTeam: 'Operations Analytics' },
+  Lyra: { department: 'Analytics & Insights', subTeam: 'Business Intelligence' },
+  Nahom: { department: 'Marketing & Content', subTeam: 'Strategy' },
+  Bini: { department: 'Marketing & Content', subTeam: 'Content' },
+  Lidya: { department: 'Marketing & Content', subTeam: 'Design' },
+  Autoscientist: { department: 'Research', subTeam: 'Deep Research' },
+  Aria: { department: 'Unassigned', subTeam: 'Unassigned' },
+  Aroma: { department: 'Unassigned', subTeam: 'Unassigned' },
+  Vision: { department: 'Inactive', subTeam: 'Inactive' },
+  Pulse: { department: 'Unassigned', subTeam: 'Unassigned' },
+  // Default fallback for any other agent
+};
+
+const DEPARTMENT_COLORS: Record<string, { name: string; text: string; border: string; glow: string }> = {
+  'Orchestration': { name: 'bg-violet-500', text: 'text-violet-500', border: 'border-violet-500', glow: 'from-violet-500/5 to-violet-600/5' },
+  'Engineering': { name: 'bg-blue-500', text: 'text-blue-500', border: 'border-blue-500', glow: 'from-blue-500/5 to-blue-600/5' },
+  'Quality & Safety': { name: 'bg-rose-500', text: 'text-rose-500', border: 'border-rose-500', glow: 'from-rose-500/5 to-rose-600/5' },
+  'Analytics & Insights': { name: 'bg-emerald-500', text: 'text-emerald-500', border: 'border-emerald-500', glow: 'from-emerald-500/5 to-emerald-600/5' },
+  'Marketing & Content': { name: 'bg-pink-500', text: 'text-pink-500', border: 'border-pink-500', glow: 'from-pink-500/5 to-pink-600/5' },
+  'Research': { name: 'bg-amber-500', text: 'text-amber-500', border: 'border-amber-500', glow: 'from-amber-500/5 to-amber-600/5' },
+  'Unassigned': { name: 'bg-gray-500', text: 'text-gray-500', border: 'border-gray-500', glow: 'from-gray-500/5 to-gray-600/5' },
+  'Inactive': { name: 'bg-neutral-500', text: 'text-neutral-500', border: 'border-neutral-500', glow: 'from-neutral-500/5 to-neutral-600/5' },
+};
+
 export function AgentGrid({ agents, tasks, onAgentClick, onNewAgent, loading, theme }: AgentGridProps) {
   const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
   const [pingedAgents, setPingedAgents] = useState<Set<string>>(new Set());
   const [triggerAgent, setTriggerAgent] = useState<string | null>(null);
+  const [agentFileProfiles, setAgentFileProfiles] = useState<Record<string, AgentFileProfile>>({});
 
-  const departments = useMemo(() => {
-    const map = new Map<string, Agent[]>();
+  // Load actual file profiles for all agents
+  useEffect(() => {
     agents.forEach(agent => {
-      if (agent.name === 'Nova' || agent.name === 'Bruk') return;
-      // Extract department from role or use a fallback. A simple split by space could work, or just use the role name.
-      const deptName = agent.role ? agent.role.split(' ')[0] : 'General';
-      if (!map.has(deptName)) map.set(deptName, []);
-      map.get(deptName)!.push(agent);
-    });
-    
-    return Array.from(map.entries()).map(([name, deptAgents], index) => {
-      const colors = [
-        { bg: 'bg-blue-500', text: 'text-blue-500', border: 'border-blue-500' },
-        { bg: 'bg-pink-500', text: 'text-pink-500', border: 'border-pink-500' },
-        { bg: 'bg-violet-500', text: 'text-violet-500', border: 'border-violet-500' },
-        { bg: 'bg-orange-500', text: 'text-orange-500', border: 'border-orange-500' },
-        { bg: 'bg-emerald-500', text: 'text-emerald-500', border: 'border-emerald-500' },
-      ];
-      const colorSet = colors[index % colors.length];
-      return {
-        name,
-        color: colorSet.bg,
-        textColor: colorSet.text,
-        borderColor: colorSet.border,
-        agents: deptAgents.map(a => a.name)
-      };
+      if (agentFileProfiles[agent.name]) return;
+      fetch(`/api/agents/agent-files?agent=${encodeURIComponent(agent.name)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (!data.error) {
+            setAgentFileProfiles(prev => ({ ...prev, [agent.name]: data }));
+          }
+        })
+        .catch(() => {});
     });
   }, [agents]);
 
-  const [expandedDepts, setExpandedDepts] = useState<Set<string>>(new Set(departments.map(d => d.name)));
+  const deptHierarchy = useMemo(() => {
+    const hierarchy: Record<string, Record<string, Agent[]>> = {};
+
+    agents.forEach(agent => {
+      if (agent.name === 'Bruk' || agent.name === 'Aroma') return;
+
+      // 1. Priority: explicit override (AGENT_DEPT_OVERRIDE)
+      let dept = 'Unassigned';
+      let sub = 'Unassigned';
+      if (AGENT_DEPT_OVERRIDE[agent.name]) {
+        dept = AGENT_DEPT_OVERRIDE[agent.name].department;
+        sub = AGENT_DEPT_OVERRIDE[agent.name].subTeam;
+      } else if (agent.department && agent.subTeam) {
+        // 2. Use DB fields if present
+        dept = agent.department;
+        sub = agent.subTeam;
+      } else if (agentFileProfiles[agent.name]?.department && agentFileProfiles[agent.name]?.subTeam) {
+        // 3. Use extracted file profile
+        dept = agentFileProfiles[agent.name].department;
+        sub = agentFileProfiles[agent.name].subTeam;
+      } else if (agent.role) {
+        // 4. Fallback: infer from role
+        const role = agent.role.toLowerCase();
+        if (role.includes('dev') || role.includes('eng') || role.includes('code') || role.includes('build')) {
+          dept = 'Engineering'; sub = 'Build';
+        } else if (role.includes('architect')) {
+          dept = 'Engineering'; sub = 'Architecture';
+        } else if (role.includes('integration') || role.includes('connect')) {
+          dept = 'Engineering'; sub = 'Integration';
+        } else if (role.includes('infra') || role.includes('ops') || role.includes('devops')) {
+          dept = 'Engineering'; sub = 'Infrastructure';
+        } else if (role.includes('qa') || role.includes('review') || role.includes('test')) {
+          dept = 'Quality & Safety'; sub = 'QA';
+        } else if (role.includes('security')) {
+          dept = 'Quality & Safety'; sub = 'Security';
+        } else if (role.includes('analy') || role.includes('data') || role.includes('bi') || role.includes('analytics')) {
+          dept = 'Analytics & Insights'; sub = 'Data Science';
+        } else if (role.includes('marketing') || role.includes('seo') || role.includes('growth')) {
+          dept = 'Marketing & Content'; sub = 'Strategy';
+        } else if (role.includes('content') || role.includes('copy') || role.includes('social')) {
+          dept = 'Marketing & Content'; sub = 'Content';
+        } else if (role.includes('design') || role.includes('ui') || role.includes('ux')) {
+          dept = 'Marketing & Content'; sub = 'Design';
+        } else if (role.includes('research') || role.includes('researcher')) {
+          dept = 'Research'; sub = 'Deep Research';
+        } else if (role.includes('orchestrat') || role.includes('coordinator') || role.includes('pm')) {
+          dept = 'Orchestration'; sub = 'Coordination';
+        } else {
+          dept = 'Unassigned'; sub = 'Unassigned';
+        }
+      }
+
+      // Ensure department and subteam exist in our taxonomy
+      if (!DEPARTMENT_SUBTEAM_MAP[dept]) {
+        // Try to find closest match
+        const match = Object.keys(DEPARTMENT_SUBTEAM_MAP).find(d => dept.toLowerCase().includes(d.toLowerCase()));
+        dept = match || 'Unassigned';
+      }
+      if (!DEPARTMENT_SUBTEAM_MAP[dept]?.includes(sub)) {
+        // Fallback to first subteam in that department
+        sub = DEPARTMENT_SUBTEAM_MAP[dept]?.[0] || 'Unassigned';
+      }
+
+      if (!hierarchy[dept]) hierarchy[dept] = {};
+      if (!hierarchy[dept][sub]) hierarchy[dept][sub] = [];
+      hierarchy[dept][sub].push(agent);
+    });
+
+    // Convert to sorted array structure
+    const deptList = Object.keys(hierarchy)
+      .filter(d => d !== 'Inactive') // Hide inactive from main view
+      .sort((a, b) => {
+        const order = ['Orchestration', 'Engineering', 'Quality & Safety', 'Analytics & Insights', 'Marketing & Content', 'Research', 'Unassigned'];
+        return (order.indexOf(a) || 999) - (order.indexOf(b) || 999);
+      });
+
+    return deptList.map(deptName => {
+      const subteams = hierarchy[deptName];
+      const subteamList = DEPARTMENT_SUBTEAM_MAP[deptName]
+        .filter(st => subteams[st] && subteams[st].length > 0)
+        .map(st => ({
+          name: st,
+          agents: subteams[st].sort((a, b) => a.name.localeCompare(b.name)),
+          agentCount: subteams[st].length,
+        }));
+
+      const totalAgents = subteamList.reduce((sum, st) => sum + st.agentCount, 0);
+      const color = DEPARTMENT_COLORS[deptName] || DEPARTMENT_COLORS['Unassigned'];
+
+      return {
+        name: deptName,
+        color: color.name,
+        textColor: color.text,
+        borderColor: color.border,
+        glow: color.glow,
+        subteams: subteamList,
+        agentCount: totalAgents,
+      };
+    });
+  }, [agents, agentFileProfiles]);
+
+  const [expandedDepts, setExpandedDepts] = useState<Set<string>>(new Set());
+  // If expandedDepts is empty, all departments are expanded by default
 
   const handlePing = async (agent: Agent, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -163,99 +311,111 @@ export function AgentGrid({ agents, tasks, onAgentClick, onNewAgent, loading, th
       </div>
 
       {/* Departments */}
-      <div className="flex flex-col md:flex-row justify-center gap-4">
-        {departments.map((dept) => {
-          const isExpanded = expandedDepts.has(dept.name);
+      <div className="flex flex-col gap-4">
+        {deptHierarchy.map((dept) => {
+          const isExpanded = expandedDepts.size === 0 || expandedDepts.has(dept.name);
           return (
-            <div key={dept.name} className="flex-1 min-w-[200px] max-w-[280px]">
+            <div key={dept.name} className="rounded-xl border overflow-hidden">
               {/* Department Header */}
               <button
                 onClick={() => toggleDept(dept.name)}
                 className={cn(
-                  "w-full flex items-center justify-between px-4 py-2.5 rounded-lg border transition-all",
+                  "w-full flex items-center justify-between px-4 py-3 transition-all",
                   isDark ? "bg-gray-800/60 border-gray-700 hover:bg-gray-800" : "bg-white border-gray-200 hover:bg-gray-50"
                 )}
               >
-                <div className="flex items-center gap-2">
-                  <div className={cn("w-2.5 h-2.5 rounded-full", dept.color)} />
-                  <span className={cn("text-sm font-semibold", isDark ? "text-white" : "text-gray-900")}>{dept.name}</span>
-                  <span className={cn("text-[10px] px-1.5 py-0.5 rounded-full", isDark ? "bg-gray-700 text-gray-400" : "bg-gray-100 text-gray-500")}>
-                    {dept.agents.length}
-                  </span>
+                <div className="flex items-center gap-3">
+                  <div className={cn("w-3 h-3 rounded-full", dept.color)} />
+                  <div>
+                    <div className={cn("text-sm font-semibold", isDark ? "text-white" : "text-gray-900")}>{dept.name}</div>
+                    <div className={cn("text-[10px]", isDark ? "text-gray-500" : "text-gray-400")}>{dept.agentCount} agents</div>
+                  </div>
                 </div>
                 {isExpanded ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
               </button>
 
-              {/* Department Agents */}
+              {/* Subteams & Agents */}
               {isExpanded && (
-                <div className="mt-2 space-y-1.5 pl-2">
-                  {dept.agents.map((agentName) => {
-                    const agent = agents.find(a => a.name === agentName);
-                    if (!agent) return null;
-                    const stats = getAgentStats(agentName);
-                    const lastActivity = agentLastActivity[agentName] || null;
-                    const statusInfo = getAgentStatusInfo(lastActivity);
-                    const pinged = pingedAgents.has(agent.id || agentName);
-
-                    return (
-                      <div
-                        key={agentName}
-                        onClick={() => onAgentClick(agent)}
-                        className={cn(
-                          "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all hover:scale-[1.01]",
-                          isDark ? "bg-gray-800/40 hover:bg-gray-800" : "bg-gray-50 hover:bg-white hover:shadow-sm"
-                        )}
-                      >
-                        <div className="relative flex-shrink-0">
-                          <img src={getAvatar(agentName)} alt={agentName} className="w-9 h-9 rounded-full" />
-                          <div className={cn(
-                            "absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center",
-                            isDark ? "border-gray-800" : "border-white",
-                            statusInfo.color
-                          )}>
-                            {statusInfo.icon}
-                          </div>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className={cn("text-[13px] font-medium truncate", isDark ? "text-white" : "text-gray-900")}>{agentName}</div>
-                          <div className={cn("text-[10px] truncate", isDark ? "text-gray-500" : "text-gray-400")}>{agent.role || 'Agent'}</div>
-                        </div>
-                        <div className="flex items-center gap-2 flex-shrink-0">
-                          {stats.done > 0 && (
-                            <span className="text-[11px] font-semibold text-emerald-500">{stats.done}</span>
-                          )}
-                          {stats.active > 0 && (
-                            <span className="text-[10px] text-amber-400">{stats.active}</span>
-                          )}
-                          <button
-                            onClick={(e) => { e.stopPropagation(); setTriggerAgent(agentName); }}
-                            className={cn(
-                              "p-1.5 rounded-md transition-all",
-                              isDark
-                                ? "hover:bg-emerald-600/20 text-gray-500 hover:text-emerald-400"
-                                : "hover:bg-emerald-50 text-gray-400 hover:text-emerald-600"
-                            )}
-                            title={`Run task for ${agentName}`}
-                          >
-                            <Play className="w-3 h-3" />
-                          </button>
-                          <button
-                            onClick={(e) => handlePing(agent, e)}
-                            className={cn(
-                              "p-1.5 rounded-md transition-all",
-                              pinged
-                                ? "bg-emerald-500/20 text-emerald-400"
-                                : isDark
-                                  ? "hover:bg-violet-600/20 text-gray-500 hover:text-violet-400"
-                                  : "hover:bg-violet-50 text-gray-400 hover:text-violet-600"
-                            )}
-                          >
-                            {pinged ? <Zap className="w-3 h-3" /> : <Bell className="w-3 h-3" />}
-                          </button>
-                        </div>
+                <div className={cn("p-3 space-y-3", isDark ? "bg-gray-900/20" : "bg-gray-50/50")}>
+                  {dept.subteams.map((sub) => (
+                    <div key={sub.name}>
+                      <div className={cn("text-[11px] font-medium mb-2 flex items-center gap-2", isDark ? "text-gray-500" : "text-gray-500")}>
+                        <div className="w-1 h-1 rounded-full bg-current" />
+                        {sub.name}
+                        <span className={cn("px-1.5 py-0.5 rounded text-[9px]", isDark ? "bg-gray-800 text-gray-400" : "bg-gray-200 text-gray-600")}>
+                          {sub.agentCount}
+                        </span>
                       </div>
-                    );
-                  })}
+                      <div className="space-y-1.5 pl-3 border-l-2 border-dashed" style={{ borderColor: isDark ? '#374151' : '#d1d5db' }}>
+                        {sub.agents.map((agent) => {
+                          const agentData = agents.find(a => a.name === agent.name);
+                          if (!agentData) return null;
+                          const stats = getAgentStats(agent.name);
+                          const lastActivity = agentLastActivity[agent.name] || null;
+                          const statusInfo = getAgentStatusInfo(lastActivity);
+                          const pinged = pingedAgents.has(agent.id || agent.name);
+
+                          return (
+                            <div
+                              key={agent.name}
+                              onClick={() => onAgentClick(agentData)}
+                              className={cn(
+                                "flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all hover:scale-[1.01]",
+                                isDark ? "bg-gray-800/40 hover:bg-gray-800" : "bg-white hover:bg-white hover:shadow-sm"
+                              )}
+                            >
+                              <div className="relative flex-shrink-0">
+                                <img src={getAvatar(agent.name)} alt={agent.name} className="w-9 h-9 rounded-full" />
+                                <div className={cn(
+                                  "absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center",
+                                  isDark ? "border-gray-800" : "border-white",
+                                  statusInfo.color
+                                )}
+>{statusInfo.icon}</div>
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className={cn("text-[13px] font-medium truncate", isDark ? "text-white" : "text-gray-900")}>{agent.name}</div>
+                                <div className={cn("text-[10px] truncate", isDark ? "text-gray-500" : "text-gray-400")}>{agent.role || 'Agent'}</div>
+                              </div>
+                              <div className="flex items-center gap-2 flex-shrink-0">
+                                {stats.done > 0 && (
+                                  <span className="text-[11px] font-semibold text-emerald-500">{stats.done}</span>
+                                )}
+                                {stats.active > 0 && (
+                                  <span className="text-[10px] text-amber-400">{stats.active}</span>
+                                )}
+                                <button
+                                  onClick={(e) => { e.stopPropagation(); setTriggerAgent(agent.name); }}
+                                  className={cn(
+                                    "p-1.5 rounded-md transition-all",
+                                    isDark
+                                      ? "hover:bg-emerald-600/20 text-gray-500 hover:text-emerald-400"
+                                      : "hover:bg-emerald-50 text-gray-400 hover:text-emerald-600"
+                                  )}
+                                  title={`Run task for ${agent.name}`}
+                                >
+                                  <Play className="w-3 h-3" />
+                                </button>
+                                <button
+                                  onClick={(e) => handlePing(agentData, e)}
+                                  className={cn(
+                                    "p-1.5 rounded-md transition-all",
+                                    pinged
+                                      ? "bg-emerald-500/20 text-emerald-400"
+                                      : isDark
+                                        ? "hover:bg-violet-600/20 text-gray-500 hover:text-violet-400"
+                                        : "hover:bg-violet-50 text-gray-400 hover:text-violet-600"
+                                  )}
+                                >
+                                  {pinged ? <Zap className="w-3 h-3" /> : <Bell className="w-3 h-3" />}
+                                </button>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>

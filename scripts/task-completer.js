@@ -3,7 +3,7 @@
 import { config } from 'dotenv';
 import { createClient } from '@supabase/supabase-js';
 
-config({ path: '.env' });
+config({ path: '.env', override: true });
 import OpenAI from 'openai';
 import { execSync } from 'child_process';
 import { readFile, writeFile, mkdir } from 'fs/promises';
@@ -53,11 +53,11 @@ function selectModel(task) {
 
   // Documentation/strategy/marketing/emergency SOPs: use a high-context free model
   if (combined.includes('documentation') || combined.includes('strategy') || combined.includes('plan') || combined.includes('marketing') || combined.includes('sop') || combined.includes('emergency')) {
-    return { primary: 'qwen/qwen3.6-plus-preview:free', fallback: 'qwen/qwen3-coder:free' };
+    return { primary: 'qwen/qwen3.6-plus:free', fallback: 'qwen/qwen3-coder:free' };
   }
 
   // Default: use reliable free model
-  return { primary: 'qwen/qwen3.6-plus-preview:free', fallback: 'qwen/qwen3-coder:free' };
+  return { primary: 'qwen/qwen3.6-plus:free', fallback: 'qwen/qwen3-coder:free' };
 }
 
 async function generateDeliverable(task, modelConfig) {
@@ -78,7 +78,7 @@ async function generateDeliverable(task, modelConfig) {
     });
     return completion.choices[0].message.content;
   } catch (err) {
-    if (modelConfig.fallback && (err.status === 401 || err.status === 402 || err.status === 403 || err.status === 400 || err.message?.includes('model') || err.message?.includes('not found'))) {
+    if (modelConfig.fallback && (err.status === 401 || err.status === 402 || err.status === 403 || err.status === 400 || err.status === 404 || err.message?.includes('model') || err.message?.includes('not found') || err.message?.includes('endpoints'))) {
       console.log(`Primary model ${model} failed (${err.message}), falling back to ${modelConfig.fallback}`);
       const completion = await openai.chat.completions.create({
         model: modelConfig.fallback,

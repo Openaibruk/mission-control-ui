@@ -24,6 +24,19 @@ interface Capability {
   level: 'strong' | 'capable' | 'limited';
 }
 
+// Department → Subteam taxonomy (duplicated from AgentGrid; ideally move to shared)
+const DEPARTMENT_SUBTEAM_MAP: Record<string, string[]> = {
+  'Orchestration': ['Coordination'],
+  'Engineering': ['Build', 'Architecture', 'Integration', 'Infrastructure'],
+  'Quality & Safety': ['QA', 'Security'],
+  'Analytics & Insights': ['Data Science', 'Business Intelligence', 'Operations Analytics'],
+  'Marketing & Content': ['Strategy', 'Content', 'Design'],
+  'Research': ['Deep Research'],
+  'Unassigned': ['Unassigned'],
+  'Inactive': ['Inactive'],
+};
+
+// Infer capabilities from model + role as fallback when agent files aren't available
 function inferCapabilities(model: string, role: string): Capability[] {
   const lower = model.toLowerCase();
   const caps: Capability[] = [];
@@ -47,6 +60,15 @@ function inferCapabilities(model: string, role: string): Capability[] {
   ];
 }
 
+interface AgentFileProfile {
+  hasSoul: boolean;
+  hasAgents: boolean;
+  purpose: string;
+  skills: string[];
+  soulSnippet: string;
+  agentConfig: string;
+}
+
 export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClose, onSave, onDelete, theme }: AgentModalProps) {
   const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
@@ -55,18 +77,24 @@ export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClos
   const [status, setStatus] = useState<'active' | 'idle' | 'offline'>('active');
   const [model, setModel] = useState('');
   const [prompt, setPrompt] = useState('');
+  const [department, setDepartment] = useState('');
+  const [subTeam, setSubTeam] = useState('');
   const [soulContent, setSoulContent] = useState('');
   const [isSavingSoul, setIsSavingSoul] = useState(false);
   const [skills, setSkills] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState<'profile' | 'soul' | 'skills'>('profile');
   const [lastActivity, setLastActivity] = useState<Date | null>(null);
+  // Profile data fetched from actual agent files
+  const [agentFileProfile, setAgentFileProfile] = useState<AgentFileProfile | null>(null);
+  const [loadingProfile, setLoadingProfile] = useState(false);
 
   useEffect(() => {
     if (agent && !isNew) {
       setName(agent.name); setRole(agent.role || ''); setStatus(agent.status);
       setModel(agent.model || ''); setPrompt(agent.prompt || '');
+      setDepartment(agent.department || ''); setSubTeam(agent.subTeam || '');
     } else {
-      setName(''); setRole(''); setStatus('active'); setModel(''); setPrompt('');
+      setName(''); setRole(''); setStatus('active'); setModel(''); setPrompt(''); setDepartment(''); setSubTeam('');
     }
   }, [agent, isNew]);
 
@@ -94,9 +122,30 @@ export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClos
       .catch(err => console.error('Failed to load skills:', err));
   }, []);
 
+  // Fetch agent-specific profile from actual files (SOUL.md & AGENTS.md)
+  useEffect(() => {
+    if (!agent || isNew) { setAgentFileProfile(null); return; }
+    setLoadingProfile(true);
+    fetch(`/api/agents/agent-files?agent=${encodeURIComponent(agent.name)}`)
+      .then(res => res.json())
+      .then(data => {
+        if (!data.error) setAgentFileProfile(data);
+        else setAgentFileProfile(null);
+      })
+      .catch(err => { console.error('Failed to load agent file profile:', err); setAgentFileProfile(null); })
+      .finally(() => setLoadingProfile(false));
+  }, [agent?.name, isNew]);
+
   const handleSave = () => {
     if (!name.trim()) return;
-    const data: Partial<Agent> & { id?: string } = { name: name.trim(), role: role.trim(), status, model };
+    const data: Partial<Agent> & { id?: string } = {
+      name: name.trim(),
+      role: role.trim(),
+      status,
+      model,
+      department: department || undefined,
+      subTeam: subTeam || undefined,
+    };
     if (!isNew && agent) data.id = agent.id;
     onSave(data);
     onClose();
@@ -222,6 +271,30 @@ export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClos
                   <input value={role} onChange={(e) => setRole(e.target.value)} placeholder="e.g., Development, Strategy"
                     className={cn("w-full rounded-md px-4 py-2.5 text-[13px] outline-none transition-colors focus:ring-2 focus:ring-violet-500/50", classes.inputBg)} />
                 </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className={cn("text-[11px] font-medium mb-1.5 block", classes.muted)}>Department</label>
+                    <select value={department} onChange={(e) => setDepartment(e.target.value)}
+                      className={cn("w-full rounded-md px-3 py-2.5 text-[13px] outline-none transition-colors focus:ring-2 focus:ring-violet-500/50", classes.inputBg)}>
+                      <option value="">Select department</option>
+                      {['Orchestration', 'Engineering', 'Quality & Safety', 'Analytics & Insights', 'Marketing & Content', 'Research', 'Unassigned', 'Inactive'].map(d => (
+                        <option key={d} value={d}>{d}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className={cn("text-[11px] font-medium mb-1.5 block", classes.muted)}>Subteam</label>
+                    <select value={subTeam} onChange={(e) => setSubTeam(e.target.value)}
+                      className={cn("w-full rounded-md px-3 py-2.5 text-[13px] outline-none transition-colors focus:ring-2 focus:ring-violet-500/50", classes.inputBg)}>
+                      <option value="">Select subteam</option>
+                      {department && DEPARTMENT_SUBTEAM_MAP[department]?.map(st => (
+                        <option key={st} value={st}>{st}</option>
+                      )) || Object.values(DEPARTMENT_SUBTEAM_MAP).flat().map(st => (
+                        <option key={st} value={st}>{st} (any department)</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
                 <div>
                   <label className={cn("text-[11px] font-medium mb-1.5 block", classes.muted)}>
                     <span className="flex items-center gap-1"><Activity className="w-3 h-3" /> Status</span>
@@ -303,6 +376,42 @@ export function AgentModal({ agent, isOpen = false, isNew = false, tasks, onClos
             )}
             {activeTab === 'skills' && (
               <div style={{ maxHeight: 400 }} className="overflow-y-auto pr-2 custom-scroll">
+                {/* Agent-specific skills from actual SOUL.md / AGENTS.md files */}
+                {agentFileProfile && (
+                  <div className="mb-4">
+                    <label className={cn("text-[10px] font-medium mb-2 flex items-center gap-1.5", classes.muted)}>
+                      <Zap className="w-3 h-3 text-amber-400" /> AGENT SKILLS FROM FILES
+                    </label>
+                    {loadingProfile ? (
+                      <p className={cn("text-xs", classes.muted)}>Loading agent profile...</p>
+                    ) : agentFileProfile.purpose ? (
+                      <div className="mb-2">
+                        <p className={cn("text-xs italic", classes.subtle)}>"{agentFileProfile.purpose.slice(0, 150)}..."</p>
+                      </div>
+                    ) : null}
+                    {agentFileProfile.skills.length > 0 ? (
+                      <div className="flex flex-wrap gap-2">
+                        {agentFileProfile.skills.map((skill, i) => (
+                          <span key={i} className={cn("px-2.5 py-1 rounded-full text-[10px] font-medium border",
+                            isDark ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-400" : "bg-emerald-50 border-emerald-200 text-emerald-600"
+                          )}>
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className={cn("text-xs", classes.muted)}>No skills detected in agent files.</p>
+                    )}
+                    {(agentFileProfile.hasSoul || agentFileProfile.hasAgents) && (
+                      <p className={cn("text-[10px] mt-2", classes.subtle)}>
+                        {(agentFileProfile.hasSoul && agentFileProfile.hasAgents) ? '✓ SOUL.md + AGENTS.md'
+                          : agentFileProfile.hasSoul ? '✓ SOUL.md only (no AGENTS.md)'
+                          : '✓ AGENTS.md only (no SOUL.md)'}
+                      </p>
+                    )}
+                  </div>
+                )}
+                
                 <label className={cn("text-[11px] font-medium mb-3 block flex items-center gap-1.5", classes.muted)}><Wrench className="w-3.5 h-3.5" /> Assigned Skills & Tools</label>
                 {skills.length > 0 ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

@@ -180,6 +180,7 @@ export const NAV_ITEMS = [
   { id: 'board', label: 'Board', icon: 'Columns3' },
   { id: 'projects', label: 'Projects', icon: 'FolderOpen' },
   { id: 'agents', label: 'Agents', icon: 'UserCircle' },
+  { id: 'organization', label: 'Organization', icon: 'Users2' },
   { id: 'live-agents', label: 'Live Agents', icon: 'Users' },
   { id: 'approvals', label: 'Approvals', icon: 'AlertCircle' },
   { id: 'skills', label: 'Skills', icon: 'Wrench' },

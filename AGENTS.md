@@ -14,6 +14,7 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+5. **🔥 Check the Mission Board** — run `node scripts/mc.js tasks:list`, find tasks assigned to you that are `todo` or `in_progress`, pick the highest-priority one and start working on it before chatting
 
 Don't ask permission. Just do it.
 

@@ -32,6 +32,7 @@ import { AnalyticsView } from '@/components/views/AnalyticsView';
 import { NovaWidget } from '@/components/chat/NovaWidget';
 import { QuickTrigger } from '@/components/shared/QuickTrigger';
 import { VirtualOfficeView } from '@/components/views/VirtualOfficeView';
+import { OrganizationView } from '@/components/views/OrganizationView';
 
 export default function MC() {
   const { theme, toggle: toggleTheme, isDark } = useTheme();
@@ -220,6 +221,13 @@ export default function MC() {
                   onAgentClick={handleEditAgentClick}
                   onNewAgent={handleNewAgentClick}
                   loading={db.loading} theme={theme}
+                />
+              )}
+              {view === 'organization' && (
+                <OrganizationView
+                  agents={db.agents} tasks={filteredTasks}
+                  onAgentClick={handleEditAgentClick}
+                  theme={theme}
                 />
               )}
               {view === 'live-agents' && (

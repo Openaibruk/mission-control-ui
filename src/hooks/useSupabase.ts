@@ -66,7 +66,7 @@ export function useSupabase(): UseSupabaseReturn {
         supabase.from('tasks').select('*').order('created_at', { ascending: false }),
         supabase.from('agents').select('*'),
         supabase.from('projects').select('*').order('created_at', { ascending: false }),
-        supabase.from('activities').select('*').gt('created_at', new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString()).order('created_at', { ascending: false }).limit(15),
+        supabase.from('activities').select('*').gt('created_at', new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()).order('created_at', { ascending: false }).limit(50),
       ]);
       if (tasksRes.error) throw tasksRes.error;
       if (agentsRes.error) throw agentsRes.error;

@@ -1,12 +1,12 @@
 {
-  "lastChecked": "2026-04-01T01:00:00Z",
+  "lastChecked": "2026-04-02T01:00:00Z",
   "models": [
     {
-      "id": "qwen/qwen3.6-plus-preview:free",
+      "id": "qwen/qwen3.6-plus:free",
       "context": 1000000,
-      "name": "Qwen3.6 Plus Preview",
+      "name": "Qwen3.6 Plus",
       "modality": "text->text",
-      "notes": "NEW 2026-03-31: 1M context, next-gen Qwen Plus, strong reasoning and agentic coding"
+      "notes": "1M context, next-gen Qwen Plus, strong reasoning and agentic coding"
     },
     {
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
@@ -69,7 +69,7 @@
     "general": "stepfun/step-3.5-flash:free",
     "coding": "qwen/qwen3-coder:free",
     "heavy": "nvidia/nemotron-3-super-120b-a12b:free",
-    "new-flagship": "qwen/qwen3.6-plus-preview:free",
+    "new-flagship": "qwen/qwen3.6-plus:free",
     "auto": "openrouter/free"
   }
 }

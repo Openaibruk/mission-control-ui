@@ -156,56 +156,36 @@ interface VirtualOfficeViewProps {
 
 export function VirtualOfficeView({ agents, activities, tasks, theme }: VirtualOfficeViewProps) {
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
-  const [statusNow, setStatusNow] = useState(Date.now());
-  const [displayNow, setDisplayNow] = useState(Date.now());
+  const [now, setNow] = useState(Date.now());
 
-  // Update statuses every 5 minutes (not every 30s — agents don't change status that fast)
+  // Update time every 30s (instead of every second — we only need minute-level precision)
   useEffect(() => {
-    const t = setInterval(() => setStatusNow(Date.now()), 300_000);
+    const t = setInterval(() => setNow(Date.now()), 30_000);
     return () => clearInterval(t);
   }, []);
 
-  // Update display clock every 30s for the time label in the header
-  useEffect(() => {
-    const t = setInterval(() => setDisplayNow(Date.now()), 30_000);
-    return () => clearInterval(t);
-  }, []);
-
-  // ── Pre-compute agent status map ──
-  // Optimized: O(n) single-pass indexing instead of N+1 .filter() calls per agent
+  // ── Pre-compute agent status map ONCE with useMemo ──
+  // This was the #1 bottleneck: computing status per-lookup on every render
   const statusMap = useMemo(() => {
     const map: Record<string, 'active' | 'idle' | 'offline'> = {};
-    const nowMs = statusNow; // Uses statusNow (5min cadence) NOT displayNow (30s cadence)
-
-    // Pre-index latest timestamps by agent name (O(n) single pass)
-    const latestTaskTs: Record<string, number> = {};
-    for (const t of tasks) {
-      if (t.updated_at) {
-        const ts = new Date(t.updated_at).getTime();
-        for (const assignee of t.assignees || []) {
-          const name = assignee.replace(/^@+/, '');
-          if (!latestTaskTs[name] || ts > latestTaskTs[name]) {
-            latestTaskTs[name] = ts;
-          }
-        }
-      }
-    }
-
-    const latestActivityTs: Record<string, number> = {};
-    for (const a of activities) {
-      const name = (a.agent_name || '').replace(/^@+/, '');
-      const ts = new Date(a.created_at).getTime();
-      if (!latestActivityTs[name] || ts > latestActivityTs[name]) {
-        latestActivityTs[name] = ts;
-      }
-    }
-
-    // Single-pass status computation
+    const nowMs = Date.now();
     for (const agent of agents) {
       const name = agent.name;
-      const taskTs = latestTaskTs[name] || 0;
-      const actTs = latestActivityTs[name] || 0;
-      const latestMs = taskTs > actTs ? taskTs : actTs;
+      // Check in-progress tasks
+      const agentTasks = tasks.filter(t => t.assignees?.some(a => a.replace(/^@+/, '') === name));
+      const agentActivities = activities.filter(a => a.agent_name?.replace(/^@+/, '') === name);
+      
+      let latestMs: number | null = null;
+      for (const t of agentTasks) {
+        if (t.updated_at) {
+          const ts = new Date(t.updated_at).getTime();
+          if (!latestMs || ts > latestMs) latestMs = ts;
+        }
+      }
+      for (const a of agentActivities) {
+        const ts = new Date(a.created_at).getTime();
+        if (!latestMs || ts > latestMs) latestMs = ts;
+      }
 
       if (latestMs) {
         const diff = nowMs - latestMs;
@@ -215,7 +195,7 @@ export function VirtualOfficeView({ agents, activities, tasks, theme }: VirtualO
       }
     }
     return map;
-  }, [agents, tasks, activities, statusNow]); // 'now' removed — uses 'statusNow' (5min) instead
+  }, [agents, tasks, activities, now]);
 
   const getAgentStatus = (name: string): 'active' | 'idle' | 'offline' => {
     return statusMap[name] || 'offline';
@@ -223,13 +203,7 @@ export function VirtualOfficeView({ agents, activities, tasks, theme }: VirtualO
 
   const getAgentRole = (name: string) => agents.find(a => a.name === name)?.role || 'Agent';
 
-  const activeCount = useMemo(() => {
-    let count = 0;
-    for (const agent of agents) {
-      if (statusMap[agent.name] === 'active') count++;
-    }
-    return count;
-  }, [statusMap]); // agents array is stable — only recompute when statuses change
+  const activeCount = useMemo(() => agents.filter(a => statusMap[a.name] === 'active').length, [agents, statusMap]);
   const totalCount = agents.length;
 
   // Hover state for rooms
@@ -249,7 +223,7 @@ export function VirtualOfficeView({ agents, activities, tasks, theme }: VirtualO
             </h1>
             <p className="text-xs text-neutral-500 mt-1">
               <span className="text-emerald-400 font-semibold">{activeCount}</span>/{totalCount} agents online •{' '}
-              {new Date(displayNow).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Addis_Ababa' })} EAT
+              {new Date(now).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Addis_Ababa' })} EAT
             </p>
           </div>
           <div className="flex gap-2">
@@ -491,7 +465,7 @@ export function VirtualOfficeView({ agents, activities, tasks, theme }: VirtualO
         </div>
       </div>
 
-      {/* Inline animation styles — GPU-accelerated replacements for SVG <animate> elements */}
+      {/* Inline animation styles */}
       <style jsx global>{`
         @keyframes slideInFromBottom {
           from {
@@ -502,26 +476,6 @@ export function VirtualOfficeView({ agents, activities, tasks, theme }: VirtualO
             opacity: 1;
             transform: translateY(0);
           }
-        }
-        @keyframes pulseGlow {
-          0%, 100% { r: 22; opacity: 0.08; }
-          50% { r: 27; opacity: 0.18; }
-        }
-        @keyframes pulseStatus {
-          0%, 100% { r: 3.5; }
-          50% { r: 4.8; }
-        }
-        @keyframes pulseScreenGlow {
-          0%, 100% { opacity: 0.4; }
-          50% { opacity: 0.7; }
-        }
-        @keyframes pulseIdleStatus {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
-        }
-        @keyframes steamWave {
-          0%, 100% { d: path("M12 0 Q14 -6 11 -10"); }
-          50% { d: path("M13 0 Q11 -6 14 -10"); }
         }
       `}</style>
     </div>

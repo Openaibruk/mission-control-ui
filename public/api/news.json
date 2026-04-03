@@ -1,89 +1,89 @@
 {
-  "updatedAt": "2026-04-01T05:00:00.000Z",
+  "updatedAt": "2026-04-02T05:00:00.000Z",
   "news": [
+    {
+      "title": "Q1 2026 Shatters Venture Records: $300B Invested Globally, AI at 80%",
+      "source": "Crunchbase",
+      "url": "https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/",
+      "date": "2026-04-01",
+      "category": "Finance",
+      "summary": "Global VC investment hit $300B in Q1 2026 — up 150% QoQ and YoY. AI captured 80% ($242B) of total funding. Four mega-deals alone raised $188B: OpenAI ($122B at $852B valuation), Anthropic ($30B at $380B), xAI ($20B), and Waymo ($16B)."
+    },
+    {
+      "title": "California AG Demands xAI Stop Grok Deepfake Content",
+      "source": "Crescendo AI",
+      "url": "https://www.crescendo.ai/news/latest-ai-news-and-updates",
+      "date": "2026-04-01",
+      "category": "Tech",
+      "summary": "California Attorney General Rob Bonta issued a formal demand to xAI to immediately stop its Grok AI model from producing non-consensual deepfake content, signaling growing regulatory pressure on AI companies."
+    },
+    {
+      "title": "Ethiopia's Fintech Ecosystem Grows: 49 Startups Now Active",
+      "source": "The Fintech Times",
+      "url": "https://thefintechtimes.com/ethiopias-fintech-and-financial-inclusion-ecosystem-in-2026/",
+      "date": "2026-04-01",
+      "category": "Business",
+      "summary": "Ethiopia now hosts around 49 fintech startups across payments, lending, remittances and financial infrastructure. The country's overall startup ecosystem includes nearly 100 active tech startups, marking steady growth in East Africa's fintech corridor."
+    },
+    {
+      "title": "Africa's Most Active VC Investors in Q1 2026 — Backing Ethiopian Agritech Lersha",
+      "source": "Launch Base Africa",
+      "url": "https://launchbaseafrica.com/2026/04/01/africas-most-active-startup-investors-in-q1-2026-and-where-they-put-their-money/",
+      "date": "2026-04-01",
+      "category": "Business",
+      "summary": "The IFC emerged as Africa's most active investor in Q1 2026 with four deals across quick-commerce, e-mobility, proptech, and agritech — including backing Ethiopian agritech startup Lersha. Broad sector diversification signals growing institutional confidence."
+    },
+    {
+      "title": "207 AI Startups Across Africa — Continent's AI Bet Accelerates",
+      "source": "TechCabal",
+      "url": "https://insights.techcabal.com/africas-ai-builders-207-startups-and-one-continents-bet/",
+      "date": "2026-04-01",
+      "category": "Tech",
+      "summary": "Africa now has 207 AI startups, with geographic diversification accelerating beyond Nigeria, Kenya, and South Africa. Ethiopia, Rwanda, Côte d'Ivoire, Morocco, and Senegal all now carry meaningful AI startup representation where they had almost none three years ago."
+    },
+    {
+      "title": "China VC Funding Set for Record Q1 on State-Led Tech Push in AI and Robotics",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/asia-pacific/china-venture-capital-funding-set-hit-record-q1-state-led-tech-push-2026-04-01/",
+      "date": "2026-04-01",
+      "category": "Finance",
+      "summary": "China's venture capital funding is set to hit a record high in Q1 2026 as Beijing doubles down on state-led investments in the technology sector, particularly in AI and robotics."
+    },
+    {
+      "title": "MIT AI Model Measures Material Defects for Better Strength and Energy Efficiency",
+      "source": "MIT News",
+      "url": "https://news.mit.edu/topic/artificial-intelligence2",
+      "date": "2026-04-01",
+      "category": "Tech",
+      "summary": "MIT researchers developed a new AI model that measures defects in materials, which can be leveraged to improve mechanical strength, heat transfer, and energy-conversion efficiency — a significant step for materials science."
+    },
+    {
+      "title": "FinCode: 10 Years Powering Africa's Fintech Infrastructure",
+      "source": "TechCabal",
+      "url": "https://techcabal.com/2026/04/01/fincode/",
+      "date": "2026-04-01",
+      "category": "Business",
+      "summary": "FinCode, a fintech R&D company operating in stealth for over a decade, steps into the spotlight with a renewed commitment to foster Africa's next wave of fintech unicorns — highlighting the maturation of the continent's financial infrastructure layer."
+    },
     {
       "title": "March 2026 AI Roundup: MCP Hits 97 Million Installs",
       "source": "Digital Applied",
+      "url": "https://www.digitalapplied.com/blog/march-2026-ai-roundup-month-that-changed-everything",
       "date": "2026-03-27",
       "category": "Tech",
-      "summary": "The Model Context Protocol crossed 97 million installations, cementing its transition from experimental standard to foundational agentic infrastructure. March delivered a wave of new AI models pushing boundaries of capability, efficiency, and accessibility.",
-      "url": "https://www.digitalapplied.com/blog/march-2026-ai-roundup-month-that-changed-everything"
-    },
-    {
-      "title": "Neuromorphic Computers Solve Complex Physics Simulations",
-      "source": "ScienceDaily",
-      "date": "2026-03-30",
-      "category": "Tech",
-      "summary": "Neuromorphic computers modeled after the human brain can now solve complex equations behind physics simulations — once thought possible only with energy-hungry supercomputers.",
-      "url": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/"
-    },
-    {
-      "title": "CoreWeave Secures $8.5B Loan as AI Cloud Demand Surges",
-      "source": "Tech Startups",
-      "date": "2026-03-31",
-      "category": "Business",
-      "summary": "CoreWeave locks in $8.5 billion in new financing through a delayed-draw term loan facility, months after Nvidia's $2B investment, as demand for AI cloud infrastructure accelerates.",
-      "url": "https://techstartups.com/2026/03/31/coreweave-secures-8-5b-loan-as-ai-cloud-demand-surges-months-after-nvidias-2b-bet/"
-    },
-    {
-      "title": "Starcloud Raises $170M for Orbital AI Data Centers",
-      "source": "Tech Startups",
-      "date": "2026-03-30",
-      "category": "Tech",
-      "summary": "Redmond-based orbital AI infrastructure startup Starcloud raises $170M at $1.1B valuation, hitting unicorn status just 17 months after Y Combinator demo day. Plans to launch AI data centers in orbit as Earth-based compute demand outpaces limits.",
-      "url": "https://techstartups.com/2026/03/30/starcloud-raises-170m-at-1-1b-valuation-to-launch-orbital-ai-data-centers-as-demand-for-compute-outpaces-earths-limits/"
-    },
-    {
-      "title": "VivaTech AfricaTech Award 2026: Nigeria, Kenya, Egypt Lead",
-      "source": "PR Newswire",
-      "date": "2026-03-26",
-      "category": "Business",
-      "summary": "Europe's largest startup event VivaTech reveals Top 30 of AfricaTech Award 2026, with Nigeria, Kenya, and Egypt as the three most represented countries. Recognition for startups building tech solutions addressing Africa's economic challenges.",
-      "url": "https://www.prnewswire.com/news-releases/vivatech-unveils-the-top-30-of-the-5th-edition-of-the-africatech-award-2026-nigeria-kenya-and-egypt-are-the-three-most-represented-countries-302726058.html"
-    },
-    {
-      "title": "Africa's Emerging Silicon Valleys: Lagos, Nairobi, Cape Town",
-      "source": "WBN Digital",
-      "date": "2026-04-01",
-      "category": "Business",
-      "summary": "Across Africa, cities like Lagos, Nairobi, and Cape Town emerge as dynamic technology hubs, earning recognition as the continent's new Silicon Valleys. A powerful tech shift underway driven by young, entrepreneurial talent.",
-      "url": "https://www.wbn.digital/africas-rising-tech-powerhouses-inside-the-continents-new-silicon-valleys/"
-    },
-    {
-      "title": "AI Startup Axiom Valued at $1.6B Building Mistake-Checking Systems",
-      "source": "The New York Times",
-      "date": "2026-03-31",
-      "category": "Business",
-      "summary": "Tiny startup Axiom valued at $1.6 billion is building AI systems that can autonomously check for mistakes in code, documents, and data. A growing niche as enterprises seek reliable AI verification.",
-      "url": "https://www.nytimes.com/spotlight/artificial-intelligence"
-    },
-    {
-      "title": "Eswatini's Growing Fintech Ecosystem in 2026",
-      "source": "The Fintech Times",
-      "date": "2026-03-31",
-      "category": "Business",
-      "summary": "A look at the economic development and fintech landscape in Eswatini, as the nation builds its digital finance infrastructure and positions itself within Africa's expanding fintech corridor.",
-      "url": "https://thefintechtimes.com/african-nation-of-eswatini-and-its-fintech-ecosystem-in-2026/"
-    },
-    {
-      "title": "IQM Quantum Computers Raises €50M from BlackRock Funds",
-      "source": "Tech Startups",
-      "date": "2026-03-30",
-      "category": "Tech",
-      "summary": "Finnish quantum hardware startup IQM Quantum Computers secures €50 million ($57.6M) in venture funding from BlackRock-managed funds, accelerating European quantum computing race.",
-      "url": "https://techstartups.com/2026/03/30/top-startup-and-tech-funding-news-march-30-2025/"
+      "summary": "The Model Context Protocol crossed 97 million installations, cementing its transition from experimental standard to foundational agentic infrastructure. March delivered a wave of new AI models pushing boundaries of capability, efficiency, and accessibility."
     },
     {
       "title": "ChipChip Gross Margin Stable at 15.46%",
       "source": "Internal",
-      "date": "2026-04-01",
+      "url": "",
+      "date": "2026-04-02",
       "category": "Internal",
-      "summary": "ChipChip's gross margin remains steady at 15.46% — fresh new day, continuing the grind!",
-      "url": ""
+      "summary": "ChipChip keeps the grind going — gross margin steady at 15.46%."
     }
   ],
   "business": {
-    "date": "2026-04-01",
+    "date": "2026-04-02",
     "revenue": "0",
     "orders": 0,
     "aov": 0,

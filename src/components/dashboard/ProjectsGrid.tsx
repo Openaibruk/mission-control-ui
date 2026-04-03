@@ -1,21 +1,40 @@
 'use client';
 
-import { Project } from '@/lib/types';
+import { Project, Task } from '@/lib/types';
 import { cn, getStatusBorderColor, getDepartmentColor, timeAgo } from '@/lib/utils';
 import { useThemeClasses } from '@/hooks/useTheme';
 import { Folder, MoreVertical, CheckCircle, Pause, Play, Archive } from 'lucide-react';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 
 interface ProjectsGridProps {
   projects: Project[];
+  tasks?: Task[];
   loading?: boolean;
   theme: 'dark' | 'light';
   onUpdateStatus?: (projectId: string, status: string) => void;
 }
 
-export function ProjectsGrid({ projects, loading, theme, onUpdateStatus }: ProjectsGridProps) {
+export function ProjectsGrid({ projects, tasks, loading, theme, onUpdateStatus }: ProjectsGridProps) {
   const isDark = theme === 'dark';
   const classes = useThemeClasses(isDark);
+
+  // Compute real task counts per project from the tasks array
+  const projectTaskCounts = useMemo(() => {
+    const counts = new Map<string, { total: number; done: number }>();
+    if (tasks && tasks.length > 0) {
+      for (const t of tasks) {
+        if (!t.project_id) continue;
+        const existing = counts.get(t.project_id);
+        if (existing) {
+          existing.total += 1;
+          if (t.status === 'done') existing.done += 1;
+        } else {
+          counts.set(t.project_id, { total: 1, done: t.status === 'done' ? 1 : 0 });
+        }
+      }
+    }
+    return counts;
+  }, [tasks]);
 
   if (loading) {
     return (
@@ -56,8 +75,13 @@ export function ProjectsGrid({ projects, loading, theme, onUpdateStatus }: Proje
       <h3 className={cn("text-[14px] font-semibold mb-4", classes.heading)}>Projects</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project) => {
-          const pct = project.total_tasks > 0 
-            ? Math.round((project.done_tasks / project.total_tasks) * 100) 
+          // Prefer dynamic counts from tasks prop; fall back to project's stored fields
+          const dynamicCounts = projectTaskCounts.get(project.id);
+          const totalTasks = dynamicCounts ? dynamicCounts.total : project.total_tasks;
+          const doneTasks = dynamicCounts ? dynamicCounts.done : project.done_tasks;
+          
+          const pct = totalTasks > 0 
+            ? Math.round((doneTasks / totalTasks) * 100) 
             : 0;
           const isComplete = project.status === 'complete' || pct === 100;
           
@@ -138,7 +162,7 @@ export function ProjectsGrid({ projects, loading, theme, onUpdateStatus }: Proje
               
               <div className="flex justify-between mt-2">
                 <span className={cn("text-[10px]", classes.muted)}>
-                  {project.done_tasks}/{project.total_tasks} tasks
+                  {doneTasks}/{totalTasks} tasks
                 </span>
                 <span className={cn("text-[10px]", classes.subtle)}>
                   {timeAgo(project.created_at)}

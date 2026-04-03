@@ -16,7 +16,7 @@ import { ActivityPulse } from './ActivityPulse';
 import { DomainsWidget } from './DomainsWidget';
 import { LiveClockWidget } from './LiveClockWidget';
 import { useGatewayStatus } from '@/hooks/useGatewayStatus';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface OverviewDashboardProps {
   stats: DashboardStats;
@@ -46,6 +46,24 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
   const [statusMenu, setStatusMenu] = useState<string | null>(null);
   const classes = useThemeClasses(isDark, activeDomain);
   const { data: gwStatus } = useGatewayStatus(30000);
+
+  // Real-time task counts per project from tasks array
+  const projectTaskCounts = useMemo(() => {
+    const counts = new Map<string, { total: number; done: number }>();
+    // Initialize all projects with 0 counts so they always show
+    for (const p of projects) {
+      counts.set(p.id, { total: 0, done: 0 });
+    }
+    for (const t of tasks) {
+      if (!t.project_id) continue;
+      const existing = counts.get(t.project_id);
+      if (existing) {
+        existing.total += 1;
+        if (t.status === 'done') existing.done += 1;
+      }
+    }
+    return counts;
+  }, [tasks, projects]);
   const activeAgents = agents.filter(agent => {
     const agentTasks = tasks.filter(t => t.assignees?.some(a => a.replace(/^@+/, '') === agent.name));
     const agentActivities = activities.filter(a => a.agent_name?.replace(/^@+/, '') === agent.name);
@@ -193,13 +211,16 @@ export function OverviewDashboard({ stats, tasks, agents, activities, projects, 
           </div>
           <div className="space-y-2 max-h-[250px] overflow-y-auto custom-scroll">
             {projects.length > 0 ? projects.slice(0, 8).map(p => {
-              const pct = p.total_tasks > 0 ? Math.round((p.done_tasks / p.total_tasks) * 100) : 0;
+              const tc = projectTaskCounts.get(p.id);
+              const totalT = tc ? tc.total : p.total_tasks;
+              const doneT = tc ? tc.done : p.done_tasks;
+              const pct = totalT > 0 ? Math.round((doneT / totalT) * 100) : 0;
               return (
                 <div key={p.id} onClick={() => onEditProject(p)} className={cn("flex items-center gap-3 p-2 rounded-md cursor-pointer transition-colors", isDark ? "hover:bg-white/5" : "hover:bg-neutral-50")}>
                   <FolderOpen className={cn("w-4 h-4 shrink-0", p.status === 'complete' ? "text-emerald-400" : "text-violet-400")} />
                   <div className="flex-1 min-w-0">
                     <div className={cn("text-[12px] font-medium truncate", classes.heading)}>{p.name}</div>
-                    <div className={cn("text-[10px]", classes.muted)}>{p.done_tasks}/{p.total_tasks} tasks · {pct}%</div>
+                    <div className={cn("text-[10px]", classes.muted)}>{doneT}/{totalT} tasks · {pct}%</div>
                   </div>
                   <div className="relative" onClick={e => e.stopPropagation()}>
                     <button onClick={() => setStatusMenu(statusMenu === p.id ? null : p.id)}
